@@ -1,0 +1,149 @@
+/* app css stylesheet */
+
+.all {
+  background-color: #cccccc;
+}
+
+.logotype img {
+  width: auto;
+  height: 60px;
+  margin-top: 15px;
+  margin-left: -5px;
+}
+.circle {
+  margin-top: 1em;
+  margin-left: 1em;
+  background-color: white;
+  height: 90px;
+  -moz-border-radius:75px;
+  -webkit-border-radius: 75px;
+  width: 90px;
+}
+#site-header{
+  width: 100%;
+  background-color: #662d91;
+}
+
+#site-header .site-header-toprow {
+  width: 100%;
+  height: 70px;
+  position:relative;
+  display: flex;
+}
+#site-header .site-header-toprow h1 {
+  font-family: "Courier New";
+  font-size: 50px;
+  color: white;
+  margin-left: 1em;
+  margin-top: 0;
+}
+
+#site-header .site-logo {
+  height: 10px;
+}
+
+#site-header .circle:hover {
+  transform:  scale(1.1);
+}
+
+article,div, aside, footer, header, main, nav, section {
+  display: block;
+}
+#site-header .site-header-toprow .site-logo .logotype {
+  margin-top: 0;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.site-nav-wrapper{
+  background-color: #7e37b2;
+  height: 2em;
+  text-align: center;
+  padding-top: 1em;
+}
+.site-nav-wrapper a{
+  text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #FFFFFF;
+  padding-top: 1.1em;
+  padding-bottom: 1em;
+}
+.site-nav-wrapper a:hover {
+  background-color: #8f41cb;
+
+}
+
+/* selected link */
+.site-nav-wrapper a:active {
+  background-color: #7e37b2;
+}
+
+.tile-container{
+  display: inline-block;
+
+  position: relative;
+  height: inherit;
+
+}
+.tile-container div {
+  display: block;
+  width: auto;
+  height: 100px;
+  float: left;
+
+  margin-right: 15px;
+  width: 100px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  background-color: #61616c;
+
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+}
+.tile-container a{
+   width:inherit;
+   height: inherit;
+   text-align: center;
+   text-decoration: none;
+   color: white;
+  padding-top: 50%;
+ }
+.tile-container div:hover{
+  transform:  scale(1.1);
+  background-color: rgba(150, 150, 164, 0.53);
+}
+.tile-container h2{
+  background-color: #662d91;
+  text-align: left;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: Candara;
+  padding-left: 1em;
+  color:white;
+}
+.tile-container h2 a img{
+  padding-right: 1em;
+  margin-top: 5px;
+  height: 25px ;
+  width: auto;
+  float:right;
+}
+
+.main {
+  background-color: #404046;
+  position: absolute;
+  border-left: rgba(0, 0, 0, 0.72) solid 0.1em;
+  border-right: rgba(0, 0, 0, 0.72) solid 0.1em;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow-y: hidden;
+}
+
+.section-container{
+  float:left;
+}
+
