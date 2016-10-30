@@ -11,7 +11,8 @@ app.get('/', function(req,res){
 	res.render('index');
 });
 
-app.post('/add',bodyParser.json(), function(req,res){
+app.post('/add', bodyParser.json(), function (req, res) {
+    alert('test');
 	var a = req.body.a;
 	var b = req.body.b;
 	
