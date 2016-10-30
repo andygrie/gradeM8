@@ -2,7 +2,7 @@
 var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var azure = require('azure');
 var app = express();
 
 app.set('view engine', 'ejs');
