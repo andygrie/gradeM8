@@ -1,0 +1,14 @@
+{
+  "name": "grade-m8-web",
+  "version": "0.0.0",
+  "description": "gradeM8Web",
+  "main": "app.js",
+  "author": {
+    "name": "Max"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
