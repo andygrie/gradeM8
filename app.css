@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 .all {
-  background-color: #252525;
+  background-color: #404040;
   font-family: Fraktur;
 }
 
@@ -134,7 +134,7 @@ article,div, aside, footer, header, main, nav, section {
 }
 
 .main {
-  background-color: #2F2F2F;
+  background-color: #414141;
   position: absolute;
   margin-left: 10%;
   margin-right: 10%;
