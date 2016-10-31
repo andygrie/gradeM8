@@ -29,7 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/about', routes.about);
+app.get('/boert', routes.bört);
 app.get('/contact', routes.contact);
 
 http.createServer(app).listen(app.get('port'), function () {
