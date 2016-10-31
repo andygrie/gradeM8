@@ -162,42 +162,56 @@ article,div, aside, footer, header, main, nav, section {
 
 .modal-wrapper{
   margin:7em auto;
-  width: 50%;
+  width: 40%;
+}
+
+.modal-header {
+  font-size: 1em;
+  height: 2.5em;
+  padding-left: 1em;
+  border-radius: 4px 4px 0px 0px;
+  background-color: #ffffff;
+  color:#662d91;
+  border-width: 1px;
+  border-bottom: solid rgba(0, 0, 0, 0.5);
 }
 
 .modal-body {
+
   display: block;
   background-color: #fefefe;
   padding: 20px;
-  border-width: 0.1em;
-  border-bottom: solid black;
+  border-width: 1px;
+  border-bottom: solid rgba(0, 0, 0, 0.5);
 }
 
 /* Modal Header */
-.modal-header {
-  padding: 2px 16px;
-  background-color: #ffffff;
-  color:#662d91;
-  border-width: 0.1em;
-  border-bottom: solid black;
-}
+
 .modal-footer{
+  border-radius: 0px 0px 4px 4px;
   display: block;
   height: 2em;
   padding: 2px 16px;
   background-color: #ffffff;
   color:#662d91;
-  border-width: 0.1em;
-  border-bottom: solid black;
 }
 
 .imput{
   margin: 0.5em auto;
-  width: 90%;
+  width: 80%;
+  display: block;
 }
-
+.imput div
+{
+  width: 100%;
+}
+.imput textarea, input
+{
+  width: 100%;
+}
 .close {
   color: #aaa;
+  margin-right: 1em;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -212,12 +226,14 @@ article,div, aside, footer, header, main, nav, section {
 
 
 .btnCancel{
+  margin-right: 10%;
   height: 2em;
   float:right;
   width: 30%;
 }
 
 .btnOK{
+  margin-left: 10%;
   height: 2em;
   float: left;
   width: 30%;
@@ -232,4 +248,8 @@ article,div, aside, footer, header, main, nav, section {
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
+}
+
+#studentList{
+  display: none;
 }

@@ -9,10 +9,7 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body class="all">
@@ -49,16 +46,26 @@
     <div class="modal-wrapper">
     <div class="modal-header">
       <span class="close">×</span>
-      <h2>Modal Header</h2>
+      <h2>Add Student</h2>
     </div>
       <form>
     <div class="modal-body">
-      <textarea class="imput" name="message" rows="1" cols="30"></textarea>
-        <input class="imput" list="Subjects">
-        <datalist  id="Subjects">
-          <option value="English">
-          <option value="Physics">
+      <div class="imput">
+      <div>Class: </div><input id="classList" list="Class">
+      <datalist  id="Class">
+        <option value="1BHIFS">
+        <option value="1AHIFS">
+      </datalist>
+    </div>
+
+
+        <div class="imput" id="studentList"><div>Student: </div>
+        <input list="Students">
+        <datalist  id="Students">
+          <option value="Dude 01">
+          <option value="Dude 02">
         </datalist>
+          </div>
     </div>
       <div class="modal-footer">
         <button class="btnOK" type="button"> OK</button>
@@ -72,11 +79,12 @@
     <div class="modal-wrapper">
       <div class="modal-header">
         <span class="close">×</span>
-        <h2>Modal Header</h2>
+        <h2>Add Event</h2>
       </div>
       <form>
         <div class="modal-body">
-          <textarea class="imput" name="message" rows="1" cols="30"></textarea>
+          <div class="imput">
+          <div>Title: </div><textarea name="message" rows="1" cols="30"></textarea></div>
         </div>
         <div class="modal-footer">
           <button class="btnOK" type="button"> OK</button>
@@ -156,14 +164,8 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <script src="app2.js"></script>
+
 </main>
 </body>
 </html>

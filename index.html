@@ -47,17 +47,18 @@
     <div class="modal-wrapper">
     <div class="modal-header">
       <span class="close">×</span>
-      <h2>Modal Header</h2>
+      <h2>Add Class</h2>
     </div>
       <form>
     <div class="modal-body">
-      <textarea class="imput" name="message" rows="1" cols="30"></textarea>
-        <input class="imput" list="Subjects">
+      <div class="imput"> <div>Name: </div><textarea name="message" rows="1" cols="30"></textarea></div>
+      <div class="imput"> <div>Subject: </div><input list="Subjects">
         <datalist  id="Subjects">
           <option value="English">
           <option value="Physics">
-        </datalist>
+        </datalist></div>
     </div>
+
       <div class="modal-footer">
         <button class="btnOK" type="button"> OK</button>
         <button id="btnCancel" class="btnCancel" type="button">Cancel</button>
@@ -70,11 +71,12 @@
     <div class="modal-wrapper">
       <div class="modal-header">
         <span class="close">×</span>
-        <h2>Modal Header</h2>
+        <h2>Add Subject</h2>
       </div>
       <form>
         <div class="modal-body">
-          <textarea class="imput" name="message" rows="1" cols="30"></textarea>
+          <div class = imput>
+          <div>Subject: </div><textarea class="imput" name="message" rows="1" cols="30"></textarea></div>
         </div>
         <div class="modal-footer">
           <button class="btnOK" type="button"> OK</button>
