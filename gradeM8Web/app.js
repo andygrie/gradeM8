@@ -8,6 +8,7 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var teacherService = require('./services/teacher');
+var classService = require('./services/class');
 
 var app = express();
 app.use(express.bodyParser());
@@ -37,6 +38,9 @@ app.get('/teacher', teacherService.getTeachers);
 app.post('/teacher', teacherService.insertUser);
 app.put('/teacher/:idUser', teacherService.updateUser);
 app.delete('/teacher/:idUser', teacherService.deleteTeacher);
+
+app.get('/class', classService.getClasses);
+app.post('/class', classService.insertClass);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

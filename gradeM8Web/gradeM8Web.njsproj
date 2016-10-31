@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="services\class.js" />
     <Compile Include="services\teacher.js" />
   </ItemGroup>
   <ItemGroup>
