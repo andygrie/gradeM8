@@ -9,6 +9,7 @@ var http = require('http');
 var path = require('path');
 var teacherService = require('./services/teacher');
 var classService = require('./services/class');
+var pupilService = require('./services/pupil');
 
 var app = express();
 app.use(express.bodyParser());
@@ -43,6 +44,11 @@ app.get('/class', classService.getClasses);
 app.post('/class', classService.insertClass);
 app.put('/class/:idClass', classService.updateClass);
 app.delete('/class/:idClass', classService.deleteClass);
+
+app.get('/pupil', pupilService.getPupil);
+app.post('/pupil', pupilService.insertUser);
+app.put('/pupil/:idUser', pupilService.updateUser);
+app.delete('/pupil/:idUser', pupilService.deletePupil);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
