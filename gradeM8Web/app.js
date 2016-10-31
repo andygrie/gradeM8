@@ -7,9 +7,10 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var userServices = require('./services/user');
+var teacherService = require('./services/teacher');
 
 var app = express();
+app.use(express.bodyParser());
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -31,7 +32,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/boert', routes.bört);
 app.get('/contact', routes.contact);
-app.get('/user', userServices.addUser);
+
+app.get('/teacher', teacherService.getTeachers);
+app.post('/teacher', teacherService.insertUser);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
