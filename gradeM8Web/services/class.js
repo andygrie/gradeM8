@@ -70,3 +70,42 @@ exports.insertClass = function (req, res) {
         connection.execSql(request);
     }
 }
+exports.updateClass = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("UPDATE class SET name = @name, room = @room WHERE idClass = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send();
+        });
+
+        request.addParameter('name', TYPES.VarChar, req.body.name);
+        request.addParameter('room', TYPES.NVarChar, req.body.room);
+        request.addParameter('id', TYPES.Int, req.params.idClass);
+        connection.execSql(request);
+    }
+}
+exports.deleteClass = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("DELETE FROM class WHERE idClass = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send();
+        });
+        request.addParameter('id', TYPES.Int, req.params.idClass);
+        connection.execSql(request);
+    }
+}

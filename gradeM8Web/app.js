@@ -41,6 +41,8 @@ app.delete('/teacher/:idUser', teacherService.deleteTeacher);
 
 app.get('/class', classService.getClasses);
 app.post('/class', classService.insertClass);
+app.put('/class/:idClass', classService.updateClass);
+app.delete('/class/:idClass', classService.deleteClass);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
