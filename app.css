@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 .all {
-  background-color: #cccccc;
+  background-color: #404046;
 }
 
 .logotype img {
@@ -96,7 +96,7 @@ article,div, aside, footer, header, main, nav, section {
   width: 100px;
   margin-bottom: 15px;
   margin-left: 15px;
-  background-color: #61616c;
+  background-color: #cccccc;
 
   overflow: hidden;
   position: relative;
@@ -134,7 +134,7 @@ article,div, aside, footer, header, main, nav, section {
 }
 
 .main {
-  background-color: #404046;
+  background-color: #61616c;
   position: absolute;
   border-left: rgba(0, 0, 0, 0.72) solid 0.1em;
   border-right: rgba(0, 0, 0, 0.72) solid 0.1em;
@@ -147,3 +147,89 @@ article,div, aside, footer, header, main, nav, section {
   float:left;
 }
 
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  overflow:auto;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-wrapper{
+  margin:7em auto;
+  width: 60%;
+}
+
+.modal-body {
+  display: block;
+  background-color: #fefefe;
+  padding: 20px;
+  border-width: 0.1em;
+  border-bottom: solid black;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #ffffff;
+  color:#662d91;
+  border-width: 0.1em;
+  border-bottom: solid black;
+}
+.modal-footer{
+  display: block;
+  height: 2em;
+  padding: 2px 16px;
+  background-color: #ffffff;
+  color:#662d91;
+  border-width: 0.1em;
+  border-bottom: solid black;
+}
+
+.imput{
+  margin: 0.5em auto;
+  width: 90%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.btnCancel{
+  height: 2em;
+  float:right;
+  width: 30%;
+}
+
+.btnOK{
+  height: 2em;
+  float: left;
+  width: 30%;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
