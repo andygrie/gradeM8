@@ -95,3 +95,60 @@ function insertTeacher(idUser) {
         connection.execSql(request);
     }
 }
+exports.updateUser = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("UPDATE gradeUser SET forename = @fn, surname = @sn, email = @em, password = @pw WHERE idUser = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });    
+        request.on('doneProc', function (rowCount, more) {
+            res.send();
+        });
+
+        request.addParameter('fn', TYPES.VarChar, req.body.forename);
+        request.addParameter('sn', TYPES.VarChar, req.body.surname);
+        request.addParameter('em', TYPES.VarChar, req.body.email);
+        request.addParameter('pw', TYPES.NVarChar, req.body.password);
+        request.addParameter('id', TYPES.Int, req.params.idUser);
+        connection.execSql(request);
+    }
+}
+exports.deleteTeacher = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("DELETE FROM teacher WHERE fkUser = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send();
+            deleteUser(req.params.idUser);
+        });
+        request.addParameter('id', TYPES.Int, req.params.idUser);
+        connection.execSql(request);
+    }
+}
+function deleteUser(idUser) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("DELETE FROM gradeUser WHERE idUser = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.addParameter('id', TYPES.Int, idUser);
+        connection.execSql(request);
+    }
+}

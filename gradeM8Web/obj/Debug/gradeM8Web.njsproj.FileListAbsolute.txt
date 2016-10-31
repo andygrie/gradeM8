@@ -1,0 +1,2 @@
+D:\Schule\2016_17\SYP (PRE)\Project\gradeM8\gradeM8Web\obj\Debug\gradeM8Web.njsprojResolveAssemblyReference.cache
+D:\Schule\2016_17\SYP (PRE)\Project\gradeM8\gradeM8Web\bin\Microsoft.NodejsTools.WebRole.dll

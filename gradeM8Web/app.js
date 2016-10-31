@@ -35,6 +35,8 @@ app.get('/contact', routes.contact);
 
 app.get('/teacher', teacherService.getTeachers);
 app.post('/teacher', teacherService.insertUser);
+app.put('/teacher/:idUser', teacherService.updateUser);
+app.delete('/teacher/:idUser', teacherService.deleteTeacher);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
