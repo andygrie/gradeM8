@@ -11,37 +11,33 @@ var config = {
 var Request = ted.Request;
 var TYPES = ted.TYPES;  
 
-
-
 exports.addUser = function addUser(req, res) {
     var connection = new Connection(config);
+    var results = [];
     connection.on('connect', executeStatement);  
-
     function executeStatement() {
         request = new Request("select * from gradeUser", function (err) {
             if (err) {
                 console.log(err);
             }
         });
-
         connection.on('debug', function (err) { console.log('debug:', err); });
 
-
-        var result = "";
         request.on('row', function (columns) {
+            var result = {};
             columns.forEach(function (column) {
                 if (column.value === null) {
                     console.log('NULL');
                 } else {
-                    result += column.value + " ";
+                    result[column.metadata.colName] = column.value;
                 }
             });
-            console.log(result);
-            result = "";
+            results.push(result);
+            result = {};
         });
 
-        request.on('done', function (rowCount, more) {
-            console.log(rowCount + ' rows returned');
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
         });
         connection.execSql(request);
     }  
