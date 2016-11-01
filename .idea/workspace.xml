@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Student.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Class.html" afterPath="$PROJECT_DIR$/Class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Student.html" afterPath="$PROJECT_DIR$/Student.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Student.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Student.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="273">
+              <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -49,18 +48,18 @@
       <file leaf-file-name="Student.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Student.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="51">
               <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Class.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Class.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Class.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="249">
+              <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -107,8 +106,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app.css" />
-        <option value="$PROJECT_DIR$/Student.html" />
         <option value="$PROJECT_DIR$/Class.html" />
+        <option value="$PROJECT_DIR$/Student.html" />
       </list>
     </option>
   </component>
@@ -251,15 +250,15 @@
       <option name="presentableId" value="Default" />
       <updated>1477949962002</updated>
       <workItem from="1477949963410" duration="8525000" />
-      <workItem from="1478004125558" duration="678000" />
+      <workItem from="1478004125558" duration="1404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9203000" />
+    <option name="totallyTimeSpent" value="9929000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -370,24 +369,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Student.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="51">
           <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Class.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="249">
+          <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
           <folding />
         </state>
       </provider>
