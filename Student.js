@@ -33,11 +33,6 @@ span2.onclick = function() {
   modal2.style.display = "none";
 }
 
-document.getElementById('classList').addEventListener('input', function () {
-  console.log('studentList');
-  document.getElementById('studentList').style.display="block";
-});
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
