@@ -75,7 +75,6 @@ exports.getSubject = function (req, res) {
         connection.execSql(request);
     }
 }
-
 exports.insertSubject = function (req, res) {
     var connection = new Connection(config);
     var result = {};

@@ -156,7 +156,6 @@ function updatePupil(idUser, idClass) {
 
 
 }
-
 exports.deletePupil = function (req, res) {
     var connection = new Connection(config);
     var result = {};

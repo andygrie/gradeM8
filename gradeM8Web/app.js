@@ -52,12 +52,12 @@ app.post('/pupil', pupilService.insertUser);
 app.put('/pupil/:idUser', pupilService.updateUser);
 app.delete('/pupil/:idUser', pupilService.deletePupil);
 
-app.get('/groups', groupService.getGroups);
+app.get('/group', groupService.getGroups);
 app.get('/group/:idGroup', groupService.getGroup);
 app.post('/group', groupService.insertGroup);
 app.put('/group/:idGroup', groupService.updateGroup);
 
-app.get('/subjects', subjectService.getSubjects);
+app.get('/subject', subjectService.getSubjects);
 app.get('/subject/:idSubject', subjectService.getSubject);
 app.post('/subject', subjectService.insertSubject);
 app.put('/subject/:idSubject', subjectService.updateSubject);
