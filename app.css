@@ -79,7 +79,22 @@ article,div, aside, footer, header, main, nav, section {
   background-color: #7e37b2;
 }
 
+.main {
+  background-color: #363636;
+  position:relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow-y: hidden;
+}
+
+.section-container{
+  float:left;
+  width: 100%;
+  position: relative;
+}
+
 .tile-container{
+  width: 100%;
   display: inline-block;
   position: relative;
   height: inherit;
@@ -130,17 +145,9 @@ article,div, aside, footer, header, main, nav, section {
   float:right;
 }
 
-.main {
-  background-color: #363636;
-  position: absolute;
-  margin-left: 10%;
-  margin-right: 10%;
-  overflow-y: hidden;
-}
 
-.section-container{
-  float:left;
-}
+
+
 
 .modal{
   display: none;
