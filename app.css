@@ -90,7 +90,6 @@ article,div, aside, footer, header, main, nav, section {
   width: auto;
   height: 100px;
   float: left;
-
   margin-right: 15px;
   width: 100px;
   margin-bottom: 15px;
@@ -112,9 +111,11 @@ article,div, aside, footer, header, main, nav, section {
  }
 .tile-container div:hover{
   transform:  scale(1.1);
-  background-color: rgba(150, 150, 164, 0.53);
+  background-color: #7e37b2;;
 }
 .tile-container h2{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   background-color: #662d91;
   text-align: left;
   font-size: 25px;
