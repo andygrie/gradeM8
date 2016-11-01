@@ -10,6 +10,8 @@ var path = require('path');
 var teacherService = require('./services/teacher');
 var classService = require('./services/class');
 var pupilService = require('./services/pupil');
+var groupService = require('./services/group');
+var subjectService = require('./services/subject');
 
 var app = express();
 app.use(express.bodyParser());
@@ -49,6 +51,17 @@ app.get('/pupil', pupilService.getPupil);
 app.post('/pupil', pupilService.insertUser);
 app.put('/pupil/:idUser', pupilService.updateUser);
 app.delete('/pupil/:idUser', pupilService.deletePupil);
+
+app.get('/groups', groupService.getGroups);
+app.get('/group/:idGroup', groupService.getGroup);
+app.post('/group', groupService.insertGroup);
+app.put('/group/:idGroup', groupService.updateGroup);
+
+app.get('/subjects', subjectService.getSubjects);
+app.get('/subject/:idSubject', subjectService.getSubject);
+app.post('/subject', subjectService.insertSubject);
+app.put('/subject/:idSubject', subjectService.updateSubject);
+app.delete('/subject/:idSubject', subjectService.deleteSubject);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
