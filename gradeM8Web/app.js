@@ -13,9 +13,10 @@ var pupilService = require('./services/pupil');
 var groupService = require('./services/group');
 var subjectService = require('./services/subject');
 
+var cors = require('cors');
 var app = express();
 app.use(express.bodyParser());
-
+app.use(cors());
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
