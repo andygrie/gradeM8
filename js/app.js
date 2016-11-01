@@ -1,7 +1,14 @@
 var app = angular.module("gradeM8", ["ngRoute",
                                      "moduleOverview",
                                      "moduleStudent",
-                                     "moduleClass"]);
+                                     "moduleClass",
+                                     "moduleData",
+                                     "moduleWeb"]);
+
+app.constant('constants', {
+    apiUrl: "http://gradem8.azurewebsites.net",
+    teacherId: 0
+});
 
 app.config(function($routeProvider) {
   $routeProvider
