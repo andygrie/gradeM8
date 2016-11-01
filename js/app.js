@@ -6,15 +6,15 @@ var app = angular.module("gradeM8", ["ngRoute",
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl : "/templates/overview.html",
+    templateUrl : "templates/overview.html",
     controller: "ctrlOverview"
   })
   .when("/class", {
-    templateUrl : "/templates/class.html",
+    templateUrl : "templates/class.html",
     controller: "ctrlClass"
   })
   .when("/student", {
-    templateUrl : "/templates/student.html",
+    templateUrl : "templates/student.html",
     controller: "ctrlStudent"
   });
 }); 
