@@ -72,7 +72,7 @@ app.post('/teaches', teachesService.insertTeaches);
 app.put('/teaches/:idTeaches', teachesService.updateTeaches);
 app.delete('/teaches/:idTeaches', teachesService.deleteTeaches);
 
-app.post('/assigned/:idGroup', assignedService.insertAssignedTo);
+app.post('/assigned/:fkGradeGroup', assignedService.insertAssignedTo);
 app.get('/assigned', assignedService.getAssignedTo);
 app.delete('/assigned', assignedService.deleteAssignedTo);
 

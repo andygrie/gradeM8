@@ -50,8 +50,8 @@ exports.insertAssignedTo = function (req, res) {
     var results = [];
     var requestString = "INSERT INTO assignedto ( fkGradeGroup, fkPupil ) VALUES ";
     data.forEach(function (item) {
-        requestString = requestString + "(" + req.params.idGroup + ", " + item.fkPupil + "),";
-        results.push({ 'fkGradeGroup': req.params.idGroup, 'fkPupil': item.fkPupil });
+        requestString = requestString + "(" + req.params.fkGradeGroup + ", " + item.fkPupil + "),";
+        results.push({ 'fkGradeGroup': req.params.fkGradeGroup, 'fkPupil': item.fkPupil });
     });
     requestString = requestString.substring(0, requestString.length -1);
 
