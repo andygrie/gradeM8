@@ -59,12 +59,14 @@ app.get('/pupil/byClass/:idClass', pupilService.getPupilsByClass);
 app.get('/pupil/byGroup/:idGradeGroup', pupilService.getPupilsByGroup);
 
 app.get('/group', groupService.getGroups);
+app.get('/group/byTeacherAndSubject/:idTeacher/:idSubject', groupService.getGroupsByTeacherAndSubject);
 app.get('/group/:idGroup', groupService.getGroup);
 app.post('/group', groupService.insertGroup);
 app.put('/group/:idGroup', groupService.updateGroup);
 
 app.get('/subject', subjectService.getSubjects);
 app.get('/subject/:idSubject', subjectService.getSubject);
+app.get('/subject/byTeacher/:idTeacher', subjectService.getSubjectByTeacher);
 app.post('/subject', subjectService.insertSubject);
 app.put('/subject/:idSubject', subjectService.updateSubject);
 app.delete('/subject/:idSubject', subjectService.deleteSubject);

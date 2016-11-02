@@ -42,6 +42,39 @@ exports.getGroups = function (req, res) {
         connection.execSql(request);
     }
 }
+exports.getGroupsByTeacherAndSubject = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("select g.idGradeGroup, g.name from gradegroup g INNER JOIN teaches t ON g.idGradeGroup = t.fkGradeGroup WHERE t.fkTeacher = @fkt AND t.fkGradeSubject = @fks", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+        request.addParameter('fkt', TYPES.Int, req.params.idTeacher);
+        request.addParameter('fks', TYPES.Int, req.params.idSubject);
+        connection.execSql(request);
+    }
+}
 exports.getGroup = function (req, res) {
     var connection = new Connection(config);
     var results = [];
@@ -116,7 +149,6 @@ exports.updateGroup = function (req, res) {
         request.on('doneProc', function (rowCount, more) {
             res.send();
         });
-
         request.addParameter('name', TYPES.VarChar, req.body.name);
         request.addParameter('id', TYPES.Int, req.params.idGroup);
         connection.execSql(request);

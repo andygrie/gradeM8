@@ -75,6 +75,39 @@ exports.getSubject = function (req, res) {
         connection.execSql(request);
     }
 }
+exports.getSubjectByTeacher = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("select distinct s.idgradesubject, s.name from gradesubject s INNER JOIN Teaches t ON s.idGradeSubject = t.fkGradeSubject where t.fkTeacher = @fkt", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+
+        request.addParameter('fkt', TYPES.Int, req.params.idTeacher);
+        connection.execSql(request);
+    }
+}
 exports.insertSubject = function (req, res) {
     var connection = new Connection(config);
     var result = {};
