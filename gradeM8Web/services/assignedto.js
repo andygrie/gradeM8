@@ -77,3 +77,24 @@ exports.insertAssignedTo = function (req, res) {
 
         
 }
+
+
+exports.deleteAssignedTo = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("DELETE FROM assignedto WHERE fkgradegroup = @fkgg AND fkpupil = @fkp", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send();
+        });
+        request.addParameter('fkgg', TYPES.Int, req.body.fkGradeGroup);
+        request.addParameter('fkp', TYPES.Int, req.body.fkPupil);
+        connection.execSql(request);
+    }
+}
