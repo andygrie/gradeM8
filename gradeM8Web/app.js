@@ -13,6 +13,7 @@ var pupilService = require('./services/pupil');
 var groupService = require('./services/group');
 var subjectService = require('./services/subject');
 var teachesService = require('./services/teaches');
+var assignedService = require('./services/assignedto');
 
 var cors = require('cors');
 var app = express();
@@ -70,6 +71,9 @@ app.get('/teaches/byTeacherAndSubject/:idTeacher/:idSubject', teachesService.get
 app.post('/teaches', teachesService.insertTeaches);
 app.put('/teaches/:idTeaches', teachesService.updateTeaches);
 app.delete('/teaches/:idTeaches', teachesService.deleteTeaches);
+
+app.post('/assigned/:idGroup', assignedService.insertAssignedTo);
+app.get('/assigned', assignedService.getAssignedTo);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

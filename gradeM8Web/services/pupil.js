@@ -223,3 +223,4 @@ exports.getPupilsByClass = function (req, res) {
         connection.execSql(request);
     }
 }
+
