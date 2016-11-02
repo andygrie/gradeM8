@@ -55,6 +55,7 @@ app.post('/pupil', pupilService.insertUser);
 app.put('/pupil/:idUser', pupilService.updateUser);
 app.delete('/pupil/:idUser', pupilService.deletePupil);
 app.get('/pupil/byClass/:idClass', pupilService.getPupilsByClass);
+app.get('/pupil/byGroup/:idGradeGroup', pupilService.getPupilsByGroup);
 
 app.get('/group', groupService.getGroups);
 app.get('/group/:idGroup', groupService.getGroup);

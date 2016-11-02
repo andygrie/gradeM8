@@ -224,3 +224,38 @@ exports.getPupilsByClass = function (req, res) {
     }
 }
 
+exports.getPupilsByGroup = function (req, res) {
+    {
+        var connection = new Connection(config);
+        var results = [];
+        connection.on('connect', executeStatement);
+        function executeStatement() {
+            request = new Request("select u.idUser, u.forename, u.surname, u.email, u.password, p.fkClass from gradeUser u INNER JOIN pupil p ON p.fkUser = u.idUser INNER JOIN assignedto a ON a.fkPupil = p.fkUser where fkGradeGroup = @id", function (err) {
+                if (err) {
+                    console.log(err);
+                }
+            });
+            connection.on('debug', function (err) { console.log('debug:', err); });
+
+            request.on('row', function (columns) {
+                var result = {};
+                columns.forEach(function (column) {
+                    if (column.value === null) {
+                        console.log('NULL');
+                    } else {
+                        result[column.metadata.colName] = column.value;
+                    }
+                });
+                results.push(result);
+                result = {};
+            });
+
+            request.on('doneProc', function (rowCount, more) {
+                res.send(results);
+            });
+            request.addParameter('id', TYPES.Int, req.params.idGradeGroup);
+            connection.execSql(request);
+        }
+    }
+}
+
