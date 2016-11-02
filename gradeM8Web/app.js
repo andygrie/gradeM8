@@ -12,6 +12,7 @@ var classService = require('./services/class');
 var pupilService = require('./services/pupil');
 var groupService = require('./services/group');
 var subjectService = require('./services/subject');
+var teachesService = require('./services/teaches');
 
 var cors = require('cors');
 var app = express();
@@ -64,6 +65,11 @@ app.get('/subject/:idSubject', subjectService.getSubject);
 app.post('/subject', subjectService.insertSubject);
 app.put('/subject/:idSubject', subjectService.updateSubject);
 app.delete('/subject/:idSubject', subjectService.deleteSubject);
+
+app.get('/teaches/byTeacherAndSubject/:idTeacher/:idSubject', teachesService.getTeachesByTeacherAndSubject);
+app.post('/teaches', teachesService.insertTeaches);
+app.put('/teaches/:idTeaches', teachesService.updateTeaches);
+app.delete('/teaches/:idTeaches', teachesService.deleteTeaches);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

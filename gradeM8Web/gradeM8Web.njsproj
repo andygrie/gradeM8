@@ -37,6 +37,7 @@
     <Compile Include="services\pupil.js" />
     <Compile Include="services\subject.js" />
     <Compile Include="services\teacher.js" />
+    <Compile Include="services\teaches.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\javascripts\bootstrap.js" />
