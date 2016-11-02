@@ -14,6 +14,7 @@ var groupService = require('./services/group');
 var subjectService = require('./services/subject');
 var teachesService = require('./services/teaches');
 var assignedService = require('./services/assignedto');
+var eventService = require('./services/event');
 
 var cors = require('cors');
 var app = express();
@@ -76,6 +77,11 @@ app.delete('/teaches/:idTeaches', teachesService.deleteTeaches);
 app.post('/assigned/:fkGradeGroup', assignedService.insertAssignedTo);
 app.get('/assigned', assignedService.getAssignedTo);
 app.delete('/assigned', assignedService.deleteAssignedTo);
+
+app.get('/event', eventService.getEvents);
+app.post('/event', eventService.insertEvent);
+app.put('/event/:idGradeEvent', eventService.updateEvent);
+app.delete('/event/:idGradeEvent', eventService.deleteEvent);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
