@@ -79,6 +79,7 @@ app.get('/assigned', assignedService.getAssignedTo);
 app.delete('/assigned', assignedService.deleteAssignedTo);
 
 app.get('/event', eventService.getEvents);
+app.get('/event/byGroup/:idGroup', eventService.getEventsByGroup);
 app.post('/event', eventService.insertEvent);
 app.put('/event/:idGradeEvent', eventService.updateEvent);
 app.delete('/event/:idGradeEvent', eventService.deleteEvent);

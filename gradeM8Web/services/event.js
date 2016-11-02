@@ -42,6 +42,38 @@ exports.getEvents = function (req, res) {
         connection.execSql(request);
     }
 }
+exports.getEventsByGroup = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("select e.idGradeEvent, e.fkTeaches, e.eventDate, e.eventDescription from GradeEvent e INNER JOIN Teaches t ON t.idTeaches = e.fkTeaches WHERE t.fkGradeGroup = @fkg", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+        request.addParameter('fkg', TYPES.Int, req.params.idGroup);
+        connection.execSql(request);
+    }
+}
 exports.insertEvent = function (req, res) {
     var connection = new Connection(config);
     var result = {};
