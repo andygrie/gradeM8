@@ -138,7 +138,7 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("SELECT p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
+        request = new Request("SELECT p.fkGradeEvent p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
             " e.idGradeEvent = p.fkGradeEvent WHERE fkPupil = @fkp AND fkTeaches = @fkt", function (err) {
                 if (err) {
                     console.log(err);
@@ -164,6 +164,43 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
         });
         request.addParameter('fkp', TYPES.Int, req.params.idPupil);
         request.addParameter('fkt', TYPES.Int, req.params.idTeaches);
+        connection.execSql(request);
+    }
+
+
+}
+
+exports.getParticipationByEvent = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.abscent from participation p where p.fkGradeEvent = @fke", function (err) {
+                if (err) {
+                    console.log(err);
+                }
+            });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+        
+        
+        request.addParameter('fke', TYPES.Int, req.params.idEvent);
         connection.execSql(request);
     }
 
