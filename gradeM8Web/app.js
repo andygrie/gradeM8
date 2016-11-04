@@ -92,6 +92,7 @@ app.get('/participation', participationService.getParticipation);
 app.post('/participation/:fkGradeEvent', participationService.insertParticipation);
 app.put('/participation/:idParticipation', participationService.updateParticipation);
 app.delete('/participation/:idParticipation', participationService.deleteParticipation);
+app.get('/participation/byPupilAndTeaches/:idPupil/:idTeaches', participationService.getParticipationByPupilAndTeaches);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
