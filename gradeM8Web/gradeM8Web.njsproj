@@ -36,6 +36,7 @@
     <Compile Include="services\class.js" />
     <Compile Include="services\event.js" />
     <Compile Include="services\group.js" />
+    <Compile Include="services\participation.js" />
     <Compile Include="services\pupil.js" />
     <Compile Include="services\subject.js" />
     <Compile Include="services\teacher.js" />
