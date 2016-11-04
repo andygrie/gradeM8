@@ -3,7 +3,9 @@ var app = angular.module("gradeM8", ["ngRoute",
                                      "moduleStudent",
                                      "moduleClass",
                                      "moduleData",
-                                     "moduleWeb"]);
+                                     "moduleWeb",
+                                     "moduleLogin"
+                                    ]);
 
 app.constant('constants', {
     apiUrl: "http://gradem8.azurewebsites.net",
@@ -13,6 +15,10 @@ app.constant('constants', {
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
+    templateUrl : "templates/login.html",
+    controller: "ctrlLogin"
+  })
+  .when("/overview", {
     templateUrl : "templates/overview.html",
     controller: "ctrlOverview"
   })

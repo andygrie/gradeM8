@@ -1,0 +1,5 @@
+<select ng-model="selectedItem">
+    <option ng-repeat="record in colTeachers" ng-value="record.idTeacher">{{record.surname}}, {{record.forename}}</option>
+</select>
+<button ng-click="logIn()">LogIn</button>
+<div ng-show="loginError" ng-class="errorText">Try Again</div>

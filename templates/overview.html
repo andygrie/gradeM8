@@ -1,2 +1,6 @@
-<input type="text" ng-bind="msg"></inpu>
-{{msg}}
+<div ng-repeat="recordSubject in colGroupsBySubjects">
+        <h1>{{Object.Keys(recordSubject)}}</h1>
+        <div ng-repeat="recordGroup in recordSubject">
+            <h2>{{recordGroup.idGroup}}</h2>
+        </div>
+</div>

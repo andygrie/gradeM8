@@ -1,7 +1,7 @@
 angular.module('moduleData', [])
 
-.factory('sData_teachers', ["sWeb_getTeacher", 
-                function(sWeb_getTeacher) {
+.factory('sData_teachers', ["$q", "sWeb_getTeacher", 
+                function($q, sWeb_getTeacher) {
   var teachers = null;
   var retVal;
 
@@ -24,8 +24,8 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_groupsBySubjects', ["sWeb_getSubjectByTeacher", "sWeb_getGroupByTeacherAndSubject", "sWeb_setSubject", 
-                            function( sWeb_getSubjectByTeacher, sWeb_getGroupByTeacherAndSubject, sWeb_setSubject) {
+.factory('sData_groupsBySubjects', ["$q", "sWeb_getSubjectByTeacher", "sWeb_getGroupByTeacherAndSubject", "sWeb_setSubject", 
+                            function($q, sWeb_getSubjectByTeacher, sWeb_getGroupByTeacherAndSubject, sWeb_setSubject) {
   var groupsBySubjects = null;
   var retVal;
 
@@ -68,15 +68,62 @@ angular.module('moduleData', [])
             reject(response);
         }, data);
     });
-  }
-
-  
+  } 
 }])
 
 //depends on /\ sData_groupsBySubject 
 //dont forget to call on group update
-.factory('sData_pupilsByGroups', ["sData_groupsBySubjects",  "sWeb_getPupilByGroup", "sWeb_setGroup",
-                            function(sData_groupsBySubject, sWeb_getPupilByGroup, sWeb_setGroup) {
+.factory('sData_eventsByGroups', ["$q", "sData_groupsBySubjects",  "sWeb_getEventByGroup",
+                            function($q, sData_groupsBySubject, sWeb_getEventByGroup) {
+  var eventsByGroups = null;
+  var retVal;
+
+  retVal = {
+      data: eventsByGroups,
+      fillData: fillData
+  }
+
+  return retVal;
+
+  function fillData(){
+      return $q(function(resolve, reject){
+        var baseData = sData_groupsBySubject.data;
+        if(baseData == null)
+        {
+            sData_groupsBySubject.fillData(function(response){
+                //baseData should have updated hence call by reference
+                //for bug preventing tho
+                baseData = sData_groupsBySubject.data;
+            },function(response){
+                reject("Dependent Load not working! " + response);
+            })
+        }
+
+        var keys = Object.keys(baseData);
+        for(var i = 0; i < keys.length; i++)
+        {
+            for(var j = 0; j < baseData[keys[i]].length; j++)
+            {
+                //Pushes every required group into the collection
+                eventsByGroups.push(baseData[keys[i]][j]);
+
+                sWeb_getEventByGroup(function(responseData){
+                    //and sets the pupils for each group
+                    eventsByGroups[baseData[keys[i]][j]] = responseData;
+                }, function(response){
+                    reject(response);
+                }, baseData[keys[i]][j].idGradeGroup);
+            }
+        }
+
+        resolve("Successfully loaded eventsByGroups");
+    });
+  }
+}])
+//depends on /\ sData_groupsBySubject 
+//dont forget to call on group update
+.factory('sData_pupilsByGroups', ["$q", "sData_groupsBySubjects",  "sWeb_getPupilByGroup", "sWeb_setGroup",
+                            function($q, sData_groupsBySubject, sWeb_getPupilByGroup, sWeb_setGroup) {
   var pupilsByGroups = null;
   var retVal;
 
@@ -114,10 +161,12 @@ angular.module('moduleData', [])
                     //and sets the pupils for each group
                     pupilsByGroups[baseData[keys[i]][j]] = responseData;
                 }, function(response){
-
+                    reject(response);
                 }, baseData[keys[i]][j].idGradeGroup);
             }
         }
+
+        resolve("Successfully loaded pupilsByGroups");
     });
   }
 
@@ -135,6 +184,7 @@ angular.module('moduleData', [])
   }
 }])
 
+/*
 //depends on /\ sData_pupilsByGroups 
 //dont forget to call on group update
 .factory('sData_participationsByPupils', ["sData_pupilsByGroups", "sWeb_getParticipationByPupil",
@@ -144,7 +194,7 @@ angular.module('moduleData', [])
 
   retVal = {
       data: participationsByPupils,
-      fillData: fillData
+      fillData: fillData//,
       //insertPupil: insertPupil
   }
 
@@ -195,5 +245,6 @@ angular.module('moduleData', [])
         }, data);
     });
   }
-  */
-}]);
+  *
+}]);*/
+;
