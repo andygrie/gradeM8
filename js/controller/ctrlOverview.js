@@ -1,19 +1,20 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "sData_groupsBySubjects", 
-                    function ($scope, sData_groupsBySubjects) {
+.controller("ctrlOverview", ["$scope", "$location", //"sData_groupsBySubjects", 
+                    function ($scope, $location) {
     //$scope.colGroupsBySubjects = sData_groupsBySubjects.data;
-    $scope.colGroupsBySubjects = [
-            {idSubject: 1, name: "Mathe"},
-            {idSubject: 2, name: "Deutsch"}
-        ];
-    $scope.colGroupsBySubjects[0] = [
-                    {idGroup: 1},
-                    {idGroup: 2},
-                    {idGroup: 3},
-        ];
-    $scope.colGroupsBySubjects[1] = [
-                    {idGroup: 4},
-                    {idGroup: 5},
-                    {idGroup: 6},
-        ];
+    $scope.colGroupsBySubjects = {
+        "Mathe": [
+            {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
+            {idGradeGroup: 2, idGradeSubject: 1, name: "4BHIFS"},
+            {idGradeGroup: 3, idGradeSubject: 1, name: "5AHIFS"},
+        ],
+        "English": [
+            {idGradeGroup: 4, idGradeSubject: 2, name: "5BHIFS"},
+            {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"},
+        ]
+    }
+
+    $scope.navToGroup = function(id){
+        $location.path("/group/" + id);
+    }
 }]);

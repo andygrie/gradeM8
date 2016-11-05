@@ -15,6 +15,20 @@ angular.module('moduleWeb', [])
   })
 }])
 
+.factory('sWeb_getTeaches', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/teaches"
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])
+
 .factory('sWeb_getPupilByClass', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return $q(function(resolve, reject, classId){
@@ -139,7 +153,7 @@ angular.module('moduleWeb', [])
               "name": data.name
           }
       }).then(function(response){
-          resolve(response);
+          resolve(response.data);
         }, function(response){
           reject(response);
       });
@@ -156,7 +170,26 @@ angular.module('moduleWeb', [])
               "name": data.name
           }
       }).then(function(response){
-          resolve(response);
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])
+
+.factory('sWeb_setTeaches', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject, data){
+      $http({
+          method: "POST",
+          url: constants.apiUrl + "/teaches",
+          data: {
+              "fkTeacher": constants.teacherId,
+              "fkGradeGroup": data.idGradeGroup,
+              "fkGradeSubject": data.idGradeSubject
+          }
+      }).then(function(response){
+          resolve(response.data);
         }, function(response){
           reject(response);
       });
@@ -198,7 +231,7 @@ angular.module('moduleWeb', [])
               "colPupil": data.colPupil
           }
       }).then(function(response){
-          resolve(response);
+          resolve(response.data);
         }, function(response){
           reject(response);
       });
@@ -213,12 +246,12 @@ angular.module('moduleWeb', [])
           method: "POST",
           url: constants.apiUrl + "/gradeEvent",
           data: {
-              "fkTeaches": data.idTeaches,
-              "eventDate": data.date,
-              "eventDescription": data.description
+              "fkTeaches": data.fkTeaches,
+              "eventDate": data.eventDate,
+              "eventDescription": data.eventDescription
           }
       }).then(function(response){
-          resolve(response);
+          resolve(response.data);
         }, function(response){
           reject(response);
       });
@@ -238,7 +271,7 @@ angular.module('moduleWeb', [])
               "colPupil": data.colPupil
           }
       }).then(function(response){
-          resolve(response);
+          resolve(response.data);
         }, function(response){
           reject(response);
       });

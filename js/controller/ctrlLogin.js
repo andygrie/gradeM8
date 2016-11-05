@@ -12,9 +12,9 @@ angular.module("moduleLogin", [])
     $scope.logIn = function (){
         //maybe check for selectedItem
         console.log("working");
-        constants.teacherId = $scope.selectedItem;
-        if(constants.teacherId != null)
+        if($scope.selectedItem != null)
         {
+            constants.teacherId = $scope.selectedItem;
             $location.path("/overview");
         }
         else

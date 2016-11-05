@@ -1,6 +1,13 @@
-<div ng-repeat="recordSubject in colGroupsBySubjects">
-        <h1>{{Object.Keys(recordSubject)}}</h1>
-        <div ng-repeat="recordGroup in recordSubject">
-            <h2>{{recordGroup.idGroup}}</h2>
+<div ng-repeat="recordSubject in subjects">
+    <h1>{{recordSubject.name}}</h1>
+        <div ng-repeat="recordGroup in groups | filter:recordSubject.idSubject">
+            <h3>{{recordGroup.idGroup}}</h3>
+        </div>
+</div>
+
+<div ng-repeat="(key, value) in colGroupsBySubjects">
+    <h1>{{key}}</h1>
+        <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
+            <h3>{{recordGroup.name}}</h3>
         </div>
 </div>

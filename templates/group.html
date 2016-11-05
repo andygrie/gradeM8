@@ -1,0 +1,13 @@
+<h4 ng-click="navBack()">back</h4>
+
+<h1>Pupils</h1>
+<div ng-repeat="recPupil in colPupils">
+    <h4>{{recPupil.surname}}</h4>
+    <h5>{{recPupil.forename}}</h5>
+</div>
+
+<h1>Events</h1>
+<div ng-repeat="recEvent in colEvents">
+    <h4>{{recEvent.eventDescription}}</h4>
+    <h5>{{recEvent.eventDate}}</h5>
+</div>
