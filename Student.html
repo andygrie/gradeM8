@@ -32,6 +32,7 @@
     <div class = "site-nav-wrapper">
       <a id="addClassBtn">Add Event</a>
       <a id="addSubjectBtn">Add Note</a>
+      <a href="Information.html">Show All</a>
     </div>
   </nav>
   </div>
@@ -48,13 +49,13 @@
     <div class="modal-header">
       <span class="close">×</span>
       <h2>Add Event</h2>
-    </div>
-      <form>
-    <div class="modal-body">
-      <div class="imput"> <div>Date: </div><input type="date" /></div>
-      <div class="imput"> <div>Title: </div><input type="text" /></div>
-    </div>
-      <div class="modal-footer">
+       </div>
+          <form>
+          <div class="modal-body">
+            <div class="imput"> <div>Title: </div><input type="text" /></div>
+            <div class="imput"> <div>Date: </div><input type="date" /></div>
+          </div>
+            <div class="modal-footer">
         <button class="btnOK" type="button"> OK</button>
         <button id="btnCancel" class="btnCancel" type="button">Cancel</button>
       </div>
@@ -80,40 +81,120 @@
     </div>
   </div>
 
+        <div id="participation_Modal" class="modal">
+          <div class="modal-wrapper">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>Grade</h2>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="radio-tile-group">
+                  <div class="input-container">
+                      <div class = "radio-tile">
+                        <input type="radio" id="1" class= "radio-button" name="grade" value="1">
+                        <label for="1">1</label>
+                      </div>
+                      <div class = "radio-tile">
+                        <input type="radio" id="2" class= "radio-button"  name="grade" value="2">
+                        <label for="2">2</label>
+                      </div>
+                      <div class = "radio-tile">
+                        <input type="radio" id="3" class= "radio-button"  name="grade" value="3">
+                        <label for="3">3</label>
+                        </div>
+                      <div class = "radio-tile">
+                        <input type="radio" id="4" class= "radio-button"  name="grade" value="4">
+                        <label for="4">4</label>
+                      </div>
+                      <div class = "radio-tile">
+                        <input type="radio" id="5" class= "radio-button"  name="grade" value="5">
+                        <label for="5">5</label>
+                      </div>
+                      <div class = "radio-tile">
+                        <input type="radio" id="0" class= "radio-button"  name="grade" value="0">
+                        <label for="0">A</label>
+                      </div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btnOK" type="button"> OK</button>
+                <button id="btnCancel3" class="btnCancel" type="button">Cancel</button>
+              </div>
+                </div>
+            </form>
+          </div>
+        </div>
+
         <div class="section-container">
           <div class="tile-container">
             <h2>
-              Events
+              Ungraded Events
               <a href="/"><img src="Hamburger.png"></a>
             </h2>
             <div>
-
-              <a href="/">
+              <a class="event">
                 Text
               </a>
             </div>
             <div>
-              <a href="/">
+              <a class="event">
                 Text
               </a>
             </div>
             <div>
-              <a href="/">
+              <a class="event">
                 Text
               </a>
             </div>
             <div>
-              <a href="/">
+              <a class="event">
                 Text
               </a>
             </div>
             <div>
-              <a href="/">
+              <a class="event">
                 Text
               </a>
             </div>
             </div>
         </div>
+
+        <div class="section-container">
+          <div class="tile-container">
+            <h2>
+              Graded Events
+              <a href="/"><img src="Hamburger.png"></a>
+            </h2>
+            <div>
+
+              <a class="event">
+                Text
+              </a>
+            </div>
+            <div>
+              <a class="event">
+                Text
+              </a>
+            </div>
+            <div>
+              <a class="event">
+                Text
+              </a>
+            </div>
+            <div>
+              <a class="event">
+                Text
+              </a>
+            </div>
+            <div>
+              <a class="event">
+                Text
+              </a>
+            </div>
+          </div>
+        </div>
+
 
 </main>
 <script src="Student.js"></script>
