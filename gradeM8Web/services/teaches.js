@@ -60,7 +60,7 @@ exports.insertTeaches = function (req, res) {
                 idTeaches: columns[0].value,
                 fkTeacher: req.body.fkTeacher,
                 fkSubject: req.body.fkGradeSubject,
-                fkGroup: req.body.fkGradeGroup
+                fkGradeGroup: req.body.fkGradeGroup
             };
         });
 
