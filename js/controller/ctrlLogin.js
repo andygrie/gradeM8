@@ -3,7 +3,7 @@ angular.module("moduleLogin", [])
                 function ($scope, constants, sData_teachers, $location) {
     
     sData_teachers.fillData().then(function(response){
-        $scope.colTeachers = sData_teachers.data;
+        $scope.data.colTeachers = sData_teachers.data;
         console.log("success loading teachers: " + response);
     }, function(response){
         console.log("error loading teachers: " + response);
@@ -15,15 +15,13 @@ angular.module("moduleLogin", [])
         {idUser: 2, forename: "Gerald", surname: "Kidner"}
     ];
     */
-    $scope.selectedItem = {};
-    $scope.loginError = false;
     
     $scope.logIn = function (){
         //maybe check for selectedItem
-        console.log("working: ", $scope.selectedItem);
+        console.log("working: ", $scope.form.idUser);
         if($scope.selectedItem != null)
         {
-            constants.teacherId = $scope.selectedItem;
+            constants.teacherId = $scope.form.idUser;
             $location.path("/overview");
         }
         else
