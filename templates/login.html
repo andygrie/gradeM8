@@ -1,7 +1,7 @@
 <div class="all">
     <form name="formTeacher">
         <select name="selectTeacher" ng-model="selectedItem">
-            <option ng-repeat="record in colTeachers" ng-value="record.idUser">{{record.surname}}, {{record.forename}}</option>
+            <option ng-repeat="record in colTeachers" ng-value="record.idUser">{{record.idUser}}</option>
         </select>
         <input type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()" value="LogIn"></button>
     </form>

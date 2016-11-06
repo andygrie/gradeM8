@@ -5,13 +5,16 @@ angular.module("moduleOverview", [])
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
 
+    $scope.colGroups = [];
+    $scope.colSubjects = [];
+    $scope.colGroupsBySubjects = [];
     sData_groupsBySubjects.fillData().then(function(response){
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
+        $scope.colSubjects = sData_allData.data.subjects;
+        $scope.colGroups = sData_allData.data.groups;
     }, function(response){
         console.log("error loading groups by subjects: " + response);
     })
-    $scope.colSubjects = sData_allData.data.subjects;
-    $scope.colGroups = sData_allData.data.groups;
     
     /*
     $scope.colGroupsBySubjects = {

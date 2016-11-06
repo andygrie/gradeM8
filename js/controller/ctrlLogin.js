@@ -5,16 +5,14 @@ angular.module("moduleLogin", [])
     sData_teachers.fillData().then(function(response){
         $scope.colTeachers = sData_teachers.data;
         console.log("success loading teachers: " + response);
-        console.log(sData_teachers.data);
-        console.log(sData_teachers.dataTest); //works
     }, function(response){
         console.log("error loading teachers: " + response);
     })
 
     /*
     $scope.colTeachers = [
-        {idTeacher: 1, forename: "Richard", surname: "Ludy"},
-        {idTeacher: 2, forename: "Gerald", surname: "Kidner"}
+        {idUser: 1, forename: "Richard", surname: "Ludy"},
+        {idUser: 2, forename: "Gerald", surname: "Kidner"}
     ];
     */
     $scope.selectedItem = 0;
@@ -22,7 +20,7 @@ angular.module("moduleLogin", [])
     
     $scope.logIn = function (){
         //maybe check for selectedItem
-        console.log("working");
+        console.log("working: ", selectedItem);
         if($scope.selectedItem != null)
         {
             constants.teacherId = $scope.selectedItem;
