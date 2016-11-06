@@ -20,13 +20,13 @@ angular.module('moduleData', [])
   //data = {name, idGradeSubject}
   function insertGroup (){
       return $q(function(resolve, reject, data){
-        sWeb_setGroup(function(responseData){
+        sWeb_setGroup.then(function(responseData){
             var teachesData = {
                 idGradeGroup: responseData.idGradeGroup,
                 idGradeSubject: data.idGradeSubject
             };
 
-            sWeb_setTeaches(function(responseDataInner){
+            sWeb_setTeaches.then(function(responseDataInner){
                 sData_groupsBySubjects.data[data.idGradeSubject].push(responseData);
                 sData_eventsByGroups.data[responseData.idGradeGroup] = [];
                 sData_pupilsByGroups.data[responseData.idGradeGroup] = [];
@@ -47,7 +47,7 @@ angular.module('moduleData', [])
   //data = {name}
   function insertSubject(){
       return $q(function(resolve, reject, data){
-        sWeb_setSubject(function(responseData){
+        sWeb_setSubject.then(function(responseData){
             sData_groupsBySubjects.data[responseData.idGradeSubject] = [];
 
             sData_allData.subjects.push(responseData);
@@ -61,7 +61,7 @@ angular.module('moduleData', [])
   //data = {idGradeGroup, fkTeaches, eventDate, eventDescription}
   function insertEvent(){
     return $q(function(resolve, reject, data){
-        sWeb_setEvent(function(responseData){
+        sWeb_setEvent.then(function(responseData){
             sData_eventsByGroups.data[data.idGradeGroup] = responseData;
 
             responseData.idGradeGroup = data.idGradeGroup;
@@ -76,7 +76,7 @@ angular.module('moduleData', [])
   //data = {idParticipation, fkGradeEvent, fkPupil, grade, abscent}
   function putParticipation(){
       return $q(function(resolve, reject, data){
-          sWeb_putParticipation(function(responseData){
+          sWeb_putParticipation.then(function(responseData){
 
               var partData = sData_participationsByPupil.data;
               for(var i = 0; i < partData.length; i++)
@@ -99,7 +99,7 @@ angular.module('moduleData', [])
   //data = {idGradeEvent, colPupils: [{fkPupil, grade, abscent}]}
   function insertParticipation(){
       return $q(function(resolve, reject, data){
-          sWeb_setParticipation(function(responseData){
+          sWeb_setParticipation.then(function(responseData){
               resolve(responseData);
           }, function(response){
               reject(response);
@@ -110,7 +110,7 @@ angular.module('moduleData', [])
   //data = {idTeaches, idPupil, note}
   function insertNote(){
       return $q(function(resolve, reject, data){
-          sWeb_setNote(function(responseData){
+          sWeb_setNote.then(function(responseData){
               resolve(responseData);
           }, function(response){
               reject(response);
@@ -203,8 +203,9 @@ angular.module('moduleData', [])
 
   function fillData(){
     return $q(function(resolve, reject) {
-        sWeb_getTeacher(function(responseData){
+        sWeb_getTeacher.then(function(responseData){
             classes = responseData;
+            retVal.data = classes;
             sData_allData.data.classes = classes;
             resolve("Successfuly loaded classes");
         }, function(response){
@@ -229,8 +230,9 @@ angular.module('moduleData', [])
   //data = {idTeaches, idPupil}
   function fillData(){
     return $q(function(resolve, reject, data) {
-        sWeb_getNoteByTeachesAndPupil(function(responseData){
+        sWeb_getNoteByTeachesAndPupil.then(function(responseData){
             notes = responseData;
+            retVal.data = notes;
             resolve("Successfuly loaded classes");
         }, function(response){
             reject(response);
@@ -253,8 +255,9 @@ angular.module('moduleData', [])
 
   function fillData(){
     return $q(function(resolve, reject) {
-        sWeb_getTeaches(function(responseData){
+        sWeb_getTeaches.then(function(responseData){
             teaches = responseData;
+            retVal.data = teaches;
             sData_allData.data.teaches = responseData;
             resolve("Successfuly loaded teaches");
         }, function(response){
@@ -281,8 +284,9 @@ angular.module('moduleData', [])
   //data = {idPupil, idTeaches}
   function fillData(){
     return $q(function(resolve, reject, data) {
-        sWeb_getParticipationByPupilAndTeaches(function(responseData){
+        sWeb_getParticipationByPupilAndTeaches.then(function(responseData){
             participation = responseData;
+            retVal.data = participation;
             resolve("Successfuly loaded participations");
         }, function(response){
             reject(response);
@@ -312,12 +316,12 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
-        sWeb_getSubjectByTeacher(function(responseData){
+        sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
             for(var i = 0; i < responseData.length; i++)
             {
-                sWeb_getGroupByTeacherAndSubject(function(responseDataInner){
+                sWeb_getGroupByTeacherAndSubject.then(function(responseDataInner){
                     groupsBySubjects[responseData[i].name] = responseDataInner;
                     for(var j = 0; j < responseDataInner.length; j++)
                     {
@@ -331,6 +335,7 @@ angular.module('moduleData', [])
                 }, responseData[i].idGradeSubject);
             }
 
+            retVal.data = groupsBySubjects;
             resolve("Successfully loaded groupsBySubjects");
         }, function(response){
             reject(response);
@@ -367,7 +372,7 @@ angular.module('moduleData', [])
         
         if(baseData == null)
         {
-            sData_groupsBySubject.fillData(function(response){
+            sData_groupsBySubject.fillData().then(function(response){
                 //baseData should have updated hence call by reference
                 //for bug preventing tho
                 baseData = sData_groupsBySubject.data;
@@ -384,7 +389,7 @@ angular.module('moduleData', [])
                 //Pushes every required group into the collection
                 eventsByGroups.push(baseData[keys[i]][j].idGradeGroup);
 
-                sWeb_getEventByGroup(function(responseData){
+                sWeb_getEventByGroup.then(function(responseData){
                     // sets the events for each group
                     eventsByGroups[baseData[keys[i]][j].idGradeGroup] = responseData;
                     for(var l = 0; l < responseData.length; l++)
@@ -401,6 +406,7 @@ angular.module('moduleData', [])
             }
         }
 
+        retVal.data = eventsByGroups;
         resolve("Successfully loaded eventsByGroups");
     });
   }
@@ -431,7 +437,7 @@ angular.module('moduleData', [])
         var baseData = sData_groupsBySubject.data;
         if(baseData == null)
         {
-            sData_groupsBySubject.fillData(function(response){
+            sData_groupsBySubject.fillData().then(function(response){
                 //baseData should have updated hence call by reference
                 //for bug preventing tho
                 baseData = sData_groupsBySubject.data;
@@ -448,7 +454,7 @@ angular.module('moduleData', [])
                 //pupilsByGroups every required group into the collection
                 pupilsByGroups.push(baseData[keys[i]][j].idGradeGroup);
 
-                sWeb_getPupilByGroup(function(responseData){
+                sWeb_getPupilByGroup.then(function(responseData){
                     // sets the events for each group
                     pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = responseData;
                     for(var l = 0; l < responseData.length; l++)
@@ -465,6 +471,7 @@ angular.module('moduleData', [])
             }
         }
 
+        retVal.data = pupilsByGroups;
         resolve("Successfully loaded pupilsByGroups");
     });
   }

@@ -5,7 +5,7 @@ angular.module("moduleOverview", [])
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
 
-    sData_groupsBySubjects.fillData(function(response){
+    sData_groupsBySubjects.fillData().then(function(response){
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
     }, function(response){
         console.log("error loading groups by subjects: " + response);
@@ -56,7 +56,7 @@ angular.module("moduleOverview", [])
         var data = {
             name: $scope.newSubject.name
         };
-        sData_CUDHandler.insertSubject(function(response){
+        sData_CUDHandler.insertSubject().then(function(response){
             console.log("successfuly inserted subj: " + response);
         }, function(response){
             console.log("error inserting subj: " + response);
@@ -72,7 +72,7 @@ angular.module("moduleOverview", [])
             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
             name: $scope.newGroup.name
         };
-        sData_CUDHandler.insertGroup(function(response){
+        sData_CUDHandler.insertGroup().then(function(response){
             console.log("successfuly inserted group: " + response);
         }, function(response){
             console.log("error inserting group: " + response);
