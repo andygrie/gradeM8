@@ -177,7 +177,7 @@ angular.module('moduleData', [])
 
   function fillData(){
     return $q(function(resolve, reject) {
-        sWeb_getTeacher(function(responseData){
+        sWeb_getTeacher.then(function(responseData){
             teachers = responseData;
             sData_allData.data.teachers = teachers;
             resolve("Successfuly loaded teachers");
