@@ -295,8 +295,8 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_groupsBySubjects', ["$q", "sData_allData", "sWeb_getSubjectByTeacher", "sWeb_getGroupByTeacherAndSubject", "sWeb_setSubject", 
-                            function($q, sData_allData, sWeb_getSubjectByTeacher, sWeb_getGroupByTeacherAndSubject, sWeb_setSubject) {
+.factory('sData_groupsBySubjects', ["$q", "sData_allData", "sWeb_getSubjectByTeacher", "sWeb_getGroupByTeacherAndSubject", 
+                            function($q, sData_allData, sWeb_getSubjectByTeacher, sWeb_getGroupByTeacherAndSubject) {
   /*
     groupsBySubjects = {
         "subjName" : [
@@ -316,6 +316,8 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
+          console.log("test")
+          reject("wtf is dis");
         sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
