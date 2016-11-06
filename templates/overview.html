@@ -1,3 +1,14 @@
+<form name="formSubject">
+    <input type="text" ng-model="newSubject.name" name="subjectName" required/>
+    <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()" value="Submit Subject"/>
+</form>
+
+<form name="formGroup">
+    <input type="text" ng-model="newGroup.name" name="groupName" required/>
+    <select ng-options="recSubject as recSubject.name for recSubject in colSubjects" ng-model="newGroup.subject" name="groupSubject" required></select>
+    <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()" value="Submit Group"/>
+</form>
+
 <div ng-repeat="recordSubject in subjects">
     <h1>{{recordSubject.name}}</h1>
         <div ng-repeat="recordGroup in groups | filter:recordSubject.idSubject">

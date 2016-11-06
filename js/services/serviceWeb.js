@@ -15,6 +15,20 @@ angular.module('moduleWeb', [])
   })
 }])
 
+.factory('sWeb_getClass', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/class"
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])
+
 .factory('sWeb_getTeaches', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return $q(function(resolve, reject){
@@ -129,10 +143,10 @@ angular.module('moduleWeb', [])
 
 .factory('sWeb_getParticipationByPupilAndTeaches', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
-  return $q(function(resolve, reject, pupilId, teachesId){
+  return $q(function(resolve, reject, data){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/participation/byPupilAndTeaches/" + pupilId + "/" + teachesId
+          url: constants.apiUrl + "/participation/byPupilAndTeaches/" + data.idPupil + "/" + data.idTeaches
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -279,3 +293,22 @@ angular.module('moduleWeb', [])
 }])
 
 //PUT -------------------------------------------------------------------------
+.factory('sWeb_putParticipation', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject, data){
+      $http({
+          method: "POST",
+          url: constants.apiUrl + "/participation/" + data.idParticipation,
+          data: {
+              "fkGradeEvent": data.fkGradeEvent,
+              "fkPupil": data.fkPupil,
+              "grade": data.grade,
+              "abscent": data.abscent
+          }
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])

@@ -1,9 +1,9 @@
 angular.module('moduleData', [])
 
-.factory('sData_CUDHandler', ["sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups",
-                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches",
-                        function(sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups,
-                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches) {
+.factory('sData_CUDHandler', ["sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil",
+                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation",
+                        function(sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,
+                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation) {
   var retVal;
 
   retVal = {
@@ -71,6 +71,29 @@ angular.module('moduleData', [])
     });
   }
   
+  //data = {idParticipation, fkGradeEvent, fkPupil, grade, abscent}
+  function putParticipation(){
+      return $q(function(resolve, reject, data){
+          sWeb_putParticipation(function(responseData){
+
+              var partData = sData_participationsByPupil.data;
+              for(var i = 0; i < partData.length; i++)
+              {
+                  if(partData[i].idParticipation == responseData.idParticipation)
+                  {
+                      partData[i].fkPupil = responseData.fkPupil;
+                      partData[i].fkGradeEvent = responseData.fkGradeEvent;
+                      partData[i].grade = responseData.grade;
+                      partData[i].abscent = responseData.abscent;
+                  }
+              }
+              
+          }, function(response){
+              reject(response);
+          }, data);
+      });
+  }
+
   function insertPupil(){
       console.log("insertPupil not implemented");
   }
@@ -102,6 +125,9 @@ angular.module('moduleData', [])
       ],
       teaches: [
           {idTeaches, fkTeacher, fkGradeSubject, fkGradeGroup}
+      ],
+      classes: [
+          {idClass, name, room}
       ]
   } 
   */
@@ -138,6 +164,31 @@ angular.module('moduleData', [])
   }
 }])
 
+.factory('sData_classes', ["$q", "sData_allData", "sWeb_getClass", 
+                function($q, sData_allData, sWeb_getClass) {
+  var classes = null;
+  var retVal;
+
+  retVal = {
+      data: classes,
+      fillData : fillData
+  }
+
+  return retVal;
+
+  function fillData(){
+    return $q(function(resolve, reject) {
+        sWeb_getTeacher(function(responseData){
+            classes = responseData;
+            sData_allData.data.classes = classes;
+            resolve("Successfuly loaded classes");
+        }, function(response){
+            reject(response);
+        });
+    })
+  }
+}])
+
 .factory('sData_teaches', ["$q", "sData_allData", "sWeb_getTeaches", 
                 function($q, sData_allData, sWeb_getTeaches) {
   var teaches = null;
@@ -159,6 +210,33 @@ angular.module('moduleData', [])
         }, function(response){
             reject(response);
         });
+    })
+  }
+}])
+
+
+
+.factory('sData_participationsByPupil', ["$q", "sData_allData", "sWeb_getParticipationByPupilAndTeaches", 
+                function($q, sData_allData, sWeb_getParticipationByPupilAndTeaches) {
+  var participation = null;
+  var retVal;
+
+  retVal = {
+      data: participation,
+      fillData : fillData
+  }
+
+  return retVal;
+
+  //data = {idPupil, idTeaches}
+  function fillData(){
+    return $q(function(resolve, reject, data) {
+        sWeb_getParticipationByPupilAndTeaches(function(responseData){
+            participation = responseData;
+            resolve("Successfuly loaded participations");
+        }, function(response){
+            reject(response);
+        }, data);
     })
   }
 }])

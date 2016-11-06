@@ -1,6 +1,6 @@
 var app = angular.module("gradeM8", ["ngRoute",
                                      "moduleOverview",
-                                     "moduleStudent",
+                                     "modulePupil",
                                      "moduleGroup",
                                      "moduleData",
                                      "moduleWeb",
@@ -26,8 +26,8 @@ app.config(function($routeProvider) {
     templateUrl : "templates/group.html",
     controller: "ctrlGroup"
   })
-  .when("/student", {
-    templateUrl : "templates/student.html",
-    controller: "ctrlStudent"
+  .when("/pupil/:idPupil/:idGradeGroup", {
+    templateUrl : "templates/pupil.html",
+    controller: "ctrlPupil"
   });
 }); 

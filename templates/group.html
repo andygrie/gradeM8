@@ -1,13 +1,15 @@
 <h4 ng-click="navBack()">back</h4>
 
+<form name="eventForm">
+    <input type="date" id="eventDateInput" name="inputEventDate" ng-model="newEvent.eventDate"
+       placeholder="eventDate" min="2016-01-01" required />
+    <input type="text" id="eventDescriptionInput" name="inputEventDescription" ng-model="newEvent.eventDescription"
+        placeholder="eventDescription" required/>
+    <input type="submit" ng-click="insertNewEvent()" ng-disabled="!eventForm.$valid" value="Submit"/>
+</form>
+
 <h1>Pupils</h1>
-<div ng-repeat="recPupil in colPupils">
+<div ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.idUser)">
     <h4>{{recPupil.surname}}</h4>
     <h5>{{recPupil.forename}}</h5>
-</div>
-
-<h1>Events</h1>
-<div ng-repeat="recEvent in colEvents">
-    <h4>{{recEvent.eventDescription}}</h4>
-    <h5>{{recEvent.eventDate}}</h5>
 </div>

@@ -1,0 +1,23 @@
+<h1>Ungraded Events</h1>
+<div ng-repeat="recUnEvent in data.ungradedEvents" ng-click="viewGrade(recUnEvent)">
+    <h4>{{recUnEvent.eventDescription}}</h4>
+    <h5>{{recUnEvent.eventDate}}</h5>
+</div>
+
+<h1>Graded Events</h1>
+<div ng-repeat="recEvent in data.gradedEvents" ng-click="viewGrade(recEvent)">
+    <h4>{{recEvent.eventDescription}}</h4>
+    <h5>{{recEvent.eventDate}}</h5>
+</div>
+
+<form name="formGrade">
+    <div class="form-group">
+        <input type="radio" name="grade" value="1" ng-model="formData.grade">1
+        <input type="radio" name="grade" value="2" ng-model="formData.grade">2
+        <input type="radio" name="grade" value="3" ng-model="formData.grade">3
+        <input type="radio" name="grade" value="4" ng-model="formData.grade">4
+        <input type="radio" name="grade" value="5" ng-model="formData.grade">5
+        <input type="radio" name="grade" value="1" ng-model="formData.abscence">abscent
+    </div>
+    <input type="submit" ng-click="submitGrade()" value="submit"/>
+</form>
