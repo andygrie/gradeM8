@@ -155,6 +155,21 @@ angular.module('moduleWeb', [])
   })
 }])
 
+
+.factory('sWeb_getNoteByTeachesAndPupil', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject, data){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/note/byTeachesAndPupil/" + data.idTeaches + "/" + data.idPupil
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])
+
 //POST -------------------------------------------------------------------------
 
 .factory('sWeb_setSubject', ["$q", '$http', 'constants', 
@@ -201,6 +216,25 @@ angular.module('moduleWeb', [])
               "fkTeacher": constants.teacherId,
               "fkGradeGroup": data.idGradeGroup,
               "fkGradeSubject": data.idGradeSubject
+          }
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  })
+}])
+
+.factory('sWeb_setNote', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return $q(function(resolve, reject, data){
+      $http({
+          method: "POST",
+          url: constants.apiUrl + "/note",
+          data: {
+              "fkTeaches": data.idTeaches,
+              "fkPupil": data.idPupil,
+              "note": data.note
           }
       }).then(function(response){
           resolve(response.data);
@@ -279,11 +313,8 @@ angular.module('moduleWeb', [])
   return $q(function(resolve, reject, data){
       $http({
           method: "POST",
-          url: constants.apiUrl + "/participation",
-          data: {
-              "fkEvent": data.idEvent,
-              "colPupil": data.colPupil
-          }
+          url: constants.apiUrl + "/participation/" + data.idGradeEvent,
+          data: data.colPupil
       }).then(function(response){
           resolve(response.data);
         }, function(response){

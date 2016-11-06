@@ -40,6 +40,25 @@ angular.module("moduleGroup", [])
         };
         sData_CUDHandler.insertEvent(function(response){
             console.log("successfuly inserted event: " + response);
+
+            var dataInner = {};
+            dataInner.idGradeEvent = response.idGradeEvent;
+            dataInner.colPupils = [];
+            for(var i = 0; i < $scope.colPupils.length; i++)
+            {
+                dataInner.colPupils.push({
+                    fkPupil: $scope.colPupils[i].idUser,
+                    grade: 0,
+                    abscent: 0
+                });
+            }
+
+            sData_CUDHandler.insertParticipation(function(responseData){
+                console.log("successfully inserted participations");
+            }, function(response){
+                console.log("error inserting participations" + response);
+            }, dataInner)
+
         }, function(response){
             console.log("error inserting event: " + response);
         }, data);
