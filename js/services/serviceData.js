@@ -332,7 +332,7 @@ angular.module('moduleData', [])
                     }
                 }, function(response){
                     reject(response);
-                }, responseData[i].idGradeSubject);
+                }, responseData[i].idgradesubject);
             }
 
             retVal.data = groupsBySubjects;
