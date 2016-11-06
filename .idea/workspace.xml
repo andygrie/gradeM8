@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/INSTRUCTIONS.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controller/ctrlLogin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/serviceData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/serviceWeb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/overview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/pupil.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/styled_overview.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Persoenlichkeitstest_fertig.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Class.html" afterPath="$PROJECT_DIR$/templates/styled_Class.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Information.html" afterPath="$PROJECT_DIR$/templates/styled_Information.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Overview.html" afterPath="$PROJECT_DIR$/templates/styled_Overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Student.html" afterPath="$PROJECT_DIR$/templates/styled_Student.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +48,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="289">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -283,12 +263,12 @@
       <workItem from="1478171573176" duration="561000" />
       <workItem from="1478301829489" duration="7108000" />
       <workItem from="1478447736677" duration="2442000" />
-      <workItem from="1478470172869" duration="4930000" />
+      <workItem from="1478470172869" duration="4974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36813000" />
+    <option name="totallyTimeSpent" value="36857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="7" width="1370" height="772" extended-state="0" />
@@ -483,8 +463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="289">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding />
         </state>
       </provider>
