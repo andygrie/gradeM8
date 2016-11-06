@@ -20,7 +20,7 @@ angular.module("moduleLogin", [])
     
     $scope.logIn = function (){
         //maybe check for selectedItem
-        console.log("working: ", selectedItem);
+        console.log("working: ", $scope.selectedItem);
         if($scope.selectedItem != null)
         {
             constants.teacherId = $scope.selectedItem;
