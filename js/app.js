@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
     controller: "ctrlLogin"
   })
   .when("/overview", {
-    templateUrl : "templates/overview.html",
+    templateUrl : "templates/styled_overview.html",
     controller: "ctrlOverview"
   })
   .when("/group/:idGradeGroup", {

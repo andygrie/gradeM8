@@ -9,13 +9,6 @@
     <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()" value="Submit Group"/>
 </form>
 
-<div ng-repeat="recordSubject in subjects">
-    <h1>{{recordSubject.name}}</h1>
-    <div ng-repeat="recordGroup in groups | filter:recordSubject.idSubject">
-        <h3>{{recordGroup.idGroup}}</h3>
-    </div>
-</div>
-
 <div ng-repeat="(key, value) in colGroupsBySubjects">
     <h1>{{key}}</h1>
     <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">

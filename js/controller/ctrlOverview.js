@@ -1,7 +1,10 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", //"sData_groupsBySubjects", "sData_CUDHandler",
                     function ($scope, $location, sData_allData) {
-    /*
+    $scope.data = {};
+    $scope.data.displayModalGroup = false;
+    $scope.data.displayModalSubject = false;
+
     sData_groupsBySubjects.fillData(function(response){
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
     }, function(response){
@@ -9,7 +12,8 @@ angular.module("moduleOverview", [])
     })
     $scope.colSubjects = sData_allData.data.subjects;
     $scope.colGroups = sData_allData.data.groups;
-    */
+    
+    /*
     $scope.colGroupsBySubjects = {
         "Mathe": [
             {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
@@ -32,15 +36,23 @@ angular.module("moduleOverview", [])
         {idGradeGroup: 4, idGradeSubject: 2, name: "5BHIFS"},
         {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"}
     ]
-
+    */
     $scope.navToGroup = function(id){
         $location.path("/group/" + id);
     }
+    
+    $scope.switchModalSubject = function()
+    {
+        $scope.data.displayModalSubject = !$scope.data.displayModalSubject;
+    }
+
+    $scope.switchModalGroup = function()
+    {
+        $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
+    }
 
     $scope.addNewSubject = function(){
-        $scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
-
-        /*
+        //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
         var data = {
             name: $scope.newSubject.name
         };
@@ -49,23 +61,22 @@ angular.module("moduleOverview", [])
         }, function(response){
             console.log("error inserting subj: " + response);
         }, data);
-        */
     }
 
     $scope.addNewGroup = function(){
-        $scope.colGroups.push({idGradeGroup: 1, 
+        /*$scope.colGroups.push({idGradeGroup: 1, 
                             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
-                            name: $scope.newGroup.name});
-        /*
+                            name: $scope.newGroup.name});*/
+        
         var data = {
             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
             name: $scope.newGroup.name
         };
         sData_CUDHandler.insertGroup(function(response){
-            console.log("successfuly inserted subj: " + response);
+            console.log("successfuly inserted group: " + response);
         }, function(response){
-            console.log("error inserting subj: " + response);
+            console.log("error inserting group: " + response);
         }, data);
-        */
+        
     }
 }]);
