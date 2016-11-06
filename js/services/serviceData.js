@@ -316,8 +316,6 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
-          reject("wtf");
-          console.log("called service groupsBySubjects");
         sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
@@ -335,7 +333,7 @@ angular.module('moduleData', [])
                     }
                 }, function(response){
                     reject(response);
-                }, responseData[i]["idgradesubject"]);
+                }, responseData[i].idGradeSubject);
             }
 
             retVal.data = groupsBySubjects;

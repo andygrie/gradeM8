@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler",
-                    function ($scope, $location, sData_allData) {
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler) {
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
