@@ -6,7 +6,7 @@ angular.module("moduleLogin", [])
         $scope.colTeachers = sData_teachers.data;
         console.log("success loading teachers: " + response);
         console.log(sData_teachers.data);
-        console.log(sData_teachers.dataTest);
+        console.log(sData_teachers.dataTest); //works
     }, function(response){
         console.log("error loading teachers: " + response);
     })
