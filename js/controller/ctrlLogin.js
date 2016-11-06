@@ -15,7 +15,7 @@ angular.module("moduleLogin", [])
         {idUser: 2, forename: "Gerald", surname: "Kidner"}
     ];
     */
-    $scope.selectedItem = 0;
+    $scope.selectedItem = {};
     $scope.loginError = false;
     
     $scope.logIn = function (){
