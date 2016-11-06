@@ -316,6 +316,7 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
+          console.log("called service groupsBySubjects");
         sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
