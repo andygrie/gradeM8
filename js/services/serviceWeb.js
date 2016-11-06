@@ -62,7 +62,7 @@ angular.module('moduleWeb', [])
   return $q(function(resolve, reject, groupId){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/pupil/byGroup" + groupId
+          url: constants.apiUrl + "/pupil/byGroup/" + groupId
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -76,7 +76,7 @@ angular.module('moduleWeb', [])
   return $q(function(resolve, reject, groupId){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/gradeEvent/byGroup" + groupId
+          url: constants.apiUrl + "/gradeEvent/byGroup/" + groupId
       }).then(function(response){
           resolve(response.data);
         }, function(response){

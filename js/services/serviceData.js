@@ -316,8 +316,9 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
-          console.log("test")
-          reject("wtf is dis");
+          console.log("test");
+          alert("test");
+          //reject("wtf is dis");
         sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
@@ -415,8 +416,8 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_pupilsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getPupilByGroup", "sWeb_setGroup",
-                            function($q, sData_allData, sData_groupsBySubject, sWeb_getPupilByGroup, sWeb_setGroup) {
+.factory('sData_pupilsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getPupilByGroup",
+                            function($q, sData_allData, sData_groupsBySubject, sWeb_getPupilByGroup) {
   /*
   pupilsByGroups = {
       idGradeGroup : [
