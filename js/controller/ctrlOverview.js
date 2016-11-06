@@ -1,7 +1,15 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", //"sData_groupsBySubjects", "sData_CUDHandler",
                     function ($scope, $location, sData_allData) {
-    //$scope.colGroupsBySubjects = sData_groupsBySubjects.data;
+    /*
+    sData_groupsBySubjects.fillData(function(response){
+        $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
+    }, function(response){
+        console.log("error loading groups by subjects: " + response);
+    })
+    $scope.colSubjects = sData_allData.data.subjects;
+    $scope.colGroups = sData_allData.data.groups;
+    */
     $scope.colGroupsBySubjects = {
         "Mathe": [
             {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
@@ -13,14 +21,10 @@ angular.module("moduleOverview", [])
             {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"},
         ]
     }
-
-    //$scope.colSubjects = sData_allData.data.subjects;
     $scope.colSubjects = [
         {idGradeSubject: 1, name: "Mathe"},
         {idGradeSubject: 2, name: "English"},
     ];
-
-    //$scope.colGroups = sData_allData.data.groups;
     $scope.colGroups = [
         {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
         {idGradeGroup: 2, idGradeSubject: 1, name: "4BHIFS"},

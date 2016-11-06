@@ -1,9 +1,15 @@
 angular.module("moduleGroup", [])
 .controller("ctrlGroup", ["$scope", "$routeParams", "$location", //"sData_pupilsByGroups", "sData_eventsByGroups", "sData_CUDHandler", "sData_allData",
                 function ($scope, $routeParams, $location) {
+    /*
     $scope.idGradeGroup = $routeParams.idGradeGroup;
-    //$scope.colPupils = sData_pupilsByGroups.data[idGradeGroup];
-    //$scope.colEvents = sData_eventsByGroups.data[idGradeGroup];
+    sData_pupilsByGroups.fillData(function(response){
+        $scope.colPupils = sData_pupilsByGroups.data[idGradeGroup];
+    }, function(response){
+        console.log("error loading pupils by groups: " + response);
+    })
+    $scope.colEvents = sData_eventsByGroups.data[idGradeGroup];
+    */
     $scope.teaches = findTeaches();
     
 
