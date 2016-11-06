@@ -6,7 +6,8 @@
             <select name="selectTeacher" ng-model="form.idUser" required>
                 <option ng-repeat="record in colTeachers" ng-value="record.idUser">{{record.idUser}}</option>
             </select>
-            <input class="sign-in-button" type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()" value="LogIn">
+            <input class="sign-in-button" type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()"
+                   value="LogIn">
             <!--<label>Login-Text: </label>
             <input type="text" id = credentials>
             <label>Password:</label>
