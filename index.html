@@ -1,28 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
+<html>
+  <head>
+    <title>gradeM8</title>
 
-<html lang="en" ng-app="myApp">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controller/ctrlOverview.js" type="text/javascript"></script>
+    <script src="js/controller/ctrlGroup.js" type="text/javascript"></script>
+    <script src="js/controller/ctrlPupil.js" type="text/javascript"></script>
+    <script src="js/controller/ctrlLogin.js" type="text/javascript"></script>
+    <script src="js/services/serviceData.js" type="text/javascript"></script>
+    <script src="js/services/serviceWeb.js" type="text/javascript"></script>
+
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-</head>
-
-<body class="all">
-<div class="login-area">
-    <h1>Login</h1>
-    <img src="resources/logoLogin.png">
-    <form>
-        <label>Login-Text: </label>
-        <input type="text" id = credentials>
-        <label>Password:</label>
-        <input type="password" id = "password">
-        <button class="sign-in-button" type="button">OK</button>
-    </form>
-    <label id="message" class="message_label">hier könnte ihre message stehen</label>
-</div>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+<body ng-app="gradeM8" > <!-- class="all" -->
+  <header ng-hide="true" id="site-header">
+    <div class = "site-header-toprow">
+    <div class="circle">
+      <a class ="site-logo" href="/">
+        <h1 class = "logotype">
+          <img src="resources/logo.png" width="70">
+        </h1>
+      </a>
+    </div>
+    </div>
+  </header>
+  <ng-view></ng-view>
 </body>
 </html>
+
