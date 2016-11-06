@@ -16,6 +16,7 @@ var teachesService = require('./services/teaches');
 var assignedService = require('./services/assignedto');
 var eventService = require('./services/event');
 var participationService = require('./services/participation');
+var noteService = require('./services/note');
 
 var cors = require('cors');
 var app = express();
@@ -94,6 +95,12 @@ app.put('/participation/:idParticipation', participationService.updateParticipat
 app.delete('/participation/:idParticipation', participationService.deleteParticipation);
 app.get('/participation/byPupilAndTeaches/:idPupil/:idTeaches', participationService.getParticipationByPupilAndTeaches);
 app.get('/participation/byEvent/:idEvent', participationService.getParticipationByEvent);
+
+
+app.get('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.getNotesByTeachesAndPupil);
+app.post('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.insertNote);
+app.put('/note/:idNote', noteService.updateNote);
+app.delete('/note/:idNote', noteService.deleteNote);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

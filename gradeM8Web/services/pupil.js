@@ -47,7 +47,7 @@ exports.insertUser = function (req, res) {
     var result = {};
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("INSERT INTO gradeUser(forename, surname, email, password) VALUES(@fn, @sn, @em, @pw); select @@identity", function (err) {
+        request = new Request("INSERT INTO gradeUser(forename, surname, email, password) VALUES(@fn, @sn, x@x.x, xx); select @@identity", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -71,8 +71,8 @@ exports.insertUser = function (req, res) {
 
         request.addParameter('fn', TYPES.VarChar, req.body.forename);
         request.addParameter('sn', TYPES.VarChar, req.body.surname);
-        request.addParameter('em', TYPES.VarChar, req.body.email);
-        request.addParameter('pw', TYPES.NVarChar, req.body.password);
+        //request.addParameter('em', TYPES.VarChar, req.body.email);
+        //request.addParameter('pw', TYPES.NVarChar, req.body.password);
         connection.execSql(request);
     }
 }
