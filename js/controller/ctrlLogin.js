@@ -3,7 +3,7 @@ angular.module("moduleLogin", [])
                 function ($scope, constants, sData_teachers, $location) {
     
     sData_teachers.fillData().then(function(response){
-        $scope.data.colTeachers = sData_teachers.data;
+        $scope.colTeachers = sData_teachers.data;
         console.log("success loading teachers: " + response);
     }, function(response){
         console.log("error loading teachers: " + response);
