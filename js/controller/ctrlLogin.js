@@ -2,8 +2,11 @@ angular.module("moduleLogin", [])
 .controller("ctrlLogin", ["$scope", "constants", "sData_teachers", "$location", 
                 function ($scope, constants, sData_teachers, $location) {
     
-    sData_teachers.fillData(function(response){
+    sData_teachers.fillData().then(function(response){
         $scope.colTeachers = sData_teachers.data;
+        console.log("success loading teachers: " + response);
+        console.log(sData_teachers.data);
+        console.log(sData_teachers.dataTest);
     }, function(response){
         console.log("error loading teachers: " + response);
     })
