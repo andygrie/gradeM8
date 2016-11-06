@@ -405,7 +405,7 @@ tbody tr:last-child td:last-child{
   height: 30px;
   font-size: 25px;
 }
-.login-area form button{
+.sign-in-button{
   margin-top: 1.0em;
   margin-bottom: 1em;
   width: 100%;
@@ -425,10 +425,10 @@ tbody tr:last-child td:last-child{
   text-shadow:0px 1px 0px #8348b3;
 }
 
-.login-area form button:hover {
+.sign-in-button:hover {
   background-color:#9d5fcf;
 }
-.login-area form button:active {
+.sign-in-button:active {
   position:relative;
   top:1px;
 }
