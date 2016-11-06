@@ -19,14 +19,7 @@ angular.module("moduleLogin", [])
     $scope.logIn = function (){
         //maybe check for selectedItem
         console.log("working: ", $scope.form.idUser);
-        if($scope.selectedItem != null)
-        {
-            constants.teacherId = $scope.form.idUser;
-            $location.path("/overview");
-        }
-        else
-        {
-            $scope.loginError = true;
-        }
+        constants.teacherId = $scope.form.idUser;
+        $location.path("/overview");
     }
 }]);
