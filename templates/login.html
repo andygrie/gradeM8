@@ -1,13 +1,8 @@
-        <h1>
-            Overview
-        </h1>
-        </div>
-    </header>
 <div class="all">
     <form name="formTeacher">
         <select name="selectTeacher" ng-model="selectedItem">
             <option ng-repeat="record in colTeachers" ng-value="record.idUser">{{record.surname}}, {{record.forename}}</option>
         </select>
-        <input type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()">LogIn</button>
+        <input type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()" value="LogIn"></button>
     </form>
 </div>
