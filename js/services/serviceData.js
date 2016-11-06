@@ -319,6 +319,7 @@ angular.module('moduleData', [])
         sWeb_getSubjectByTeacher.then(function(responseData){
             sData_allData.data.subjects = responseData;
 
+            console.log("response Data: " + responseData);
             for(var i = 0; i < responseData.length; i++)
             {
                 sWeb_getGroupByTeacherAndSubject.then(function(responseDataInner){
