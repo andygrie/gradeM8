@@ -34,7 +34,7 @@ angular.module('moduleData', [])
 
                 responseData.idGradeSubject = data.idGradeSubject;
                 sData_allData.data.groups.push(responseData);
-                sData.allData.data.teaches.push(responseDataInner);
+                sData_allData.data.teaches.push(responseDataInner);
                 resolve("successfuly added group");
             }, function(response){
                 reject(response);
@@ -318,6 +318,7 @@ angular.module('moduleData', [])
         groupsBySubjects = {};
         sWeb_getSubjectByTeacher(function(responseData){
             sData_allData.data.subjects = responseData;
+            console.log(responseData);
 
             for(var i = 0; i < responseData.length; i++)
             {
