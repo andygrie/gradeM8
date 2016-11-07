@@ -22,6 +22,8 @@ angular.module("moduleGroup", [])
 
     $scope.idGradeSubject = $scope.getSubjectOfGroup();
     sData_pupilsByGroups.fillData().then(function(response){
+        console.log(response);
+        console.log(sData_pupilsByGroups.data);
         $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
     }, function(response){
         console.log("error loading pupils by groups: " + response);
