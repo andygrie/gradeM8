@@ -343,14 +343,14 @@ angular.module('moduleData', [])
       return $q(function(resolve, reject){
         if(sData_allData.data.groups == null)
             sData_allData.data.groups = [];
-        var tmpIdx;
+        var tmpI;
         sWeb_getSubjectByTeacher(function(responseData){
             sData_allData.data.subjects = responseData;
 
             for(var i = 0; i < responseData.length; i++)
             {
-                tmpIdx = parseInt(i + " "); //new reference
-                fetchGroups(responseData, tmpIdx, resolve, reject);
+                tmpI = parseInt(i + " "); //new reference
+                fetchGroups(responseData, tmpI, resolve, reject);
             }
         }, function(response){
             reject(response);
@@ -431,7 +431,7 @@ angular.module('moduleData', [])
                 //Pushes every required group into the collection
                 eventsByGroups[baseData[keys[i]][j].idGradeGroup];
 
-                fetchEvents(baseData, tmpIdx, tmpJ, resolve, reject);
+                fetchEvents(baseData, tmpI, tmpJ, resolve, reject);
             }
         }
     });
@@ -513,7 +513,7 @@ angular.module('moduleData', [])
                 //pupilsByGroups every required group into the collection
                 pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = [];
 
-                fetchPupils(baseData, tmpIdx, tmpJ, resolve, reject);
+                fetchPupils(baseData, tmpI, tmpJ, resolve, reject);
             }
         }
     });
