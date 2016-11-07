@@ -192,7 +192,7 @@ angular.module("modulePupil", [])
                 //moveEventToGraded($scope.data.eventToBeGraded);
             }, function(response){
                 console.log("error trying to update participation: " + response)
-            }, );
+            };
         }
     }
 
