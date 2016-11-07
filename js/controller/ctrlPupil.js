@@ -85,8 +85,6 @@ angular.module("modulePupil", [])
     }
 
     $scope.insertNewNote = function(){
-        console.log("not implemented");
-
         var data = {
             idTeaches: $scope.data.teaches.idTeaches,
             idPupil: $scope.data.idPupil,
@@ -158,6 +156,8 @@ angular.module("modulePupil", [])
         $scope.data.participationToBeConfigured = participation;
 
         $scope.switchModalGrade();
+        console.log($scope.formData);
+        console.log(participation);
         $scope.formData.grade = participation.grade;
         $scope.formData.abscence = participation.abscent;
     }

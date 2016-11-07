@@ -5,7 +5,7 @@
     </div>
 </nav>
 <div class="all">
-    <div ng-hide="!data.displayModalGroup" id="myModal" class="modal">
+    <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Add Subject</h2>
@@ -18,8 +18,8 @@
                         </div>
                         <div class="modal-footer">
                             <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
-                                   value="Submit"/>
-                            <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
+                                   value="Submit" class="btnOK"/>
+                            <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div ng-hide="!data.displayModalSubject" id="myModal2" class="modal">
+    <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Add Group</h2>
@@ -44,8 +44,8 @@
                         </div>
                         <div class="modal-footer">
                             <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()"
-                                   value="Submit"/>
-                            <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+                                   value="Submit" class="btnOK"/>
+                            <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
                         </div>
                     </div>
                 </div>

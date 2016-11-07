@@ -37,7 +37,6 @@
                 <div class="modal-body">
                     <input type="text" id="noteTextInput" name="inputNoteText" ng-model="newNote.note"
                         placeholder="new note" required/>
-                    <input type="submit" ng-click="insertNewNote()" ng-disabled="!noteForm.$valid" value="Submit"/>
                 </div>
                 <div class="modal-footer">
                     <input class="btnOK" type="submit" ng-click="insertNewNote()" ng-disabled="!noteForm.$valid" value="Submit"/>
