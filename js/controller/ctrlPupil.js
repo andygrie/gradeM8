@@ -157,6 +157,7 @@ angular.module("modulePupil", [])
 
     $scope.viewGrade = function(event){
         var participation = getParticipationOfEvent(event.idGradeEvent);
+        console.log(participation);
         $scope.data.eventToBeGraded = event;
         $scope.data.participationToBeConfigured = participation;
 
@@ -189,7 +190,8 @@ angular.module("modulePupil", [])
                 fkPupil: $scope.data.participationToBeConfigured.fkPupil,
                 grade: $scope.formData.grade,
                 abscent: $scope.formData.abscence};
-
+            
+            console.log(data);
             sData_CUDHandler.putParticipation(data).then(function(response){
                 console.log(response);
                 //moveEventToGraded($scope.data.eventToBeGraded);
@@ -262,14 +264,13 @@ angular.module("modulePupil", [])
     }
 
     function getParticipationOfEvent(id) {
-        var retVal;
-        for(var i = 0; i < $scope.data.colParticipations.length; i++)
+        var retVal = null;
+        for(var i = 0; i < $scope.data.colParticipations.length && retVal == null; i++)
         {
             if($scope.data.colParticipations[i].fkGradeEvent == id &&
                 $scope.data.colParticipations[i].fkPupil == $scope.data.idPupil)
                 retVal = $scope.data.colParticipations[i];
         }
-        console.log(retVal);
         return retVal;
     }
 
