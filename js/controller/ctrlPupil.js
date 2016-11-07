@@ -124,6 +124,7 @@ angular.module("modulePupil", [])
 
                 $scope.data.ungradedEvents.push(response);
                 $scope.data.ungradedParticipations.push(responseData[0]);
+                $scope.data.colParticipations.push(responseData[0]);
             }, function(response){
                 console.log("error inserting participations" + response);
             })
