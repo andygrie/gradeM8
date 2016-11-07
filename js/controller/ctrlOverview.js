@@ -51,6 +51,8 @@ angular.module("moduleOverview", [])
     }
 
     $scope.navToGroup = function(id){
+        console.log(id);
+        console.log($scope.colGroupsBySubjects);
         $location.path("/group/" + id);
     }
     
