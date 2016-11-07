@@ -71,7 +71,7 @@ exports.getGroupsByTeacherAndSubject = function (req, res) {
             res.send(results);
         });
         request.addParameter('fkt', TYPES.Int, req.params.idTeacher);
-        request.addParameter('fks', TYPES.Int, req.params.idSubject);
+        request.addParameter('fks', TYPES.Int, req.params.idGradeSubject);
         connection.execSql(request);
     }
 }

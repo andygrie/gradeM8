@@ -39,7 +39,7 @@ exports.getTeachesByTeacherAndSubject = function (req, res) {
             res.send(results);
         });
         request.addParameter('fkt', TYPES.VarChar, req.params.idTeacher);
-        request.addParameter('fks', TYPES.NVarChar, req.params.idSubject);
+        request.addParameter('fks', TYPES.NVarChar, req.params.idGradeSubject);
         connection.execSql(request);
     }
 }

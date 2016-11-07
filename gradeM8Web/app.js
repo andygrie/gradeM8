@@ -61,7 +61,7 @@ app.get('/pupil/byClass/:idClass', pupilService.getPupilsByClass);
 app.get('/pupil/byGroup/:idGradeGroup', pupilService.getPupilsByGroup);
 
 app.get('/group', groupService.getGroups);
-app.get('/group/byTeacherAndSubject/:idTeacher/:idSubject', groupService.getGroupsByTeacherAndSubject);
+app.get('/group/byTeacherAndSubject/:idTeacher/:idGradeSubject', groupService.getGroupsByTeacherAndSubject);
 app.get('/group/:idGroup', groupService.getGroup);
 app.post('/group', groupService.insertGroup);
 app.put('/group/:idGroup', groupService.updateGroup);
@@ -73,7 +73,7 @@ app.post('/subject', subjectService.insertSubject);
 app.put('/subject/:idSubject', subjectService.updateSubject);
 app.delete('/subject/:idSubject', subjectService.deleteSubject);
 
-app.get('/teaches/byTeacherAndSubject/:idTeacher/:idSubject', teachesService.getTeachesByTeacherAndSubject);
+app.get('/teaches/byTeacherAndSubject/:idTeacher/:idGradeSubject', teachesService.getTeachesByTeacherAndSubject);
 app.post('/teaches', teachesService.insertTeaches);
 app.put('/teaches/:idTeaches', teachesService.updateTeaches);
 app.delete('/teaches/:idTeaches', teachesService.deleteTeaches);
