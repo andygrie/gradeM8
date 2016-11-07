@@ -16,7 +16,8 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
-    var data = {idPupil: $scope.data.idPupil, idTeaches: $scope.data.teaches.idTeaches};
+    var data = {idPupil: $scope.data.idPupil, 
+                idTeaches: $scope.data.teaches.idTeaches};
     sData_participationsByPupil.fillData(data).then(function(response){
         console.log("successfuly loaded participations");
         $scope.data.colParticipations = sData_participationsByPupil.data;
@@ -117,13 +118,12 @@ angular.module("modulePupil", [])
                     grade: 0,
                     abscent: 0
                 }];
-
-            console.log(dataInner);
             sData_CUDHandler.insertParticipation(dataInner).then(function(responseData){
-                console.log("successfully inserted participations");
+                console.log("successfully inserted participations, now should follow response data <.<");
+                console.log(responseData);
 
                 $scope.data.ungradedEvents.push(response);
-                $scope.data.ungradedParticipations.push(responseData);
+                $scope.data.ungradedParticipations.push(responseData[0]);
             }, function(response){
                 console.log("error inserting participations" + response);
             })
