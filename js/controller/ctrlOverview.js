@@ -68,11 +68,11 @@ angular.module("moduleOverview", [])
         var data = {
             name: $scope.newSubject.name
         };
-        sData_CUDHandler.insertSubject().then(function(response){
+        sData_CUDHandler.insertSubject(data).then(function(response){
             console.log("successfuly inserted subj: " + response);
         }, function(response){
             console.log("error inserting subj: " + response);
-        }, data);
+        });
     }
 
     $scope.addNewGroup = function(){
@@ -84,11 +84,11 @@ angular.module("moduleOverview", [])
             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
             name: $scope.newGroup.name
         };
-        sData_CUDHandler.insertGroup().then(function(response){
+        sData_CUDHandler.insertGroup(data).then(function(response){
             console.log("successfuly inserted group: " + response);
         }, function(response){
             console.log("error inserting group: " + response);
-        }, data);
+        });
         
     }
 }]);

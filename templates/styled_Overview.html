@@ -1,8 +1,10 @@
+<nav id="site-nav">
+    <div class="site-nav-wrapper">
+        <button ng-click="switchModalGroup()">add group</button>
+        <button ng-click="switchModalSubject()">add subj</button>
+    </div>
+</nav>
 <div class="all">
-    <button ng-click="switchModalGroup()">add group</button>
-    <button ng-click="switchModalSubject()">add subj</button>
-    <button ng-click="logCollection()">log col</button>
-
     <div ng-hide="!data.displayModalGroup" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
@@ -16,7 +18,7 @@
                         </div>
                         <div class="modal-footer">
                             <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
-                                   value="Submit Subject"/>
+                                   value="Submit"/>
                             <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
                         </div>
                     </div>
@@ -42,7 +44,7 @@
                         </div>
                         <div class="modal-footer">
                             <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()"
-                                   value="Submit Group"/>
+                                   value="Submit"/>
                             <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
                         </div>
                     </div>
