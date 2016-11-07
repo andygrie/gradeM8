@@ -262,7 +262,7 @@ angular.module('moduleData', [])
             resolve("Successfuly loaded teaches");
         }, function(response){
             reject(response);
-        });
+        }, data);
     })
   }
 }])
@@ -331,7 +331,7 @@ angular.module('moduleData', [])
                             sData_allData.data.groups = [];
                         responseDataInner[j].idGradeSubject = responseData[tmpIdx].idGradeSubject;
                         sData_allData.data.groups.push(responseDataInner[j]);
-                        
+
                         if(tmpIdx == responseData.length - 1 && j == responseDataInner.length -1)
                         {
                             retVal.data = groupsBySubjects;
@@ -402,18 +402,18 @@ angular.module('moduleData', [])
 
                 sWeb_getEventByGroup(function(responseData){
                     // sets the events for each group
-                    eventsByGroups[baseData[keys[i]][j].idGradeGroup] = responseData;
+                    eventsByGroups[baseData[keys[tmpI]][tmpJ].idGradeGroup] = responseData;
                     for(var l = 0; l < responseData.length; l++)
                     {
                         //modifies the data and writes it to local data obj 
                         if(sData_allData.data.groups == null)
                             sData_allData.data.groups = [];
-                        responseData[l].idGradeGroup = baseData[keys[i]][j].idGradeGroup;
+                        responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
                         sData_allData.data.events.push(responseData[l]);
 
                         //if done
                         if(tmpI == keys.length - 1 &&
-                            tmpJ == baseData[keys[i]].length - 1 &&
+                            tmpJ == baseData[keys[tmpI]].length - 1 &&
                             l == responseData.length -1)
                         {
                             retVal.data = eventsByGroups;
@@ -422,7 +422,7 @@ angular.module('moduleData', [])
                     }
                 }, function(response){
                     reject(response);
-                }, baseData[keys[i]][j].idGradeGroup);
+                }, baseData[keys[tmpI]][tmpJ].idGradeGroup);
             }
         }
     });
@@ -470,20 +470,25 @@ angular.module('moduleData', [])
         var keys = Object.keys(baseData);
         for(var i = 0; i < keys.length; i++)
         {
+            tmpI = i;
             for(var j = 0; j < baseData[keys[i]].length; j++)
             {
+                tmpJ = j;
                 //pupilsByGroups every required group into the collection
                 pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = [];
 
                 sWeb_getPupilByGroup(function(responseData){
                     // sets the events for each group
-                    pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = responseData;
+                    console.log(keys[tmpI]);
+                    console.log(baseData[keys[tmpI]]);
+                    console.log(baseData[keys[tmpI]][tmpJ]);
+                    pupilsByGroups[baseData[keys[tmpI]][tmpJ].idGradeGroup] = responseData;
                     for(var l = 0; l < responseData.length; l++)
                     {
                         //modifies the data and writes it to local data obj 
                         if(sData_allData.data.pupils == null)
                             sData_allData.data.pupils = [];
-                        responseData[l].idGradeGroup = baseData[keys[i]][j].idGradeGroup;
+                        responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
                         sData_allData.data.events.push(responseData[l]);
 
                         //if done
@@ -497,7 +502,7 @@ angular.module('moduleData', [])
                     }
                 }, function(response){
                     reject(response);
-                }, baseData[keys[i]][j].idGradeGroup);
+                }, baseData[keys[tmpI]][j].idGradeGroup);
             }
         }
     });
