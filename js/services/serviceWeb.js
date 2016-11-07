@@ -239,15 +239,13 @@ angular.module('moduleWeb', [])
   }
 }])
 
-.factory('sWeb_setNote', ["$q", '$http', 'constants', 
+.factory('sWeb_setNoteByTeachesAndPupil', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return function(resolve, reject, data){
       $http({
           method: "POST",
-          url: constants.apiUrl + "/note",
+          url: constants.apiUrl + "/note/byTeachesAndPupil/" + data.fkTeaches + "/" + data.fkPupil,
           data: {
-              "fkTeaches": data.idTeaches,
-              "fkPupil": data.idPupil,
               "note": data.note
           }
       }).then(function(response){
@@ -345,8 +343,6 @@ angular.module('moduleWeb', [])
           method: "POST",
           url: constants.apiUrl + "/participation/" + data.idParticipation,
           data: {
-              "fkGradeEvent": data.fkGradeEvent,
-              "fkPupil": data.fkPupil,
               "grade": data.grade,
               "abscent": data.abscent
           }

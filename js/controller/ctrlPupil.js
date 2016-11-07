@@ -96,6 +96,7 @@ angular.module("modulePupil", [])
 
         sData_CUDHandler.insertNote(data).then(function(responseData){
             console.log("successfuly inserted note: " + responseData);
+            $scope.data.colNotes.push(responseData);
         }, function(response){
             console.log("error inserting note: " + response);
         });
@@ -160,8 +161,6 @@ angular.module("modulePupil", [])
         $scope.data.participationToBeConfigured = participation;
 
         $scope.switchModalGrade();
-        console.log($scope.formData);
-        console.log(participation);
         $scope.formData.grade = participation.grade;
         $scope.formData.abscence = participation.abscent;
     }
