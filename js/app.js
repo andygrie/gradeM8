@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
     controller: "ctrlGroup"
   })
   .when("/pupil/:idPupil/:idGradeGroup", {
-    templateUrl : "templates/pupil.html",
+    templateUrl : "templates/styled_Student.html",
     controller: "ctrlPupil"
   });
 }); 

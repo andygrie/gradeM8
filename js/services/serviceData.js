@@ -479,9 +479,6 @@ angular.module('moduleData', [])
 
                 sWeb_getPupilByGroup(function(responseData){
                     // sets the events for each group
-                    console.log(keys[tmpI]);
-                    console.log(baseData[keys[tmpI]]);
-                    console.log(baseData[keys[tmpI]][tmpJ]);
                     pupilsByGroups[baseData[keys[tmpI]][tmpJ].idGradeGroup] = responseData;
                     for(var l = 0; l < responseData.length; l++)
                     {

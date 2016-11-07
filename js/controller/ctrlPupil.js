@@ -1,6 +1,6 @@
 angular.module("modulePupil", [])
-.controller("ctrlPupil", ["$scope", "$routeParams", //"sData_participationsByPupil", "sData_CUDHandler", "sData_allData", "sData_notesByPupil",
-                function ($scope, $routeParams) {
+.controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", "sData_notesByPupil",
+                function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, sData_notesByPupil) {
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -11,25 +11,25 @@ angular.module("modulePupil", [])
     $scope.data.gradedEvents = [];
     $scope.data.ungradedParticipations = [];
     $scope.data.gradedParticipations = [];
-
-    /*
     $scope.data.colEvents = findEvents();
 
-    sData_participationsByPupil.fillData(function(response){
+    var data = {idPupil: $scope.data.idPupil, idTeaches: $scope.data.teaches.idTeaches};
+    sData_participationsByPupil.fillData(data).then(function(response){
         console.log("successfuly loaded participations");
         $scope.data.colParticipations = sData_participationsByPupil.data;
+        setGradedAndUngraded();
     }, function(response){
         console.log("error loading participations");
-    }, {idPupil: $scope.data.idPupil, idTeaches: $scope.data.teaches.idTeaches});
+    });
 
-    sData_notesByPupil.fillData(function(response){
+    sData_notesByPupil.fillData(data).then(function(response){
         console.log(response);
         $scope.data.colNotes = sData_notesByPupil.data;
     }, function(response){
         console.log("error loading notes: " + response);
     });
-    */
 
+    /*
     $scope.data.colEvents = [
         {idGradeEvent: 1, 
             idGradeGroup: $scope.data.idGradeGroup, 
@@ -60,9 +60,7 @@ angular.module("modulePupil", [])
         {idNote: 1, fkTeaches: $scope.data.teaches, fkPupil: $scope.data.idPupil, note: "Macht probleme"},
         {idNote: 2, fkTeaches: $scope.data.teaches, fkPupil: $scope.data.idPupil, note: "Wird unterdrückt"}
     ]
-
-    setGradedAndUngraded();
-
+    */
     $scope.getTotalGrade = function(){
         var gradesSum = 0;
 
@@ -320,16 +318,14 @@ angular.module("modulePupil", [])
     }
 
     function findTeaches(){
-        var retVal = 1;
+        var retVal = -1;
 
-        /*
         var colTeaches = sData_allData.data.teaches;
         for(var i = 0; i < colTeaches.length; i++)
         {
             if(colTeaches[i].fkGradeGroup = $scope.data.idGradeGroup)
                 retVal = colTeaches[i];
         }
-        */
 
         return retVal;
     }
@@ -337,14 +333,12 @@ angular.module("modulePupil", [])
     function findEvents(){
         var retVal = [];
 
-        /*
         var colEvents = sData_allData.data.events;
         for(var i = 0; i < colEvents.length; i++)
         {
             if(colEvents[i].idGradeGroup = $scope.data.idGradeGroup)
                 retVal.push(colEvents[i]);
         }
-        */
 
         return retVal;
     }
