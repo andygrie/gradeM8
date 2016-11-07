@@ -30,6 +30,7 @@ angular.module("modulePupil", [])
     sData_notesByPupil.fillData(data).then(function(response){
         console.log(response);
         $scope.data.colNotes = sData_notesByPupil.data;
+        console.log($scope.data.colNotes);
     }, function(response){
         console.log("error loading notes: " + response);
     });
@@ -97,6 +98,7 @@ angular.module("modulePupil", [])
         sData_CUDHandler.insertNote(data).then(function(responseData){
             console.log("successfuly inserted note: " + responseData);
             $scope.data.colNotes.push(responseData);
+            console.log($scope.data.colNotes);
         }, function(response){
             console.log("error inserting note: " + response);
         });
