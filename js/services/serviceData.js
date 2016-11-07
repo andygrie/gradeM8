@@ -49,7 +49,7 @@ angular.module('moduleData', [])
   function insertSubject(data){
       return $q(function(resolve, reject){
         sWeb_setSubject(function(responseData){
-            sData_groupsBySubjects.data[responseData.idGradeSubject] = [];
+            sData_groupsBySubjects.data[responseData.name] = [];
 
             sData_allData.data.subjects.push(responseData);
             resolve("successfuly added subject");
@@ -165,7 +165,7 @@ angular.module('moduleData', [])
 
 .factory('sData_teachers', ["$q", "sData_allData", "sWeb_getTeacher", 
                 function($q, sData_allData, sWeb_getTeacher) {
-  var teachers = null;
+  var teachers = {};
   var retVal;
 
   retVal = {
@@ -191,7 +191,7 @@ angular.module('moduleData', [])
 
 .factory('sData_classes', ["$q", "sData_allData", "sWeb_getClass", 
                 function($q, sData_allData, sWeb_getClass) {
-  var classes = null;
+  var classes = {};
   var retVal;
 
   retVal = {
@@ -217,7 +217,7 @@ angular.module('moduleData', [])
 
 .factory('sData_email', ["$q", "sWeb_sendEmail", 
                 function($q, sWeb_sendEmail) {
-  var email = null;
+  var email = {};
   var retVal;
 
   retVal = {
@@ -243,7 +243,7 @@ angular.module('moduleData', [])
 
 .factory('sData_notesByPupil', ["$q", "sWeb_getNoteByTeachesAndPupil", 
                 function($q, sWeb_getNoteByTeachesAndPupil) {
-  var notes = null;
+  var notes = {};
   var retVal;
 
   retVal = {
@@ -269,7 +269,7 @@ angular.module('moduleData', [])
 
 .factory('sData_teaches', ["$q", "sData_allData", "sWeb_getTeachesByTeacherAndSubject", 
                 function($q, sData_allData, sWeb_getTeachesByTeacherAndSubject) {
-  var teaches = null;
+  var teaches = {};
   var retVal;
 
   retVal = {
@@ -296,7 +296,7 @@ angular.module('moduleData', [])
 
 .factory('sData_participationsByPupil', ["$q", "sData_allData", "sWeb_getParticipationByPupilAndTeaches", 
                 function($q, sData_allData, sWeb_getParticipationByPupilAndTeaches) {
-  var participation = null;
+  var participation = {};
   var retVal;
 
   retVal = {
@@ -329,7 +329,7 @@ angular.module('moduleData', [])
         ]
     }
   */
-  var groupsBySubjects = null;
+  var groupsBySubjects = {};
   var retVal;
 
   retVal = {
@@ -343,9 +343,6 @@ angular.module('moduleData', [])
       return $q(function(resolve, reject){
         if(sData_allData.data.groups == null)
             sData_allData.data.groups = [];
-
-        groupsBySubjects = {};
-        retVal.data = {};
         sWeb_getSubjectByTeacher(function(responseData){
             sData_allData.data.subjects = responseData;
 
@@ -387,7 +384,7 @@ angular.module('moduleData', [])
       ]
   }
   */
-  var eventsByGroups = null;
+  var eventsByGroups = {};
   var retVal;
 
   retVal = {
@@ -402,8 +399,6 @@ angular.module('moduleData', [])
         var baseData = sData_groupsBySubject.data;
         //if(sData_allData.data.events == null)
             sData_allData.data.events = [];
-        eventsByGroups = {};
-        retVal.data = {};
         /*
         if(baseData == null)
         {
@@ -465,7 +460,7 @@ angular.module('moduleData', [])
   }
   */
   
-  var pupilsByGroups = null;
+  var pupilsByGroups = {};
   var retVal;
 
   retVal = {
@@ -480,8 +475,6 @@ angular.module('moduleData', [])
         var baseData = sData_groupsBySubject.data;
         if(sData_allData.data.pupils == null)
             sData_allData.data.pupils = [];
-        pupilsByGroups = {};
-        retVal.data = {};
         /*
         if(baseData == null)
         {
