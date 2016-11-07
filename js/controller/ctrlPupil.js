@@ -142,17 +142,19 @@ angular.module("modulePupil", [])
     $scope.getEventOfParticipation = function(id){
         var retVal = {};
         var found = false;
-
+        console.log("check");
+        console.log(id);
         for(var i = 0; i < $scope.data.gradedEvents.length && !found; i++)
         {
             if($scope.data.gradedEvents[i].idGradeEvent == id)
             {
+                console.log("found");
+                console.log(i);
+                console.log($scope.data.gradedEvents[i]);
                 retVal = $scope.data.gradedEvents[i];
                 found = true;
             }
         }
-
-        console.log(retVal);
         return retVal;
     }
 
