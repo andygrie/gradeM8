@@ -437,7 +437,7 @@ angular.module('moduleData', [])
     });
   }
 
-  function fetchEvents(keys, baseData, tmpIdx, tmpJ, resolve, reject)
+  function fetchEvents(keys, baseData, tmpI, tmpJ, resolve, reject)
   {
       sWeb_getEventByGroup(function(responseData){
         // sets the events for each group
@@ -519,7 +519,7 @@ angular.module('moduleData', [])
     });
   }
 
-  function fetchPupils(keys, baseData, tmpIdx, tmpJ, resolve, reject)
+  function fetchPupils(keys, baseData, tmpI, tmpJ, resolve, reject)
   {
       sWeb_getPupilByGroup(function(responseData){
         // sets the events for each group
