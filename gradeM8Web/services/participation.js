@@ -67,6 +67,7 @@ exports.insertParticipation = function (req, res) {
         });
 
         request.on('row', function (columns) {
+            console.log(columns[0].value);
             results.push({
                 "idParticipation": columns[0].value,
                 "fkGradeEvent": req.params.fkGradeEvent,
@@ -138,8 +139,8 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("SELECT p.fkGradeEvent p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
-            " e.idGradeEvent = p.fkGradeEvent WHERE fkPupil = @fkp AND fkTeaches = @fkt", function (err) {
+        request = new Request("SELECT p.fkGradeEvent, p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
+            " e.idGradeEvent = p.fkGradeEvent WHERE p.fkPupil = @fkp AND e.fkTeaches = @fkt", function (err) {
                 if (err) {
                     console.log(err);
                 }

@@ -89,6 +89,8 @@
     <Folder Include="typings\globals\express\" />
     <Folder Include="typings\globals\jade\" />
     <Folder Include="typings\globals\mssql\" />
+    <Folder Include="typings\globals\nodemailer-ses-transport\" />
+    <Folder Include="typings\globals\nodemailer\" />
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\stylus\" />
     <Folder Include="typings\globals\tedious\" />
@@ -100,6 +102,8 @@
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mssql\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\nodemailer-ses-transport\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\nodemailer\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\tedious\index.d.ts" />
