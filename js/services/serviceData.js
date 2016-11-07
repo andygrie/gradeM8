@@ -41,7 +41,7 @@ angular.module('moduleData', [])
             }, teachesData);
         }, function(response){
             reject(response);
-        }, data.name);
+        }, data);
       });
   }
 
@@ -55,7 +55,7 @@ angular.module('moduleData', [])
             resolve("successfuly added subject");
         }, function(response){
             reject(response);
-        }, data.name);
+        }, data);
       });
   }
 
