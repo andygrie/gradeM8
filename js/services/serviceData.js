@@ -33,8 +33,8 @@ angular.module('moduleData', [])
                 sData_pupilsByGroups.data[responseData.idGradeGroup] = [];
 
                 responseData.idGradeSubject = data.idGradeSubject;
-                sData_allData.groups.push(responseData);
-                sData.allData.teaches.push(responseDataInner);
+                sData_allData.data.groups.push(responseData);
+                sData.allData.data.teaches.push(responseDataInner);
                 resolve("successfuly added group");
             }, function(response){
                 reject(response);
@@ -51,7 +51,7 @@ angular.module('moduleData', [])
         sWeb_setSubject(function(responseData){
             sData_groupsBySubjects.data[responseData.idGradeSubject] = [];
 
-            sData_allData.subjects.push(responseData);
+            sData_allData.data.subjects.push(responseData);
             resolve("successfuly added subject");
         }, function(response){
             reject(response);
@@ -66,7 +66,7 @@ angular.module('moduleData', [])
             sData_eventsByGroups.data[data.idGradeGroup] = responseData;
 
             responseData.idGradeGroup = data.idGradeGroup;
-            sData_allData.events.push(responseData);
+            sData_allData.data.events.push(responseData);
             resolve(responseData);
         }, function(response){
             reject(response);
@@ -268,8 +268,6 @@ angular.module('moduleData', [])
   }
 }])
 
-
-
 .factory('sData_participationsByPupil', ["$q", "sData_allData", "sWeb_getParticipationByPupilAndTeaches", 
                 function($q, sData_allData, sWeb_getParticipationByPupilAndTeaches) {
   var participation = null;
@@ -351,8 +349,6 @@ angular.module('moduleData', [])
   }
 }])
 
-//depends on /\ sData_groupsBySubject 
-//dont forget to call on group update
 .factory('sData_eventsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getEventByGroup",
                             function($q, sData_allData, sData_groupsBySubject, sWeb_getEventByGroup) {
   /*
