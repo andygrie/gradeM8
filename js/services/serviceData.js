@@ -541,6 +541,6 @@ angular.module('moduleData', [])
         }
     }, function(response){
         reject(response);
-    }, baseData[keys[tmpI]][j].idGradeGroup);
+    }, baseData[keys[tmpI]][tmpJ].idGradeGroup);
   }
 }])
