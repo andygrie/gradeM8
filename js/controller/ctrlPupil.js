@@ -86,11 +86,10 @@ angular.module("modulePupil", [])
     }
 
     $scope.insertNewNote = function(){
-        var id = parseInt($scope.data.idPupil);
 
         var data = {
             idTeaches: $scope.data.teaches.idTeaches,
-            idPupil: id,
+            idPupil: $scope.data.idPupil,
             note: $scope.newNote.note
         }
 
@@ -114,7 +113,7 @@ angular.module("modulePupil", [])
             var dataInner = {};
             dataInner.idGradeEvent = response.idGradeEvent;
             dataInner.colPupils = [{
-                    fkPupil: $scope.data.idPupil,
+                    fkPupil: parseInt($scope.data.idPupil),
                     grade: 0,
                     abscent: 0
                 }];
