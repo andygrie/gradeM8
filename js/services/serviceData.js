@@ -331,9 +331,7 @@ angular.module('moduleData', [])
                             sData_allData.data.groups = [];
                         responseDataInner[j].idGradeSubject = responseData[tmpIdx].idGradeSubject;
                         sData_allData.data.groups.push(responseDataInner[j]);
-
-                        console.log(tmpIdx);
-                        console.log(j);
+                        
                         if(tmpIdx == responseData.length - 1 && j == responseDataInner.length -1)
                         {
                             retVal.data = groupsBySubjects;

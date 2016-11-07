@@ -52,23 +52,13 @@
             </form>
         </div>
     </div>
-
-    <div class="section-container">
-        <div class="tile-container">
-            <h2>
-                Pupils
-                <a href="/"><img src="../resources/Hamburger.png"></a>
-            </h2>
-            <div ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.idUser)">
-                <h4>{{recPupil.surname}}</h4>
-                <h5>{{recPupil.forename}}</h5>
-            </div>
-        </div>
-    </div>
     
     <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="title-container">
-            <h2>{{key}}</h2>
+            <h2>
+                {{key}}
+                <a href="/"><img src="../resources/Hamburger.png"></a>
+            </h2>
             <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
                 <h3>{{recordGroup.name}}</h3>
             </div>

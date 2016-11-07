@@ -8,6 +8,18 @@ angular.module("moduleGroup", [])
     $scope.data.displayModalPupil = false;
     $scope.colPupils = {};
 
+    $scope.getSubjectOfGroup = function(){
+        var retVal = null;
+        var colGroups = sData_allData.data.groups;
+        for(var i = 0; i < colGroups.length && retVal == null; i++)
+        {
+            if(colGroups[i].idGradeGroup = $scope.idGradeGroup)
+                retVal = colGroups[i].idGradeSubject;
+        }
+
+        return retVal;
+    }
+
     $scope.idGradeSubject = $scope.getSubjectOfGroup();
     sData_pupilsByGroups.fillData().then(function(response){
         $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
@@ -36,17 +48,7 @@ angular.module("moduleGroup", [])
     ];
     */
 
-    $scope.getSubjectOfGroup = function(){
-        var retVal = null;
-        var colGroups = sData_allData.data.groups;
-        for(var i = 0; i < colGroups.length && retVal == null; i++)
-        {
-            if(colGroups[i].idGradeGroup = $scope.idGradeGroup)
-                retVal = colGroups[i].idGradeSubject;
-        }
-
-        return retVal;
-    }
+    
 
     $scope.switchModalEvent = function(){
         $scope.data.displayModalEvent = !$scope.data.displayModalEvent; 
