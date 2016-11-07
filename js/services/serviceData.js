@@ -341,9 +341,11 @@ angular.module('moduleData', [])
 
   function fillData(){
       return $q(function(resolve, reject){
-        groupsBySubjects = {};
         if(sData_allData.data.groups == null)
             sData_allData.data.groups = [];
+
+        groupsBySubjects = {};
+        retVal.data = {};
         sWeb_getSubjectByTeacher(function(responseData){
             sData_allData.data.subjects = responseData;
             console.log(responseData);
@@ -401,9 +403,8 @@ angular.module('moduleData', [])
         var baseData = sData_groupsBySubject.data;
         if(sData_allData.data.events == null)
             sData_allData.data.events = [];
-
         eventsByGroups = {};
-        
+        retVal.data = {};
         /*
         if(baseData == null)
         {
@@ -478,9 +479,10 @@ angular.module('moduleData', [])
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
-        pupilsByGroups = {};
         if(sData_allData.data.pupils == null)
             sData_allData.data.pupils = [];
+        pupilsByGroups = {};
+        retVal.data = {};
         /*
         if(baseData == null)
         {
