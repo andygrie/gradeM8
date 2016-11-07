@@ -16,7 +16,7 @@ exports.getSubjects = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select s.idgradesubject, s.name from gradesubject s", function (err) {
+        request = new Request("select s.idGradeSubject, s.name from gradesubject s", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -47,7 +47,7 @@ exports.getSubject = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select s.idgradesubject, s.name from gradesubject s where s.idgradesubject = @id", function (err) {
+        request = new Request("select s.idGradeSubject, s.name from gradesubject s where s.idgradesubject = @id", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -80,7 +80,7 @@ exports.getSubjectByTeacher = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select distinct s.idgradesubject, s.name from gradesubject s INNER JOIN Teaches t ON s.idGradeSubject = t.fkGradeSubject where t.fkTeacher = @fkt", function (err) {
+        request = new Request("select distinct s.idGradeSubject, s.name from gradesubject s INNER JOIN Teaches t ON s.idGradeSubject = t.fkGradeSubject where t.fkTeacher = @fkt", function (err) {
             if (err) {
                 console.log(err);
             }
