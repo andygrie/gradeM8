@@ -3,6 +3,7 @@ angular.module("moduleGroup", [])
                 function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups, sData_CUDHandler, sData_allData, sData_teaches) {
 
     $scope.idGradeGroup = $routeParams.idGradeGroup;
+    $scope.data = {};
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
 

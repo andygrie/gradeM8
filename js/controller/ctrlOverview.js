@@ -41,10 +41,6 @@ angular.module("moduleOverview", [])
         {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"}
     ]
     */
-    $scope.logCollection = function()
-    {
-        console.log($scope.colGroupsBySubjects);
-    }
 
     $scope.navToGroup = function(id){
         $location.path("/group/" + id);
@@ -52,14 +48,11 @@ angular.module("moduleOverview", [])
     
     $scope.switchModalSubject = function()
     {
-        console.log("in func: " + $scope.data.displayModalSubject);
-        console.log(!$scope.data.displayModalSubject);
         $scope.data.displayModalSubject = !$scope.data.displayModalSubject;
     }
 
     $scope.switchModalGroup = function()
     {
-        console.log("in func");
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
     }
 
