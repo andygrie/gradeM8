@@ -244,7 +244,7 @@ angular.module('moduleWeb', [])
   return function(resolve, reject, data){
       $http({
           method: "POST",
-          url: constants.apiUrl + "/note/byTeachesAndPupil/" + data.fkTeaches + "/" + data.fkPupil,
+          url: constants.apiUrl + "/note/byTeachesAndPupil/" + data.idTeaches + "/" + data.idPupil,
           data: {
               "note": data.note
           }
