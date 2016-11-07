@@ -117,6 +117,7 @@ angular.module("modulePupil", [])
                     abscent: 0
                 }];
 
+            console.log(dataInner);
             sData_CUDHandler.insertParticipation(dataInner).then(function(responseData){
                 console.log("successfully inserted participations");
 
