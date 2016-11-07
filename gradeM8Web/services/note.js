@@ -69,6 +69,7 @@ exports.insertNote = function (req, res) {
         request.on('doneProc', function (rowCount, more) {
             res.send(result);
         });
+        console.log(req.body);
         request.addParameter('fkt', TYPES.VarChar, req.params.fkTeaches);
         request.addParameter('fkp', TYPES.VarChar, req.params.fkPupil);
         request.addParameter('note', TYPES.VarChar, req.body.note);

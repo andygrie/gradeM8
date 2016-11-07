@@ -139,7 +139,7 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("SELECT p.fkGradeEvent, p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
+        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
             " e.idGradeEvent = p.fkGradeEvent WHERE p.fkPupil = @fkp AND e.fkTeaches = @fkt", function (err) {
                 if (err) {
                     console.log(err);
