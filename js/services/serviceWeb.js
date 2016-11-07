@@ -33,7 +33,7 @@ angular.module('moduleWeb', [])
                     function($q, $http, constants) {
   return function(resolve, reject){
       $http({
-          method: "GET",
+          method: "POST",
           url: constants.apiUrl + "/teacher/sendGrades/" + constants.teacherId
       }).then(function(response){
           resolve(response.data);
@@ -340,7 +340,7 @@ angular.module('moduleWeb', [])
                     function($q, $http, constants) {
   return function(resolve, reject, data){
       $http({
-          method: "POST",
+          method: "PUT",
           url: constants.apiUrl + "/participation/" + data.idParticipation,
           data: {
               "grade": data.grade,
