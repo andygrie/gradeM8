@@ -375,7 +375,7 @@ angular.module('moduleData', [])
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
-        eventsByGroups = [];
+        eventsByGroups = {};
         
         /*
         if(baseData == null)
@@ -399,7 +399,7 @@ angular.module('moduleData', [])
             {
                 tmpJ = j;
                 //Pushes every required group into the collection
-                eventsByGroups.push(baseData[keys[i]][j].idGradeGroup);
+                eventsByGroups[baseData[keys[i]][j].idGradeGroup];
 
                 sWeb_getEventByGroup(function(responseData){
                     // sets the events for each group
@@ -453,6 +453,7 @@ angular.module('moduleData', [])
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
+        pupilsByGroups = {};
         /*
         if(baseData == null)
         {
@@ -473,7 +474,7 @@ angular.module('moduleData', [])
             for(var j = 0; j < baseData[keys[i]].length; j++)
             {
                 //pupilsByGroups every required group into the collection
-                pupilsByGroups.push(baseData[keys[i]][j].idGradeGroup);
+                pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = [];
 
                 sWeb_getPupilByGroup(function(responseData){
                     // sets the events for each group
