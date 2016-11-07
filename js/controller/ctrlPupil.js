@@ -157,7 +157,7 @@ angular.module("modulePupil", [])
         $scope.data.eventToBeGraded = event;
         $scope.data.participationToBeConfigured = participation;
 
-        switchModalGrade();
+        $scope.switchModalGrade();
         $scope.formData.grade = participation.grade;
         $scope.formData.abscence = participation.abscent;
     }
