@@ -309,12 +309,12 @@ angular.module("modulePupil", [])
     }
 
     function findTeaches(){
-        var retVal = -1;
+        var retVal = null;
 
         var colTeaches = sData_allData.data.teaches;
-        for(var i = 0; i < colTeaches.length; i++)
+        for(var i = 0; i < colTeaches.length && retVal == null; i++)
         {
-            if(colTeaches[i].fkGradeGroup = $scope.data.idGradeGroup)
+            if(colTeaches[i].fkGradeGroup == $scope.data.idGradeGroup)
                 retVal = colTeaches[i];
         }
 
