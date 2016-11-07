@@ -18,8 +18,8 @@ angular.module('moduleData', [])
   return retVal;
 
   //data = {name, idGradeSubject}
-  function insertGroup (){
-      return $q(function(resolve, reject, data){
+  function insertGroup (data){
+      return $q(function(resolve, reject){
         sWeb_setGroup(function(responseData){
             var teachesData = {
                 idGradeGroup: responseData.idGradeGroup,
@@ -45,8 +45,8 @@ angular.module('moduleData', [])
   }
 
   //data = {name}
-  function insertSubject(){
-      return $q(function(resolve, reject, data){
+  function insertSubject(data){
+      return $q(function(resolve, reject){
         sWeb_setSubject(function(responseData){
             sData_groupsBySubjects.data[responseData.idGradeSubject] = [];
 
@@ -59,8 +59,8 @@ angular.module('moduleData', [])
   }
 
   //data = {idGradeGroup, fkTeaches, eventDate, eventDescription}
-  function insertEvent(){
-    return $q(function(resolve, reject, data){
+  function insertEvent(data){
+    return $q(function(resolve, reject){
         sWeb_setEvent(function(responseData){
             sData_eventsByGroups.data[data.idGradeGroup] = responseData;
 
@@ -74,8 +74,8 @@ angular.module('moduleData', [])
   }
   
   //data = {idParticipation, fkGradeEvent, fkPupil, grade, abscent}
-  function putParticipation(){
-      return $q(function(resolve, reject, data){
+  function putParticipation(data){
+      return $q(function(resolve, reject){
           sWeb_putParticipation(function(responseData){
 
               var partData = sData_participationsByPupil.data;
@@ -97,8 +97,8 @@ angular.module('moduleData', [])
   }
 
   //data = {idGradeEvent, colPupils: [{fkPupil, grade, abscent}]}
-  function insertParticipation(){
-      return $q(function(resolve, reject, data){
+  function insertParticipation(data){
+      return $q(function(resolve, reject){
           sWeb_setParticipation(function(responseData){
               resolve(responseData);
           }, function(response){
@@ -108,8 +108,8 @@ angular.module('moduleData', [])
   }
 
   //data = {idTeaches, idPupil, note}
-  function insertNote(){
-      return $q(function(resolve, reject, data){
+  function insertNote(data){
+      return $q(function(resolve, reject){
           sWeb_setNote(function(responseData){
               resolve(responseData);
           }, function(response){
@@ -227,8 +227,8 @@ angular.module('moduleData', [])
   return retVal;
 
   //data = {idTeaches, idPupil}
-  function fillData(){
-    return $q(function(resolve, reject, data) {
+  function fillData(data){
+    return $q(function(resolve, reject) {
         sWeb_getNoteByTeachesAndPupil(function(responseData){
             notes = responseData;
             retVal.data = notes;
@@ -281,9 +281,8 @@ angular.module('moduleData', [])
   return retVal;
 
   //data = {idPupil, idTeaches}
-  function fillData(){
-      console.log("testaa");
-    return $q(function(resolve, reject, data) {
+  function fillData(data){
+    return $q(function(resolve, reject) {
         sWeb_getParticipationByPupilAndTeaches(function(responseData){
             participation = responseData;
             retVal.data = participation;
@@ -329,7 +328,7 @@ angular.module('moduleData', [])
                     {
                         if(sData_allData.data.groups == null)
                             sData_allData.data.groups = [];
-                        responseDataInner[j].idGradeSubject = responseData[tmpIdx].idgradesubject;
+                        responseDataInner[j].idGradeSubject = responseData[tmpIdx].idGradeSubject;
                         sData_allData.data.groups.push(responseDataInner[j]);
 
                         console.log(tmpIdx);
@@ -343,7 +342,7 @@ angular.module('moduleData', [])
                     
                 }, function(response){
                     reject(response);
-                }, {idGradeSubject: responseData[i].idgradesubject});
+                }, {idGradeSubject: responseData[i].idGradeSubject});
             }
         }, function(response){
             reject(response);
@@ -378,6 +377,7 @@ angular.module('moduleData', [])
         var baseData = sData_groupsBySubject.data;
         eventsByGroups = [];
         
+        /*
         if(baseData == null)
         {
             sData_groupsBySubject.fillData().then(function(response){
@@ -387,13 +387,17 @@ angular.module('moduleData', [])
             },function(response){
                 reject("Dependent Load not working! " + response);
             })
-        }
+        }*/
 
+        var tmpI;
+        var tmpJ;
         var keys = Object.keys(baseData);
         for(var i = 0; i < keys.length; i++)
         {
+            tmpI = i;
             for(var j = 0; j < baseData[keys[i]].length; j++)
             {
+                tmpJ = j;
                 //Pushes every required group into the collection
                 eventsByGroups.push(baseData[keys[i]][j].idGradeGroup);
 
@@ -407,15 +411,21 @@ angular.module('moduleData', [])
                             sData_allData.data.groups = [];
                         responseData[l].idGradeGroup = baseData[keys[i]][j].idGradeGroup;
                         sData_allData.data.events.push(responseData[l]);
+
+                        //if done
+                        if(tmpI == keys.length - 1 &&
+                            tmpJ == baseData[keys[i]].length - 1 &&
+                            l == responseData.length -1)
+                        {
+                            retVal.data = eventsByGroups;
+                            resolve("Successfully loaded eventsByGroups");
+                        }
                     }
                 }, function(response){
                     reject(response);
                 }, baseData[keys[i]][j].idGradeGroup);
             }
         }
-
-        retVal.data = eventsByGroups;
-        resolve("Successfully loaded eventsByGroups");
     });
   }
 }])
@@ -443,6 +453,7 @@ angular.module('moduleData', [])
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
+        /*
         if(baseData == null)
         {
             sData_groupsBySubject.fillData().then(function(response){
@@ -453,7 +464,9 @@ angular.module('moduleData', [])
                 reject("Dependent Load not working! " + response);
             })
         }
-
+        */
+        var tmpI;
+        var tmpJ;
         var keys = Object.keys(baseData);
         for(var i = 0; i < keys.length; i++)
         {
@@ -472,15 +485,21 @@ angular.module('moduleData', [])
                             sData_allData.data.pupils = [];
                         responseData[l].idGradeGroup = baseData[keys[i]][j].idGradeGroup;
                         sData_allData.data.events.push(responseData[l]);
+
+                        //if done
+                        if(tmpI == keys.length - 1 &&
+                            tmpJ == baseData[keys[i]].length - 1 &&
+                            l == responseData.length -1)
+                        {
+                            retVal.data = pupilsByGroups;
+                            resolve("Successfully loaded pupilsByGroups");
+                        }
                     }
                 }, function(response){
                     reject(response);
                 }, baseData[keys[i]][j].idGradeGroup);
             }
         }
-
-        retVal.data = pupilsByGroups;
-        resolve("Successfully loaded pupilsByGroups");
     });
   }
 }])

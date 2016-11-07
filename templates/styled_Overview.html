@@ -60,14 +60,5 @@
             <h3>{{recordGroup.name}}</h3>
         </div>
     </div>
-    
-    <div class="section-container" ng-repeat="(key, value) in data.colGroupsBySubjects">
-        <div class="title-container">
-            <h1>Old Reference: {{key}}</h1>
-        </div>
-        <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
-            <h3>{{recordGroup.name}}</h3>
-        </div>
-    </div>
     </main>
 </div>

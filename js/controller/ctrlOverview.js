@@ -7,23 +7,12 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
-    $scope.data.colGroupsBySubjects = {};
+
     sData_groupsBySubjects.fillData().then(function(response){
         console.log(response);
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
         $scope.colSubjects = sData_allData.data.subjects;
         $scope.colGroups = sData_allData.data.groups;
-
-        var keys = Object.keys($scope.colGroupsBySubjects);
-        for(var i = 0; i < keys.length; i++)
-        {
-            $scope.data.colGroupsBySubjects[keys[i]] = [];
-            for(var j = 0; j < $scope.colGroupsBySubjects[keys[i]]; j++)
-            {
-                $scope.data.colGroupsBySubjects[keys[i]].push($scope.colGroupsBySubjects[keys[i]][j]);
-            }
-        }
-        console.log($scope.colGroupsBySubjects);
     }, function(response){
         console.log("error loading groups by subjects: " + response);
     })
@@ -63,7 +52,8 @@ angular.module("moduleOverview", [])
     
     $scope.switchModalSubject = function()
     {
-        console.log("in func");
+        console.log("in func: " + $scope.data.displayModalSubject);
+        console.log(!$scope.data.displayModalSubject);
         $scope.data.displayModalSubject = !$scope.data.displayModalSubject;
     }
 
