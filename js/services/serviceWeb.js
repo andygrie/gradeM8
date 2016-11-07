@@ -328,7 +328,7 @@ angular.module('moduleWeb', [])
       $http({
           method: "POST",
           url: constants.apiUrl + "/participation/" + data.idGradeEvent,
-          data: data.colPupil
+          data: data.colPupils
       }).then(function(response){
           resolve(response.data);
         }, function(response){
