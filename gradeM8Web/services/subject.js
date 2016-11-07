@@ -122,7 +122,7 @@ exports.insertSubject = function (req, res) {
 
         request.on('row', function (columns) {
             result = {
-                idClass: columns[0].value,
+                idGradeSubject: columns[0].value,
                 name: req.body.name
             };
         });
