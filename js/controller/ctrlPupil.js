@@ -21,7 +21,6 @@ angular.module("modulePupil", [])
     sData_participationsByPupil.fillData(dataInit).then(function(response){
         console.log("successfuly loaded participations");
         $scope.data.colParticipations = sData_participationsByPupil.data;
-        console.log($scope.data.colParticipations);
         setGradedAndUngraded();
     }, function(response){
         console.log("error loading participations");
@@ -30,7 +29,6 @@ angular.module("modulePupil", [])
     sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log("successfully loaded notes");
         $scope.data.colNotes = sData_notesByPupil.data;
-        console.log($scope.data.colNotes);
     }, function(response){
         console.log("error loading notes: " + response);
     });
@@ -154,6 +152,7 @@ angular.module("modulePupil", [])
             }
         }
 
+        console.log(retVal);
         return retVal;
     }
 

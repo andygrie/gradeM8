@@ -348,7 +348,6 @@ angular.module('moduleData', [])
         retVal.data = {};
         sWeb_getSubjectByTeacher(function(responseData){
             sData_allData.data.subjects = responseData;
-            console.log(responseData);
 
             for(var i = 0; i < responseData.length; i++)
             {
@@ -401,7 +400,7 @@ angular.module('moduleData', [])
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
-        if(sData_allData.data.events == null)
+        //if(sData_allData.data.events == null)
             sData_allData.data.events = [];
         eventsByGroups = {};
         retVal.data = {};
