@@ -16,9 +16,9 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
-    var data = {idPupil: $scope.data.idPupil, 
+    var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
-    sData_participationsByPupil.fillData(data).then(function(response){
+    sData_participationsByPupil.fillData(dataInit).then(function(response){
         console.log("successfuly loaded participations");
         $scope.data.colParticipations = sData_participationsByPupil.data;
         console.log($scope.data.colParticipations);
@@ -27,7 +27,7 @@ angular.module("modulePupil", [])
         console.log("error loading participations");
     });
 
-    sData_notesByPupil.fillData(data).then(function(response){
+    sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log(response);
         $scope.data.colNotes = sData_notesByPupil.data;
         console.log($scope.data.colNotes);
@@ -94,6 +94,7 @@ angular.module("modulePupil", [])
             idPupil: $scope.data.idPupil,
             note: $scope.newNote.note
         }
+        console.log(data);
 
         sData_CUDHandler.insertNote(data).then(function(responseData){
             console.log("successfuly inserted note: " + responseData);
