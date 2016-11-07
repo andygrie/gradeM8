@@ -431,13 +431,13 @@ angular.module('moduleData', [])
                 //Pushes every required group into the collection
                 eventsByGroups[baseData[keys[i]][j].idGradeGroup];
 
-                fetchEvents(baseData, tmpI, tmpJ, resolve, reject);
+                fetchEvents(keys, baseData, tmpI, tmpJ, resolve, reject);
             }
         }
     });
   }
 
-  function fetchEvents(baseData, tmpIdx, tmpJ, resolve, reject)
+  function fetchEvents(keys, baseData, tmpIdx, tmpJ, resolve, reject)
   {
       sWeb_getEventByGroup(function(responseData){
         // sets the events for each group
@@ -513,13 +513,13 @@ angular.module('moduleData', [])
                 //pupilsByGroups every required group into the collection
                 pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = [];
 
-                fetchPupils(baseData, tmpI, tmpJ, resolve, reject);
+                fetchPupils(keys, baseData, tmpI, tmpJ, resolve, reject);
             }
         }
     });
   }
 
-  function fetchPupils(baseData, tmpIdx, tmpJ, resolve, reject)
+  function fetchPupils(keys, baseData, tmpIdx, tmpJ, resolve, reject)
   {
       sWeb_getPupilByGroup(function(responseData){
         // sets the events for each group
