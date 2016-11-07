@@ -31,9 +31,11 @@ angular.module("moduleGroup", [])
     }, function(response){
         console.log("error loading teaches: " + response);
     })
-    $scope.colEvents = sData_eventsByGroups.data[$scope.idGradeGroup];
-    
-    
+    sData_eventsByGroups.fillData().then(function(response){
+        $scope.colEvents = sData_eventsByGroups.data[$scope.idGradeGroup];
+    }, function(response){
+        console.log("error loading pupils by groups: " + response);
+    })
     /*
     $scope.colPupils = [
         {idUser: 1, fkClass: 1, forename: "Bört", surname: "enson", email: "on@pisse.ru", password: "1m4G0d"},

@@ -406,8 +406,8 @@ angular.module('moduleData', [])
                     for(var l = 0; l < responseData.length; l++)
                     {
                         //modifies the data and writes it to local data obj 
-                        if(sData_allData.data.groups == null)
-                            sData_allData.data.groups = [];
+                        if(sData_allData.data.events == null)
+                            sData_allData.data.events = [];
                         responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
                         sData_allData.data.events.push(responseData[l]);
 
@@ -489,7 +489,7 @@ angular.module('moduleData', [])
                         if(sData_allData.data.pupils == null)
                             sData_allData.data.pupils = [];
                         responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
-                        sData_allData.data.events.push(responseData[l]);
+                        sData_allData.data.pupils.push(responseData[l]);
 
                         //if done
                         if(tmpI == keys.length - 1 &&
