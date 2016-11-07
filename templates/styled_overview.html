@@ -1,6 +1,7 @@
 <div class="all">
-    <h2 ng-click="switchModalGroup">Add Group</h2>
-    <h2 ng-click="switchModalSubject">Add Subject</h2>
+    <button ng-click="switchModalGroup()">add group</button>
+    <button ng-click="switchModalSubject()">add subj</button>
+    <button ng-click="logCollection()">log col</button>
 
     <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
         <div class="modal-wrapper">
@@ -43,6 +44,7 @@
         </div>
     </div>
 
+    With new Reference
     <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="title-container">
             <h1>{{key}}</h1>
@@ -51,5 +53,22 @@
             <h3>{{recordGroup.name}}</h3>
         </div>
     </div>
+
+    Old Reference
+    <div class="section-container" ng-repeat="(key, value) in data.colGroupsBySubjects">
+        <div class="title-container">
+            <h1>{{key}}</h1>
+        </div>
+        <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
+            <h3>{{recordGroup.name}}</h3>
+        </div>
+    </div>
+
+    <div ng-repeat="rec in colGroupsBySubjects">
+        {{rec}}
+        <h1>test</h1>
+    </div>
+
+    {{Object.Keys(colGroupsBySubjects)}}
     </main>
 </div>
