@@ -506,7 +506,7 @@ angular.module('moduleData', [])
             
             for(var j = 0; j < baseData[keys[i]].length; j++)
             {
-                tmpI = parseInt(" " +i);
+                tmpI = parseInt(" "+i);
                 tmpJ = parseInt(" "+j);
                 //pupilsByGroups every required group into the collection
                 pupilsByGroups[baseData[keys[i]][j].idGradeGroup] = [];
@@ -528,11 +528,16 @@ angular.module('moduleData', [])
             responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
             sData_allData.data.pupils.push(responseData[l]);
 
+            console.log("fetch");
+            console.log(tmpI);
+            console.log(tmpJ);
+            console.log(l);
             //if done
             if(tmpI == keys.length - 1 &&
                 tmpJ == baseData[keys[tmpI]].length - 1 &&
                 l == responseData.length -1)
             {
+                console.log("done");
                 retVal.data = pupilsByGroups;
                 resolve("Successfully loaded pupilsByGroups");
             }
