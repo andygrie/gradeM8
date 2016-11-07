@@ -47,6 +47,7 @@ app.get('/teacher', teacherService.getTeachers);
 app.post('/teacher', teacherService.insertUser);
 app.put('/teacher/:idUser', teacherService.updateUser);
 app.delete('/teacher/:idUser', teacherService.deleteTeacher);
+app.post('/teacher/sendGrades/:idTeacher', teacherService.sendTodaysGrades);
 
 app.get('/class', classService.getClasses);
 app.post('/class', classService.insertClass);

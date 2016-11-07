@@ -1,5 +1,24 @@
 ﻿var sql = require('mssql');
 var ted = require('tedious');
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'm8grade@gmail.com', 
+            pass: 'Grade2016'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+    var mailOptions = {
+        from: 'm8grade@gmail.com', 
+        to: '', 
+        subject: 'Grades',
+        html: '<p>Hello, you added following grades today:</p><table><tr><th>Forename</th><th>Surname</th><th>Description</th><th>Grade</th></tr>'
+    };
+
+
 
 var Connection = ted.Connection;
 var config = {
@@ -151,4 +170,88 @@ function deleteUser(idUser) {
         request.addParameter('id', TYPES.Int, idUser);
         connection.execSql(request);
     }
+}
+exports.sendTodaysGrades = function (req, res) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("select u.idUser, u.forename, u.surname, u.email, u.password from gradeUser u INNER JOIN teacher t ON t.fkUser = u.idUser WHERE u.idUser = @id", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            getGrades(result, res);
+        });
+        request.addParameter('id', TYPES.Int, req.params.idTeacher);
+        connection.execSql(request);
+    }
+}
+function getGrades(teacher, res) {
+    var connection = new Connection(config);
+    var results = [];
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("select u.forename, u.surname, e.eventDescription, p.grade from gradeUser u" + 
+                        " INNER JOIN pupil pu ON pu.fkUser = u.idUser" +
+                        " INNER JOIN participation p ON p.fkPupil = pu.fkUser" +
+                        " INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent" +
+                        " INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE t.fkTeacher = @id AND p.grade IS NOT NULL AND datediff(day, e.eventDate, GETDATE()) = 0",
+            function (err) {
+                if (err) {
+                    console.log(err);
+                }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            sendMail(results, teacher, res);
+        });
+        request.addParameter('id', TYPES.Int, teacher.idUser);
+        connection.execSql(request);
+    }
+    
+}
+function sendMail(results, teacher, res) {
+    mailOptions.to = teacher.email;
+    results.forEach(function (result) {
+        mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.eventDescription + "</td><td>" + result.grade + "</td></tr>";
+    });
+    mailOptions.html += "</table>";
+    if (results.length == 0)
+        mailOptions.html += "<p>You have recorded no grades today.</p>";
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.json({ status: error });
+        } else {
+            res.json({ status: 'ok' });
+        };
+    });
 }
