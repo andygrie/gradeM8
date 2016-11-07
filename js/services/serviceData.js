@@ -1,9 +1,9 @@
 angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil",
-                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNote", "sWeb_setEvent",
+                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", "sWeb_setEvent",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,
-                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNote, sWeb_setEvent) {
+                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, sWeb_setEvent) {
   var retVal;
 
   retVal = {
@@ -111,7 +111,7 @@ angular.module('moduleData', [])
   //data = {idTeaches, idPupil, note}
   function insertNote(data){
       return $q(function(resolve, reject){
-          sWeb_setNote(function(responseData){
+          sWeb_setNoteByTeachesAndPupil(function(responseData){
               resolve(responseData);
           }, function(response){
               reject(response);
