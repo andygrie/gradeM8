@@ -215,6 +215,32 @@ angular.module('moduleData', [])
   }
 }])
 
+.factory('sData_email', ["$q", "sWeb_sendEmail", 
+                function($q, sWeb_sendEmail) {
+  var email = null;
+  var retVal;
+
+  retVal = {
+      data: email,
+      send : send
+  }
+
+  return retVal;
+
+  function send(){
+    return $q(function(resolve, reject) {
+        sWeb_sendEmail(function(responseData){
+            email = responseData;
+            retVal.data = email;
+            resolve("Successfuly sent emails: " + responseData.status);
+        }, function(response){
+            reject(response);
+        });
+    })
+  }
+}])
+
+
 .factory('sData_notesByPupil', ["$q", "sWeb_getNoteByTeachesAndPupil", 
                 function($q, sWeb_getNoteByTeachesAndPupil) {
   var notes = null;

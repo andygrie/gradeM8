@@ -29,6 +29,19 @@ angular.module('moduleWeb', [])
   }
 }])
 
+.factory('sWeb_sendEmail', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/teacher/sendGrades/" + constants.teacherId
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
 /*
 .factory('sWeb_getTeaches', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
@@ -315,7 +328,7 @@ angular.module('moduleWeb', [])
       $http({
           method: "POST",
           url: constants.apiUrl + "/participation/" + data.idGradeEvent,
-          data: data.colPupil
+          data: data.colPupils
       }).then(function(response){
           resolve(response.data);
         }, function(response){

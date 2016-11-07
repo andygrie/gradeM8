@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler",
-                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler) {
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
@@ -41,6 +41,14 @@ angular.module("moduleOverview", [])
         {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"}
     ]
     */
+
+    $scope.sendEmail = function(){
+        sData_email.send().then(function(response){
+            alert(response);
+        }, function(response){
+            alert("error: ", response);
+        })
+    }
 
     $scope.navToGroup = function(id){
         $location.path("/group/" + id);
