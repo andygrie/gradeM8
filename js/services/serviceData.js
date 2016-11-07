@@ -493,7 +493,7 @@ angular.module('moduleData', [])
 
                         //if done
                         if(tmpI == keys.length - 1 &&
-                            tmpJ == baseData[keys[i]].length - 1 &&
+                            tmpJ == baseData[keys[tmpI]].length - 1 &&
                             l == responseData.length -1)
                         {
                             retVal.data = pupilsByGroups;

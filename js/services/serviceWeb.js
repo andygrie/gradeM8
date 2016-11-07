@@ -77,7 +77,7 @@ angular.module('moduleWeb', [])
   return function(resolve, reject, groupId){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/gradeEvent/byGroup/" + groupId
+          url: constants.apiUrl + "/event/byGroup/" + groupId
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -293,7 +293,7 @@ angular.module('moduleWeb', [])
   return function(resolve, reject, data){
       $http({
           method: "POST",
-          url: constants.apiUrl + "/gradeEvent",
+          url: constants.apiUrl + "/event",
           data: {
               "fkTeaches": data.fkTeaches,
               "eventDate": data.eventDate,
