@@ -20,6 +20,7 @@ angular.module("modulePupil", [])
     sData_participationsByPupil.fillData(data).then(function(response){
         console.log("successfuly loaded participations");
         $scope.data.colParticipations = sData_participationsByPupil.data;
+        console.log($scope.data.colParticipations);
         setGradedAndUngraded();
     }, function(response){
         console.log("error loading participations");
@@ -266,6 +267,7 @@ angular.module("modulePupil", [])
                 $scope.data.colParticipations[i].fkPupil == $scope.data.idPupil)
                 retVal = $scope.data.colParticipations[i];
         }
+        console.log(retVal);
         return retVal;
     }
 
