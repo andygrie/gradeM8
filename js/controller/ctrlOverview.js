@@ -55,11 +55,6 @@ angular.module("moduleOverview", [])
     $scope.logCollection = function()
     {
         console.log($scope.colGroupsBySubjects);
-        $scope.data.colGroupsBySubjects["Mathe"] = [
-            {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
-            {idGradeGroup: 2, idGradeSubject: 1, name: "4BHIFS"},
-            {idGradeGroup: 3, idGradeSubject: 1, name: "5AHIFS"},
-        ];
     }
 
     $scope.navToGroup = function(id){

@@ -51,31 +51,23 @@
         </div>
     </div>
 
-    With new Reference
+    
     <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="title-container">
-            <h1>{{key}}</h1>
+            <h1>With new Reference: {{key}}</h1>
         </div>
         <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
             <h3>{{recordGroup.name}}</h3>
         </div>
     </div>
-
-    Old Reference
+    
     <div class="section-container" ng-repeat="(key, value) in data.colGroupsBySubjects">
         <div class="title-container">
-            <h1>{{key}}</h1>
+            <h1>Old Reference: {{key}}</h1>
         </div>
         <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
             <h3>{{recordGroup.name}}</h3>
         </div>
     </div>
-
-    <div ng-repeat="rec in colGroupsBySubjects">
-        {{rec}}
-        <h1>test</h1>
-    </div>
-
-    {{Object.Keys(colGroupsBySubjects)}}
     </main>
 </div>
