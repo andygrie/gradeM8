@@ -29,6 +29,7 @@ angular.module('moduleWeb', [])
   }
 }])
 
+/*
 .factory('sWeb_getTeaches', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return function(resolve, reject){
@@ -42,7 +43,7 @@ angular.module('moduleWeb', [])
       });
   }
 }])
-
+*/
 .factory('sWeb_getPupilByClass', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return function(resolve, reject, classId){
@@ -115,10 +116,10 @@ angular.module('moduleWeb', [])
 
 .factory('sWeb_getTeachesByTeacherAndSubject', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
-  return function(resolve, reject, subjectId){
+  return function(resolve, reject, data){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/teaches/byTeacherAndSubject/" + constants.teacherId + "/" + subjectId
+          url: constants.apiUrl + "/teaches/byTeacherAndSubject/" + constants.teacherId + "/" + data.idGradeSubject
       }).then(function(response){
           resolve(response.data);
         }, function(response){

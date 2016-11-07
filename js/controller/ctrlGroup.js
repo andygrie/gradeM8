@@ -6,19 +6,20 @@ angular.module("moduleGroup", [])
     $scope.data = {};
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
-
     $scope.colPupils = {};
-    sData_pupilsByGroups.fillData(function(response){
-        $scope.colPupils = sData_pupilsByGroups.data[idGradeGroup];
+
+    $scope.idGradeSubject = $scope.getSubjectOfGroup();
+    sData_pupilsByGroups.fillData().then(function(response){
+        $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
     }, function(response){
         console.log("error loading pupils by groups: " + response);
     })
-    sData_teaches.fillData(function(response){
+    sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function(response){
         $scope.teaches = findTeaches();
     }, function(response){
         console.log("error loading teaches: " + response);
     })
-    $scope.colEvents = sData_eventsByGroups.data[idGradeGroup];
+    $scope.colEvents = sData_eventsByGroups.data[$scope.idGradeGroup];
     
     
     /*
@@ -34,6 +35,18 @@ angular.module("moduleGroup", [])
         {idGradeEvent: 3, fkTeaches: 1, eventDate: "1.3.2017", eventDescription: "Abgabe2"},
     ];
     */
+
+    $scope.getSubjectOfGroup = function(){
+        var retVal = null;
+        var colGroups = sData_allData.data.groups;
+        for(var i = 0; i < colGroups.length && retVal == null; i++)
+        {
+            if(colGroups[i].idGradeGroup = $scope.idGradeGroup)
+                retVal = colGroups[i].idGradeSubject;
+        }
+
+        return retVal;
+    }
 
     $scope.switchModalEvent = function(){
         $scope.data.displayModalEvent = !$scope.data.displayModalEvent; 

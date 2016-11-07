@@ -240,8 +240,8 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_teaches', ["$q", "sData_allData", "sWeb_getTeaches", 
-                function($q, sData_allData, sWeb_getTeaches) {
+.factory('sData_teaches', ["$q", "sData_allData", "sWeb_getTeachesByTeacherAndSubject", 
+                function($q, sData_allData, sWeb_getTeachesByTeacherAndSubject) {
   var teaches = null;
   var retVal;
 
@@ -252,9 +252,10 @@ angular.module('moduleData', [])
 
   return retVal;
 
-  function fillData(){
+  //data = {idGradeSubject}
+  function fillData(data){
     return $q(function(resolve, reject) {
-        sWeb_getTeaches(function(responseData){
+        sWeb_getTeachesByTeacherAndSubject(function(responseData){
             teaches = responseData;
             retVal.data = teaches;
             sData_allData.data.teaches = responseData;
