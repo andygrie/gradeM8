@@ -288,7 +288,8 @@ angular.module("modulePupil", [])
             for(var j = 0; j < $scope.data.colParticipations.length; j++)
             {
                 if($scope.data.colEvents[i].idGradeEvent == 
-                    $scope.data.colParticipations[j].fkGradeEvent)
+                    $scope.data.colParticipations[j].fkGradeEvent 
+                    && $scope.data.colParticipations[j].fkPupil == $scope.data.idPupil)
                 {
                     if(angular.equals($scope.data.colParticipations[j].grade, 0))
                     {
@@ -305,10 +306,12 @@ angular.module("modulePupil", [])
                 }
             }
 
-            if(found == 0)
+            /* falls keine participation
+            if(found == 0 )
             {
                 $scope.data.ungradedEvents.push($scope.data.colEvents[i]);
             }
+            */
         }
     }
 
