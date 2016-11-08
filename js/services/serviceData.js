@@ -503,7 +503,7 @@ angular.module('moduleData', [])
         var keys = Object.keys(baseData);
         for(var i = 0; i < keys.length; i++)
         {
-            
+            console.log("4x?");
             for(var j = 0; j < baseData[keys[i]].length; j++)
             {
                 tmpI = parseInt(" "+i);
