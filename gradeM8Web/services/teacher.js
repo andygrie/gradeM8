@@ -244,8 +244,8 @@ function sendMail(results, teacher, res) {
         mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.eventDescription + "</td><td>" + result.grade + "</td></tr>";
     });
     mailOptions.html += "</table>";
-    if (results.length == 0)
-        mailOptions.html += "<p>You have recorded no grades today.</p>";
+    //if (results.length == 0)
+    //    mailOptions.html += "<p>You have recorded no grades today.</p>";
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
