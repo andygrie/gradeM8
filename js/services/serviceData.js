@@ -28,7 +28,7 @@ angular.module('moduleData', [])
             };
 
             sWeb_setTeaches(function(responseDataInner){
-                sData_groupsBySubjects.data[data.idGradeSubject].push(responseData);
+                sData_groupsBySubjects.data[data.name].push(responseData);
                 sData_eventsByGroups.data[responseData.idGradeGroup] = [];
                 sData_pupilsByGroups.data[responseData.idGradeGroup] = [];
 

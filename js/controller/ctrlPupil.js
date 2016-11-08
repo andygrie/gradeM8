@@ -97,6 +97,7 @@ angular.module("modulePupil", [])
         sData_CUDHandler.insertNote(data).then(function(responseData){
             console.log("successfuly inserted note: " + responseData);
             $scope.data.colNotes.push(responseData);
+            $scope.switchModalNote();
         }, function(response){
             console.log("error inserting note: " + response);
         });
@@ -126,6 +127,8 @@ angular.module("modulePupil", [])
                 $scope.data.ungradedEvents.push(response);
                 $scope.data.ungradedParticipations.push(responseData[0]);
                 $scope.data.colParticipations.push(responseData[0]);
+
+                $scope.switchModalEvent();
             }, function(response){
                 console.log("error inserting participations" + response);
             })
@@ -196,6 +199,7 @@ angular.module("modulePupil", [])
             sData_CUDHandler.putParticipation(data).then(function(response){
                 console.log(response);
                 //moveEventToGraded($scope.data.eventToBeGraded);
+                $scope.switchModalGrade();
             }, function(response){
                 console.log("error trying to update participation: " + response)
             });

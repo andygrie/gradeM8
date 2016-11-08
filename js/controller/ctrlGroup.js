@@ -92,6 +92,7 @@ angular.module("moduleGroup", [])
 
             sData_CUDHandler.insertParticipation(dataInner).then(function(responseData){
                 console.log("successfully inserted participations");
+                $scope.switchModalEvent();
             }, function(response){
                 console.log("error inserting participations" + response);
             });

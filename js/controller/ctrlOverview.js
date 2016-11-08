@@ -74,6 +74,7 @@ angular.module("moduleOverview", [])
         console.log(data);
         sData_CUDHandler.insertSubject(data).then(function(response){
             console.log("successfuly inserted subj: " + response);
+            $scope.switchModalSubject();
         }, function(response){
             console.log("error inserting subj: " + response);
         });
@@ -91,6 +92,7 @@ angular.module("moduleOverview", [])
         console.log(data);
         sData_CUDHandler.insertGroup(data).then(function(response){
             console.log("successfuly inserted group: " + response);
+            $scope.switchModalGroup();
         }, function(response){
             console.log("error inserting group: " + response);
         });
