@@ -302,6 +302,7 @@ angular.module('moduleWeb', [])
 .factory('sWeb_setEvent', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return function(resolve, reject, data){
+      data.eventDate.setDate(data.eventDate.getDate() + 1);
       $http({
           method: "POST",
           url: constants.apiUrl + "/event",
