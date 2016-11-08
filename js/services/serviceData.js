@@ -28,7 +28,16 @@ angular.module('moduleData', [])
             };
 
             sWeb_setTeaches(function(responseDataInner){
-                sData_groupsBySubjects.data[data.name].push(responseData);
+                var found = false;
+                for(var i = 0; i < sData_allData.data.subjects.length && !found; i++)
+                {
+                    if(sData_allData.data.subjects[i].idGradeSubject == data.idGradeSubject)
+                    {
+                        sData_groupsBySubjects.data[sData_allData.data.subjects[i].name].push(responseData);
+                        found = true;
+                    }
+                }
+                
                 sData_eventsByGroups.data[responseData.idGradeGroup] = [];
                 sData_pupilsByGroups.data[responseData.idGradeGroup] = [];
 
