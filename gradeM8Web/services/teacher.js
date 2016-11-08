@@ -209,7 +209,7 @@ function getGrades(teacher, res) {
                         " INNER JOIN pupil pu ON pu.fkUser = u.idUser" +
                         " INNER JOIN participation p ON p.fkPupil = pu.fkUser" +
                         " INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent" +
-                        " INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE t.fkTeacher = @id AND p.grade IS NOT NULL AND datediff(day, e.eventDate, GETDATE()) = 0",
+                        " INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE t.fkTeacher = @id AND p.grade != 0 AND datediff(day, e.eventDate, GETDATE()) = 0",
             function (err) {
                 if (err) {
                     console.log(err);
