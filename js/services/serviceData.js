@@ -43,6 +43,8 @@ angular.module('moduleData', [])
 
                 responseData.idGradeSubject = data.idGradeSubject;
                 sData_allData.data.groups.push(responseData);
+                if(sData_allData.data.teaches == null)
+                    sData_allData.data.teaches = [];
                 sData_allData.data.teaches.push(responseDataInner);
                 resolve("successfuly added group");
             }, function(response){
