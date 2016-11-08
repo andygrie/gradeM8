@@ -529,9 +529,12 @@ angular.module('moduleData', [])
             sData_allData.data.pupils.push(responseData[l]);
 
             console.log("fetch");
-            console.log(tmpI + "/" + keys.length - 1);
-            console.log(tmpJ + "/" + baseData[keys[tmpI]].length - 1);
-            console.log(l + "/" + responseData.length -1);
+            console.log(tmpI);
+            console.log(keys.length - 1);
+            console.log(tmpJ);
+            console.log(baseData[keys[tmpI]].length - 1);
+            console.log(l);
+            console.log(responseData.length -1);
             //if done
             if(tmpI == keys.length - 1 &&
                 tmpJ == baseData[keys[tmpI]].length - 1 &&
