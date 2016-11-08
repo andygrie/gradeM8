@@ -118,7 +118,6 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #636060;
     overflow: hidden;
     position: relative;
-    display: flex;
     align-items: center;
 
 }
