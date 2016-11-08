@@ -481,11 +481,13 @@ angular.module('moduleData', [])
 
   return retVal;
 
-  function fillData(){
+  function fillData(data){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
         if(sData_allData.data.pupils == null)
             sData_allData.data.pupils = [];
+
+        pupilsByGroups = {};
         /*
         if(baseData == null)
         {
@@ -498,6 +500,30 @@ angular.module('moduleData', [])
             })
         }
         */
+
+
+        sWeb_getPupilByGroup(function(responseData){
+            // sets the events for each group
+            pupilsByGroups[data.idGradeGroup] = responseData;
+            for(var l = 0; l < responseData.length; l++)
+            {
+                //modifies the data and writes it to local data obj 
+                responseData[l].idGradeGroup = data.idGradeGroup;
+                sData_allData.data.pupils.push(responseData[l]);
+                //if done
+                if(l == responseData.length -1)
+                {
+                    //console.log("done");
+                    retVal.data = pupilsByGroups;
+                    resolve("Successfully loaded pupilsByGroups");
+                }
+            }
+        }, function(response){
+            reject(response);
+        }, data.idGradeGroup);
+
+
+/*
         var tmpI;
         var tmpJ;
         var keys = Object.keys(baseData);
@@ -514,6 +540,7 @@ angular.module('moduleData', [])
                 fetchPupils(keys, baseData, tmpI, tmpJ, resolve, reject);
             }
         }
+        */
     });
   }
 
@@ -528,6 +555,7 @@ angular.module('moduleData', [])
             responseData[l].idGradeGroup = baseData[keys[tmpI]][tmpJ].idGradeGroup;
             sData_allData.data.pupils.push(responseData[l]);
 
+            /*
             console.log("fetch");
             console.log(tmpI);
             console.log(keys.length - 1);
@@ -535,12 +563,13 @@ angular.module('moduleData', [])
             console.log(baseData[keys[tmpI]].length - 1);
             console.log(l);
             console.log(responseData.length -1);
+            */
             //if done
             if(tmpI == keys.length - 1 &&
                 tmpJ == baseData[keys[tmpI]].length - 1 &&
                 l == responseData.length -1)
             {
-                console.log("done");
+                //console.log("done");
                 retVal.data = pupilsByGroups;
                 resolve("Successfully loaded pupilsByGroups");
             }
