@@ -144,6 +144,7 @@ angular.module("modulePupil", [])
         var found = false;
         console.log("check");
         console.log(id);
+        console.log($scope.data.gradedEvents);
         for(var i = 0; i < $scope.data.gradedEvents.length && !found; i++)
         {
             if($scope.data.gradedEvents[i].idGradeEvent == id)
