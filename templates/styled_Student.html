@@ -130,8 +130,8 @@
                 <th>Grade</th>
             </tr>
             <tr ng-repeat="recParticipation in data.gradedParticipations">
-                <td>{{getEventOfParticipation(recParticipation.idParticipation).eventDescription}}</td>
-                <td>{{getEventOfParticipation(recParticipation.idParticipation).eventDate}}</td>
+                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDescription}}</td>
+                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate | date : "dd-MM-yyyy" : timezone}}</td>
                 <td>{{recParticipation.grade}}</td>
             </tr>
         </table>
