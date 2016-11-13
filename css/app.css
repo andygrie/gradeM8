@@ -67,8 +67,10 @@ article, div, aside, footer, header, main, nav, section {
 }
 
 .site-nav-button {
+    border: none;
     background-color: #7e37b2;
     height: 2em;
+    margin: 0 0 0 0;
 }
 
 .site-nav-wrapper a:hover {
