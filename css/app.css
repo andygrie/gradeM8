@@ -61,6 +61,7 @@ article, div, aside, footer, header, main, nav, section {
 
 .site-nav-wrapper {
     background-color: #7e37b2;
+    color: white;
     height: 2em;
     text-align: center;
     padding-top: 1em;
@@ -72,14 +73,12 @@ article, div, aside, footer, header, main, nav, section {
     height: 2em;
     margin: 0 0 0 0;
 }
-
-.site-nav-wrapper a:hover {
+.site-nav-button:hover {
     background-color: #8f41cb;
-
 }
 
 /* selected link */
-.site-nav-wrapper a:active {
+.site-nav-button:active {
     background-color: #7e37b2;
 }
 
