@@ -68,6 +68,7 @@ article, div, aside, footer, header, main, nav, section {
 
 .site-nav-button {
     background-color: #7e37b2;
+    height: 100%;
 }
 
 .site-nav-wrapper a:hover {
