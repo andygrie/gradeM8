@@ -63,7 +63,7 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #7e37b2;
     height: 3em;
     text-align: center;
-    display: inline-block;
+    display: block;
 }
 .site-nav-wrapper button:first-child {
     border-right: rgba(0, 0, 0, 0.35);
@@ -83,6 +83,7 @@ article, div, aside, footer, header, main, nav, section {
     font-size: 1em;
     margin:0 0 0 0;
     padding: 1em 0.5em 0.8em 0.5em;
+    display: inline;
 }
 .site-nav-button:hover {
     background-color: #8f41cb;
