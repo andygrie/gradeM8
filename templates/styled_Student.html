@@ -103,7 +103,7 @@
     <div ng-hide="data.showOverview">
         <div class="section-container">
             <div class="tile-container">
-                <h2>Ungraded Events</h2>
+                <h1>Ungraded Events</h1>
                 <div ng-repeat="recUnEvent in data.ungradedEvents" ng-click="viewGrade(recUnEvent)">
                     <h4>{{recUnEvent.eventDescription}}</h4>
                     <h5>{{recUnEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</h5>
@@ -113,7 +113,7 @@
 
         <div class="section-container">
             <div class="tile-container">
-                <h2>Graded Events</h2>
+                <h1>Graded Events</h1>
                 <div ng-repeat="recEvent in data.gradedEvents" ng-click="viewGrade(recEvent)">
                     <h4>{{recEvent.eventDescription}}</h4>
                     <h5>{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</h5>
