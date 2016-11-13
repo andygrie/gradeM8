@@ -63,7 +63,7 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #7e37b2;
     height: 3em;
     text-align: center;
-    display: block;
+    display: inline-block;
 }
 .site-nav-wrapper button:first-child {
     border-right: rgba(0, 0, 0, 0.35);
