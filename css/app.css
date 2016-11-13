@@ -112,7 +112,6 @@ article, div, aside, footer, header, main, nav, section {
     display: inline-block;
     position: relative;
     height: inherit;
-
 }
 
 .tile-container div {
@@ -126,7 +125,6 @@ article, div, aside, footer, header, main, nav, section {
     overflow: hidden;
     position: relative;
     align-items: center;
-
 }
 
 .tile-container a {
