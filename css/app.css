@@ -64,7 +64,7 @@ article, div, aside, footer, header, main, nav, section {
     height: 3em;
     text-align: center;
 }
-.site-nav-wrapper:first-child {
+.site-nav-wrapper button:first-child {
     border-left: black;
     border-left-style: solid;
 }
