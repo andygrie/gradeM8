@@ -57,9 +57,9 @@
     <main class="main">
     <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="tile-container">
-            <h2>
+            <h1>
                 {{key}}
-            </h2>
+            </h1>
             <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
                 <h3>{{recordGroup.name}}</h3>
             </div>
