@@ -71,6 +71,7 @@ article, div, aside, footer, header, main, nav, section {
     color: white;
     background-color: #7e37b2;
     padding: 1em 1em 1em 1em;
+    margin-top: -1em;
 }
 .site-nav-button:hover {
     background-color: #8f41cb;
