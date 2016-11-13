@@ -82,7 +82,7 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #7e37b2;
     font-size: 1em;
     margin:0 0 0 0;
-    padding: 1em 0.5em 0.8em 0.5em;
+    padding: 1em 1em 0.8em 1em;
     display: inline-block;
 }
 .site-nav-button:hover {
