@@ -65,14 +65,14 @@ article, div, aside, footer, header, main, nav, section {
     text-align: center;
 }
 .site-nav-wrapper button:first-child {
-    border-right: black;
+    border-right: rgba(0, 0, 0, 0.35);
     border-right-style: solid;
-    border-right-width: 0.5em;
+    border-right-width: 0.1em;
 }
 .site-nav-wrapper button:last-child {
-    border-left: black;
+    border-left: rgba(0, 0, 0, 0.35);
     border-left-style: solid;
-    border-left-width: 0.5em;
+    border-left-width: 0.1em;
 }
 
 .site-nav-button {
