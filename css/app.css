@@ -64,13 +64,17 @@ article, div, aside, footer, header, main, nav, section {
     height: 3em;
     text-align: center;
 }
+.site-nav-wrapper:first-child {
+    border-left: black;
+    border-left-style: solid;
+}
 
 .site-nav-button {
     border: none;
     color: white;
     background-color: #7e37b2;
     font-size: 1em;
-    padding: 1em 0.5em 0.75em 0.5em;
+    padding: 1em 0.5em 0.8em 0.5em;
 }
 .site-nav-button:hover {
     background-color: #8f41cb;
