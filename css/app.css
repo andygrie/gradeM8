@@ -69,7 +69,7 @@ article, div, aside, footer, header, main, nav, section {
     border: none;
     color: white;
     background-color: #7e37b2;
-    font-size: 2em;
+    font-size: 1em;
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
 .site-nav-button:hover {
