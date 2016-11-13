@@ -65,8 +65,14 @@ article, div, aside, footer, header, main, nav, section {
     text-align: center;
 }
 .site-nav-wrapper button:first-child {
+    border-right: black;
+    border-right-style: solid;
+    border-right-width: 0.5em;
+}
+.site-nav-wrapper button:last-child {
     border-left: black;
     border-left-style: solid;
+    border-left-width: 0.5em;
 }
 
 .site-nav-button {
