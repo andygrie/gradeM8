@@ -1,7 +1,7 @@
 ﻿exports.hack = function (req, res) {
     var ActiveDirectory = require('activedirectory');
     var config = {
-        url: 'ldap://192.168.128.253',
+        url: 'ldap://212.152.179.122',
         baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
     }
     username = 'griessera@htl-vil';
