@@ -10,14 +10,17 @@
     ad.authenticate(username, password, function (err, auth) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
-            return;
         }
 
         if (auth) {
-            console.log('Authenticated!');
+            res.send({
+                'message': 'authenticated'
+            });
         }
         else {
-            console.log('Authentication failed!');
+            res.send({
+                'message': 'authentication failed'
+            });
         }
     });
 }
