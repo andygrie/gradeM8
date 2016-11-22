@@ -17,6 +17,7 @@ var assignedService = require('./services/assignedto');
 var eventService = require('./services/event');
 var participationService = require('./services/participation');
 var noteService = require('./services/note');
+var loginService = require('./services/login');
 
 var cors = require('cors');
 var app = express();
@@ -102,6 +103,8 @@ app.get('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.getNotesByTea
 app.post('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.insertNote);
 app.put('/note/:idNote', noteService.updateNote);
 app.delete('/note/:idNote', noteService.deleteNote);
+
+app.get('/hack', loginService.hack);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
