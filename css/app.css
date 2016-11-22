@@ -31,8 +31,9 @@
 #site-header .site-header-toprow {
     width: 100%;
     height: 70px;
-    position: relative;
-    display: flex;
+    position:relative;
+    display:flex;
+
 }
 
 #site-header .site-header-toprow h1 {
@@ -58,6 +59,17 @@ article, div, aside, footer, header, main, nav, section {
     margin-top: 0;
     font-size: 25px;
     margin-right: 15px;
+}
+
+.settings-btn {
+    width: 100%;
+}
+.settings-btn img{
+    float: right;
+    margin-right: 2em;
+    height: 70%;
+    width: auto;
+    margin-top:0.5em;
 }
 
 .site-nav-wrapper {
@@ -430,6 +442,8 @@ tbody tr:last-child td:last-child {
 .login-area img {
     width: 40%;
 }
+
+
 
 .login-area h1 {
     padding-top: 1em;
