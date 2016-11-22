@@ -5,7 +5,7 @@
         baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
     }
     username = 'griessera@htl-vil';
-    password = 'zasp225';
+    password = 'zasp25';
     var ad = new ActiveDirectory(config);
     ad.authenticate(username, password, function (err, auth) {
         if (err) {
