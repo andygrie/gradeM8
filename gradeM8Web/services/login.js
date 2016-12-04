@@ -8,20 +8,32 @@
     var password = req.body.password;
     console.log('user: ' + username + ', pw: ' + password);
     var ad = new ActiveDirectory(config);
-    ad.authenticate(username, password, function (err, auth) {
+
+    var sAMAccountName = 'griessera';
+    ad.findUser(sAMAccountName, function (err, user) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
+            return;
         }
 
-        if (auth) {
-            res.send({
-                'message': 'authenticated'
-            });
-        }
-        else {
-            res.send({
-                'message': 'authentication failed'
-            });
-        }
+        if (!user) console.log('User: ' + sAMAccountName + ' not found.');
+        else console.log(JSON.stringify(user));
     });
+
+    //ad.authenticate(username, password, function (err, auth) {
+    //    if (err) {
+    //        console.log('ERROR: ' + JSON.stringify(err));
+    //    }
+
+    //    if (auth) {
+    //        res.send({
+    //            'message': 'authenticated'
+    //        });
+    //    }
+    //    else {
+    //        res.send({
+    //            'message': 'authentication failed'
+    //        });
+    //    }
+    //});
 }
