@@ -50,12 +50,18 @@
             ad.getUsersForGroup(groupName, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
+                    res.send({
+                        'message': 'ERROR: ' + JSON.stringify(err)
+                    });
                     return;
                 }
 
                 if (!users) console.log('Group: ' + groupName + ' not found.');
                 else {
                     console.log(JSON.stringify(users));
+                    res.send({
+                        'message': JSON.stringify(users)
+                    });
                 }
             });
         }
