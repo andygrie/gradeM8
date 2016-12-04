@@ -23,26 +23,39 @@
             var sAMAccountName = 'griessera';
             ad.opts.bindDN = username;
             ad.opts.bindCredentials = password;
-            ad.findUser(sAMAccountName, function (err, user) {
+            //ad.findUser(sAMAccountName, function (err, user) {
+            //    if (err) {
+            //        console.log('ERROR: ' + JSON.stringify(err));
+            //        res.send({
+            //            'message': 'ERROR: ' + JSON.stringify(err)
+            //        });
+            //        return;
+            //    }
+
+            //    if (!user) {
+            //        console.log('User: ' + sAMAccountName + ' not found.');
+            //        res.send({
+            //            'message': 'User: ' + sAMAccountName + ' not found.'
+            //        });
+            //    }
+            //    else {
+            //        console.log(JSON.stringify(user));
+            //        res.send({
+            //            'message': JSON.stringify(user)
+            //        });
+            //    }
+            //});
+            var groupName = '5BHIFS';
+
+            ad.getUsersForGroup(groupName, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
-                    res.send({
-                        'message': 'ERROR: ' + JSON.stringify(err)
-                    });
                     return;
                 }
 
-                if (!user) {
-                    console.log('User: ' + sAMAccountName + ' not found.');
-                    res.send({
-                        'message': 'User: ' + sAMAccountName + ' not found.'
-                    });
-                }
+                if (!users) console.log('Group: ' + groupName + ' not found.');
                 else {
-                    console.log(JSON.stringify(user));
-                    res.send({
-                        'message': JSON.stringify(user)
-                    });
+                    console.log(JSON.stringify(users));
                 }
             });
         }
