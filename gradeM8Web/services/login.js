@@ -45,27 +45,52 @@
             //        });
             //    }
             //});
-            var groupName = '5BHIFS';
 
-            ad.getUsersForGroup(groupName, function (err, users) {
+
+            //var groupName = '5BHIFS';
+
+            //ad.getUsersForGroup(groupName, function (err, users) {
+            //    if (err) {
+            //        console.log('ERROR: ' + JSON.stringify(err));
+            //        res.send({
+            //            'message': 'ERROR: ' + JSON.stringify(err)
+            //        });
+            //        return;
+            //    }
+
+            //    if (!users) {
+            //        console.log('Group: ' + groupName + ' not found.');
+            //        res.send({
+            //            'message': 'Group: ' + groupName + ' not found.'
+            //        });
+            //    }
+            //    else {
+            //        console.log(JSON.stringify(users));
+            //        res.send({
+            //            'message': JSON.stringify(users)
+            //        });
+            //    }
+            //});
+
+            ad.findGroups(query, function (err, groups) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
                     res.send({
-                        'message': 'ERROR: ' + JSON.stringify(err)
+                        'message': 'ERROR: ' + JSON.stringify(users)
                     });
                     return;
                 }
 
-                if (!users) {
-                    console.log('Group: ' + groupName + ' not found.');
+                if ((!groups) || (groups.length == 0)) {
                     res.send({
-                        'message': 'Group: ' + groupName + ' not found.'
+                        'message': 'No groups found.'
                     });
+                    console.log('No groups found.');
                 }
                 else {
-                    console.log(JSON.stringify(users));
+                    console.log('findGroups: ' + JSON.stringify(groups));
                     res.send({
-                        'message': JSON.stringify(users)
+                        'message': 'findGroups: ' + JSON.stringify(groups)
                     });
                 }
             });
