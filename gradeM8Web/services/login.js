@@ -4,7 +4,7 @@
         url: 'ldap://212.152.179.122',
         baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
     }
-    var username = req.body.username;
+    var username = req.body.username + '@htl-vil';
     var password = req.body.password;
     console.log('user: ' + username + ', pw: ' + password);
     var ad = new ActiveDirectory(config);
