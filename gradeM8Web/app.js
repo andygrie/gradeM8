@@ -104,7 +104,7 @@ app.post('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.insertNote);
 app.put('/note/:idNote', noteService.updateNote);
 app.delete('/note/:idNote', noteService.deleteNote);
 
-app.get('/hack', loginService.hack);
+app.post('/login', loginService.login);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
