@@ -9,44 +9,45 @@
     console.log('user: ' + username + ', pw: ' + password);
     var ad = new ActiveDirectory(config);
 
-    var sAMAccountName = 'griessera';
-    ad.findUser(sAMAccountName, function (err, user) {
+    
+
+    ad.authenticate(username, password, function (err, auth) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
-            res.send({
-                'message': 'ERROR: ' + JSON.stringify(err)
-            });
-            return;
         }
 
-        if (!user) {
-            console.log('User: ' + sAMAccountName + ' not found.');
-            res.send({
-                'message': 'User: ' + sAMAccountName + ' not found.'
+        if (auth) {
+            //res.send({
+            //    'message': 'authenticated'
+            //});
+            var sAMAccountName = 'griessera';
+            ad.findUser(sAMAccountName, function (err, user) {
+                if (err) {
+                    console.log('ERROR: ' + JSON.stringify(err));
+                    res.send({
+                        'message': 'ERROR: ' + JSON.stringify(err)
+                    });
+                    return;
+                }
+
+                if (!user) {
+                    console.log('User: ' + sAMAccountName + ' not found.');
+                    res.send({
+                        'message': 'User: ' + sAMAccountName + ' not found.'
+                    });
+                }
+                else {
+                    console.log(JSON.stringify(user));
+                    res.send({
+                        'message': JSON.stringify(user)
+                    });
+                }
             });
         }
         else {
-            console.log(JSON.stringify(user));
             res.send({
-                'message': JSON.stringify(user)
+                'message': 'authentication failed'
             });
         }
     });
-
-    //ad.authenticate(username, password, function (err, auth) {
-    //    if (err) {
-    //        console.log('ERROR: ' + JSON.stringify(err));
-    //    }
-
-    //    if (auth) {
-    //        res.send({
-    //            'message': 'authenticated'
-    //        });
-    //    }
-    //    else {
-    //        res.send({
-    //            'message': 'authentication failed'
-    //        });
-    //    }
-    //});
 }
