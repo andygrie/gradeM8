@@ -13,11 +13,24 @@
     ad.findUser(sAMAccountName, function (err, user) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
+            res.send({
+                'message': 'ERROR: ' + JSON.stringify(err)
+            });
             return;
         }
 
-        if (!user) console.log('User: ' + sAMAccountName + ' not found.');
-        else console.log(JSON.stringify(user));
+        if (!user) {
+            console.log('User: ' + sAMAccountName + ' not found.');
+            res.send({
+                'message': 'User: ' + sAMAccountName + ' not found.'
+            });
+        }
+        else {
+            console.log(JSON.stringify(user));
+            res.send({
+                'message': JSON.stringify(user)
+            });
+        }
     });
 
     //ad.authenticate(username, password, function (err, auth) {
