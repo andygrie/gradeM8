@@ -56,7 +56,12 @@
                     return;
                 }
 
-                if (!users) console.log('Group: ' + groupName + ' not found.');
+                if (!users) {
+                    console.log('Group: ' + groupName + ' not found.');
+                    res.send({
+                        'message': 'Group: ' + groupName + ' not found.'
+                    });
+                }
                 else {
                     console.log(JSON.stringify(users));
                     res.send({
