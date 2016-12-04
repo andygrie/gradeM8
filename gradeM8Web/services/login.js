@@ -21,6 +21,8 @@
             //    'message': 'authenticated'
             //});
             var sAMAccountName = 'griessera';
+            ad.opts.bindDN = username;
+            ad.opts.bindCredentials = password;
             ad.findUser(sAMAccountName, function (err, user) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
