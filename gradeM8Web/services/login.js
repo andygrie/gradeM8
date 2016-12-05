@@ -21,7 +21,7 @@ exports.login = function (req, res) {
             findTeacher(ad, req.body.username, req.body.password, res);
         }
         else {
-            res.status(403);
+            res.status(400);
             res.send('wrong credentials');
         }
     });
