@@ -1,13 +1,6 @@
 angular.module("moduleLogin", [])
-.controller("ctrlLogin", ["$scope", "constants", "sData_teachers", "$location", 
-                function ($scope, constants, sData_teachers, $location) {
-    
-    sData_teachers.fillData().then(function(response){
-        $scope.colTeachers = sData_teachers.data;
-        console.log("success loading teachers: " + response);
-    }, function(response){
-        console.log("error loading teachers: " + response);
-    })
+.controller("ctrlLogin", ["$scope", "constants", "$location",
+                function ($scope, constants, $location) {
 
     /*
     $scope.colTeachers = [
