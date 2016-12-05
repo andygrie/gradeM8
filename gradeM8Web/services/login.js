@@ -18,7 +18,7 @@ exports.login = function (req, res) {
         }
 
         if (auth) {
-            findUser(ad, req.body.username, req.body.password, res);
+            findTeacher(ad, req.body.username, req.body.password, res);
         }
         else {
             res.status(403);
@@ -27,12 +27,13 @@ exports.login = function (req, res) {
     });
 }
 
-function findUser(ad, username, password, res) {
+function findTeacher(ad, username, password, res) {
     ad.opts.bindDN = username + '@htl-vil';
     ad.opts.bindCredentials = password;
     ad.findUser(username, function (err, user) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
+            res.status(500);
             res.send({
                 'message': 'ERROR: ' + JSON.stringify(err)
             });
@@ -41,12 +42,19 @@ function findUser(ad, username, password, res) {
 
         if (!user) {
             console.log('User: ' + username + ' not found.');
+            res.status(500);
             res.send({
                 'message': 'User: ' + username + ' not found.'
             });
         }
         else {
-            res.send(user);
+            var teacher = {
+                email: user.mail,
+                forename: user.givenName,
+                surname: user.sn,
+                username: user.cn
+            }
+            res.send(teacher);
         }
     });
 }
