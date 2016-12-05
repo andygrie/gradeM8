@@ -15,19 +15,19 @@ app.constant('constants', {
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl : "templates/login.html",
+    templateUrl : "templates/styled_Login.html",
     controller: "ctrlLogin"
   })
   .when("/overview", {
-    templateUrl : "templates/overview.html",
+    templateUrl : "templates/styled_Overview.html",
     controller: "ctrlOverview"
   })
   .when("/group/:idGradeGroup", {
-    templateUrl : "templates/group.html",
+    templateUrl : "templates/styled_Class.html",
     controller: "ctrlGroup"
   })
   .when("/pupil/:idPupil/:idGradeGroup", {
-    templateUrl : "templates/pupil.html",
+    templateUrl : "templates/styled_Student.html",
     controller: "ctrlPupil"
   });
 }); 

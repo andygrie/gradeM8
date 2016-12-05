@@ -1,15 +1,23 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", //"sData_groupsBySubjects", "sData_CUDHandler",
-                    function ($scope, $location, sData_allData) {
-    /*
-    sData_groupsBySubjects.fillData(function(response){
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
+    $scope.data = {};
+    $scope.data.displayModalGroup = false;
+    $scope.data.displayModalSubject = false;
+    $scope.colGroupsBySubjects = {};
+    $scope.colSubjects = {};
+    $scope.colGroups = {};
+
+    sData_groupsBySubjects.fillData().then(function(response){
+        console.log(response);
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
+        $scope.colSubjects = sData_allData.data.subjects;
+        $scope.colGroups = sData_allData.data.groups;
     }, function(response){
         console.log("error loading groups by subjects: " + response);
     })
-    $scope.colSubjects = sData_allData.data.subjects;
-    $scope.colGroups = sData_allData.data.groups;
-    */
+    
+    /*
     $scope.colGroupsBySubjects = {
         "Mathe": [
             {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
@@ -32,40 +40,62 @@ angular.module("moduleOverview", [])
         {idGradeGroup: 4, idGradeSubject: 2, name: "5BHIFS"},
         {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"}
     ]
+    */
+
+    $scope.sendEmail = function(){
+        sData_email.send().then(function(response){
+            alert(response);
+        }, function(response){
+            alert("error: ", response);
+        })
+    }
 
     $scope.navToGroup = function(id){
+        console.log(id);
+        console.log($scope.colGroupsBySubjects);
         $location.path("/group/" + id);
+    }
+    
+    $scope.switchModalSubject = function()
+    {
+        $scope.data.displayModalSubject = !$scope.data.displayModalSubject;
+    }
+
+    $scope.switchModalGroup = function()
+    {
+        $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
     }
 
     $scope.addNewSubject = function(){
-        $scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
-
-        /*
+        //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
         var data = {
             name: $scope.newSubject.name
         };
-        sData_CUDHandler.insertSubject(function(response){
+        console.log(data);
+        sData_CUDHandler.insertSubject(data).then(function(response){
             console.log("successfuly inserted subj: " + response);
+            $scope.switchModalSubject();
         }, function(response){
             console.log("error inserting subj: " + response);
-        }, data);
-        */
+        });
     }
 
     $scope.addNewGroup = function(){
-        $scope.colGroups.push({idGradeGroup: 1, 
+        /*$scope.colGroups.push({idGradeGroup: 1, 
                             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
-                            name: $scope.newGroup.name});
-        /*
+                            name: $scope.newGroup.name});*/
+        
         var data = {
             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
             name: $scope.newGroup.name
         };
-        sData_CUDHandler.insertGroup(function(response){
-            console.log("successfuly inserted subj: " + response);
+        console.log(data);
+        sData_CUDHandler.insertGroup(data).then(function(response){
+            console.log("successfuly inserted group: " + response);
+            $scope.switchModalGroup();
         }, function(response){
-            console.log("error inserting subj: " + response);
-        }, data);
-        */
+            console.log("error inserting group: " + response);
+        });
+        
     }
 }]);
