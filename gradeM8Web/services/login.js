@@ -132,7 +132,7 @@ function insertUser(user) {
             var teacher = {
                 email: user.mail,
                 forename: user.givenName,
-                idUser: result.idUser,
+                //idUser: result.idUser,
                 surname: user.sn,
                 username: user.cn
             }
