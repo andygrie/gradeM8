@@ -15,7 +15,7 @@ app.constant('constants', {
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl : "templates/login.html",
+    templateUrl : "templates/styled_Login.html",
     controller: "ctrlLogin"
   })
   .when("/overview", {
