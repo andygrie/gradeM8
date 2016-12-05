@@ -10,7 +10,8 @@
 </head>
 
 <body class="all" ng-app="gradeM8">
-<header ng-show="location != '/templates/styled_Login.html'" id="site-header">
+<div id=includedView ng-view="included" ng-show="location != '/templates/styled_Login.html'">
+<header id="site-header">
     <div class="site-header-toprow">
         <div class="circle">
             <a class="site-logo" href="#overview">
@@ -25,7 +26,6 @@
     </div>
 </header>
 </div>
-<ng-view></ng-view>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
