@@ -2,6 +2,7 @@
     var ActiveDirectory = require('activedirectory');
     var config = {
         url: 'ldap://212.152.179.122',
+        //url: 'ldap://192.168.128.253',
         baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
     }
     var username = req.body.username + '@htl-vil';
@@ -71,8 +72,8 @@
             //        });
             //    }
             //});
-
-            ad.findGroups(query, function (err, groups) {
+            var query = '';
+            ad.findUsers(query, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
                     res.send({
@@ -81,16 +82,19 @@
                     return;
                 }
 
-                if ((!groups) || (groups.length == 0)) {
+                if ((!users) || (users.length == 0)) {
                     res.send({
-                        'message': 'No groups found.'
+                        'message': 'No users found.'
                     });
-                    console.log('No groups found.');
+                    console.log('No users found.');
                 }
                 else {
-                    console.log('findGroups: ' + JSON.stringify(groups));
+                    //console.log('findUsers: ' + JSON.stringify(users));
+                    for (var idx in users){
+                        console.log(users[idx].sAMAccountName + ' ' + users[idx].sn + ' ' + users[idx].givenName + ' ' + users[idx].mail + ' ' + users[idx].OU);
+                    }
                     res.send({
-                        'message': 'findGroups: ' + JSON.stringify(groups)
+                        'message': 'findUsers: ' + JSON.stringify(users)
                     });
                 }
             });
