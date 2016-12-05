@@ -28,9 +28,9 @@ exports.login = function (req, res) {
 }
 
 function findUser(ad, username, password, res) {
-    ad.opts.bindDN = username;
+    ad.opts.bindDN = username + '@htl-vil';
     ad.opts.bindCredentials = password;
-    ad.findUser(sAMAccountName, function (err, user) {
+    ad.findUser(username, function (err, user) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
             res.send({
@@ -40,9 +40,9 @@ function findUser(ad, username, password, res) {
         }
 
         if (!user) {
-            console.log('User: ' + sAMAccountName + ' not found.');
+            console.log('User: ' + username + ' not found.');
             res.send({
-                'message': 'User: ' + sAMAccountName + ' not found.'
+                'message': 'User: ' + username + ' not found.'
             });
         }
         else {
