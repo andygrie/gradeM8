@@ -1,13 +1,13 @@
-﻿exports.login = function (req, res) {
-    var ActiveDirectory = require('activedirectory');
-    var config = {
-        url: 'ldap://212.152.179.122',
-        //url: 'ldap://192.168.128.253',
-        baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
-    }
-    var username = req.body.username;// + '@htl-vil';
+﻿var ActiveDirectory = require('activedirectory');
+var config = {
+    url: 'ldap://212.152.179.122',
+    //url: 'ldap://192.168.128.253',
+    baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
+}
+
+exports.login = function (req, res) {
+    var username = req.body.username + '@htl-vil';
     var password = req.body.password;
-    console.log('user: ' + username + ', pw: ' + password);
     var ad = new ActiveDirectory(config);
 
     
@@ -18,12 +18,45 @@
         }
 
         if (auth) {
-            //res.send({
-            //    'message': 'authenticated'
-            //});
-            var sAMAccountName = 'griessera';
-            ad.opts.bindDN = username;
-            ad.opts.bindCredentials = password;
+            findUser(ad, req.body.username, req.body.password, res);
+        }
+        else {
+            res.status(403);
+            res.send('wrong credentials');
+        }
+    });
+}
+
+function findUser(ad, username, password, res) {
+    ad.opts.bindDN = username;
+    ad.opts.bindCredentials = password;
+    ad.findUser(sAMAccountName, function (err, user) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+            res.send({
+                'message': 'ERROR: ' + JSON.stringify(err)
+            });
+            return;
+        }
+
+        if (!user) {
+            console.log('User: ' + sAMAccountName + ' not found.');
+            res.send({
+                'message': 'User: ' + sAMAccountName + ' not found.'
+            });
+        }
+        else {
+            res.send({
+                user
+            });
+        }
+    });
+}
+
+exports.getAllUser = function (req, res) {
+//var sAMAccountName = 'griessera';
+            //ad.opts.bindDN = username;
+            //ad.opts.bindCredentials = password;
             //ad.findUser(sAMAccountName, function (err, user) {
             //    if (err) {
             //        console.log('ERROR: ' + JSON.stringify(err));
@@ -72,37 +105,30 @@
             //        });
             //    }
             //});
-            var query = '';
-            ad.findUsers(query, function (err, users) {
-                if (err) {
-                    console.log('ERROR: ' + JSON.stringify(err));
-                    res.send({
-                        'message': 'ERROR: ' + JSON.stringify(users)
-                    });
-                    return;
-                }
+            //var query = '';
+            //ad.findUsers(query, function (err, users) {
+            //    if (err) {
+            //        console.log('ERROR: ' + JSON.stringify(err));
+            //        res.send({
+            //            'message': 'ERROR: ' + JSON.stringify(users)
+            //        });
+            //        return;
+            //    }
 
-                if ((!users) || (users.length == 0)) {
-                    res.send({
-                        'message': 'No users found.'
-                    });
-                    console.log('No users found.');
-                }
-                else {
-                    //console.log('findUsers: ' + JSON.stringify(users));
-                    for (var idx in users){
-                        console.log(users[idx].sAMAccountName + ' ' + users[idx].sn + ' ' + users[idx].givenName + ' ' + users[idx].mail + ' ' + users[idx].OU);
-                    }
-                    res.send({
-                        'message': 'findUsers: ' + JSON.stringify(users)
-                    });
-                }
-            });
-        }
-        else {
-            res.send({
-                'message': 'authentication failed'
-            });
-        }
-    });
+            //    if ((!users) || (users.length == 0)) {
+            //        res.send({
+            //            'message': 'No users found.'
+            //        });
+            //        console.log('No users found.');
+            //    }
+            //    else {
+            //        //console.log('findUsers: ' + JSON.stringify(users));
+            //        for (var idx in users){
+            //            console.log(users[idx].sAMAccountName + ' ' + users[idx].sn + ' ' + users[idx].givenName + ' ' + users[idx].mail + ' ' + users[idx].OU);
+            //        }
+            //        res.send({
+            //            'message': 'findUsers: ' + JSON.stringify(users)
+            //        });
+            //    }
+            //});
 }
