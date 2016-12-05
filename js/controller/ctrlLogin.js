@@ -19,7 +19,7 @@ angular.module("moduleLogin", [])
         constants.teacherPassword = $scope.user.password;
 
         console.log("working: ", $scope.form.idUser);
-        constants.teacherId = $scope.form.idUser;
+    //    constants.teacherId = $scope.form.idUser;
         $location.path("/overview");
     }
 }]);
