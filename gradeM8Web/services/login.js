@@ -141,10 +141,11 @@ function insertUser(user) {
         });
         request.addParameter('username', TYPES.VarChar, user.cn);
         connection.execSql(request);
+    }
 }
 
 function insertTeacher(idUser) {
-    var connection = new Connection(config);
+    var connection = new Connection(dbConfig);
     var result = {};
     connection.on('connect', executeStatement);
     function executeStatement() {
