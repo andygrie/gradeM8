@@ -3,14 +3,16 @@
         <h1>Login</h1>
         <img src="resources/logoLogin.png">
         <form name="formTeacher">
+
             <!--<select name="selectTeacher" ng-model="form.idUser" required>
                 <option ng-repeat="record in colTeachers" ng-value="record.idUser">{{record.idUser}}</option>
             </select>-->
+
             <label>Login-Text: </label>
             <input type="text" id = credentials>
             <label>Password:</label>
             <input type="password" id = "password">
-            
+
             <input class="sign-in-button" type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()"
                    value="LogIn">
         </form>

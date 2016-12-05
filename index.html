@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+<div id=includedView ng-view="included" ng-show="location != '/index'">
 <body class="all" ng-app="gradeM8">
-<header id="site-header">
+<header ngShow="" id="site-header">
     <div class="site-header-toprow">
         <div class="circle">
             <a class="site-logo" href="#overview">
@@ -23,6 +24,7 @@
         </div>
     </div>
 </header>
+</div>
 <ng-view></ng-view>
 
 </body>
