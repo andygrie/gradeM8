@@ -1,14 +1,28 @@
 ﻿var ActiveDirectory = require('activedirectory');
-var config = {
+var adConfig = {
     url: 'ldap://212.152.179.122',
     //url: 'ldap://192.168.128.253',
     baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
 }
 
+var sql = require('mssql');
+var ted = require('tedious');
+
+var Connection = ted.Connection;
+var dbConfig = {
+    userName: 'grademin',
+    password: 'Grade2016',
+    server: 'grade-server.database.windows.net',
+    options: { encrypt: true, database: 'gradeDB' }
+};
+var Request = ted.Request;
+var TYPES = ted.TYPES;  
+
+
 exports.login = function (req, res) {
     var username = req.body.username + '@htl-vil';
     var password = req.body.password;
-    var ad = new ActiveDirectory(config);
+    var ad = new ActiveDirectory(adConfig);
 
     
 
@@ -48,15 +62,105 @@ function findTeacher(ad, username, password, res) {
             });
         }
         else {
+            searchUserInDB(user);
+        }
+    });
+}
+
+function searchUserInDB(user) {
+    var connection = new Connection(dbConfig);
+    connection.on('connect', executeStatement);
+    var result = {};
+    var isInDB = false;
+    function executeStatement() {
+        request = new Request("SELECT u.idUser from gradeUser u WHERE u.username = @username", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('row', function (columns) {
+            isInDB = true;
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            if (isInDB) {
+                var teacher = {
+                    email: user.mail,
+                    forename: user.givenName,
+                    idUser: result.idUser,
+                    surname: user.sn,
+                    username: user.cn
+                }
+                res.send(teacher);
+            }
+            else {
+                insertUser(user);
+            }
+        });
+        request.addParameter('username', TYPES.VarChar, user.cn);
+        connection.execSql(request);
+    }
+}
+
+function insertUser(user) {
+    var connection = new Connection(dbConfig);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("INSERT INTO gradeUser(username) VALUES(@username); select @@identity", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            result = {
+                idUser: columns[0].value
+            };
+        });
+
+        request.on('doneProc', function (rowCount, more) {
             var teacher = {
                 email: user.mail,
                 forename: user.givenName,
+                idUser: result.idUser,
                 surname: user.sn,
                 username: user.cn
             }
             res.send(teacher);
-        }
-    });
+            insertTeacher(result.idUser);
+        });
+        request.addParameter('username', TYPES.VarChar, user.cn);
+        connection.execSql(request);
+}
+
+function insertTeacher(idUser) {
+    var connection = new Connection(config);
+    var result = {};
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request("INSERT INTO teacher(fkUser) VALUES(@id)", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('row', function (columns) {
+        });
+        request.on('doneProc', function (rowCount, more) {
+        });
+        request.addParameter('id', TYPES.Int, idUser);
+        connection.execSql(request);
+    }
 }
 
 exports.getAllUser = function (req, res) {
