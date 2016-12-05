@@ -62,12 +62,12 @@ function findTeacher(ad, username, password, res) {
             });
         }
         else {
-            searchUserInDB(user);
+            searchUserInDB(user,res);
         }
     });
 }
 
-function searchUserInDB(user) {
+function searchUserInDB(user, res) {
     var connection = new Connection(dbConfig);
     connection.on('connect', executeStatement);
     var result = {};
@@ -102,7 +102,7 @@ function searchUserInDB(user) {
                 res.send(teacher);
             }
             else {
-                insertUser(user);
+                insertUser(user, res);
             }
         });
         request.addParameter('username', TYPES.VarChar, user.cn);
@@ -110,7 +110,7 @@ function searchUserInDB(user) {
     }
 }
 
-function insertUser(user) {
+function insertUser(user, res) {
     var connection = new Connection(dbConfig);
     var result = {};
     connection.on('connect', executeStatement);
@@ -132,7 +132,7 @@ function insertUser(user) {
             var teacher = {
                 email: user.mail,
                 forename: user.givenName,
-                //idUser: result.idUser,
+                idUser: result.idUser,
                 surname: user.sn,
                 username: user.cn
             }
