@@ -46,9 +46,7 @@ function findUser(ad, username, password, res) {
             });
         }
         else {
-            res.send({
-                user
-            });
+            res.send(user);
         }
     });
 }
