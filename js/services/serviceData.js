@@ -143,12 +143,20 @@ angular.module('moduleData', [])
   #text# ... lokales Attribut, nicht in der DB
 
   applData = {
+      user: [
+          {idUser, forename, surname, email, username}
+      ],
+
       groups: [
           {idGradeGroup, #idGradeSubject#, name}
       ],
+      
+      ####
       teachers: [
           {fkUser, forename, surname, email, password}
       ],
+      ####
+
       subjects: [
           {idGradeSubject, name}
       ],
@@ -174,6 +182,8 @@ angular.module('moduleData', [])
   return retVal;
 })
 
+
+/*
 .factory('sData_teachers', ["$q", "sData_allData", "sWeb_getTeacher", 
                 function($q, sData_allData, sWeb_getTeacher) {
   var teachers = {};
@@ -196,6 +206,34 @@ angular.module('moduleData', [])
         }, function(response){
             reject(response);
         });
+    })
+  }
+}])
+*/
+.factory('sData_authenticate', ["$q", "sData_allData", "sWeb_authenticate", "constants",
+                function($q, sData_allData, sWeb_authenticate, constants) {
+  var user = {};
+  var retVal;
+
+  retVal = {
+      data: user,
+      authenticate : authenticate
+  }
+
+  return retVal;
+
+  function authenticate(userData){
+    return $q(function(resolve, reject) {
+        sWeb_authenticate(function(responseData){
+            user = responseData;
+            retVal.data = user;
+            sData_allData.data.user = user;
+            constants.teacherId = user.idUser;
+            resolve("Successfuly authenticated user");
+        }, function(response){
+            reject(response);
+        }, {"username": btoa(userData.username),
+            "password": btoa(userData.password)});
     })
   }
 }])
@@ -472,7 +510,7 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_pupilsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getPupilByGroup",
+.factory('sData_pupilsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getPupilByGroup", 
                             function($q, sData_allData, sData_groupsBySubject, sWeb_getPupilByGroup) {
   /*
   pupilsByGroups = {
@@ -534,7 +572,7 @@ angular.module('moduleData', [])
         }, data.idGradeGroup);
 
 
-/*
+    /*
         var tmpI;
         var tmpJ;
         var keys = Object.keys(baseData);

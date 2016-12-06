@@ -186,6 +186,24 @@ angular.module('moduleWeb', [])
 
 //POST -------------------------------------------------------------------------
 
+.factory('sWeb_authenticate', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject, userData){
+      $http({
+          method: "POST",
+          url: constants.apiUrl + "/login",
+          data:{
+              "username": userData.username,
+              "password": userData.password
+          }
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
+
 .factory('sWeb_setSubject', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
   return function(resolve, reject, data){
