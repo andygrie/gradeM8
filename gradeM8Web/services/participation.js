@@ -17,7 +17,7 @@ exports.getParticipation = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.abscent from participation p", function (err) {
+        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -51,8 +51,8 @@ exports.insertParticipation = function (req, res) {
     var requestString = "";
     var i = 0;
     data.forEach(function (item) {
-        requestString = requestString + "INSERT INTO participation ( fkGradeEvent, fkPupil, grade, abscent ) VALUES ";
-        requestString = requestString + "(" + req.params.fkGradeEvent + ", " + item.fkPupil + ", " + item.grade + ", " + item.abscent + ")";
+        requestString = requestString + "INSERT INTO participation ( fkGradeEvent, fkPupil, grade, gradedOn ) VALUES ";
+        requestString = requestString + "(" + req.params.fkGradeEvent + ", " + item.fkPupil + ", " + item.grade + ", " + item.gradedOn + ")";
         requestString = requestString + "; select @@identity; ";
     });
     console.log(requestString);
@@ -73,7 +73,7 @@ exports.insertParticipation = function (req, res) {
                 "fkGradeEvent": req.params.fkGradeEvent,
                 "fkPupil": data[i].fkPupil,
                 "grade": data[i].grade,
-                "abscent": data[i].abscent
+                "gradedOn": data[i].gradedOn
             });
             
         });
@@ -98,7 +98,7 @@ exports.updateParticipation = function (req, res) {
     var result = {};
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("UPDATE participation SET grade = @g, abscent = @a WHERE idParticipation = @id", function (err) {
+        request = new Request("UPDATE participation SET grade = @g, gradedOn = @go WHERE idParticipation = @id", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -108,7 +108,7 @@ exports.updateParticipation = function (req, res) {
             res.send();
         });
         request.addParameter('g', TYPES.Int, req.body.grade);
-        request.addParameter('a', TYPES.Int, req.body.abscent);
+        request.addParameter('go', TYPES.Int, req.body.gradedOn);
         request.addParameter('id', TYPES.Int, req.params.idParticipation);
         
         connection.execSql(request);
@@ -139,7 +139,7 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.abscent, e.fkTeaches FROM participation p inner join gradeevent e on" +
+        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn, e.fkTeaches FROM participation p inner join gradeevent e on" +
             " e.idGradeEvent = p.fkGradeEvent WHERE p.fkPupil = @fkp AND e.fkTeaches = @fkt", function (err) {
                 if (err) {
                     console.log(err);
@@ -176,7 +176,7 @@ exports.getParticipationByEvent = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.abscent from participation p where p.fkGradeEvent = @fke", function (err) {
+        request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p where p.fkGradeEvent = @fke", function (err) {
                 if (err) {
                     console.log(err);
                 }
