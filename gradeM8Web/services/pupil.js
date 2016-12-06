@@ -15,8 +15,8 @@ var TYPES = ted.TYPES;
 var atob = require('atob');
 var ActiveDirectory = require('activedirectory');
 var adConfig = {
-    //url: 'ldap://212.152.179.122',
-    url: 'ldap://192.168.128.253',
+    url: 'ldap://212.152.179.122',
+    //url: 'ldap://192.168.128.253',
     baseDN: 'ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
 }
 
