@@ -315,7 +315,6 @@ exports.getAllPupils = function (req, res) {
         var myCounter = '';
         for (var idx = 0; idx < groups.length; idx = idx + 1) {
             var i = idx;
-            myCounter += groups[i].cn;
             ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
@@ -336,6 +335,7 @@ exports.getAllPupils = function (req, res) {
                         class: groups[i].cn,
                         pupils: users
                     });
+                    myCounter += groups[i].cn;
                 }
                 if (groupsWithPupils.length == groups.length)
                     res.send({ "counter": myCounter });
