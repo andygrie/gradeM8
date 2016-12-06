@@ -312,8 +312,10 @@ exports.getAllPupils = function (req, res) {
     }
     function getPupilsFromAD(groups) {
         var groupsWithPupils = [];
+        var myCounter = 0;
         for (var idx = 0; idx < groups.length; idx = idx + 1) {
             var i = idx;
+            myCounter++;
             ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
@@ -335,8 +337,8 @@ exports.getAllPupils = function (req, res) {
                         pupils: users
                     });
                 }
-                if (groupsWithPupils.length == 6)
-                    res.send(groups);
+                if (groupsWithPupils.length == groups.length)
+                    res.send({ "counter": myCounter });
             });
         }
     }
