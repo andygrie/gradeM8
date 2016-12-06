@@ -375,45 +375,7 @@ exports.getAllPupils = function (req, res) {
     }
 }
 
-exports.getGroups = function (req, res) {
-    ad.authenticate(username, password, function (err, auth) {
-        if (err) {
-            console.log('ERROR: ' + JSON.stringify(err));
-        }
-
-        if (auth) {
-            getGroupsFromAD();
-        }
-        else {
-            res.status(400);
-            res.send('wrong credentials');
-        }
-    });
-
-
-    function getGroupsFromAD() {
-
-        ad.opts.bindDN = username;
-        ad.opts.bindCredentials = password;
-
-        var query = '';
-        
-        ad.findGroups(query, function (err, groups) {
-            if (err) {
-                console.log('ERROR: ' + JSON.stringify(err));
-                return;
-            }
-
-            if ((!groups) || (groups.length == 0)) console.log('No groups found.');
-            else {
-                console.log('findGroups: ' + JSON.stringify(groups));
-                res.send(groups);
-            }
-        });
-    }
-}
-
-function getPupilsForGroup (req, res) {
+exports.getPupilsForADGroup = function (req, res) {
     ad.authenticate(username, password, function (err, auth) {
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
@@ -434,7 +396,7 @@ function getPupilsForGroup (req, res) {
         ad.opts.bindDN = username;
         ad.opts.bindCredentials = password;
 
-        var groupName = '5BHIFS-Schüler';
+        var groupName = req.body.name;
 
         ad.getUsersForGroup(groupName, function (err, users) {
             if (err) {
@@ -452,8 +414,17 @@ function getPupilsForGroup (req, res) {
                 });
             }
             else {
+                var pupils = [];
+                for (var i = 0; i < pupils.length; i++) {
+                    pupils.push({
+                        email: users[i].mail,
+                        forename: users[i].givenName,
+                        surname: users[i].sn,
+                        username: users[i].cn
+                    });
+                }
                 console.log(JSON.stringify(users));
-                res.send(users);
+                res.send(pupils);
             }
         });
     }

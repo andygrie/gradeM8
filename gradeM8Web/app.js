@@ -62,7 +62,7 @@ app.put('/pupil/:idUser', pupilService.updateUser);
 app.delete('/pupil/:idUser', pupilService.deletePupil);
 app.get('/pupil/byClass/:idClass', pupilService.getPupilsByClass);
 app.get('/pupil/byGroup/:idGradeGroup', pupilService.getPupilsByGroup);
-app.get('/pupil/fromAD', pupilService.getAllPupils);
+app.post('/pupil/byClass/fromAD', pupilService.getPupilsForADGroup);
 
 app.get('/group', groupService.getGroups);
 app.get('/group/byTeacherAndSubject/:idTeacher/:idGradeSubject', groupService.getGroupsByTeacherAndSubject);
