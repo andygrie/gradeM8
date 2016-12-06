@@ -366,7 +366,7 @@ exports.getAllPupils = function (req, res) {
                         pupils: users
                     });
                 }
-                if (groupsWithPupils.length == 2)
+                if (groupsWithPupils.length == 4)
                     res.send(groupsWithPupils);
                 else
                     getNextGroup(idx + 1);
