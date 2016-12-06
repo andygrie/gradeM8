@@ -314,10 +314,6 @@ exports.getAllPupils = function (req, res) {
         var groupsWithPupils = [];
         for (var idx = 0; idx < groups.length; idx++) {
             var i = idx;
-            groups[i].cn
-            console.log("yyyyyyyyyyyyy" + groups[i].cn);
-            var newGroup = {};
-            newGroup.class = groups[i].cn;
             ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
@@ -334,11 +330,13 @@ exports.getAllPupils = function (req, res) {
                     });
                 }
                 else {
-                    newGroup.users = users;
-                    groupsWithPupils.push(newGroup);
+                    groupsWithPupils.push({
+                        class: groups[i].cn,
+                        pupils: users
+                    });
                 }
                 if (groupsWithPupils.length == 3)
-                    res.send({ i: groups[i].cn + i });
+                    res.send(groupsWithPupils);
             });
         }
     }
