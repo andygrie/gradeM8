@@ -315,7 +315,8 @@ exports.getAllPupils = function (req, res) {
         var myCounter = '';
         for (var idx = 0; idx < groups.length; idx = idx + 1) {
             var i = idx;
-            ad.getUsersForGroup(groups[i].cn, function (err, users) {
+            var groupName = groups[i].cn;
+            ad.getUsersForGroup(groupName, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
                     res.send({
@@ -325,14 +326,14 @@ exports.getAllPupils = function (req, res) {
                 }
 
                 if (!users) {
-                    console.log('Group: ' + groups[i].cn + ' not found.');
+                    console.log('Group: ' + groupName + ' not found.');
                     res.send({
-                        'message': 'Group: ' + groups[i].cn + ' not found.'
+                        'message': 'Group: ' + groupName + ' not found.'
                     });
                 }
                 else {
                     groupsWithPupils.push({
-                        group: groups[i].cn,
+                        group: groupName,
                         pupils: users
                     });
                 }
