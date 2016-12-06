@@ -335,10 +335,9 @@ exports.getAllPupils = function (req, res) {
                         class: groups[i].cn,
                         pupils: users
                     });
-                    myCounter += groups[i].cn;
                 }
-                if (groupsWithPupils.length == groups.length)
-                    res.send({ "counter": myCounter });
+                if (groupsWithPupils.length == i)
+                    res.send(groupsWithPupils);
             });
         }
     }
