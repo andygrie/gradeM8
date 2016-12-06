@@ -313,11 +313,12 @@ exports.getAllPupils = function (req, res) {
     function getPupilsFromAD(groups) {
         var groupsWithPupils = [];
         for (var idx in groups) {
-            var groupName = groups[idx].cn;
-            console.log("yyyyyyyyyyyyy" + groupName);
+            var i = idx;
+            groups[i].cn
+            console.log("yyyyyyyyyyyyy" + groups[i].cn);
             var newGroup = {};
-            newGroup.class = groupName;
-            ad.getUsersForGroup(groupName, function (err, users) {
+            newGroup.class = groups[i].cn;
+            ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
                     res.send({
@@ -327,9 +328,9 @@ exports.getAllPupils = function (req, res) {
                 }
 
                 if (!users) {
-                    console.log('Group: ' + groupName + ' not found.');
+                    console.log('Group: ' + groups[i].cn + ' not found.');
                     res.send({
-                        'message': 'Group: ' + groupName + ' not found.'
+                        'message': 'Group: ' + groups[i].cn + ' not found.'
                     });
                 }
                 else {
@@ -337,7 +338,7 @@ exports.getAllPupils = function (req, res) {
                     groupsWithPupils.push(newGroup);
                 }
                 if (groupsWithPupils.length == 3)
-                    res.send(groupName);
+                    res.send(groups[i].cn);
             });
         }
     }
