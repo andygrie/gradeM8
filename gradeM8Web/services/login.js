@@ -22,7 +22,7 @@ var TYPES = ted.TYPES;
 exports.login = function (req, res) {
     var username = req.body.username + '@htl-vil';
     var b64string = req.body.password;
-    var password = Buffer.from(b64string, 'base64');
+    var password = atob(b64string);
 
 
     var ad = new ActiveDirectory(adConfig);

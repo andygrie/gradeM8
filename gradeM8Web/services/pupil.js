@@ -259,3 +259,6 @@ exports.getPupilsByGroup = function (req, res) {
     }
 }
 
+exports.getAllPupils = function (req, res) {
+
+}
