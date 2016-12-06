@@ -232,7 +232,7 @@ angular.module('moduleData', [])
             resolve("Successfuly authenticated user");
         }, function(response){
             reject(response);
-        }, {"username": btoa(userData.username),
+        }, {"username": userData.username,//btoa(userData.username),
             "password": btoa(userData.password)});
     })
   }
