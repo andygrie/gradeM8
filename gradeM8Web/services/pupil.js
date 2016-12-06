@@ -332,7 +332,7 @@ exports.getAllPupils = function (req, res) {
                 }
                 else {
                     groupsWithPupils.push({
-                        class: groups[i].cn,
+                        group: groups[i].cn + 'a',
                         pupils: users
                     });
                 }
