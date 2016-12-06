@@ -11,6 +11,18 @@ var config = {
 var Request = ted.Request;
 var TYPES = ted.TYPES;  
 
+
+var atob = require('atob');
+var ActiveDirectory = require('activedirectory');
+var adConfig = {
+    url: 'ldap://212.152.179.122',
+    //url: 'ldap://192.168.128.253',
+    baseDN: 'ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
+}
+
+var username = 'griessera@htl-vil';
+var password = atob('emFzcDI1');
+
 exports.getClasses = function (req, res) {
     var connection = new Connection(config);
     var results = [];
@@ -107,5 +119,48 @@ exports.deleteClass = function (req, res) {
         });
         request.addParameter('id', TYPES.Int, req.params.idClass);
         connection.execSql(request);
+    }
+}
+exports.getClassesFromAD = function (req, res) {
+    ad.authenticate(username, password, function (err, auth) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
+
+        if (auth) {
+            getGroupsFromAD();
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
+
+
+    function getGroupsFromAD() {
+
+        ad.opts.bindDN = username;
+        ad.opts.bindCredentials = password;
+
+        var query = '';
+
+        ad.findGroups(query, function (err, groups) {
+            if (err) {
+                console.log('ERROR: ' + JSON.stringify(err));
+                return;
+            }
+
+            if ((!groups) || (groups.length == 0)) console.log('No groups found.');
+            else {
+                console.log('findGroups: ' + JSON.stringify(groups));
+                var classes = [];
+                for (var i = 0; i < groups.length; i++) {
+                    classes.push({
+                        name: groups[i].cn
+                    });
+                }
+                res.send(classes);
+            }
+        });
     }
 }
