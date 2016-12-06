@@ -312,10 +312,39 @@ exports.getAllPupils = function (req, res) {
     }
     function getPupilsFromAD(groups) {
         var groupsWithPupils = [];
-        var myCounter = '';
-        for (var idx = 0; idx < groups.length; idx = idx + 1) {
-            var i = idx;
-            var groupName = groups[i].cn;
+        getNextGroup(0);
+        //for (var idx = 0; idx < groups.length; idx = idx + 1) {
+        //    var i = idx;
+        //    var groupName = groups[i].cn;
+        //    ad.getUsersForGroup(groupName, function (err, users) {
+        //        if (err) {
+        //            console.log('ERROR: ' + JSON.stringify(err));
+        //            res.send({
+        //                'message': 'ERROR: ' + JSON.stringify(err)
+        //            });
+        //            return;
+        //        }
+
+        //        if (!users) {
+        //            console.log('Group: ' + groupName + ' not found.');
+        //            res.send({
+        //                'message': 'Group: ' + groupName + ' not found.'
+        //            });
+        //        }
+        //        else {
+        //            groupsWithPupils.push({
+        //                group: groupName,
+        //                pupils: users
+        //            });
+        //        }
+        //        if (groupsWithPupils.length == i)
+        //            res.send(groupsWithPupils);
+        //    });
+        //}
+
+
+        function getNextGroup(idx) {
+            var groupName = groups[idx].cn;
             ad.getUsersForGroup(groupName, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
@@ -337,8 +366,10 @@ exports.getAllPupils = function (req, res) {
                         pupils: users
                     });
                 }
-                if (groupsWithPupils.length == i)
+                if (groupsWithPupils.length == groups.length)
                     res.send(groupsWithPupils);
+                else
+                    getNextGroup(idx + 1);
             });
         }
     }
