@@ -19,9 +19,9 @@ var adConfig = {
     //url: 'ldap://192.168.128.253',
     baseDN: 'ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
 }
-
 var username = 'griessera@htl-vil';
 var password = atob('emFzcDI1');
+var ad = new ActiveDirectory(adConfig);
 
 exports.getClasses = function (req, res) {
     var connection = new Connection(config);
