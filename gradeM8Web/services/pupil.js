@@ -336,7 +336,7 @@ exports.getAllPupils = function (req, res) {
                     });
                 }
                 if (groupsWithPupils.length == 6)
-                    res.send(groupsWithPupils);
+                    res.send(users);
             });
         }
     }
