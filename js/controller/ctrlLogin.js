@@ -18,7 +18,7 @@ angular.module("moduleLogin", [])
         //maybe check for selectedItem
         console.log("working: ", $scope.form.username);
 
-        sData_authenticate.authenticate(form).then(function(response){
+        sData_authenticate.authenticate($scope.form).then(function(response){
             $location.path("/overview");
         }, function(response){
             alert(response);
