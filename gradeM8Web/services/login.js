@@ -21,7 +21,10 @@ var TYPES = ted.TYPES;
 
 exports.login = function (req, res) {
     var username = req.body.username + '@htl-vil';
-    var password = req.body.password;
+    var b64string = req.body.password;
+    var password = Buffer.from(b64string, 'base64');
+
+
     var ad = new ActiveDirectory(adConfig);
 
     
@@ -32,7 +35,7 @@ exports.login = function (req, res) {
         }
 
         if (auth) {
-            findTeacher(ad, req.body.username, req.body.password, res);
+            findTeacher(ad, req.body.username, password, res);
         }
         else {
             res.status(400);
@@ -40,7 +43,6 @@ exports.login = function (req, res) {
         }
     });
 }
-
 function findTeacher(ad, username, password, res) {
     ad.opts.bindDN = username + '@htl-vil';
     ad.opts.bindCredentials = password;
@@ -66,7 +68,6 @@ function findTeacher(ad, username, password, res) {
         }
     });
 }
-
 function searchUserInDB(user, res) {
     var connection = new Connection(dbConfig);
     connection.on('connect', executeStatement);
@@ -109,7 +110,6 @@ function searchUserInDB(user, res) {
         connection.execSql(request);
     }
 }
-
 function insertUser(user, res) {
     var connection = new Connection(dbConfig);
     var result = {};
@@ -143,7 +143,6 @@ function insertUser(user, res) {
         connection.execSql(request);
     }
 }
-
 function insertTeacher(idUser) {
     var connection = new Connection(dbConfig);
     var result = {};
