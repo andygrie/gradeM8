@@ -312,10 +312,10 @@ exports.getAllPupils = function (req, res) {
     }
     function getPupilsFromAD(groups) {
         var groupsWithPupils = [];
-        var myCounter = 0;
+        var myCounter = '';
         for (var idx = 0; idx < groups.length; idx = idx + 1) {
             var i = idx;
-            myCounter += idx;
+            myCounter += groups[i].cn;
             ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
                     console.log('ERROR: ' + JSON.stringify(err));
