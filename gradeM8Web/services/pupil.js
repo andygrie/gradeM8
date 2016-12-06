@@ -336,7 +336,7 @@ exports.getAllPupils = function (req, res) {
                     newGroup.users = users;
                     groupsWithPupils.push(newGroup);
                 }
-                if (groupsWithPupils.length == groups.length)
+                if (groupsWithPupils.length == 3)
                     res.send(groupsWithPupils);
             });
         }
