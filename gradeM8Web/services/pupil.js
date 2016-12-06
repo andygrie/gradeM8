@@ -11,6 +11,21 @@ var config = {
 var Request = ted.Request;
 var TYPES = ted.TYPES;
 
+
+var atob = require('atob');
+var ActiveDirectory = require('activedirectory');
+var adConfig = {
+    //url: 'ldap://212.152.179.122',
+    url: 'ldap://192.168.128.253',
+    baseDN: 'ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
+}
+
+var username = 'griessera@htl-vil';
+var password = atob('emFzcDI1');
+
+
+var ad = new ActiveDirectory(adConfig);
+
 exports.getPupil = function (req, res) {
     var connection = new Connection(config);
     var results = [];
@@ -260,5 +275,154 @@ exports.getPupilsByGroup = function (req, res) {
 }
 
 exports.getAllPupils = function (req, res) {
+    ad.authenticate(username, password, function (err, auth) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
 
+        if (auth) {
+            getGroupsFromAD();
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
+
+
+    function getGroupsFromAD() {
+
+        ad.opts.bindDN = username;
+        ad.opts.bindCredentials = password;
+
+        var query = '';
+
+        ad.findGroups(query, function (err, groups) {
+            if (err) {
+                console.log('ERROR: ' + JSON.stringify(err));
+                return;
+            }
+
+            if ((!groups) || (groups.length == 0)) console.log('No groups found.');
+            else {
+                console.log('findGroups: ' + JSON.stringify(groups));
+                getPupilsFromAD(groups);
+            }
+        });
+    }
+    function getPupilsFromAD(groups) {
+        var groupsWithPupils = [];
+        for (var idx in groups) {
+            var groupName = groups[idx].cn;
+            console.log("yyyyyyyyyyyyy" + groupName);
+            var newGroup = {};
+            newGroup.class = groupName;
+            ad.getUsersForGroup(groupName, function (err, users) {
+                if (err) {
+                    console.log('ERROR: ' + JSON.stringify(err));
+                    res.send({
+                        'message': 'ERROR: ' + JSON.stringify(err)
+                    });
+                    return;
+                }
+
+                if (!users) {
+                    console.log('Group: ' + groupName + ' not found.');
+                    res.send({
+                        'message': 'Group: ' + groupName + ' not found.'
+                    });
+                }
+                else {
+                    newGroup.users = users;
+                    groupsWithPupils.push(newGroup);
+                }
+                if (groupsWithPupils.length == groups.length)
+                    res.send(groupsWithPupils);
+            });
+        }
+    }
+}
+
+exports.getGroups = function (req, res) {
+    ad.authenticate(username, password, function (err, auth) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
+
+        if (auth) {
+            getGroupsFromAD();
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
+
+
+    function getGroupsFromAD() {
+
+        ad.opts.bindDN = username;
+        ad.opts.bindCredentials = password;
+
+        var query = '';
+        
+        ad.findGroups(query, function (err, groups) {
+            if (err) {
+                console.log('ERROR: ' + JSON.stringify(err));
+                return;
+            }
+
+            if ((!groups) || (groups.length == 0)) console.log('No groups found.');
+            else {
+                console.log('findGroups: ' + JSON.stringify(groups));
+                res.send(groups);
+            }
+        });
+    }
+}
+
+function getPupilsForGroup (req, res) {
+    ad.authenticate(username, password, function (err, auth) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
+
+        if (auth) {
+            getPupilsFromAD();
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
+
+
+    function getPupilsFromAD() {
+
+        ad.opts.bindDN = username;
+        ad.opts.bindCredentials = password;
+
+        var groupName = '5BHIFS-Schüler';
+
+        ad.getUsersForGroup(groupName, function (err, users) {
+            if (err) {
+                console.log('ERROR: ' + JSON.stringify(err));
+                res.send({
+                    'message': 'ERROR: ' + JSON.stringify(err)
+                });
+                return;
+            }
+
+            if (!users) {
+                console.log('Group: ' + groupName + ' not found.');
+                res.send({
+                    'message': 'Group: ' + groupName + ' not found.'
+                });
+            }
+            else {
+                console.log(JSON.stringify(users));
+                res.send(users);
+            }
+        });
+    }
 }
