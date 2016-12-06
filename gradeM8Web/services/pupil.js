@@ -415,7 +415,7 @@ exports.getPupilsForADGroup = function (req, res) {
             }
             else {
                 var pupils = [];
-                for (var i = 0; i < pupils.length; i++) {
+                for (var i = 0; i < users.length; i++) {
                     pupils.push({
                         email: users[i].mail,
                         forename: users[i].givenName,
