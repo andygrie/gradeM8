@@ -4,6 +4,7 @@ var adConfig = {
     //url: 'ldap://192.168.128.253',
     baseDN: 'ou=EDVO,ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
 }
+var atob = require('atob');
 
 var sql = require('mssql');
 var ted = require('tedious');

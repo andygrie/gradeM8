@@ -9,6 +9,7 @@
   "dependencies": {
     "activedirectory": "^0.7.2",
     "async": "^2.1.2",
+    "atob": "^2.0.3",
     "body-parser": "^1.15.2",
     "bunyan": "^1.8.5",
     "cors": "^2.8.1",
