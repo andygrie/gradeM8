@@ -312,7 +312,7 @@ exports.getAllPupils = function (req, res) {
     }
     function getPupilsFromAD(groups) {
         var groupsWithPupils = [];
-        for (var idx = 0; idx < groups.length; idx++) {
+        for (var idx = 0; idx < groups.length; idx = idx + 1) {
             var i = idx;
             ad.getUsersForGroup(groups[i].cn, function (err, users) {
                 if (err) {
