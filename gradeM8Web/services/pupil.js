@@ -59,44 +59,54 @@ exports.getPupil = function (req, res) {
 }
 exports.insertUser = function (req, res) {
     var connection = new Connection(config);
-    var result = {};
     connection.on('connect', executeStatement);
+
+    var data = req.body;
+    var results = [];
+    var requestString = "";
+    data.forEach(function (item) {
+        requestString = requestString + "INSERT INTO gradeUser ( username ) VALUES ";
+        requestString = requestString + "(" + item.username + ")";
+        requestString = requestString + "; select @@identity; ";
+    });
+
     function executeStatement() {
-        request = new Request("INSERT INTO gradeUser(forename, surname, email, password) VALUES(@fn, @sn, x@x.x, xx); select @@identity", function (err) {
+        request = new Request(requestString, function (err) {
             if (err) {
                 console.log(err);
+                res.send(err);
             }
         });
         connection.on('debug', function (err) { console.log('debug:', err); });
 
         request.on('row', function (columns) {
-            result = {
-                idUser: columns[0].value,
-                forename: req.body.forename,
-                surname: req.body.surname,
-                email: req.body.email,
-                password: req.body.password,
-            };
+            console.log("asdf");
+            results.push(columns[0].value);
         });
 
         request.on('doneProc', function (rowCount, more) {
-            res.send(result);
-            insertPupil(result.idUser, req.body.fkClass);
+            for (var i = 0; i < data.length; i++)
+                data[i].idUser = results[i];
+            res.send(data);
+            insertPupil(results);
         });
-
-        request.addParameter('fn', TYPES.VarChar, req.body.forename);
-        request.addParameter('sn', TYPES.VarChar, req.body.surname);
-        //request.addParameter('em', TYPES.VarChar, req.body.email);
-        //request.addParameter('pw', TYPES.NVarChar, req.body.password);
         connection.execSql(request);
     }
 }
-function insertPupil(idUser,idClass) {
+function insertPupil(userIds) {
     var connection = new Connection(config);
     var result = {};
     connection.on('connect', executeStatement);
+    
+    var results = [];
+    var requestString = "";
+    userIds.forEach(function (id) {
+        requestString = requestString + "INSERT INTO pupil ( fkUser ) VALUES ";
+        requestString = requestString + "(" + id + "); ";
+    });
+
     function executeStatement() {
-        request = new Request("INSERT INTO pupil(fkUser,fkClass) VALUES(@id,@cid)", function (err) {
+        request = new Request(requestString, function (err) {
             if (err) {
                 console.log(err);
             }
@@ -106,8 +116,6 @@ function insertPupil(idUser,idClass) {
             });
             request.on('doneProc', function (rowCount, more) {
             });
-        request.addParameter('id', TYPES.Int, idUser);
-        request.addParameter('cid', TYPES.Int, idClass);
         connection.execSql(request);
     }
 }
@@ -281,98 +289,29 @@ exports.getAllPupils = function (req, res) {
         }
 
         if (auth) {
-            getGroupsFromAD();
+            ad.opts.bindDN = username;
+            ad.opts.bindCredentials = password;
+            
+            var query = '(|(cn=griessera)(cn=leitert)(cn=kramerl))';
+            
+            ad.findUsers(query, function (err, users) {
+                if (err) {
+                    console.log('ERROR: ' + JSON.stringify(err));
+                    return;
+                }
+
+                if ((!users) || (users.length == 0)) console.log('No users found.');
+                else {
+                    console.log('findUsers: ' + JSON.stringify(users));
+                    res.send(users);
+                }
+            });
         }
         else {
             res.status(400);
             res.send('wrong credentials');
         }
     });
-
-
-    function getGroupsFromAD() {
-
-        ad.opts.bindDN = username;
-        ad.opts.bindCredentials = password;
-
-        var query = '';
-
-        ad.findGroups(query, function (err, groups) {
-            if (err) {
-                console.log('ERROR: ' + JSON.stringify(err));
-                return;
-            }
-
-            if ((!groups) || (groups.length == 0)) console.log('No groups found.');
-            else {
-                console.log('findGroups: ' + JSON.stringify(groups));
-                getPupilsFromAD(groups);
-            }
-        });
-    }
-    function getPupilsFromAD(groups) {
-        var groupsWithPupils = [];
-        getNextGroup(0);
-        //for (var idx = 0; idx < groups.length; idx = idx + 1) {
-        //    var i = idx;
-        //    var groupName = groups[i].cn;
-        //    ad.getUsersForGroup(groupName, function (err, users) {
-        //        if (err) {
-        //            console.log('ERROR: ' + JSON.stringify(err));
-        //            res.send({
-        //                'message': 'ERROR: ' + JSON.stringify(err)
-        //            });
-        //            return;
-        //        }
-
-        //        if (!users) {
-        //            console.log('Group: ' + groupName + ' not found.');
-        //            res.send({
-        //                'message': 'Group: ' + groupName + ' not found.'
-        //            });
-        //        }
-        //        else {
-        //            groupsWithPupils.push({
-        //                group: groupName,
-        //                pupils: users
-        //            });
-        //        }
-        //        if (groupsWithPupils.length == i)
-        //            res.send(groupsWithPupils);
-        //    });
-        //}
-
-
-        function getNextGroup(idx) {
-            var groupName = groups[idx].cn;
-            ad.getUsersForGroup(groupName, function (err, users) {
-                if (err) {
-                    console.log('ERROR: ' + JSON.stringify(err));
-                    res.send({
-                        'message': 'ERROR: ' + JSON.stringify(err)
-                    });
-                    return;
-                }
-
-                if (!users) {
-                    console.log('Group: ' + groupName + ' not found.');
-                    res.send({
-                        'message': 'Group: ' + groupName + ' not found.'
-                    });
-                }
-                else {
-                    groupsWithPupils.push({
-                        group: groupName,
-                        pupils: users
-                    });
-                }
-                if (groupsWithPupils.length == 4)
-                    res.send(groupsWithPupils);
-                else
-                    getNextGroup(idx + 1);
-            });
-        }
-    }
 }
 
 exports.getPupilsForADGroup = function (req, res) {
@@ -429,3 +368,4 @@ exports.getPupilsForADGroup = function (req, res) {
         });
     }
 }
+
