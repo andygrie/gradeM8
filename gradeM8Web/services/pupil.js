@@ -253,7 +253,7 @@ exports.getPupilsByGroup = function (req, res) {
         var results = [];
         connection.on('connect', executeStatement);
         function executeStatement() {
-            request = new Request("select u.idUser, u.forename, u.surname, u.email, u.password, p.fkClass from gradeUser u INNER JOIN pupil p ON p.fkUser = u.idUser INNER JOIN assignedto a ON a.fkPupil = p.fkUser where fkGradeGroup = @id", function (err) {
+            request = new Request("select p.fkUser username from gradeUser u INNER JOIN pupil p ON p.fkUser = u.idUser INNER JOIN assignedto a ON a.fkPupil = p.fkUser where fkGradeGroup = @id", function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -274,12 +274,44 @@ exports.getPupilsByGroup = function (req, res) {
             });
 
             request.on('doneProc', function (rowCount, more) {
-                res.send(results);
+                getPupilsByUsernameFromAD(results);
             });
             request.addParameter('id', TYPES.Int, req.params.idGradeGroup);
             connection.execSql(request);
         }
     }
+}
+
+function getPupilsByUsernameFromAD(pupils) {
+    ad.authenticate(username, password, function (err, auth) {
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
+
+        if (auth) {
+            ad.opts.bindDN = username;
+            ad.opts.bindCredentials = password;
+
+            var query = '(|(cn=griessera)(cn=leitert)(cn=kramerl))';
+
+            ad.findUsers(query, function (err, users) {
+                if (err) {
+                    console.log('ERROR: ' + JSON.stringify(err));
+                    return;
+                }
+
+                if ((!users) || (users.length == 0)) console.log('No users found.');
+                else {
+                    console.log('findUsers: ' + JSON.stringify(users));
+                    res.send(users);
+                }
+            });
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
 }
 
 exports.getAllPupils = function (req, res) {
@@ -292,7 +324,7 @@ exports.getAllPupils = function (req, res) {
             ad.opts.bindDN = username;
             ad.opts.bindCredentials = password;
             
-            var query = '(|(cn=griessera)(cn=leitert)(cn=kramerl))';
+            var query = '(|(cn=dreierl)(cn=drumla)(cn=haiderm)(cn=sammerm)(cn=kramerl)(cn=leitert)(cn=griessera))';
             
             ad.findUsers(query, function (err, users) {
                 if (err) {
