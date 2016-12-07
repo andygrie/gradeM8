@@ -9,9 +9,9 @@
             </select>-->
 
             <label>Username: </label>
-            <input type="text" id = "credentials" ng-model="user.name">
+            <input name="username" type="text" id = "credentials" ng-model="form.username">
             <label>Password:</label>
-            <input type="password" id = "password" ng-model="user.password">
+            <input name="password" type="password" id = "password" ng-model="form.password">
             <input class="sign-in-button" type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()"
                    value="LogIn">
         </form>
