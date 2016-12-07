@@ -1,11 +1,11 @@
 <nav id="site-nav">
     <div class="site-nav-wrapper">
-        <button class="site-nav-button" ng-click="switchModalPupil()" ng-disabled="true">add pupil</button>
+        <button class="site-nav-button" ng-click="switchModalPupil()">add pupil</button>
         <button class="site-nav-button" ng-click="switchModalEvent()">add event</button>
     </div>
 </nav>
 <main class="main">
-    <div ng-hide="!data.displayModalPupil || true" id="myModal" class="modal">
+    <div ng-hide="!data.displayModalPupil" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Add Pupil</h2>

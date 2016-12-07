@@ -1,6 +1,8 @@
 angular.module("modulePupil", [])
-.controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", "sData_notesByPupil",
-                function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, sData_notesByPupil) {
+.controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", 
+                            "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory",
+                function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
+                            sData_notesByPupil, sData_noteHistory, sData_participationHistory) {
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;

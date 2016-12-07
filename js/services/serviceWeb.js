@@ -20,7 +20,7 @@ angular.module('moduleWeb', [])
   return function(resolve, reject){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/class"
+          url: constants.apiUrl + "/class/fromAD"
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -59,10 +59,10 @@ angular.module('moduleWeb', [])
 */
 .factory('sWeb_getPupilByClass', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
-  return function(resolve, reject, classId){
+  return function(resolve, reject, data){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/pupil/byClass/" + classId
+          url: constants.apiUrl + "/pupil/byClass/fromAD" + data.classname
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -169,6 +169,47 @@ angular.module('moduleWeb', [])
   }
 }])
 
+.factory('sWeb_getParticipationHistory', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject, data){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/participation/history/" + data.idParticipation
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
+
+.factory('sWeb_getParticipationByPupilAndTeaches', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject, data){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/participation/byPupilAndTeaches/" + data.idPupil + "/" + data.idTeaches
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
+
+.factory('sWeb_getNoteHistory', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject, data){
+      $http({
+          method: "GET",
+          url: constants.apiUrl + "/note/history/" + data.idNote
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
 
 .factory('sWeb_getNoteByTeachesAndPupil', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
