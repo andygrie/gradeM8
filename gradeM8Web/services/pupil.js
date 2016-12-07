@@ -274,7 +274,7 @@ exports.getPupilsByGroup = function (req, res) {
             });
 
             request.on('doneProc', function (rowCount, more) {
-                getPupilsByUsernameFromAD(results);
+                getPupilsByUsernameFromAD(results, res);
             });
             request.addParameter('id', TYPES.Int, req.params.idGradeGroup);
             connection.execSql(request);
@@ -282,7 +282,7 @@ exports.getPupilsByGroup = function (req, res) {
     }
 }
 
-function getPupilsByUsernameFromAD(pupils) {
+function getPupilsByUsernameFromAD(pupils, res) {
     ad.authenticate(username, password, function (err, auth) {
         var pupilsHelp = {};
         var finalPupils = [];
