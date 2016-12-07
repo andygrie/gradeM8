@@ -1,6 +1,7 @@
 ﻿var sql = require('mssql');
 var ted = require('tedious');
 
+
 var Connection = ted.Connection;
 var config = {
     userName: 'grademin',
@@ -66,10 +67,9 @@ exports.insertUser = function (req, res) {
     var requestString = "";
     data.forEach(function (item) {
         requestString = requestString + "INSERT INTO gradeUser ( username ) VALUES ";
-        requestString = requestString + "(" + item.username + ")";
-        requestString = requestString + "; select @@identity; ";
+        requestString = requestString + "('" + item.username + "')";
+        requestString = requestString + "; SELECT idUser FROM gradeUser WHERE username LIKE '" + item.username + "'; ";
     });
-
     function executeStatement() {
         request = new Request(requestString, function (err) {
             if (err) {
@@ -86,7 +86,7 @@ exports.insertUser = function (req, res) {
 
         request.on('doneProc', function (rowCount, more) {
             for (var i = 0; i < data.length; i++)
-                data[i].idUser = results[i];
+                data[i].fkUser = results[i];
             res.send(data);
             insertPupil(results);
         });

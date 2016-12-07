@@ -21,6 +21,7 @@
     "nodemailer-ses-transport": "^1.5.0",
     "stylus": "*",
     "tedious": "^1.14.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "winston": "^2.3.0"
   }
 }

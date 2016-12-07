@@ -64,6 +64,18 @@ exports.insertAssignedTo = function (req, res) {
             }
         });
 
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
         request.on('doneProc', function (rowCount, more) {
             res.send(results);
         });
