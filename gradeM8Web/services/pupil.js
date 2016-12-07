@@ -284,6 +284,8 @@ exports.getPupilsByGroup = function (req, res) {
 
 function getPupilsByUsernameFromAD(pupils) {
     ad.authenticate(username, password, function (err, auth) {
+        var pupilsHelp = {};
+        var finalPupils = [];
         if (err) {
             console.log('ERROR: ' + JSON.stringify(err));
         }
@@ -292,7 +294,12 @@ function getPupilsByUsernameFromAD(pupils) {
             ad.opts.bindDN = username;
             ad.opts.bindCredentials = password;
 
-            var query = '(|(cn=griessera)(cn=leitert)(cn=kramerl))';
+            var query = '(|';
+            pupils.forEach(function (item) {
+                query = query + '(cn=' + item.username + ')';
+                pupilsHelp[item.username] = item.fkUser;
+            });
+            query = query + ')';
 
             ad.findUsers(query, function (err, users) {
                 if (err) {
@@ -302,8 +309,16 @@ function getPupilsByUsernameFromAD(pupils) {
 
                 if ((!users) || (users.length == 0)) console.log('No users found.');
                 else {
-                    console.log('findUsers: ' + JSON.stringify(users));
-                    res.send(users);
+                    users.forEach(function (item) {
+                        finalPupils.push({
+                            fkUser: pupilsHelp[item.cn],
+                            username: item.cn,
+                            forename: item.givenName,
+                            surname: item.sn,
+                            email: item.mail
+                        });
+                    });
+                    res.send(finalPupils);
                 }
             });
         }
