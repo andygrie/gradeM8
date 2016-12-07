@@ -283,16 +283,6 @@ exports.getPupilsByGroup = function (req, res) {
 }
 
 function getPupilsByUsernameFromAD(pupils, res) {
-    pupilsHelp = {};
-    var query = '(|';
-    pupils.forEach(function (item) {
-        query = query + '(cn=' + item.username + ')';
-        pupilsHelp[item.username] = item.fkUser;
-    });
-    query = query + ')';
-    console.log(query);
-
-
     ad.authenticate(username, password, function (err, auth) {
         var pupilsHelp = {};
         var finalPupils = [];
