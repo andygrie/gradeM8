@@ -253,7 +253,7 @@ exports.getPupilsByGroup = function (req, res) {
         var results = [];
         connection.on('connect', executeStatement);
         function executeStatement() {
-            request = new Request("select p.fkUser username from gradeUser u INNER JOIN pupil p ON p.fkUser = u.idUser INNER JOIN assignedto a ON a.fkPupil = p.fkUser where fkGradeGroup = @id", function (err) {
+            request = new Request("select p.fkUser, username from gradeUser u INNER JOIN pupil p ON p.fkUser = u.idUser INNER JOIN assignedto a ON a.fkPupil = p.fkUser where fkGradeGroup = @id", function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -283,6 +283,16 @@ exports.getPupilsByGroup = function (req, res) {
 }
 
 function getPupilsByUsernameFromAD(pupils, res) {
+    pupilsHelp = {};
+    var query = '(|';
+    pupils.forEach(function (item) {
+        query = query + '(cn=' + item.username + ')';
+        pupilsHelp[item.username] = item.fkUser;
+    });
+    query = query + ')';
+    console.log(query);
+
+
     ad.authenticate(username, password, function (err, auth) {
         var pupilsHelp = {};
         var finalPupils = [];
