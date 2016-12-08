@@ -1,16 +1,18 @@
 angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil",
-                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", "sWeb_setEvent",
+                                "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,
-                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, sWeb_setEvent) {
+                                sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned) {
   var retVal;
 
   retVal = {
       insertGroup: insertGroup,
       insertSubject: insertSubject,
       insertEvent: insertEvent,
-      insertPupil: insertPupil,
+      registerPupils: registerPupils,
       insertNote: insertNote,
       putParticipation: putParticipation,
       insertParticipation: insertParticipation
@@ -85,7 +87,7 @@ angular.module('moduleData', [])
     });
   }
   
-  //data = {idParticipation, fkGradeEvent, fkPupil, grade, abscent}
+  //data = {idParticipation, fkGradeEvent, fkPupil, grade}
   function putParticipation(data){
       return $q(function(resolve, reject){
           sWeb_putParticipation(function(responseData){
@@ -98,7 +100,6 @@ angular.module('moduleData', [])
                       partData[i].fkPupil = responseData.fkPupil;
                       partData[i].fkGradeEvent = responseData.fkGradeEvent;
                       partData[i].grade = responseData.grade;
-                      partData[i].abscent = responseData.abscent;
                   }
               }
               
@@ -108,7 +109,7 @@ angular.module('moduleData', [])
       });
   }
 
-  //data = {idGradeEvent, colPupils: [{fkPupil, grade, abscent}]}
+  //data = {idGradeEvent, colPupils: [{fkPupil, grade}]}
   function insertParticipation(data){
       return $q(function(resolve, reject){
           sWeb_setParticipation(function(responseData){
@@ -130,8 +131,43 @@ angular.module('moduleData', [])
       });
   }
 
-  function insertPupil(){
-      console.log("insertPupil not implemented");
+  //data = {idGradeGroup, pupils: [{forename, surname, email, username}]}
+  function registerPupils(data){
+      return $q(function(resolve, reject){
+          //register pupils from AD in application Backend
+          sWeb_registerPupils(function(responsePupils){
+              //set assigned
+              //data = {idGradGroup, colPupils: [{fkUser, forename, surname, email, username}]}
+              sWeb_setAssigned(function(responseAssign){
+                //register Pupils locally
+                for(var i = 0; i < responsePupils.length; i++)
+                {
+                    if(sData_pupilsByGroups.data[data.idGradeGroup] != null)
+                        sData_pupilsByGroups.data[data.idGradeGroup].push(responsePupils[i]);
+                    // new instance so pupilsByGroups isnt polluted
+                    var tmp = {
+                        fkUser: responsePupils[i].fkUser,
+                        forename: responsePupils[i].forename,
+                        surname: responsePupils[i].surname,
+                        username: responsePupils[i].username,
+                        email: responsePupils[i].email,
+                        idGradeGroup: data.idGradeGroup
+                    }
+                    sData_allData.data.pupils.push(tmp);
+                }
+                if(sData_pupilsByGroups.data[data.idGradeGroup] == null)
+                    sData_pupilsByGroups.data[data.idGradeGroup] = responsePupils;
+                //Maybe move inside loop with if condition if async
+                resolve("successfully registered and assigned pupils");
+              }, function(responseAssign){
+                  console.log("error assigning registered pupils");
+                  reject(responseAssign);
+              }, {idGradeGroup: data.idGradeGroup, colPupils: responsePupils});
+          }, function(responsePupils){
+              console.log("error registrating pupils");
+              reject(response);
+          }, data.pupils);
+      })
   }
 }])
 
@@ -170,7 +206,7 @@ angular.module('moduleData', [])
           {idGradeEvent, #idGradeGroup#, fkTeaches, eventDate, eventDescription}
       ],
       pupils: [
-          {fkUser, fkClass, #idGradeGroup#, forename, surname, email, password}
+          {fkUser, #idGradeGroup#, forename, surname, email, username}
       ],
       teaches: [
           {idTeaches, fkTeacher, fkGradeSubject, fkGradeGroup}
@@ -452,6 +488,32 @@ angular.module('moduleData', [])
   }
 }])
 
+.factory('sData_participationsByEvent', ["$q", "sWeb_getParticipationByEvent", 
+                function($q, sWeb_getParticipationByEvent) {
+  var participations = {};
+  var retVal;
+
+  retVal = {
+      data: participations,
+      fillData : fillData
+  }
+
+  return retVal;
+
+  //data = {idGradeEvent}
+  function fillData(data){
+    return $q(function(resolve, reject) {
+        sWeb_getParticipationByEvent(function(responseData){
+            participations = responseData;
+            retVal.data = participations;
+            resolve("Successfuly loaded participations");
+        }, function(response){
+            reject(response);
+        }, data);
+    })
+  }
+}])
+
 .factory('sData_groupsBySubjects', ["$q", "sData_allData", "sWeb_getSubjectByTeacher", "sWeb_getGroupByTeacherAndSubject", 
                             function($q, sData_allData, sWeb_getSubjectByTeacher, sWeb_getGroupByTeacherAndSubject) {
   /*
@@ -607,7 +669,7 @@ angular.module('moduleData', [])
   /*
   pupilsByGroups = {
       idGradeGroup : [
-          {idUser, fkClass, forename, surname, email, password}
+          {fkUser, forename, surname, email, username}
       ]
   }
   */

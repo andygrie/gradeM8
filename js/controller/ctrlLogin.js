@@ -15,13 +15,11 @@ angular.module("moduleLogin", [])
     */
     
     $scope.logIn = function (){
-        //maybe check for selectedItem
-        console.log("working: ", $scope.form.username);
-
         sData_authenticate.authenticate($scope.form).then(function(response){
             $location.path("/overview");
         }, function(response){
-            alert(response);
+            alert("Error authenticating");
+            console.log(response);
         })
     }
 }]);
