@@ -1,13 +1,14 @@
 angular.module("moduleLogin", [])
-.controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate",
-                function ($scope, constants, $location, sData_authenticate) {
+.controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate", 'breadcrumbs',
+                function ($scope, constants, $location, sData_authenticate, breadcrumbs) {
 
     $scope.form = {
         username: "",
         password: ""
     };
 
-    $scope.breadcrumb = "login";
+    $scope.breadcrumbs = breadcrumbs
+
 
     /*
     $scope.colTeachers = [

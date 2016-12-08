@@ -1,4 +1,5 @@
 var app = angular.module("gradeM8", ["ngRoute",
+                                     "ng-breadcrumbs",
                                      "moduleOverview",
                                      "modulePupil",
                                      "moduleGroup",
@@ -15,7 +16,8 @@ app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
     templateUrl : "templates/styled_Login.html",
-    controller: "ctrlLogin"
+    controller: "ctrlLogin",
+      label: "login"
   })
   .when("/overview", {
     templateUrl : "templates/styled_Overview.html",
