@@ -7,6 +7,8 @@ angular.module("moduleLogin", [])
         password: ""
     };
 
+
+
     /*
     $scope.colTeachers = [
         {idUser: 1, forename: "Richard", surname: "Ludy"},
