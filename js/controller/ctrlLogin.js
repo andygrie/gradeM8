@@ -7,7 +7,7 @@ angular.module("moduleLogin", [])
         password: ""
     };
 
-
+    $scope.breadcrumb = "login";
 
     /*
     $scope.colTeachers = [

@@ -14,7 +14,6 @@ app.constant('constants', {
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-      breadcrumb:"login",
     templateUrl : "templates/styled_Login.html",
     controller: "ctrlLogin"
   })
