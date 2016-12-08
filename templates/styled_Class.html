@@ -69,6 +69,18 @@
             </div>
         </div>
     </div>
+
+    <div class="section-container">
+        <div class="tile-container">
+            <h1>
+                Events
+            </h1>
+            <div ng-repeat="recEvent in colEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+                <h4>{{recEvent.eventDescription}}</h4>
+                <h5>{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</h5>
+            </div>
+        </div>
+    </div>
 </main>
 </div>
 </html>
