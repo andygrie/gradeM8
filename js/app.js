@@ -1,5 +1,4 @@
 var app = angular.module("gradeM8", ["ngRoute",
-                                     "ng-breadcrumbs",
                                      "moduleOverview",
                                      "modulePupil",
                                      "moduleGroup",
