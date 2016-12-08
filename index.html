@@ -20,8 +20,8 @@
                 </h1>
             </a>
         </div>
-        <div ng-repeat="breadcrumb in breadcrumbs.get() track by breadcrumb.path">
-            <h2 ng-bind="breadcrumb.label">
+        <div ng-repeat="breadcrumbs in breadcrumbs track by $index">
+            <h2 ng-bind="breadcrumb">
             </h2>
         </div>
         <div class="settings-btn">

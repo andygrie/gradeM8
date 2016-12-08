@@ -7,7 +7,7 @@ angular.module("moduleLogin", [])
         password: ""
     };
 
-    $scope.breadcrumbs = breadcrumbs
+    $scope.breadcrumb = "login";
 
 
     /*

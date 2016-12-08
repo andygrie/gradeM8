@@ -174,6 +174,7 @@ angular.module('moduleData', [])
 .factory('sData_allData', function() {
   var retVal;
   var applData = {
+      breadcrumbs : [],
       user: {},
       groups: [],
       subjects: [],
