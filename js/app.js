@@ -15,8 +15,7 @@ app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
     templateUrl : "templates/styled_Login.html",
-    controller: "ctrlLogin",
-      breadcrumb:"none"
+    controller: "ctrlLogin"
   })
   .when("/overview", {
     templateUrl : "templates/styled_Overview.html",
