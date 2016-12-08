@@ -156,7 +156,7 @@ exports.getClassesFromAD = function (req, res) {
                 var classes = [];
                 for (var i = 0; i < groups.length; i++) {
                     var firstChar = groups[i].cn.charAt(0)
-                    if (firstChar <= '5' && firstChar >= '1') {
+                    if (firstChar <= '5' && firstChar >= '1' && groups[i].cn.indexOf('Schüler') !== -1) {
                         classes.push({
                             name: groups[i].cn
                         });
