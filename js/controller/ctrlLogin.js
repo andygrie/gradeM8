@@ -1,6 +1,6 @@
 angular.module("moduleLogin", [])
-.controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate", 'breadcrumbs',
-                function ($scope, constants, $location, sData_authenticate, breadcrumbs) {
+.controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate",
+                function ($scope, constants, $location, sData_authenticate) {
 
     $scope.form = {
         username: "",
