@@ -2,7 +2,7 @@ angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
 
-    $scope.breadcrumb = "Overview" + $location;
+    $scope.breadcrumb = "Overview - " + sData_allData.data.user;
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
