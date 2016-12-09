@@ -22,7 +22,7 @@ angular.module("moduleGroup", [])
                     $scope.show = true;
 
                     var groupname = function(){ var group;
-                        sData_allData.data.groups.forEach(function(entry,group){
+                        sData_allData.data.groups.forEach(function(entry){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
 
                             group = entry.name;
