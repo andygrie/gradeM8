@@ -9,6 +9,10 @@ angular.module("moduleLogin", [])
 
     $scope.breadcrumb = "login";
 
+                    $scope.checkShow = function(){
+                        Console.log($location);
+                        return $location != '/templates/styled_Login.html';
+                    }
 
     /*
     $scope.colTeachers = [
