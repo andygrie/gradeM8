@@ -15,6 +15,7 @@ angular.module("moduleGroup", [])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
+                    $scope.breadcrumb = "Group - " + sData_allData.data.idGradeGroup;
                     $scope.show = true;
 
     $scope.getSubjectOfGroup = function(){
