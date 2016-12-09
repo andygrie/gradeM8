@@ -11,6 +11,7 @@ angular.module("moduleOverview", [])
     $scope.colGroups = {};
                         $scope.data.displayModalSettings = false;
                         $scope.show = true;
+                        $scope.data.currentSettingstab = 'Period';
 
     sData_groupsBySubjects.fillData().then(function(response){
         console.log(response);
@@ -71,6 +72,14 @@ angular.module("moduleOverview", [])
     }
                         $scope.switchModalSettings = function(){
                             $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                        }
+
+                        $scope.setSettingTabToPeriod = function () {
+                            $scope.data.currentSettingstab = 'Period';
+                        }
+
+                        $scope.setSettingTabToWeekdays = function () {
+                            $scope.data.currentSettingstab = 'Weekdays';
                         }
 
     $scope.addNewSubject = function(){
