@@ -1,3 +1,24 @@
+<div >
+    <header  ng-show="location != '/templates/styled_Login.html'" id="site-header">
+        <div class="site-header-toprow">
+            <div class="circle">
+                <a class="site-logo" href="#overview">
+                    <h1 class="logotype">
+                        <img src="resources/logo.png" width="70">
+                    </h1>
+                </a>
+            </div>
+            <div >
+                <h2 ng-bind="breadcrumb">
+                </h2>
+            </div>
+            <div class="settings-btn">
+                <img src="resources/settings.png" width="2em">
+            </div>
+        </div>
+    </header>
+</div>
+
 <nav id="site-nav">
     <div class="site-nav-wrapper">
         <button class="site-nav-button" ng-click="switchModalNote()">add note</button>
@@ -87,7 +108,7 @@
                                 <input type="radio" name="grade" value="3" ng-model="formData.grade">3
                                 <input type="radio" name="grade" value="4" ng-model="formData.grade">4
                                 <input type="radio" name="grade" value="5" ng-model="formData.grade">5
-                                <input type="radio" name="grade" value="1" ng-model="formData.abscence">abscent
+                                <input type="radio" name="grade" value="0" ng-model="formData.grade">abscent
                             </div>
                         </div>
                     </div>
@@ -129,17 +150,26 @@
                 <th>Title</th>
                 <th>Date</th>
                 <th>Grade</th>
+                <th>History</th>
             </tr>
             <tr ng-repeat="recParticipation in data.gradedParticipations">
                 <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDescription}}</td>
                 <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate | date : "dd-MM-yyyy" : timezone}}</td>
                 <td>{{recParticipation.grade}}</td>
+                <td><button ng-click="displayParticipationHistory(recParticipation.idParticipation)">History</button></td>
             </tr>
         </table>
         <h1>Notes</h1>
-        <div ng-repeat="recNote in data.colNotes">
-            <label >{{recNote.note}}</label>
-        </div>
+        <table>
+            <tr>
+                <th>Latest Note</th>
+                <th>History</th>
+            </tr>
+            <tr ng-repeat="recNote in data.colNotes">
+                <td>{{recNote.note}}</td>
+                <td><button ng-click="displayNoteHistory(recNote.idNote)">History</button></td>
+            </tr>
+        </table>
 
         <h1>Total grade</h1>
         <label>{{getTotalGrade()}}</label>

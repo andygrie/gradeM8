@@ -6,7 +6,6 @@ var app = angular.module("gradeM8", ["ngRoute",
                                      "moduleWeb",
                                      "moduleLogin"
                                     ]);
-
 app.constant('constants', {
     apiUrl: "http://gradem8.azurewebsites.net",
     teacherId: 0
@@ -23,7 +22,7 @@ app.config(function($routeProvider) {
     controller: "ctrlOverview"
   })
   .when("/group/:idGradeGroup", {
-    templateUrl : "templates/styled_Class.html",
+    templateUrl : "templates/styled_Group.html",
     controller: "ctrlGroup"
   })
   .when("/pupil/:idPupil/:idGradeGroup", {

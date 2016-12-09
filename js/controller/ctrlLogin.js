@@ -1,6 +1,13 @@
 angular.module("moduleLogin", [])
-.controller("ctrlLogin", ["$scope", "constants", "$location",
-                function ($scope, constants, $location) {
+.controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate",
+                function ($scope, constants, $location, sData_authenticate) {
+
+    $scope.form = {
+        username: "",
+        password: ""
+    };
+
+    $scope.breadcrumb = "login";
 
 
     /*
@@ -11,15 +18,11 @@ angular.module("moduleLogin", [])
     */
     
     $scope.logIn = function (){
-        //maybe check for selectedItem
-        console.log("working: ", $scope.user.name);
-        console.log("working: ", $scope.user.password);
-
-        constants.teacherName = $scope.user.name;
-        constants.teacherPassword = $scope.user.password;
-
-        console.log("working: ", $scope.form.idUser);
-    //    constants.teacherId = $scope.form.idUser;
-        $location.path("/overview");
+        sData_authenticate.authenticate($scope.form).then(function(response){
+            $location.path("/overview");
+        }, function(response){
+            alert("Error authenticating");
+            console.log(response);
+        })
     }
 }]);

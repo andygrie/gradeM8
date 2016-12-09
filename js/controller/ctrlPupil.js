@@ -1,6 +1,8 @@
 angular.module("modulePupil", [])
-.controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", "sData_notesByPupil",
-                function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, sData_notesByPupil) {
+.controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", 
+                            "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups",
+                function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
+                            sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups) {
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -10,6 +12,8 @@ angular.module("modulePupil", [])
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
 
+    $scope.data.colNoteHistory = [];
+    $scope.data.colParticipationHistroy = [];
     $scope.data.ungradedEvents = [];
     $scope.data.gradedEvents = [];
     $scope.data.ungradedParticipations = [];
@@ -51,13 +55,11 @@ angular.module("modulePupil", [])
         {idParticipation: 1,
             fkGradeEvent: 1,
             fkPupil: $scope.data.idPupil,
-            grade: 4,
-            abscent: 0},
+            grade: 4},
         {idParticipation: 2,
             fkGradeEvent: 2,
             fkPupil: $scope.data.idPupil,
-            grade: 0,
-            abscent: 0},
+            grade: -1},
     ]
 
     $scope.data.colNotes = [
@@ -65,6 +67,35 @@ angular.module("modulePupil", [])
         {idNote: 2, fkTeaches: $scope.data.teaches, fkPupil: $scope.data.idPupil, note: "Wird unterdrückt"}
     ]
     */
+    $scope.displayNoteHistory = function(paramIdNote) {
+        $scope.switchModalNoteHistory();
+        $scope.loadNoteHistory();
+    }
+
+    $scope.displayParticipationHistory = function(paramIdParticipation)
+    {
+        $scope.switchModalParticipationHistory();
+        $scope.loadParticipationHistory();
+    }
+
+    $scope.loadNoteHistory = function(paramIdNote){
+        sData_noteHistory.fillData(paramIdNote).then(function(response){
+            console.log(response);
+            $scope.data.colNoteHistory = sData_noteHistory.data;
+        }, function(response){
+            console.log(response);
+        });
+    }
+
+    $scope.loadParticipationHistory = function(paramIdParticipation){
+        sData_participationHistory.fillData(paramIdParticipation).then(function(response){
+            console.log(response);
+            $scope.data.colParticipationHistroy = sData_participationHistory.data;
+        }, function(response){
+            console.log(response);
+        });
+    }
+
     $scope.switchModalEvent = function(){
         $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
     }
@@ -73,6 +104,12 @@ angular.module("modulePupil", [])
     }
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
+    }
+    $scope.switchModalNoteHistory = function() {
+
+    }
+    $scope.switchModalParticipationHistory = function() {
+        
     }
 
     $scope.getTotalGrade = function(){
@@ -117,8 +154,7 @@ angular.module("modulePupil", [])
             dataInner.idGradeEvent = response.idGradeEvent;
             dataInner.colPupils = [{
                     fkPupil: parseInt($scope.data.idPupil),
-                    grade: 0,
-                    abscent: 0
+                    grade: -1
                 }];
             sData_CUDHandler.insertParticipation(dataInner).then(function(responseData){
                 console.log("successfully inserted participations, now should follow response data <.<");
@@ -167,33 +203,26 @@ angular.module("modulePupil", [])
 
         $scope.switchModalGrade();
         $scope.formData.grade = participation.grade;
-        $scope.formData.abscence = participation.abscent;
     }
 
     $scope.submitGrade = function(){
-        if($scope.formData.abscence != $scope.data.participationToBeConfigured.abscent ||
-           $scope.formData.grade != $scope.data.participationToBeConfigured.grade)
+        if($scope.formData.grade != $scope.data.participationToBeConfigured.grade)
         {
-            if($scope.formData.abscence == 1 &&
-                $scope.data.participationToBeConfigured.abscent != 1)
+            if($scope.formData.grade == 0 &&
+                $scope.data.participationToBeConfigured.grade != 0)
             {
-                $scope.formData.grade = 0;
                 moveEventToUngraded($scope.data.eventToBeGraded, $scope.data.participationToBeConfigured);
             } 
             else
             {
-                $scope.formData.abscence = 0;
                 moveEventToGraded($scope.data.eventToBeGraded, $scope.data.participationToBeConfigured);
             }
                 
-
-            $scope.data.participationToBeConfigured.abscent = $scope.formData.abscence;
             $scope.data.participationToBeConfigured.grade = $scope.formData.grade;
             var data = {idParticipation: $scope.data.participationToBeConfigured.idParticipation, 
                 fkGradeEvent: $scope.data.participationToBeConfigured.fkGradeEvent,
                 fkPupil: $scope.data.participationToBeConfigured.fkPupil,
-                grade: $scope.formData.grade,
-                abscent: $scope.formData.abscence};
+                grade: $scope.formData.grade};
             
             console.log(data);
             sData_CUDHandler.putParticipation(data).then(function(response){
@@ -228,7 +257,6 @@ angular.module("modulePupil", [])
             if($scope.data.gradedParticipations[i].idParticipation == participation.idParticipation)
             {
                 $scope.data.gradedParticipations[i].grade = $scope.formData.grade;
-                $scope.data.gradedParticipations[i].abscent = $scope.formData.abscence;
 
                 $scope.data.ungradedParticipations.push($scope.data.gradedParticipations[i]);
                 $scope.data.gradedParticipations.splice(i,1);
@@ -259,7 +287,6 @@ angular.module("modulePupil", [])
             if($scope.data.ungradedParticipations[i].idParticipation == participation.idParticipation)
             {
                 $scope.data.ungradedParticipations[i].grade = $scope.formData.grade;
-                $scope.data.ungradedParticipations[i].abscent = $scope.formData.abscence;
 
                 $scope.data.gradedParticipations.push($scope.data.ungradedParticipations[i]);
                 $scope.data.ungradedParticipations.splice(i,1);
@@ -293,7 +320,7 @@ angular.module("modulePupil", [])
                     $scope.data.colParticipations[j].fkGradeEvent 
                     && $scope.data.colParticipations[j].fkPupil == $scope.data.idPupil)
                 {
-                    if(angular.equals($scope.data.colParticipations[j].grade, 0))
+                    if($scope.data.colParticipations[j].grade < 1)
                     {
                         $scope.data.ungradedParticipations.push($scope.data.colParticipations[j]);
                         $scope.data.ungradedEvents.push($scope.data.colEvents[i]);
@@ -331,7 +358,7 @@ angular.module("modulePupil", [])
     }
 
     function findEvents(){
-        var retVal = [];
+        /*var retVal = [];
 
         var colEvents = sData_allData.data.events;
         for(var i = 0; i < colEvents.length; i++)
@@ -341,5 +368,8 @@ angular.module("modulePupil", [])
         }
 
         return retVal;
+        */
+
+        return sData_eventsByGroups.data[$scope.idGradeGroup];
     }
 }]);

@@ -1,20 +1,191 @@
-<div class="all">
-    <h1>
-        Information
-    </h1>
+
+<div >
+    <header  ng-show="location != '/templates/styled_Login.html'" id="site-header">
+        <div class="site-header-toprow">
+            <div class="circle">
+                <a class="site-logo" href="#overview">
+                    <h1 class="logotype">
+                        <img src="resources/logo.png" width="70">
+                    </h1>
+                </a>
+            </div>
+            <div >
+                <h2 ng-bind="breadcrumb">
+                </h2>
+            </div>
+            <div class="settings-btn">
+                <img src="resources/settings.png" width="2em">
+            </div>
+        </div>
+    </header>
 </div>
 
 <nav id="site-nav">
     <div class="site-nav-wrapper">
     </div>
 </nav>
+
+<div ng-hide="!data.displayModalGroup"  id="myModal" class="modal">
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <h2>Settings</h2>
+        </div>
+        <form>
+            <div class="modal-body">
+                <div class=imput>
+
+                    <div>
+                        <label>Uhrzeit:</label>
+                    </div>
+
+                    <div>
+                        <input type="time">
+                    </div>
+                    <div>
+                        <ul class="nav nav-tabs">
+                            <li><a href="#">Periode</a></li>
+                            <li><a href="#">Wochentage</a></li>
+                        </ul>
+                        <div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Monday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Tuesday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Wednesday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Thursday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Friday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Saturday</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="">Sunday</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="sel1">Send me an e-mail every </label>
+                            <div >
+                            <select class="form-control"  id="sel1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+
+                            </div>
+                            <label> days </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
+                       value="Submit" class="btnOK"/>
+                <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-</header>
-<main class="main">
-    <div class="section-container">
-        <div class="information-container">
 
+<div ng-hide="!data.displayModalGroup"  id="myModal2" class="modal">
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <h2>Grade History</h2>
+        </div>
+        <form>
+            <div class="modal-body">
+                <table>
+                    <colgroup>
+                        <col style="width:25%">
+                        <col style="width:75%">
+                    </colgroup>
+                    <thead>
+                    <tr class="table-head">
+                        <th>Grade</th>
+                        <th>Changed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-body-1">
+                        <td>1</td>
+                        <td>13.3.2016</td>
+                    </tr>
+                    <tr class="table-body-2">
+                        <td>2</td>
+                        <td>14.4.2016</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div ng-hide="!data.displayModalGroup"  id="myModal3" class="modal">
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <h2>Note History</h2>
+        </div>
+        <form>
+            <div class="modal-body">
+                <table>
+                    <colgroup>
+                        <col style="width:75%">
+                        <col style="width:25%">
+                    </colgroup>
+                    <thead>
+                    <tr class="table-head">
+                        <th>Content</th>
+                        <th>Changed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-body-1">
+                        <td>ffdafdafdfasfaaafdsafda</td>
+                        <td>13.3.2016</td>
+                    </tr>
+                    <tr class="table-body-2">
+                        <td>ssdfhgdjkiuhlkmnhdf</td>
+                        <td>14.4.2016</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<main class="main">
+        <div class="information-container">
             <h2>
                 Prüfung
                 <a href="/"><img src="../resources/Hamburger.png"></a>
@@ -22,15 +193,21 @@
             <div>
                 <table>
                     <colgroup>
-                        <col style="width:60%">
-                        <col style="width:30%">
+                        <col style="width:35%">
+                        <col style="width:15%">
                         <col style="width:10%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                        <col style="width:5%">
                     </colgroup>
                     <thead>
                     <tr class="table-head">
                         <th>Title</th>
                         <th>Date</th>
                         <th>Grade</th>
+                        <th>Created</th>
+                        <th>Changed</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,35 +215,31 @@
                         <td>Prüfung</td>
                         <td>13.3.2016</td>
                         <td>4</td>
+                        <td>13.3.2016</td>
+                        <td>13.3.2016</td>
+                        <td><span class="glyphicon glyphicon-zoom-in"/></td>
                     </tr>
                     <tr class="table-body-2">
                         <td>Prüfung</td>
                         <td>14.4.2016</td>
                         <td>3</td>
+                        <td>13.3.2016</td>
+                        <td>13.3.2016</td>
+                        <td><span class="glyphicon glyphicon-zoom-in"/></td>
                     </tr>
                     <tr class="table-body-1">
                         <td>Prüfung</td>
                         <td>13.3.2016</td>
                         <td>4</td>
+                        <td>13.3.2016</td>
+                        <td>13.3.2016</td>
+                        <td><span class="glyphicon glyphicon-zoom-in"/></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="information-container">
-            <h2>
-                Notizen
-                <a href="/"><img src="../resources/Hamburger.png"></a>
-            </h2>
-            <div>
-                <table class="single-Value">
-                    <tr>
-                        <td>This is but just on of those messages</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
 
         <div class="information-container">
             <h2>
@@ -81,6 +254,51 @@
                 </table>
             </div>
         </div>
+
+
+    <div class="information-container">
+        <h2>
+            Prüfung
+            <a href="/"><img src="../resources/Hamburger.png"></a>
+        </h2>
+        <div>
+            <table>
+                <colgroup>
+                    <col style="width:65%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                    <col style="width:5%">
+                </colgroup>
+                <thead>
+                <tr class="table-head">
+                    <th>Note</th>
+                    <th>Created</th>
+                    <th>Changed</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-body-1">
+                    <td>Prüfung</td>
+                    <td>13.3.2016</td>
+                    <td>13.3.2016</td>
+                    <td><span class="glyphicon glyphicon-zoom-in"/></td>
+                </tr>
+                <tr class="table-body-2">
+                    <td>Prüfung</td>
+                    <td>13.3.2016</td>
+                    <td>13.3.2016</td>
+                    <td><span class="glyphicon glyphicon-zoom-in"/></td>
+                </tr>
+                <tr class="table-body-1">
+                    <td>Prüfung</td>
+                    <td>13.3.2016</td>
+                    <td>13.3.2016</td>
+                    <td><span class="glyphicon glyphicon-zoom-in"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
@@ -89,4 +307,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
     -->
 </main>
-</div>
+
+
+

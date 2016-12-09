@@ -1,3 +1,25 @@
+<div >
+    <header  ng-show="location != '/templates/styled_Login.html'" id="site-header">
+        <div class="site-header-toprow">
+            <div class="circle">
+                <a class="site-logo" href="#overview">
+                    <h1 class="logotype">
+                        <img src="resources/logo.png" width="70">
+                    </h1>
+                </a>
+            </div>
+            <div >
+                <h2 ng-bind="breadcrumb">
+                </h2>
+            </div>
+            <div class="settings-btn">
+                <img src="resources/settings.png" width="2em">
+            </div>
+        </div>
+    </header>
+</div>
+
+
 <nav id="site-nav">
     <div class="site-nav-wrapper">
         <button class = "site-nav-button" ng-click="switchModalGroup()">add group</button>
@@ -54,6 +76,7 @@
             </form>
         </div>
     </div>
+
     <main class="main">
     <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="tile-container">
