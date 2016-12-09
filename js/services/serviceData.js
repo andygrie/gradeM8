@@ -301,7 +301,7 @@ angular.module('moduleData', [])
         sWeb_getTeacher(function(responseData){
             classes = responseData;
             retVal.data = classes;
-            window.alert(classes);
+
             sData_allData.data.classes = classes;
             resolve("Successfuly loaded classes");
         }, function(response){
@@ -571,11 +571,13 @@ angular.module('moduleData', [])
   {
       sWeb_getGroupByTeacherAndSubject(function(responseDataInner){
             groupsBySubjects[responseData[tmpIdx].name] = responseDataInner;
+          window.alert(responseDataInner[0]);
             for(var j = 0; j < responseDataInner.length; j++)
             {
                 //console.log("response i:" + tmpIdx);
                 responseDataInner[j].idGradeSubject = responseData[tmpIdx].idGradeSubject;
                 sData_allData.data.groups.push(responseDataInner[j]);
+
                 if(tmpIdx == responseData.length - 1 && j == responseDataInner.length -1)
                 {
                     retVal.data = groupsBySubjects;
