@@ -1,6 +1,8 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
+
+                        $scope.breadcrumb = "overview";
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
@@ -42,7 +44,8 @@ angular.module("moduleOverview", [])
     ]
     */
 
-    $scope.breadcrumb = "overview";
+
+
     $scope.sendEmail = function(){
         sData_email.send().then(function(response){
             alert(response);
