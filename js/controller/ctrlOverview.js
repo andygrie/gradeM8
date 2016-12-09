@@ -42,6 +42,7 @@ angular.module("moduleOverview", [])
     ]
     */
 
+    $scope.breadcrumb = "overview";
     $scope.sendEmail = function(){
         sData_email.send().then(function(response){
             alert(response);
