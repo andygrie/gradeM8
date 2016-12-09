@@ -97,10 +97,10 @@
                         </div>
                         <div>
                             <ul class="nav nav-tabs">
-                                <li><a href="#">Periode</a></li>
-                                <li><a href="#">Wochentage</a></li>
+                                <li ng-click="setSettingTabToPeriod()">Periode</li>
+                                <li ng-click="setSettingTabToWeekdays()">Weekdays</li>
                             </ul>
-                            <div>
+                            <div ng-hide="data.currentSettingstab != 'Weekdays'">
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="">Monday</label>
                                 </div>
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" ng-hide="data.currentSettingstab != 'Period'">
                                 <label class="control-label" for="sel1">Send me an e-mail every </label>
                                 <div >
                                     <select class="form-control"  id="sel1">
@@ -147,6 +147,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <input ng-disabled="" type="submit" ng-click=""
                            value="Submit" class="btnOK"/>
@@ -155,6 +156,7 @@
             </form>
         </div>
     </div>
+
 
     <div class="section-container">
         <div class="tile-container">

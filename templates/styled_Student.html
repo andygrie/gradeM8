@@ -51,7 +51,7 @@
                                 <li ng-click="setSettingTabToPeriod()">Periode</li>
                                 <li ng-click="setSettingTabToWeekdays()">Weekdays</li>
                             </ul>
-                            <div ng-hide="currentSettingstab != 'Weekdays'">
+                            <div ng-hide="data.currentSettingstab != 'Weekdays'">
                                 <div class="checkbox">
                                     <label><input type="checkbox" value="">Monday</label>
                                 </div>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" ng-hide="currentSettingstab != 'Period'">
+                            <div class="form-group" ng-hide="data.currentSettingstab != 'Period'">
                                 <label class="control-label" for="sel1">Send me an e-mail every </label>
                                 <div >
                                     <select class="form-control"  id="sel1">
@@ -107,6 +107,7 @@
             </form>
         </div>
     </div>
+
 
     <div ng-hide="!data.displayModalEvent" id="myModal" class="modal">
         <div class="modal-wrapper">

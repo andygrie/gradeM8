@@ -13,6 +13,8 @@ angular.module("modulePupil", [])
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
 
+
+                    $scope.data.currentSettingstab = "Period";
                     $scope.data.displayModalSettings = false;
 
     $scope.data.colNoteHistory = [];
@@ -134,6 +136,17 @@ angular.module("modulePupil", [])
                     $scope.switchModalSettings = function(){
                         $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
                     }
+
+                    $scope.setSettingTabToPeriod = function () {
+                        window.alert($scope.data.currentSettingstab);
+                        $scope.data.currentSettingstab = "Period";
+                    }
+
+                    $scope.setSettingTabToWeekdays = function () {
+                        window.alert($scope.data.currentSettingstab);
+                        $scope.data.currentSettingstab = "Weekdays";
+                    }
+
     $scope.switchModalNoteHistory = function() {
 
     }

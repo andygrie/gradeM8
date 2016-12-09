@@ -20,6 +20,8 @@ angular.module("moduleGroup", [])
                     $scope.data.displayModalSettings = false;
                     $scope.show = true;
 
+                    $scope.data.currentSettingstab = "Period";
+
                     var groupname = function(){ var group;
                         sData_allData.data.groups.forEach(function(entry){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
@@ -152,6 +154,15 @@ angular.module("moduleGroup", [])
                     $scope.switchModalSettings = function(){
                         $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
                     }
+
+                    $scope.setSettingTabToPeriod = function () {
+                        $scope.data.currentSettingstab = "Period";
+                    }
+
+                    $scope.setSettingTabToWeekdays = function () {
+                        $scope.data.currentSettingstab = "Weekdays";
+                    }
+
     $scope.switchModalEventDetail = function(){
 
     }
