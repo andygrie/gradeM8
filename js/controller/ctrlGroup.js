@@ -4,7 +4,14 @@ angular.module("moduleGroup", [])
                 function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups, 
                             sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent) {
 
-    $scope.idGradeGroup = $routeParams.idGradeGroup;
+    $scope.idGradeGroup = function(){ sData_allData.data.groups.forEach(function(entry){
+        if(entry.idGradeGroup == $routeParams.idGradeGroup){
+            Console.log(entry);
+            return entry.groupName;
+        }
+    })};
+
+
     $scope.data = {};
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
