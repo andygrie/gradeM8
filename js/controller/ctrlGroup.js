@@ -23,7 +23,7 @@ angular.module("moduleGroup", [])
 
                     var groupname = function(){ sData_allData.data.groups.forEach(function(entry){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
-                            window.alert(entry);
+                            window.alert(entry.name);
                             return entry.groupName;
                         }
                     })};
