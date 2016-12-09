@@ -174,7 +174,6 @@ article, div, aside, footer, header, main, nav, section {
 }
 
 .modal {
-    display: none;
     position: fixed;
     z-index: 1;
     left: 0;

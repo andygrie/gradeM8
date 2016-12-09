@@ -21,6 +21,8 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
+                    $scope.breadcrumb = "Group - " + $routeParams.idGradeGroup + " - Pupil - " + $routeParams.idGradeGroup ;
+
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
