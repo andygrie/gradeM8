@@ -271,9 +271,9 @@ angular.module('moduleData', [])
             user = responseData;
             retVal.data = user;
             sData_allData.data.user = user;
-
+/*
             window.alert(sData_allData.data.user.username);
-
+*/
             constants.teacherId = user.idUser;
             resolve("Successfuly authenticated user");
         }, function(response){
@@ -301,6 +301,7 @@ angular.module('moduleData', [])
         sWeb_getTeacher(function(responseData){
             classes = responseData;
             retVal.data = classes;
+            window.alert(classes);
             sData_allData.data.classes = classes;
             resolve("Successfuly loaded classes");
         }, function(response){
