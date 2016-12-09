@@ -17,8 +17,7 @@ angular.module("moduleGroup", [])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
-
-
+                    $scope.data.displayModalSettings = false;
                     $scope.show = true;
 
                     var groupname = function(){ var group;
@@ -150,6 +149,9 @@ angular.module("moduleGroup", [])
     $scope.switchModalPupil = function(){
         $scope.data.displayModalPupil = !$scope.data.displayModalPupil;
     }
+                    $scope.switchModalSettings = function(){
+                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                    }
     $scope.switchModalEventDetail = function(){
 
     }

@@ -9,7 +9,7 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
-
+                        $scope.data.displayModalSettings = false;
                         $scope.show = true;
 
     sData_groupsBySubjects.fillData().then(function(response){
@@ -69,6 +69,9 @@ angular.module("moduleOverview", [])
     {
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
     }
+                        $scope.switchModalSettings = function(){
+                            $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                        }
 
     $scope.addNewSubject = function(){
         //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});

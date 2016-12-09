@@ -13,6 +13,8 @@ angular.module("modulePupil", [])
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
 
+                    $scope.data.displayModalSettings = false;
+
     $scope.data.colNoteHistory = [];
     $scope.data.colParticipationHistroy = [];
     $scope.data.ungradedEvents = [];
@@ -129,6 +131,9 @@ angular.module("modulePupil", [])
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
     }
+                    $scope.switchModalSettings = function(){
+                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                    }
     $scope.switchModalNoteHistory = function() {
 
     }
