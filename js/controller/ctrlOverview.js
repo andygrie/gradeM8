@@ -75,6 +75,7 @@ angular.module("moduleOverview", [])
                         }
 
                         $scope.setSettingTabToPeriod = function () {
+                            window.alert($scope.data.currentSettingstab);
                             $scope.data.currentSettingstab = "Period";
                         }
 
