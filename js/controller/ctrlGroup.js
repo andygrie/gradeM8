@@ -17,16 +17,19 @@ angular.module("moduleGroup", [])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
-                    $scope.breadcrumb = "Group - " + function(){ sData_allData.data.groups.forEach(function(entry){
+
+
+                    $scope.show = true;
+
+                    var groupname = function(){ sData_allData.data.groups.forEach(function(entry){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
                             Console.log(entry);
                             return entry.groupName;
                         }
                     })};
+                    $scope.breadcrumb = "Group - " + groupname();
 
-                    $scope.show = true;
-
-    $scope.getSubjectOfGroup = function(){
+                    $scope.getSubjectOfGroup = function(){
         var retVal = null;
         var colGroups = sData_allData.data.groups;
         for(var i = 0; i < colGroups.length && retVal == null; i++)
