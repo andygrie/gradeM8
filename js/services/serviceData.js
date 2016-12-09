@@ -272,7 +272,7 @@ angular.module('moduleData', [])
             retVal.data = user;
             sData_allData.data.user = user;
 
-            console.log(user.toString());
+            window.alert(user);
 
             constants.teacherId = user.idUser;
             resolve("Successfuly authenticated user");
