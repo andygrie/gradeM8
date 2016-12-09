@@ -31,6 +31,7 @@ angular.module("moduleGroup", [])
                         window.alert(group);
                     return group;};
 
+
                     $scope.breadcrumb = "Group - " + groupname();
 
                     $scope.getSubjectOfGroup = function(){
