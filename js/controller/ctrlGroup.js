@@ -4,12 +4,7 @@ angular.module("moduleGroup", [])
                 function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups, 
                             sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent) {
 
-    $scope.idGradeGroup = function(){ sData_allData.data.groups.forEach(function(entry){
-        if(entry.idGradeGroup == $routeParams.idGradeGroup){
-            Console.log(entry);
-            return entry.groupName;
-        }
-    })};
+    $scope.idGradeGroup = $routeParams.idGradeGroup;
 
 
     $scope.data = {};
@@ -22,7 +17,13 @@ angular.module("moduleGroup", [])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
-                    $scope.breadcrumb = "Group - " + $routeParams.idGradeGroup;
+                    $scope.breadcrumb = "Group - " + function(){ sData_allData.data.groups.forEach(function(entry){
+                        if(entry.idGradeGroup == $routeParams.idGradeGroup){
+                            Console.log(entry);
+                            return entry.groupName;
+                        }
+                    })};
+
                     $scope.show = true;
 
     $scope.getSubjectOfGroup = function(){
