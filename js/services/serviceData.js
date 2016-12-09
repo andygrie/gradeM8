@@ -271,6 +271,9 @@ angular.module('moduleData', [])
             user = responseData;
             retVal.data = user;
             sData_allData.data.user = user;
+
+            console.log(user.toString());
+
             constants.teacherId = user.idUser;
             resolve("Successfuly authenticated user");
         }, function(response){
@@ -479,6 +482,7 @@ angular.module('moduleData', [])
   function fillData(data){
     return $q(function(resolve, reject) {
         sWeb_getNoteHistory(function(responseData){
+
             participations = responseData;
             retVal.data = participations;
             resolve("Successfuly loaded participation history");
