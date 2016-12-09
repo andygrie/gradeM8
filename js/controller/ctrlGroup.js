@@ -16,6 +16,11 @@ angular.module("moduleGroup", [])
     $scope.colParticipations = [];
     $scope.colEvents = [];
 
+                    $scope.checkShow = function(){
+                        Console.log($location);
+                        return $location != '/templates/styled_Login.html';
+                    }
+
     $scope.getSubjectOfGroup = function(){
         var retVal = null;
         var colGroups = sData_allData.data.groups;

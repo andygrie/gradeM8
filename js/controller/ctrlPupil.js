@@ -20,6 +20,11 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
+                    $scope.checkShow = function(){
+                        Console.log($location);
+                        return $location != '/templates/styled_Login.html';
+                    }
+
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
     sData_participationsByPupil.fillData(dataInit).then(function(response){
