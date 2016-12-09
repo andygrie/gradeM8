@@ -23,10 +23,11 @@ angular.module("moduleGroup", [])
 
                     var groupname = function(){ sData_allData.data.groups.forEach(function(entry){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
-                            Console.log(entry);
+                            window.alert(entry);
                             return entry.groupName;
                         }
                     })};
+
                     $scope.breadcrumb = "Group - " + groupname();
 
                     $scope.getSubjectOfGroup = function(){
