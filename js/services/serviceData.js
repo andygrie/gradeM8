@@ -571,7 +571,7 @@ angular.module('moduleData', [])
   {
       sWeb_getGroupByTeacherAndSubject(function(responseDataInner){
             groupsBySubjects[responseData[tmpIdx].name] = responseDataInner;
-          window.alert(responseDataInner[0].idGradeSubject);
+          window.alert(responseDataInner[0].idGradeGroup);
             for(var j = 0; j < responseDataInner.length; j++)
             {
                 //console.log("response i:" + tmpIdx);
