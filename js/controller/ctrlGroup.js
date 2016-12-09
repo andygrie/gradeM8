@@ -28,7 +28,7 @@ angular.module("moduleGroup", [])
                             group = entry.name;
                         }
                     });
-                        window.alert(entry.name);
+                        window.alert(group);
                     return group;};
 
                     $scope.breadcrumb = "Group - " + groupname();
