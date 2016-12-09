@@ -156,12 +156,10 @@ angular.module("moduleGroup", [])
                     }
 
                     $scope.setSettingTabToPeriod = function () {
-                        window.alert($scope.data.currentSettingstab)
                         $scope.data.currentSettingstab = "Period";
                     }
 
                     $scope.setSettingTabToWeekdays = function () {
-                        window.alert($scope.data.currentSettingstab)
                         $scope.data.currentSettingstab = "Weekdays";
                     }
 
