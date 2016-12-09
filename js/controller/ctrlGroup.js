@@ -28,7 +28,6 @@ angular.module("moduleGroup", [])
                             group = entry.name;
                         }
                     });
-                        window.alert(group);
                     return group;};
 
 

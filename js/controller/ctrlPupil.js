@@ -21,7 +21,27 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
-                    $scope.breadcrumb = "Group - " + $routeParams.idGradeGroup + " - Pupil - " + $routeParams.idGradeGroup ;
+
+                    var generateBreadcrumb = function(){ var group;
+                        sData_allData.data.groups.forEach(function(entry){
+                            if(entry.idGradeGroup == $routeParams.idGradeGroup){
+
+                                group = entry.name;
+                            }
+                        });
+                        var pupil;
+                        sData_allData.data.pupils.forEach(function(entry){
+                            if(entry.idPupil == $routeParams.idPupil){
+                                pupil = entry.name;
+                            }
+                        });
+
+
+                        return "Group-"+group+"-Pupil-"+pupil;};
+
+                    $scope.breadcrumb = generateBreadcrumb();
+
+
 
 
     var dataInit = {idPupil: $scope.data.idPupil, 
