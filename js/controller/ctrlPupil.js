@@ -3,6 +3,7 @@ angular.module("modulePupil", [])
                             "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups",
                 function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
                             sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups) {
+                    $scope.show = true;
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -20,10 +21,6 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
-                    $scope.checkShow = function(){
-                        Console.log($location);
-                        return $location != '/templates/styled_Login.html';
-                    }
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};

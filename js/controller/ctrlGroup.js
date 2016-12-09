@@ -15,11 +15,7 @@ angular.module("moduleGroup", [])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
-
-                    $scope.checkShow = function(){
-                        Console.log($location);
-                        return $location != '/templates/styled_Login.html';
-                    }
+                    $scope.show = true;
 
     $scope.getSubjectOfGroup = function(){
         var retVal = null;

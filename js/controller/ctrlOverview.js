@@ -10,10 +10,7 @@ angular.module("moduleOverview", [])
     $scope.colSubjects = {};
     $scope.colGroups = {};
 
-                        $scope.checkShow = function(){
-                            Console.log($location);
-                            return $location != '/templates/styled_Login.html';
-                        }
+                        $scope.show = true;
 
     sData_groupsBySubjects.fillData().then(function(response){
         console.log(response);

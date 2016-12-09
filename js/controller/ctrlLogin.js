@@ -2,6 +2,8 @@ angular.module("moduleLogin", [])
 .controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate",
                 function ($scope, constants, $location, sData_authenticate) {
 
+                    $scope.show = false;
+
     $scope.form = {
         username: "",
         password: ""
@@ -9,10 +11,6 @@ angular.module("moduleLogin", [])
 
     $scope.breadcrumb = "login";
 
-                    $scope.checkShow = function(){
-                        Console.log($location);
-                        return $location != '/templates/styled_Login.html';
-                    }
 
     /*
     $scope.colTeachers = [
