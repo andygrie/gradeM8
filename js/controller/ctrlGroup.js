@@ -21,12 +21,15 @@ angular.module("moduleGroup", [])
 
                     $scope.show = true;
 
-                    var groupname = function(){ sData_allData.data.groups.forEach(function(entry){
+                    var groupname = function(){ var group;
+                        sData_allData.data.groups.forEach(function(entry,group){
                         if(entry.idGradeGroup == $routeParams.idGradeGroup){
-                            window.alert(entry.name);
-                            return entry.name;
+
+                            group = entry.name;
                         }
-                    })};
+                    });
+                        window.alert(entry.name);
+                    return group;};
 
                     $scope.breadcrumb = "Group - " + groupname();
 
