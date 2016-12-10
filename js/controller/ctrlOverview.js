@@ -15,6 +15,7 @@ angular.module("moduleOverview", [])
 
 
                         $scope.status = '  ';
+
                         $scope.showTabDialog = function(ev) {
                             $mdDialog.show({
                                 controller: DialogController,
