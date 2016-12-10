@@ -3,6 +3,7 @@ angular.module("modulePupil", [])
                             "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups",
                 function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
                             sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups) {
+                    $scope.show = true;
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -12,6 +13,10 @@ angular.module("modulePupil", [])
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
 
+
+                    $scope.data.currentSettingstab = "Period";
+                    $scope.data.displayModalSettings = false;
+
     $scope.data.colNoteHistory = [];
     $scope.data.colParticipationHistroy = [];
     $scope.data.ungradedEvents = [];
@@ -19,6 +24,29 @@ angular.module("modulePupil", [])
     $scope.data.ungradedParticipations = [];
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
+
+
+                    var generateBreadcrumb = function(){ var group;
+                        sData_allData.data.groups.forEach(function(entry){
+                            if(entry.idGradeGroup == $routeParams.idGradeGroup){
+
+                                group = entry.name;
+                            }
+                        });
+                        var pupil;
+                        sData_allData.data.pupils.forEach(function(entry){
+                            if(entry.idPupil == $routeParams.idPupil){
+                                pupil = entry.name;
+                            }
+                        });
+
+
+                        return "Group-"+group+"-Pupil-"+pupil;};
+
+                    $scope.breadcrumb = generateBreadcrumb();
+
+
+
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
@@ -105,6 +133,20 @@ angular.module("modulePupil", [])
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
     }
+                    $scope.switchModalSettings = function(){
+                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                    }
+
+                    $scope.setSettingTabToPeriod = function () {
+                        window.alert($scope.data.currentSettingstab);
+                        $scope.data.currentSettingstab = "Period";
+                    }
+
+                    $scope.setSettingTabToWeekdays = function () {
+                        window.alert($scope.data.currentSettingstab);
+                        $scope.data.currentSettingstab = "Weekdays";
+                    }
+
     $scope.switchModalNoteHistory = function() {
 
     }

@@ -1,12 +1,17 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
+
+    $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
+                        $scope.data.displayModalSettings = false;
+                        $scope.show = true;
+                        $scope.data.currentSettingstab = "Period";
 
     sData_groupsBySubjects.fillData().then(function(response){
         console.log(response);
@@ -42,6 +47,8 @@ angular.module("moduleOverview", [])
     ]
     */
 
+
+
     $scope.sendEmail = function(){
         sData_email.send().then(function(response){
             alert(response);
@@ -63,6 +70,17 @@ angular.module("moduleOverview", [])
     {
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
     }
+                        $scope.switchModalSettings = function(){
+                            $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                        }
+
+                        $scope.setSettingTabToPeriod = function () {
+                            $scope.data.currentSettingstab = "Period";
+                        }
+
+                        $scope.setSettingTabToWeekdays = function () {
+                            $scope.data.currentSettingstab = "Weekdays";
+                        }
 
     $scope.addNewSubject = function(){
         //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});

@@ -5,6 +5,8 @@ angular.module("moduleGroup", ['ngMaterial'])
                             sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent) {
 
     $scope.idGradeGroup = $routeParams.idGradeGroup;
+
+
     $scope.data = {};
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
@@ -17,6 +19,21 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
+
+//Breadcrumbs
+    $scope.data.displayModalSettings = false;
+    $scope.show = true;
+    $scope.data.currentSettingstab = "Period";
+    var groupname = function(){ var group;
+        sData_allData.data.groups.forEach(function(entry){
+        if(entry.idGradeGroup == $routeParams.idGradeGroup){
+
+            group = entry.name;
+        }
+    });
+    return group;};
+    $scope.breadcrumb = "Group - " + groupname();
+
 
 // Autocomplete
     $scope.auto = {};
@@ -119,19 +136,6 @@ angular.module("moduleGroup", ['ngMaterial'])
     }, function(response){
         console.log("error loading pupils by groups: " + response);
     })
-    /*
-    $scope.colPupils = [
-        {idUser: 1, fkClass: 1, forename: "Bört", surname: "enson", email: "on@pisse.ru", password: "1m4G0d"},
-        {idUser: 2, fkClass: 1, forename: "Üx", surname: "Finanzminister", email: "wüllst@aGöld.at", password: "hypo4SaVin"},
-        {idUser: 3, fkClass: 1, forename: "Andreas", surname: "Grißeszlera", email: "scheißLackna@hell.666", password: "StehstDuAuchAufSpeedmetal?"},
-    ];
-
-    $scope.colEvents = [
-        {idGradeEvent: 1, fkTeaches: 1, eventDate: "1.1.2017", eventDescription: "SUA"},
-        {idGradeEvent: 2, fkTeaches: 1, eventDate: "1.2.2017", eventDescription: "Abgabe1"},
-        {idGradeEvent: 3, fkTeaches: 1, eventDate: "1.3.2017", eventDescription: "Abgabe2"},
-    ];
-    */
 
     $scope.displayParticipationsOfEvent = function(paramEventId){
         $scope.switchModalEventDetail();
@@ -212,6 +216,18 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.switchModalPupil = function(){
         $scope.data.displayModalPupil = !$scope.data.displayModalPupil;
     }
+                    $scope.switchModalSettings = function(){
+                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+                    }
+
+                    $scope.setSettingTabToPeriod = function () {
+                        $scope.data.currentSettingstab = "Period";
+                    }
+
+                    $scope.setSettingTabToWeekdays = function () {
+                        $scope.data.currentSettingstab = "Weekdays";
+                    }
+
     $scope.switchModalEventDetail = function(){
         $scope.data.displayModalEventDetail = !$scope.data.displayModalEventDetail;
     }

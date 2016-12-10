@@ -1,9 +1,31 @@
+
+<div >
+    <header  ng-show="show" id="site-header">
+        <div class="site-header-toprow">
+            <div class="circle">
+                <a class="site-logo" href="#overview">
+                    <h1 class="logotype">
+                        <img src="resources/logo.png" width="70">
+                    </h1>
+                </a>
+            </div>
+            <div >
+                <h2 ng-bind="breadcrumb">
+                </h2>
+            </div>
+            <div class="settings-btn">
+                <img src="resources/settings.png" width="2em">
+            </div>
+        </div>
+    </header>
+</div>
+
 <nav id="site-nav">
     <div class="site-nav-wrapper">
     </div>
 </nav>
 
-<div ng-hide="!data.displayModalGroup"  id="myModal" class="modal">
+<div ng-hide="!data.displayModalSettings"  id="myModal3" class="modal">
     <div class="modal-wrapper">
         <div class="modal-header">
             <h2>Settings</h2>
@@ -21,10 +43,10 @@
                     </div>
                     <div>
                         <ul class="nav nav-tabs">
-                            <li><a href="#">Periode</a></li>
-                            <li><a href="#">Wochentage</a></li>
+                            <li ng-click="setSettingTabToPeriod()">Periode</li>
+                            <li ng-click="setSettingTabToWeekdays()">Weekdays</li>
                         </ul>
-                        <div>
+                        <div ng-hide="data.currentSettingstab != 'Weekdays'">
                             <div class="checkbox">
                                 <label><input type="checkbox" value="">Monday</label>
                             </div>
@@ -48,40 +70,39 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ng-hide="data.currentSettingstab != 'Period'">
                             <label class="control-label" for="sel1">Send me an e-mail every </label>
                             <div >
-                            <select class="form-control"  id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                            </select>
-
+                                <select class="form-control"  id="sel1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
                             </div>
                             <label> days </label>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="modal-footer">
-                <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
+                <input ng-disabled="" type="submit" ng-click=""
                        value="Submit" class="btnOK"/>
-                <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+                <button ng-click="switchModalSettings()" class="btnCancel">Cancel</button>
             </div>
         </form>
     </div>
 </div>
+
 
 
 <div ng-hide="!data.displayModalGroup"  id="myModal2" class="modal">
@@ -104,11 +125,13 @@
                     </thead>
                     <tbody>
                     <tr class="table-body-1">
-                        <td>1</td>
+                        <td>
+                            2
+                        </td>
                         <td>13.3.2016</td>
                     </tr>
                     <tr class="table-body-2">
-                        <td>2</td>
+                        <td>3</td>
                         <td>14.4.2016</td>
                     </tr>
                     </tbody>
@@ -190,25 +213,47 @@
                     </thead>
                     <tbody>
                     <tr class="table-body-1">
-                        <td>Prüfung</td>
+                        <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput></td>
                         <td>13.3.2016</td>
-                        <td>4</td>
+                        <td>
+                            <select class="form-control"  ng-model="" ng-change="changedValue(Grade+id/name?)">
+                            <option value="0">Absent</option>
+                            <option selected value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
                         <td>13.3.2016</td>
                         <td>13.3.2016</td>
                         <td><span class="glyphicon glyphicon-zoom-in"/></td>
                     </tr>
                     <tr class="table-body-2">
-                        <td>Prüfung</td>
+                        <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput>g</td>
                         <td>14.4.2016</td>
-                        <td>3</td>
+                        <td><select class="form-control"  ng-model="" ng-change="changedValue(Grade+id/name?)">
+                            <option value="0">Absent</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option selected value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
                         <td>13.3.2016</td>
                         <td>13.3.2016</td>
                         <td><span class="glyphicon glyphicon-zoom-in"/></td>
                     </tr>
                     <tr class="table-body-1">
-                        <td>Prüfung</td>
+                        <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput></td>
                         <td>13.3.2016</td>
-                        <td>4</td>
+                        <td><select class="form-control"  ng-model="" ng-change="changedValue(Grade+id/name?)">
+                            <option value="0">Absent</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option selected value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
                         <td>13.3.2016</td>
                         <td>13.3.2016</td>
                         <td><span class="glyphicon glyphicon-zoom-in"/></td>
@@ -249,7 +294,7 @@
                 </colgroup>
                 <thead>
                 <tr class="table-head">
-                    <th>Note</th>
+                    <th><imput type="text" ng-model = "" ng-change="">whatsoever</imput></th>
                     <th>Created</th>
                     <th>Changed</th>
                     <th></th>
@@ -257,19 +302,19 @@
                 </thead>
                 <tbody>
                 <tr class="table-body-1">
-                    <td>Prüfung</td>
+                    <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput></td>
                     <td>13.3.2016</td>
                     <td>13.3.2016</td>
                     <td><span class="glyphicon glyphicon-zoom-in"/></td>
                 </tr>
                 <tr class="table-body-2">
-                    <td>Prüfung</td>
+                    <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput></td>
                     <td>13.3.2016</td>
                     <td>13.3.2016</td>
                     <td><span class="glyphicon glyphicon-zoom-in"/></td>
                 </tr>
                 <tr class="table-body-1">
-                    <td>Prüfung</td>
+                    <td><imput type="text" ng-model = "" ng-change="">whatsoever</imput></td>
                     <td>13.3.2016</td>
                     <td>13.3.2016</td>
                     <td><span class="glyphicon glyphicon-zoom-in"/></td>

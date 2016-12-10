@@ -179,6 +179,7 @@ angular.module('moduleData', [])
 .factory('sData_allData', function() {
   var retVal;
   var applData = {
+      breadcrumbs : [],
       user: {},
       groups: [],
       subjects: [],
@@ -275,6 +276,9 @@ angular.module('moduleData', [])
             user = responseData;
             retVal.data = user;
             sData_allData.data.user = user;
+/*
+            window.alert(sData_allData.data.user.username);
+*/
             constants.teacherId = user.idUser;
             resolve("Successfuly authenticated user");
         }, function(response){
@@ -302,6 +306,7 @@ angular.module('moduleData', [])
         sWeb_getClass(function(responseData){
             classes = responseData;
             retVal.data = classes;
+
             sData_allData.data.classes = classes;
             resolve("Successfuly loaded classes");
         }, function(response){
@@ -483,6 +488,7 @@ angular.module('moduleData', [])
   function fillData(data){
     return $q(function(resolve, reject) {
         sWeb_getNoteHistory(function(responseData){
+
             participations = responseData;
             retVal.data = participations;
             resolve("Successfuly loaded participation history");
@@ -575,6 +581,7 @@ angular.module('moduleData', [])
                 //console.log("response i:" + tmpIdx);
                 responseDataInner[j].idGradeSubject = responseData[tmpIdx].idGradeSubject;
                 sData_allData.data.groups.push(responseDataInner[j]);
+
                 if(tmpIdx == responseData.length - 1 && j == responseDataInner.length -1)
                 {
                     retVal.data = groupsBySubjects;

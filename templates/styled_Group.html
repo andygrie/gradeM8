@@ -19,59 +19,61 @@
     </header>
 </div>
 
-
 <nav id="site-nav">
     <div class="site-nav-wrapper">
-        <button class = "site-nav-button" ng-click="switchModalGroup()">add group</button>
-        <button class = "site-nav-button" ng-click="switchModalSubject()">add subj</button>
-        <button class = "site-nav-button" ng-click="sendEmail()">send mail</button>
+        <button class="site-nav-button" ng-click="switchModalPupil()">add pupil</button>
+        <button class="site-nav-button" ng-click="switchModalEvent()">add event</button>
     </div>
 </nav>
 
-<div class="all">
-    <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
+<main class="main">
+    <div ng-hide="!data.displayModalPupil" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
-                <h2>Add Subject</h2>
+                <h2>Add Pupil</h2>
             </div>
-            <form name="formSubject">
+            <form>
                 <div class="modal-body">
-                    <div class=imput>
-                        <div>
-                            <input class="imput" type="text" ng-model="newSubject.name" name="subjectName" required/>
-                        </div>
-                        <div class="modal-footer">
-                            <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
-                                   value="Submit" class="btnOK"/>
-                            <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
-                        </div>
+                    <div class="imput">
+                        <div>Class:</div>
+                        <input id="classList" list="Class">
+                        <datalist id="Class">
+                            <option value="1BHIFS">
+                            <option value="1AHIFS">
+                        </datalist>
                     </div>
+                    <div class="imput" id="studentList">
+                        <div>Student:</div>
+                        <input list="Students">
+                        <datalist id="Students">
+                            <option value="Dude 01">
+                            <option value="Dude 02">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btnOK" type="button"> OK</button>
+                    <button ng-click="switchModalPupil()" class="btnCancel">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
+    <div ng-hide="!data.displayModalEvent" id="myModal2" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
-                <h2>Add Group</h2>
+                <h2>Add Event</h2>
             </div>
-            <form name="formGroup">
+            <form name="eventForm">
                 <div class="modal-body">
-                    <div class=imput>
-                        <div>
-                            <input type="text" ng-model="newGroup.name" name="groupName" required/>
-                        </div>
-                        <div>
-                            <select ng-options="recSubject as recSubject.name for recSubject in colSubjects"
-                                    ng-model="newGroup.subject" name="groupSubject" required></select>
-                        </div>
-                        <div class="modal-footer">
-                            <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()"
-                                   value="Submit" class="btnOK"/>
-                            <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
-                        </div>
-                    </div>
+                    <input type="date" id="eventDateInput" name="inputEventDate" ng-model="newEvent.eventDate"
+                    placeholder="eventDate" min="2016-01-01" required />
+                    <input type="text" id="eventDescriptionInput" name="inputEventDescription" ng-model="newEvent.eventDescription"
+                        placeholder="eventDescription" required/>
+                </div>
+                <div class="modal-footer">
+                    <input class="btnOK" type="submit" ng-click="insertNewEvent()" ng-disabled="!eventForm.$valid" value="Submit"/>
+                    <button ng-click="switchModalEvent()" class="btnCancel">Cancel</button>
                 </div>
             </form>
         </div>
@@ -155,16 +157,30 @@
         </div>
     </div>
 
-    <main class="main">
-    <div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
+
+    <div class="section-container">
         <div class="tile-container">
             <h1>
-                {{key}}
+                Pupils
             </h1>
-            <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
-                <h3>{{recordGroup.name}}</h3>
+            <div ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.idUser)">
+                <h4>{{recPupil.surname}}</h4>
+                <h5>{{recPupil.forename}}</h5>
             </div>
         </div>
     </div>
-    </main>
+
+    <div class="section-container">
+        <div class="tile-container">
+            <h1>
+                Events
+            </h1>
+            <div ng-repeat="recEvent in colEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+                <h4>{{recEvent.eventDescription}}</h4>
+                <h5>{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</h5>
+            </div>
+        </div>
+    </div>
+</main>
 </div>
+</html>
