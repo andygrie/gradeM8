@@ -115,7 +115,7 @@ exports.updateParticipation = function (req, res) {
     var result = {};
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("UPDATE participation SET grade = @g, gradedOn = @go WHERE idParticipation = @id", function (err) {
+        request = new Request("UPDATE participation SET grade = @g WHERE idParticipation = @id", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -125,7 +125,6 @@ exports.updateParticipation = function (req, res) {
             res.send();
         });
         request.addParameter('g', TYPES.Int, req.body.grade);
-        request.addParameter('go', TYPES.Int, req.body.gradedOn);
         request.addParameter('id', TYPES.Int, req.params.idParticipation);
         
         connection.execSql(request);
