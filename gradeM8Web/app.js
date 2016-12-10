@@ -109,6 +109,9 @@ app.delete('/note/:idNote', noteService.deleteNote);
 app.post('/login', loginService.login);
 app.get('/test', pupilService.getAllPupils);
 
+
+app.get('/note/history/:idNote', noteService.getVersionHistory);
+
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });

@@ -11,3 +11,4 @@
 /// <reference path="globals/stylus/index.d.ts" />
 /// <reference path="globals/tedious/index.d.ts" />
 /// <reference path="globals/underscore/index.d.ts" />
+/// <reference path="globals/winston/index.d.ts" />
