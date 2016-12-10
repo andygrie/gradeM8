@@ -76,7 +76,7 @@ angular.module('moduleData', [])
   function insertEvent(data){
     return $q(function(resolve, reject){
         sWeb_setEvent(function(responseData){
-            sData_eventsByGroups.data[data.idGradeGroup] = responseData;
+            sData_eventsByGroups.data.push(responseData);
 
             responseData.idGradeGroup = data.idGradeGroup;
             sData_allData.data.events.push(responseData);
@@ -87,7 +87,7 @@ angular.module('moduleData', [])
     });
   }
   
-  //data = {idParticipation, fkGradeEvent, fkPupil, grade}
+  //data = {idParticipation, grade}
   function putParticipation(data){
       return $q(function(resolve, reject){
           sWeb_putParticipation(function(responseData){
@@ -97,12 +97,10 @@ angular.module('moduleData', [])
               {
                   if(partData[i].idParticipation == responseData.idParticipation)
                   {
-                      partData[i].fkPupil = responseData.fkPupil;
-                      partData[i].fkGradeEvent = responseData.fkGradeEvent;
                       partData[i].grade = responseData.grade;
                   }
               }
-              
+              resolve("success");
           }, function(response){
               reject(response);
           }, data);
@@ -193,7 +191,7 @@ angular.module('moduleData', [])
   #text# ... lokales Attribut, nicht in der DB
 
   applData = {
-      user:  {idUser, forename, surname, email, username},
+      user:  {fkUser, forename, surname, email, username},
 
       groups: [
           {idGradeGroup, #idGradeSubject#, name}
@@ -276,9 +274,9 @@ angular.module('moduleData', [])
             user = responseData;
             retVal.data = user;
             sData_allData.data.user = user;
-/*
+            /*
             window.alert(sData_allData.data.user.username);
-*/
+            */
             constants.teacherId = user.idUser;
             resolve("Successfuly authenticated user");
         }, function(response){
@@ -604,32 +602,33 @@ angular.module('moduleData', [])
       ]
   }
   */
-  var eventsByGroups = {};
+  var events = [];
   var retVal;
 
   retVal = {
-      data: eventsByGroups,
+      data: events,
       fillData: fillData
   }
 
   return retVal;
 
+  //data {idGradeGroup}
+  function fillData(data){
+      return $q(function(resolve, reject) {
+        sWeb_getEventByGroup(function(responseData){
+            events = responseData;
+            retVal.data = events;
+            resolve(responseData);
+        }, function(response){
+            reject(response);
+        }, data);
+    })
+  }
+  /* wai u do dis
   function fillData(){
       return $q(function(resolve, reject){
         var baseData = sData_groupsBySubject.data;
-        //if(sData_allData.data.events == null)
-            sData_allData.data.events = [];
-        /*
-        if(baseData == null)
-        {
-            sData_groupsBySubject.fillData().then(function(response){
-                //baseData should have updated hence call by reference
-                //for bug preventing tho
-                baseData = sData_groupsBySubject.data;
-            },function(response){
-                reject("Dependent Load not working! " + response);
-            })
-        }*/
+        sData_allData.data.events = [];
 
         var tmpI;
         var tmpJ;
@@ -674,6 +673,7 @@ angular.module('moduleData', [])
         reject(response);
     }, baseData[keys[tmpI]][tmpJ].idGradeGroup);
   }
+  */
 }])
 
 .factory('sData_pupilsByGroups', ["$q", "sData_allData", "sData_groupsBySubjects",  "sWeb_getPupilByGroup", 

@@ -11,6 +11,38 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
     $scope.data.displayModalEventDetail = false;
+
+    $scope.state = {};
+    $scope.state.awaitingPupilData = true;
+    $scope.state.awaitingEventData = true;
+
+    $scope.newEvent = {};
+    $scope.newEvent.eventDate = new Date();
+
+    $scope.grade = {};
+    $scope.grade.gradeOptions = [
+        {grade: -1, description: "ungraded"},
+        {grade: 0, description: "abscent"},
+        {grade: 1, description: "1"},
+        {grade: 2, description: "2"},
+        {grade: 3, description: "3"},
+        {grade: 4, description: "4"},
+        {grade: 5, description: "5"}
+    ];
+    $scope.grade.colParticipations = [];
+    $scope.grade.updateGrade = function(item){
+        item.isUpdating = true;
+
+        sData_CUDHandler.putParticipation(item).then(function(reponse){
+            item.isUpdating = false;
+            console.log("success updating grade");
+        }, function(response){
+            item.isUpdating = false;
+            console.log("update failed");
+            console.log(response);
+        });
+    }
+
     $scope.classesSelected = false;
     $scope.colPupils = [];
     $scope.colClasses = [];
@@ -120,10 +152,10 @@ angular.module("moduleGroup", ['ngMaterial'])
 
     $scope.idGradeSubject = $scope.getSubjectOfGroup();
     sData_pupilsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function(response){
-        console.log(response);
-        console.log(sData_pupilsByGroups.data);
+        $scope.state.awaitingPupilData = false;
         $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
     }, function(response){
+        $scope.state.awaitingPupilData = false;
         console.log("error loading pupils by groups: " + response);
     })
     sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function(response){
@@ -131,9 +163,11 @@ angular.module("moduleGroup", ['ngMaterial'])
     }, function(response){
         console.log("error loading teaches: " + response);
     })
-    sData_eventsByGroups.fillData().then(function(response){
-        $scope.colEvents = sData_eventsByGroups.data[$scope.idGradeGroup];
+    sData_eventsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function(response){
+        $scope.state.awaitingEventData = false;
+        $scope.colEvents = sData_eventsByGroups.data;
     }, function(response){
+        $scope.state.awaitingEventData = false;
         console.log("error loading pupils by groups: " + response);
     })
 
@@ -145,7 +179,12 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.loadParticipationsByEvent = function(paramEventId) {
         sData_participationsByEvent.fillData({idGradeEvent: paramEventId}).then(function(response){
             console.log(response);
-            $scope.colParticipations = sData_participationsByEvent.data;
+            $scope.grade.colParticipations = sData_participationsByEvent.data.map(function(item){
+                item.isUpdating = false;
+                return item;
+            });
+
+            console.log($scope.grade.colParticipations);
         }, function(response){
             console.log(response);
         });
@@ -255,9 +294,8 @@ angular.module("moduleGroup", ['ngMaterial'])
             for(var i = 0; i < $scope.colPupils.length; i++)
             {
                 dataInner.colPupils.push({
-                    fkPupil: $scope.colPupils[i].idUser,
-                    grade: 0,
-                    abscent: 0
+                    fkPupil: $scope.colPupils[i].fkUser,
+                    grade: -1
                 });
             }
 

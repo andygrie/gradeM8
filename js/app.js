@@ -12,7 +12,12 @@ app.constant('constants', {
     teacherId: 0
 });
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $mdDateLocaleProvider) {
+  
+  $mdDateLocaleProvider.formatDate = function(date) {
+    return moment(date).format('YYYY-MM-DD');
+  };
+  
   $routeProvider
   .when("/", {
     templateUrl : "templates/styled_Login.html",

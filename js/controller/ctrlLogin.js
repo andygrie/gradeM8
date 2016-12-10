@@ -9,6 +9,8 @@ angular.module("moduleLogin", [])
         password: ""
     };
 
+    $scope.form.awaitingLoginResponse = false;
+
     $scope.breadcrumb = "login";
 
 
@@ -20,9 +22,13 @@ angular.module("moduleLogin", [])
     */
     
     $scope.logIn = function (){
+        $scope.form.awaitingLoginResponse = true;
+
         sData_authenticate.authenticate($scope.form).then(function(response){
+            $scope.form.awaitingLoginResponse = false;
             $location.path("/overview");
         }, function(response){
+            $scope.form.awaitingLoginResponse = false;
             alert("Error authenticating");
             console.log(response);
         })

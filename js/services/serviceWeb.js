@@ -90,10 +90,10 @@ angular.module('moduleWeb', [])
 
 .factory('sWeb_getEventByGroup', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {
-  return function(resolve, reject, groupId){
+  return function(resolve, reject, data){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/event/byGroup/" + groupId
+          url: constants.apiUrl + "/event/byGroup/" + data.idGradeGroup
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -149,7 +149,7 @@ angular.module('moduleWeb', [])
   return function(resolve, reject, data){
       $http({
           method: "GET",
-          url: constants.apiUrl + "/participation/byEvent/" + data.idGradeEvent
+          url: constants.apiUrl + "/participation/pupil/byEvent/" + data.idGradeEvent
       }).then(function(response){
           resolve(response.data);
         }, function(response){

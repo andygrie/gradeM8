@@ -4,8 +4,8 @@
         <button class="site-nav-button" ng-click="switchModalEvent()">add event</button>
     </div>
 </nav>
-<main class="main">
-    <div ng-show="data.displayModalPupil" id="myModal" class="modal">
+
+<div ng-show="data.displayModalPupil" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Add Pupil</h2>
@@ -103,6 +103,9 @@
         </div>
     </div>
 
+<main class="main">
+    </br>
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingPupilData"></md-progress-linear>
 
     <div class="section-container">
         <div class="tile-container">
@@ -115,6 +118,9 @@
             </div>
         </div>
     </div>
+
+    </br>
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
 
     <div class="section-container">
         <div class="tile-container">

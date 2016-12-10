@@ -3,6 +3,8 @@ angular.module("moduleOverview", [])
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
 
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
+    $scope.state = {};
+    $scope.state.awaitingData = true;
     $scope.data = {};
     $scope.data.displayModalGroup = false;
     $scope.data.displayModalSubject = false;
@@ -18,8 +20,10 @@ angular.module("moduleOverview", [])
         $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
         $scope.colSubjects = sData_allData.data.subjects;
         $scope.colGroups = sData_allData.data.groups;
+        $scope.state.awaitingData = false;
     }, function(response){
         console.log("error loading groups by subjects: " + response);
+        $scope.state.awaitingData = false;
     })
     
     /*

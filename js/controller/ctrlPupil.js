@@ -13,9 +13,13 @@ angular.module("modulePupil", [])
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
 
+    $scope.partHistory = {};
+    $scope.noteHistory = {};
+    $scope.partHistory.colParticipation = [];
+    $scope.noteHistory.colNotes = [];
 
-                    $scope.data.currentSettingstab = "Period";
-                    $scope.data.displayModalSettings = false;
+    $scope.data.currentSettingstab = "Period";
+    $scope.data.displayModalSettings = false;
 
     $scope.data.colNoteHistory = [];
     $scope.data.colParticipationHistroy = [];
@@ -25,25 +29,37 @@ angular.module("modulePupil", [])
     $scope.data.gradedParticipations = [];
     $scope.data.colEvents = findEvents();
 
+    $scope.grade = {};
+    $scope.grade.gradeOptions = [
+        {grade: -1, description: "ungraded"},
+        {grade: 0, description: "abscent"},
+        {grade: 1, description: "1"},
+        {grade: 2, description: "2"},
+        {grade: 3, description: "3"},
+        {grade: 4, description: "4"},
+        {grade: 5, description: "5"}
+    ];
 
-                    var generateBreadcrumb = function(){ var group;
-                        sData_allData.data.groups.forEach(function(entry){
-                            if(entry.idGradeGroup == $routeParams.idGradeGroup){
+    function generateBreadcrumb(){ 
+        var group;
+        sData_allData.data.groups.forEach(function(entry){
+            if(entry.idGradeGroup == $routeParams.idGradeGroup){
 
-                                group = entry.name;
-                            }
-                        });
-                        var pupil;
-                        sData_allData.data.pupils.forEach(function(entry){
-                            if(entry.idPupil == $routeParams.idPupil){
-                                pupil = entry.name;
-                            }
-                        });
+                group = entry.name;
+            }
+        });
+        var pupil;
+        sData_allData.data.pupils.forEach(function(entry){
+            if(entry.idPupil == $routeParams.idPupil){
+                pupil = entry.name;
+            }
+        });
 
 
-                        return "Group-"+group+"-Pupil-"+pupil;};
+        return "Group-"+group+"-Pupil-"+pupil;
+    };
 
-                    $scope.breadcrumb = generateBreadcrumb();
+    $scope.breadcrumb = generateBreadcrumb();
 
 
 
@@ -65,36 +81,7 @@ angular.module("modulePupil", [])
         console.log("error loading notes: " + response);
     });
 
-    /*
-    $scope.data.colEvents = [
-        {idGradeEvent: 1, 
-            idGradeGroup: $scope.data.idGradeGroup, 
-            fkTeaches: $scope.data.teaches.idTeaches, 
-            eventDate: "01.01.2016", 
-            eventDescription: "D-Test"},
-        {idGradeEvent: 2, 
-            idGradeGroup: $scope.data.idGradeGroup, 
-            fkTeaches: $scope.data.teaches.idTeaches, 
-            eventDate: "01.01.2016", 
-            eventDescription: "AM-Test"}
-    ]
-
-    $scope.data.colParticipations = [
-        {idParticipation: 1,
-            fkGradeEvent: 1,
-            fkPupil: $scope.data.idPupil,
-            grade: 4},
-        {idParticipation: 2,
-            fkGradeEvent: 2,
-            fkPupil: $scope.data.idPupil,
-            grade: -1},
-    ]
-
-    $scope.data.colNotes = [
-        {idNote: 1, fkTeaches: $scope.data.teaches, fkPupil: $scope.data.idPupil, note: "Macht probleme"},
-        {idNote: 2, fkTeaches: $scope.data.teaches, fkPupil: $scope.data.idPupil, note: "Wird unterdrückt"}
-    ]
-    */
+    
     $scope.displayNoteHistory = function(paramIdNote) {
         $scope.switchModalNoteHistory();
         $scope.loadNoteHistory();
@@ -109,7 +96,7 @@ angular.module("modulePupil", [])
     $scope.loadNoteHistory = function(paramIdNote){
         sData_noteHistory.fillData(paramIdNote).then(function(response){
             console.log(response);
-            $scope.data.colNoteHistory = sData_noteHistory.data;
+            $scope.noteHistory.colNotes = sData_noteHistory.data;
         }, function(response){
             console.log(response);
         });
@@ -118,7 +105,7 @@ angular.module("modulePupil", [])
     $scope.loadParticipationHistory = function(paramIdParticipation){
         sData_participationHistory.fillData(paramIdParticipation).then(function(response){
             console.log(response);
-            $scope.data.colParticipationHistroy = sData_participationHistory.data;
+            $scope.partHistory.colParticipation = sData_participationHistory.data;
         }, function(response){
             console.log(response);
         });
@@ -133,19 +120,20 @@ angular.module("modulePupil", [])
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
     }
-                    $scope.switchModalSettings = function(){
-                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
-                    }
+    
+    $scope.switchModalSettings = function(){
+        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+    }
 
-                    $scope.setSettingTabToPeriod = function () {
-                        window.alert($scope.data.currentSettingstab);
-                        $scope.data.currentSettingstab = "Period";
-                    }
+    $scope.setSettingTabToPeriod = function () {
+        window.alert($scope.data.currentSettingstab);
+        $scope.data.currentSettingstab = "Period";
+    }
 
-                    $scope.setSettingTabToWeekdays = function () {
-                        window.alert($scope.data.currentSettingstab);
-                        $scope.data.currentSettingstab = "Weekdays";
-                    }
+    $scope.setSettingTabToWeekdays = function () {
+        window.alert($scope.data.currentSettingstab);
+        $scope.data.currentSettingstab = "Weekdays";
+    }
 
     $scope.switchModalNoteHistory = function() {
 

@@ -36,6 +36,9 @@
             <input name="password" type="password" id = "password" ng-model="form.password">
             <input class="sign-in-button" type="submit" ng-disabled="!formTeacher.$valid" ng-click="logIn()"
                    value="LogIn">
+            </br>
+            <md-progress-linear md-mode="indeterminate" ng-disabled="!form.awaitingLoginResponse"></md-progress-linear>
+            </br>
         </form>
         <label id="message" class="message_label">hier könnte ihre message stehen</label>
     </div>
