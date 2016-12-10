@@ -278,7 +278,7 @@ exports.getVersionHistory = function (req, res) {
 exports.getPupilByParticipationEvent = function (req, res) {
     var connection = new Connection(config);
     var results = [];
-    var reqString = "select username from pupil " +
+    var reqString = "select idParticipation, Participation.fkGradeEvent, grade, gradedOn, username from pupil " +
         "inner join Participation on pupil.fkUser = Participation.fkPupil " +
         "inner join GradeEvent on GradeEvent.idGradeEvent = Participation.fkGradeEvent " +
         "inner join Gradeuser on GradeUser.idUser = pupil.fkUser " +
@@ -332,7 +332,13 @@ function getPupilsByUsernameFromAD(pupils, res) {
             var query = '(|';
             pupils.forEach(function (item) {
                 query = query + '(cn=' + item.username + ')';
-                pupilsHelp[item.username] = item.fkUser;
+                pupilsHelp[item.username] = {
+                    fkUser: item.fkUser,
+                    fkGradeEvent: item.fkGradeEvent,
+                    grade: item.grade,
+                    gradedOn: item.gradedOn,
+                    idParticipation: item.idParticipation
+                };
             });
             query = query + ')';
 
@@ -346,11 +352,17 @@ function getPupilsByUsernameFromAD(pupils, res) {
                 else {
                     users.forEach(function (item) {
                         finalPupils.push({
-                            fkUser: pupilsHelp[item.cn],
-                            username: item.cn,
-                            forename: item.givenName,
-                            surname: item.sn,
-                            email: item.mail
+                            idParticipation: pupilsHelp[item.cn].idParticipation,
+                            fkGradeEvent: pupilsHelp[item.cn].fkGradeEvent,
+                            grade: pupilsHelp[item.cn].grade,
+                            gradedOn: pupilsHelp[item.cn].gradedOn,
+                            Pupil: {
+                                fkUser: pupilsHelp[item.cn].fkUser,
+                                username: item.cn,
+                                forename: item.givenName,
+                                surname: item.sn,
+                                email: item.mail
+                            }
                         });
                     });
                     res.send(finalPupils);
