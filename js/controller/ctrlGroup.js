@@ -1,4 +1,4 @@
-angular.module("moduleGroup", [])
+angular.module("moduleGroup", ['ngMaterial'])
 .controller("ctrlGroup", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups", 
                             "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent",
                 function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups, 
@@ -10,31 +10,103 @@ angular.module("moduleGroup", [])
     $scope.data = {};
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalPupil = false;
-    $scope.colPupils = {};
-    $scope.colClasses = {};
+    $scope.data.displayModalEventDetail = false;
+    $scope.classesSelected = false;
+    $scope.colPupils = [];
+    $scope.colClasses = [];
     $scope.colAdPupils = []; //Maybe [] because push() is called
-    $scope.colSelectedClasses = {};
+    $scope.colSelectedClasses = [];
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
     $scope.colEvents = [];
-                    $scope.data.displayModalSettings = false;
-                    $scope.show = true;
 
-                    $scope.data.currentSettingstab = "Period";
+//Breadcrumbs
+    $scope.data.displayModalSettings = false;
+    $scope.show = true;
+    $scope.data.currentSettingstab = "Period";
+    var groupname = function(){ var group;
+        sData_allData.data.groups.forEach(function(entry){
+        if(entry.idGradeGroup == $routeParams.idGradeGroup){
 
-                    var groupname = function(){ var group;
-                        sData_allData.data.groups.forEach(function(entry){
-                        if(entry.idGradeGroup == $routeParams.idGradeGroup){
-
-                            group = entry.name;
-                        }
-                    });
-                    return group;};
+            group = entry.name;
+        }
+    });
+    return group;};
+    $scope.breadcrumb = "Group - " + groupname();
 
 
-                    $scope.breadcrumb = "Group - " + groupname();
+// Autocomplete
+    $scope.auto = {};
+    $scope.auto.selectedItem = null;
+    $scope.auto.searchText = null;
+    /**
+     * Return the proper object when the append is called.
+     */
+    $scope.auto.transformChip = function transformChip(chip) {
+      // If it is an object, it's already a known chip
+      if (angular.isObject(chip)) {
+        return chip;
+      }
 
-                    $scope.getSubjectOfGroup = function(){
+      // Otherwise, create a new one
+      return { name: chip };
+    }
+
+    /**
+     * Search for classes.
+     */
+    $scope.auto.querySearch = function querySearch (query) {
+      var results = query ? $scope.colClasses.filter(createFilterFor(query)) : [];
+      return results;
+    }
+
+    /**
+     * Create filter function for a query string
+     */
+    function createFilterFor(query) {
+      var lowercaseQuery = angular.lowercase(query);
+
+      return function filterFn(paramClass) {
+        return (paramClass.name.toLowerCase().indexOf(lowercaseQuery) === 0);
+      };
+
+    }
+//Check
+    $scope.check = {};
+
+    $scope.check.toggle = function (item, list) {
+        var idx = list.indexOf(item);
+        if (idx > -1) {
+          list.splice(idx, 1);
+        }
+        else {
+          list.push(item);
+        }
+      };
+
+    $scope.check.exists = function (item, list) {
+    return list.indexOf(item) > -1;
+    };
+
+    $scope.check.isIndeterminate = function() {
+        return ($scope.colSelectedPupils.length !== 0 &&
+            $scope.colSelectedPupils.length !== $scope.colAdPupils.length);
+    };
+
+    $scope.check.isChecked = function() {
+        return $scope.colSelectedPupils.length === $scope.colAdPupils.length;
+    };
+
+    $scope.check.toggleAll = function() {
+        if ($scope.colSelectedPupils.length === $scope.colAdPupils.length) {
+        $scope.colSelectedPupils = [];
+        } else if ($scope.colSelectedPupils.length === 0 || $scope.colSelectedPupils.length > 0) {
+        $scope.colSelectedPupils = $scope.colAdPupils.slice(0);
+        }
+    };
+
+// Other Functions
+    $scope.getSubjectOfGroup = function(){
         var retVal = null;
         var colGroups = sData_allData.data.groups;
         for(var i = 0; i < colGroups.length && retVal == null; i++)
@@ -64,19 +136,6 @@ angular.module("moduleGroup", [])
     }, function(response){
         console.log("error loading pupils by groups: " + response);
     })
-    /*
-    $scope.colPupils = [
-        {idUser: 1, fkClass: 1, forename: "Bört", surname: "enson", email: "on@pisse.ru", password: "1m4G0d"},
-        {idUser: 2, fkClass: 1, forename: "Üx", surname: "Finanzminister", email: "wüllst@aGöld.at", password: "hypo4SaVin"},
-        {idUser: 3, fkClass: 1, forename: "Andreas", surname: "Grißeszlera", email: "scheißLackna@hell.666", password: "StehstDuAuchAufSpeedmetal?"},
-    ];
-
-    $scope.colEvents = [
-        {idGradeEvent: 1, fkTeaches: 1, eventDate: "1.1.2017", eventDescription: "SUA"},
-        {idGradeEvent: 2, fkTeaches: 1, eventDate: "1.2.2017", eventDescription: "Abgabe1"},
-        {idGradeEvent: 3, fkTeaches: 1, eventDate: "1.3.2017", eventDescription: "Abgabe2"},
-    ];
-    */
 
     $scope.displayParticipationsOfEvent = function(paramEventId){
         $scope.switchModalEventDetail();
@@ -92,6 +151,11 @@ angular.module("moduleGroup", [])
         });
     }
 
+    $scope.displayAddPupil = function(){
+        $scope.switchModalPupil();
+        $scope.loadClasses();
+    }
+
     $scope.registerPupils = function(){
         var paramData = {
             idGradeGroup: $scope.idGradeGroup,
@@ -100,6 +164,7 @@ angular.module("moduleGroup", [])
 
         sData_CUDHandler.registerPupils(paramData).then(function(response){
             console.log(response);
+            $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
             $scope.switchModalPupil();
         }, function(response){
             console.log(response);
@@ -115,9 +180,10 @@ angular.module("moduleGroup", [])
             console.log(response);
         });
     }
-    
+
     $scope.loadAdPupils = function(){
         loadPupilsOfClass($scope.colSelectedClasses, 0, function(msg){
+            $scope.classesSelected = true;
             console.log("successfully loaded Pupils of selected Classes");
             console.log(msg);
         }, function(msg){
@@ -127,12 +193,11 @@ angular.module("moduleGroup", [])
     }
 
     function loadPupilsOfClass(classnames, index, onDone, onError){
-        sData_pupilsByClass.fillData(classname[index]).then(function(response){
+        sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function(response){
             for(var i = 0; i < response.length; i++)
             {
                 $scope.colAdPupils.push(response[i]);
             }
-
             index++;
             if(index < classnames.length)
             {
@@ -164,7 +229,7 @@ angular.module("moduleGroup", [])
                     }
 
     $scope.switchModalEventDetail = function(){
-
+        $scope.data.displayModalEventDetail = !$scope.data.displayModalEventDetail;
     }
     $scope.navBack = function(){
         $location.path("/overview");
