@@ -229,9 +229,7 @@ article, div, aside, footer, header, main, nav, section {
     color: #662d91;
     padding-top: 0.5em;
 }
-#md-pagination-wrapper {
-    width:100% !important;
-}
+
 .imput {
     margin: 0.5em auto;
     width: 80%;
