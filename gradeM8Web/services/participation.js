@@ -105,8 +105,6 @@ exports.insertParticipation = function (req, res) {
 
 
 
-
-
 }
 
 
@@ -118,14 +116,17 @@ exports.updateParticipation = function (req, res) {
         request = new Request("UPDATE participation SET grade = @g WHERE idParticipation = @id", function (err) {
             if (err) {
                 console.log(err);
+                result = err;
             }
         });
         connection.on('debug', function (err) { console.log('debug:', err); });
         request.on('doneProc', function (rowCount, more) {
-            res.send();
+            res.send(result);
         });
         request.addParameter('g', TYPES.Int, req.body.grade);
         request.addParameter('id', TYPES.Int, req.params.idParticipation);
+
+        console.log(req);
         
         connection.execSql(request);
     }
