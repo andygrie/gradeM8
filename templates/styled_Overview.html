@@ -13,7 +13,7 @@
                 </h2>
             </div>
             <div class="settings-btn">
-                <img src="resources/settings.png" width="2em" ng-click="switchModalSettings()">
+                <img src="resources/settings.png" width="2em" ng-click="showTabDialog()">
             </div>
         </div>
     </header>
@@ -72,101 +72,6 @@
                             <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
                         </div>
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div ng-hide="!data.displayModalSettings"  id="myModal3" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Settings</h2>
-            </div>
-            <form>
-                <div class="modal-body">
-                    <div class=imput>
-
-                        <div>
-                            <label>Uhrzeit:</label>
-                        </div>
-
-                        <div>
-                            <input type="time">
-                        </div>
-
-                        <div ng-cloak>
-                            <md-content>
-                                <md-tabs md-dynamic-height md-border-bottom>
-                                    <md-tab label="Periode">
-                                        <md-content class="md-padding">
-                                            <fieldset class="fieldset">
-                                                <div layout="row" layout-wrap flex>
-                                                    <div flex-xs flex="35">
-                                                        <md-checkbox aria-label="Monday" >
-                                                            Monday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Tuesday">
-                                                            Tuesday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Wednesday">
-                                                            Wednesday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Thursday">
-                                                            Thursday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Friday">
-                                                            Friday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Saturday">
-                                                            Saturday
-                                                        </md-checkbox>
-
-                                                        <md-checkbox aria-label="Sunday">
-                                                            Sunday
-                                                        </md-checkbox>
-                                                    </div>
-                                                    </div>
-                                            </fieldset>
-                                        </md-content>
-                                    </md-tab>
-
-                                    <md-tab label="Weekdays">
-                                        <md-content class="md-padding">
-                                            <label class="control-label" for="sel1">Send me an e-mail every </label>
-                                            <div >
-                                                <select class="form-control"  id="sel1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                    <option>6</option>
-                                                    <option>7</option>
-                                                    <option>8</option>
-                                                    <option>9</option>
-                                                    <option>10</option>
-                                                    <option>11</option>
-                                                    <option>12</option>
-                                                </select>
-                                            </div>
-                                            <label> days </label>
-                                        </md-content>
-                                    </md-tab>
-                                </md-tabs>
-                            </md-content>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <input ng-disabled="" type="submit" ng-click=""
-                           value="Submit" class="btnOK"/>
-                    <button ng-click="switchModalSettings()" class="btnCancel">Cancel</button>
                 </div>
             </form>
         </div>

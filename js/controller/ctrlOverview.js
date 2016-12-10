@@ -14,39 +14,30 @@ angular.module("moduleOverview", [])
                         $scope.data.currentSettingstab = "Period";
 
 
-                        $scope.items = [1,2,3,4,5];
-                        $scope.selected = [1];
 
-                        $scope.toggle = function (item, list) {
-                            var idx = list.indexOf(item);
-                            if (idx > -1) {
-                                list.splice(idx, 1);
-                            }
-                            else {
-                                list.push(item);
-                            }
+                        $scope.showTabDialog = function(ev) {
+                            $mdDialog.show({
+                                controller: DialogController,
+                                templateUrl: '../../templates/settings_Modal.html',
+                                parent: angular.element(document.body),
+                                targetEvent: ev,
+                                clickOutsideToClose:true
+                            })
                         };
+                        
+                        function DialogController($scope, $mdDialog) {
+                            $scope.hide = function() {
+                                $mdDialog.hide();
+                            };
 
-                        $scope.exists = function (item, list) {
-                                return list.indexOf(item) > -1;
-                        };
+                            $scope.cancel = function() {
+                                $mdDialog.cancel();
+                            };
 
-                        $scope.isIndeterminate = function() {
-                            return ($scope.selected.length !== 0 &&
-                            $scope.selected.length !== $scope.items.length);
-                        };
-
-                        $scope.isChecked = function() {
-                            return $scope.selected.length === $scope.items.length;
-                        };
-
-                        $scope.toggleAll = function() {
-                            if ($scope.selected.length === $scope.items.length) {
-                                $scope.selected = [];
-                            } else if ($scope.selected.length === 0 || $scope.selected.length > 0) {
-                                $scope.selected = $scope.items.slice(0);
-                            }
-                        };
+                            $scope.answer = function(answer) {
+                                $mdDialog.hide(answer);
+                            };
+                        }
 
 
     sData_groupsBySubjects.fillData().then(function(response){
@@ -105,7 +96,7 @@ angular.module("moduleOverview", [])
     $scope.switchModalGroup = function()
     {
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
-    }
+    }/*
                         $scope.switchModalSettings = function(){
                             $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
                         }
@@ -117,7 +108,7 @@ angular.module("moduleOverview", [])
                         $scope.setSettingTabToWeekdays = function () {
                             $scope.data.currentSettingstab = "Weekdays";
                         }
-
+*/
     $scope.addNewSubject = function(){
         //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
         var data = {
