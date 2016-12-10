@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/app.css" afterPath="$PROJECT_DIR$/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/settings_Modal.html" afterPath="$PROJECT_DIR$/templates/settings_Modal.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +28,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#fieldset#0;n#md-content#0;n#md-tab#0;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="false" />
+                <element signature="n#md-content#0;n#md-tab#1;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,27 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-                <element signature="n#fieldset#0;n#md-content#0;n#md-tab#0;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="false" />
-                <element signature="n#md-content#0;n#md-tab#1;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-material.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="4628" column="37" selection-start-line="4628" selection-start-column="34" selection-end-line="4628" selection-end-column="37" />
+            <state relative-caret-position="209">
+              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -127,18 +127,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-material.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.min.css">
+      <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="6019" column="0" selection-start-line="6019" selection-start-column="0" selection-end-line="6019" selection-end-column="0" />
+            <state relative-caret-position="612">
+              <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
               <folding>
-                <element signature="e#21367#21540#2" expanded="true" />
-                <element signature="e#22905#23078#2" expanded="true" />
-                <element signature="e#23701#23874#2" expanded="true" />
-                <element signature="e#157726#158815#2" expanded="true" />
-                <element signature="e#158963#160048#2" expanded="true" />
+                <marker date="1481379184872" expanded="true" signature="7946:7952" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctrlLogin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,21 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="230" column="1" selection-start-line="230" selection-start-column="1" selection-end-line="230" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+            <state relative-caret-position="119">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -223,8 +219,8 @@
         <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.min.css" />
         <option value="$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js" />
         <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.js" />
-        <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
         <option value="$PROJECT_DIR$/css/app.css" />
+        <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
       </list>
     </option>
   </component>
@@ -467,12 +463,12 @@
       <workItem from="1481275531581" duration="15501000" />
       <workItem from="1481304538420" duration="5052000" />
       <workItem from="1481316590441" duration="353000" />
-      <workItem from="1481378857937" duration="15130000" />
+      <workItem from="1481378857937" duration="15478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107966000" />
+    <option name="totallyTimeSpent" value="108314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -611,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlInformation.js" />
     <entry file="file://$PROJECT_DIR$/js/services/serviceData.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -638,27 +627,6 @@
         <state relative-caret-position="255">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
-          <folding>
-            <marker date="1481379184872" expanded="true" signature="7946:7952" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="7984:8028" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="8071:8151" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="8191:9415" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="8212:8437" ph="{&quot;idGradeGroup&quot;: $scope.idGradeGroup...}" />
-            <marker date="1481379184872" expanded="true" signature="8505:9313" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="8779:8975" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="8822:8959" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="9064:9191" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="9211:9300" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="9333:9407" ph="{...}" />
-            <marker date="1481379184872" expanded="true" signature="9602:9718" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,22 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -831,25 +783,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+    <entry file="file://$PROJECT_DIR$/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
           <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#fieldset#0;n#md-content#0;n#md-tab#0;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="false" />
-            <element signature="n#md-content#0;n#md-tab#1;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <marker date="1481379184872" expanded="true" signature="7946:7952" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/app.css">
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="230" column="1" selection-start-line="230" selection-start-column="1" selection-end-line="230" selection-end-column="1" />
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#fieldset#0;n#md-content#0;n#md-tab#0;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="false" />
+            <element signature="n#md-content#0;n#md-tab#1;n#md-tabs#0;n#md-content#0;n#div#2;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
