@@ -61,8 +61,11 @@ angular.module('moduleWeb', [])
                     function($q, $http, constants) {
   return function(resolve, reject, data){
       $http({
-          method: "GET",
-          url: constants.apiUrl + "/pupil/byClass/fromAD" + data.classname
+          method: "POST",
+          url: constants.apiUrl + "/pupil/byClass/fromAD",
+          data:{
+              name: data.classname
+          }
       }).then(function(response){
           resolve(response.data);
         }, function(response){
@@ -336,11 +339,8 @@ angular.module('moduleWeb', [])
   return function(resolve, reject, data){
       $http({
           method: "POST",
-          url: constants.apiUrl + "/assigned",
-          data: {
-              "idGroup": data.idGradeGroup,
-              "colPupil": data.colPupils
-          }
+          url: constants.apiUrl + "/assigned/" + data.idGradeGroup,
+          data: data.colPupils
       }).then(function(response){
           resolve(response.data);
         }, function(response){

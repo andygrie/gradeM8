@@ -1,15 +1,60 @@
 <nav id="site-nav">
     <div class="site-nav-wrapper">
-        <button class="site-nav-button" ng-click="switchModalPupil()">add pupil</button>
+        <button class="site-nav-button" ng-click="displayAddPupil()">add pupil</button>
         <button class="site-nav-button" ng-click="switchModalEvent()">add event</button>
     </div>
 </nav>
 <main class="main">
-    <div ng-hide="!data.displayModalPupil" id="myModal" class="modal">
+    <div ng-show="data.displayModalPupil" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Add Pupil</h2>
             </div>
+            <div class="modal-body">
+                <md-content ng-show="!classesSelected">
+                    <md-chips ng-model="colSelectedClasses" md-autocomplete-snap
+                    md-transform-chip="auto.transformChip($chip)"
+                    md-require-match="true">
+                     <md-chip-template>
+                            <span>
+                            <strong>{{$chip.name}}</strong>
+                            </span>
+                        </md-chip-template>
+                        <md-autocomplete
+                            md-selected-item="auto.selectedItem"
+                            md-search-text="auto.searchText"
+                            md-items="item in auto.querySearch(auto.searchText)"
+                            md-item-text="item.name"
+                            placeholder="Search for a Class">
+                            <md-item-template><span md-highlight-text="auto.searchText">{{item.name}}</span></md-item-template>
+                        </md-autocomplete>
+                    </md-chips>
+                    <md-button class="md-raised md-primary" ng-click="loadAdPupils()">Submit Classes</md-button>
+                </md-content>
+                <md-content ng-show="classesSelected">
+                     <div layout="row" layout-wrap flex>
+                        <div flex-xs flex="50">
+                            <md-checkbox aria-label="Select All"
+                                        ng-checked="check.isChecked()"
+                                        md-indeterminate="check.isIndeterminate()"
+                                        ng-click="check.toggleAll()">
+                            <span ng-if="check.isChecked()">Un-</span>Select All
+                            </md-checkbox>
+                        </div>
+                        <div flex="50" ng-repeat="item in colAdPupils">
+                        <md-checkbox ng-checked="check.exists(item, colSelectedPupils)" ng-click="check.toggle(item, colSelectedPupils)">
+                            {{item.surname}},{{item.forename}}
+                        </md-checkbox>
+                        </div>
+                      </div>
+                      <md-button class="md-raised md-primary" ng-click="registerPupils()">Submit Pupils</md-button>
+                </md-content>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="switchModalPupil()" class="btnOK" type="button"> OK</button>
+                <button ng-click="switchModalPupil()" class="btnCancel">Cancel</button>
+            </div>
+            <!--
             <form>
                 <div class="modal-body">
                     <div class="imput">
@@ -34,6 +79,7 @@
                     <button ng-click="switchModalPupil()" class="btnCancel">Cancel</button>
                 </div>
             </form>
+            -->
         </div>
     </div>
 

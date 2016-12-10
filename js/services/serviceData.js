@@ -137,7 +137,12 @@ angular.module('moduleData', [])
           //register pupils from AD in application Backend
           sWeb_registerPupils(function(responsePupils){
               //set assigned
-              //data = {idGradGroup, colPupils: [{fkUser, forename, surname, email, username}]}
+              //data = {idGradGroup, colPupils: [{fkPupil}]}
+              dataAssign = [];
+              for(var i = 0; i < responsePupils.length; i++)
+              {
+                  dataAssign.push({fkPupil: responsePupils[i].fkUser});
+              }
               sWeb_setAssigned(function(responseAssign){
                 //register Pupils locally
                 for(var i = 0; i < responsePupils.length; i++)
@@ -162,7 +167,7 @@ angular.module('moduleData', [])
               }, function(responseAssign){
                   console.log("error assigning registered pupils");
                   reject(responseAssign);
-              }, {idGradeGroup: data.idGradeGroup, colPupils: responsePupils});
+              }, {idGradeGroup: data.idGradeGroup, colPupils: dataAssign});
           }, function(responsePupils){
               console.log("error registrating pupils");
               reject(response);
@@ -224,7 +229,6 @@ angular.module('moduleData', [])
   return retVal;
 })
 
-
 /*
 .factory('sData_teachers', ["$q", "sData_allData", "sWeb_getTeacher", 
                 function($q, sData_allData, sWeb_getTeacher) {
@@ -252,6 +256,7 @@ angular.module('moduleData', [])
   }
 }])
 */
+
 .factory('sData_authenticate', ["$q", "sData_allData", "sWeb_authenticate", "constants",
                 function($q, sData_allData, sWeb_authenticate, constants) {
   var user = {};
@@ -294,7 +299,7 @@ angular.module('moduleData', [])
 
   function fillData(){
     return $q(function(resolve, reject) {
-        sWeb_getTeacher(function(responseData){
+        sWeb_getClass(function(responseData){
             classes = responseData;
             retVal.data = classes;
             sData_allData.data.classes = classes;
@@ -349,7 +354,7 @@ angular.module('moduleData', [])
         sWeb_getPupilByClass(function(responseData){
             pupils = responseData;
             retVal.data = pupils;
-            resolve("Successfuly loaded pupils");
+            resolve(responseData);
         }, function(response){
             reject(response);
         }, data);
