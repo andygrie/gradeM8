@@ -4,6 +4,7 @@
     background-color: #2c2c2c;
     font-family: 'Roboto';
     color: white;
+    overflow:auto;
 }
 
 .logotype img {
@@ -12,6 +13,12 @@
     margin-top: 15px;
     margin-left: -5px;
 }
+
+.fieldset {
+    border-style: solid;
+    border-width: 1px;
+    height: 100%; }
+
 
 .circle {
     margin-top: 1em;
@@ -221,6 +228,10 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #ffffff;
     color: #662d91;
     padding-top: 0.5em;
+}
+
+.imputTypeTime{
+    width: 99.3%;
 }
 .imput {
     margin: 0.5em auto;

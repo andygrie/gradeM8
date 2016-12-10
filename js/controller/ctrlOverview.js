@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
-                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","$mdDialog",
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,$mdDialog) {
 
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.state = {};
@@ -14,6 +14,34 @@ angular.module("moduleOverview", [])
                         $scope.data.displayModalSettings = false;
                         $scope.show = true;
                         $scope.data.currentSettingstab = "Period";
+
+
+                        $scope.status = '  ';
+
+                        $scope.showTabDialog = function(ev) {
+                            $mdDialog.show({
+                                controller: DialogController,
+                                templateUrl: '../../templates/settings_Modal.html',
+                                parent: angular.element(document.body),
+                                targetEvent: ev,
+                                clickOutsideToClose:true
+                            });
+                        };
+
+                        function DialogController($scope, $mdDialog) {
+                            $scope.hide = function() {
+                                $mdDialog.hide();
+                            };
+
+                            $scope.cancel = function() {
+                                $mdDialog.cancel();
+                            };
+
+                            $scope.answer = function(answer) {
+                                $mdDialog.hide(answer);
+                            };
+                        }
+
 
     sData_groupsBySubjects.fillData().then(function(response){
         console.log(response);
@@ -73,7 +101,7 @@ angular.module("moduleOverview", [])
     $scope.switchModalGroup = function()
     {
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
-    }
+    }/*
                         $scope.switchModalSettings = function(){
                             $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
                         }
@@ -85,7 +113,7 @@ angular.module("moduleOverview", [])
                         $scope.setSettingTabToWeekdays = function () {
                             $scope.data.currentSettingstab = "Weekdays";
                         }
-
+*/
     $scope.addNewSubject = function(){
         //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
         var data = {

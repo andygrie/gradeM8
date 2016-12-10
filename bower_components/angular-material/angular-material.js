@@ -32384,7 +32384,7 @@ function MdTabsController ($scope, $element, $window, $mdConstant, $mdTabInkRipp
       //   prevents `offsetWidth` value from being rounded down and causing wrapping issues, but
       //   also handles scenarios where `getBoundingClientRect()` is inaccurate (ie. tabs inside
       //   of a dialog)
-      width += Math.max(tab.offsetWidth, tab.getBoundingClientRect().width);
+      width += Math.max(tab.offsetWidth, tab.getBoundingClientRect().width)+1;
     });
 
     return Math.ceil(width);
