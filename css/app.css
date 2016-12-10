@@ -229,7 +229,7 @@ article, div, aside, footer, header, main, nav, section {
     color: #662d91;
     padding-top: 0.5em;
 }
-.md-pagination-wrapper {
+#md-pagination-wrapper {
     width:auto !important;
 }
 .imput {
