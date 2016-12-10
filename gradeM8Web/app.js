@@ -111,6 +111,7 @@ app.get('/test', pupilService.getAllPupils);
 
 
 app.get('/note/history/:idNote', noteService.getVersionHistory);
+app.get('/participation/history/:idParticipation', participationService.getVersionHistory)
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

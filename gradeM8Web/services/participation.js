@@ -207,3 +207,53 @@ exports.getParticipationByEvent = function (req, res) {
 
 
 }
+
+exports.getVersionHistory = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    var reqString = ";WITH    q AS " +
+        "( " +
+        "SELECT * " +
+        "FROM    participation " +
+        "WHERE   idParticipation = @id " +
+        "UNION ALL " +
+        "SELECT  n.* " +
+        "FROM    participation n " +
+        "JOIN    q " +
+        "ON      n.successor = q.idParticipation " +
+        ") " +
+        "SELECT * " +
+        "FROM    q; ";
+    connection.on('connect', executeStatement);
+    console.log(reqString);
+
+    function executeStatement() {
+        request = new Request(reqString, function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+        request.addParameter('id', TYPES.Int, req.params.idParticipation);
+        connection.execSql(request);
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+    }
+
+
+}
