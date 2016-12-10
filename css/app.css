@@ -231,7 +231,7 @@ article, div, aside, footer, header, main, nav, section {
 }
 
 .imputTypeTime{
-    border-width:1px;
+    width: 99.3%;
 }
 .imput {
     margin: 0.5em auto;
