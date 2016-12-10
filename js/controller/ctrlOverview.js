@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
-                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email) {
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,$mdDialog) {
 
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.data = {};
@@ -24,7 +24,7 @@ angular.module("moduleOverview", [])
                                 clickOutsideToClose:true
                             })
                         };
-                        
+
                         function DialogController($scope, $mdDialog) {
                             $scope.hide = function() {
                                 $mdDialog.hide();
