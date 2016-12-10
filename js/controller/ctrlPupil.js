@@ -51,7 +51,7 @@ angular.module("modulePupil", [])
         var pupil;
         sData_allData.data.pupils.forEach(function(entry){
             if(entry.idPupil == $routeParams.idPupil){
-                pupil = entry.firstname;
+                pupil = entry.forename + " " + entry.surname;
             }
         });
 
