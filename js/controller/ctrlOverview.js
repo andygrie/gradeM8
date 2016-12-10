@@ -1,5 +1,5 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email",
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","$mdDialog",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,$mdDialog) {
 
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
