@@ -230,6 +230,9 @@ article, div, aside, footer, header, main, nav, section {
     padding-top: 0.5em;
 }
 
+.imputTypeTime{
+    border-width:1px;
+}
 .imput {
     margin: 0.5em auto;
     width: 80%;
