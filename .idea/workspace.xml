@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-material/angular-material.min.css" afterPath="$PROJECT_DIR$/bower_components/angular-material/angular-material.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js" afterPath="$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-material/angular-material.js" afterPath="$PROJECT_DIR$/bower_components/angular-material/angular-material.js" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-material.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="angular-material.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="32392" column="17" selection-start-line="32392" selection-start-column="17" selection-end-line="32392" selection-end-column="17" />
+            <state relative-caret-position="239">
+              <caret line="32383" column="70" selection-start-line="32383" selection-start-column="70" selection-end-line="32383" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tabs.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tabs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="811" column="32" selection-start-line="811" selection-start-column="32" selection-end-line="811" selection-end-column="32" />
+            <state relative-caret-position="222">
+              <caret line="815" column="3" selection-start-line="815" selection-start-column="3" selection-end-line="815" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -194,6 +193,7 @@
         <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.scss" />
         <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.min.css" />
         <option value="$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js" />
+        <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.js" />
       </list>
     </option>
   </component>
@@ -532,12 +532,12 @@
       <workItem from="1481275531581" duration="15501000" />
       <workItem from="1481304538420" duration="5052000" />
       <workItem from="1481316590441" duration="353000" />
-      <workItem from="1481378857937" duration="13470000" />
+      <workItem from="1481378857937" duration="13527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106306000" />
+    <option name="totallyTimeSpent" value="106363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -869,21 +869,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="32392" column="17" selection-start-line="32392" selection-start-column="17" selection-end-line="32392" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/angular-material/modules/js/tabs/tabs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="811" column="32" selection-start-line="811" selection-start-column="32" selection-end-line="811" selection-end-column="32" />
+        <state relative-caret-position="222">
+          <caret line="815" column="3" selection-start-line="815" selection-start-column="3" selection-end-line="815" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="32383" column="70" selection-start-line="32383" selection-start-column="70" selection-end-line="32383" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
