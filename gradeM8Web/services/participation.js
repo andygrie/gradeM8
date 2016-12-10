@@ -11,6 +11,20 @@ var config = {
 var Request = ted.Request;
 var TYPES = ted.TYPES;
 
+var atob = require('atob');
+var ActiveDirectory = require('activedirectory');
+var adConfig = {
+    url: 'ldap://212.152.179.122',
+    //url: 'ldap://192.168.128.253',
+    baseDN: 'ou=schueler,ou=Benutzer,dc=htl-vil,dc=local'
+}
+
+var username = 'griessera@htl-vil';
+var password = atob('emFzcDI1');
+
+
+var ad = new ActiveDirectory(adConfig);
+
 
 exports.getParticipation = function (req, res) {
     var connection = new Connection(config);
@@ -50,9 +64,12 @@ exports.insertParticipation = function (req, res) {
     var results = [];
     var requestString = "";
     var i = 0;
+    console.log(data);
+    console.log(data.length);
+
     data.forEach(function (item) {
         requestString = requestString + "INSERT INTO participation ( fkGradeEvent, fkPupil, grade, gradedOn ) VALUES ";
-        requestString = requestString + "(" + req.params.fkGradeEvent + ", " + item.fkPupil + ", " + item.grade + ", " + item.gradedOn + ")";
+        requestString = requestString + "(" + req.params.fkGradeEvent + ", " + item.fkPupil + ", " + item.grade + ", " + null + ")";
         requestString = requestString + "; select @@identity; ";
     });
     console.log(requestString);
@@ -73,7 +90,7 @@ exports.insertParticipation = function (req, res) {
                 "fkGradeEvent": req.params.fkGradeEvent,
                 "fkPupil": data[i].fkPupil,
                 "grade": data[i].grade,
-                "gradedOn": data[i].gradedOn
+                "gradedOn": null
             });
             
         });
@@ -256,4 +273,93 @@ exports.getVersionHistory = function (req, res) {
     }
 
 
+}
+
+exports.getPupilByParticipationEvent = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    var reqString = "select username from pupil " +
+        "inner join Participation on pupil.fkUser = Participation.fkPupil " +
+        "inner join GradeEvent on GradeEvent.idGradeEvent = Participation.fkGradeEvent " +
+        "inner join Gradeuser on GradeUser.idUser = pupil.fkUser " +
+        "where GradeEvent.idGradeEvent = @fkge";
+
+    connection.on('connect', executeStatement);
+    function executeStatement() {
+        request = new Request(reqString, function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+        request.on('doneProc', function (rowCount, more) {
+            getPupilsByUsernameFromAD(results, res);
+        });
+
+
+        request.addParameter('fkge', TYPES.Int, req.params.idEvent);
+        connection.execSql(request);
+    }
+}
+
+
+function getPupilsByUsernameFromAD(pupils, res) {
+    ad.authenticate(username, password, function (err, auth) {
+        var pupilsHelp = {};
+        var finalPupils = [];
+        if (err) {
+            console.log('ERROR: ' + JSON.stringify(err));
+        }
+
+        if (auth) {
+            ad.opts.bindDN = username;
+            ad.opts.bindCredentials = password;
+
+            var query = '(|';
+            pupils.forEach(function (item) {
+                query = query + '(cn=' + item.username + ')';
+                pupilsHelp[item.username] = item.fkUser;
+            });
+            query = query + ')';
+
+            ad.findUsers(query, function (err, users) {
+                if (err) {
+                    console.log('ERROR: ' + JSON.stringify(err));
+                    return;
+                }
+
+                if ((!users) || (users.length == 0)) console.log('No users found.');
+                else {
+                    users.forEach(function (item) {
+                        finalPupils.push({
+                            fkUser: pupilsHelp[item.cn],
+                            username: item.cn,
+                            forename: item.givenName,
+                            surname: item.sn,
+                            email: item.mail
+                        });
+                    });
+                    res.send(finalPupils);
+                }
+            });
+        }
+        else {
+            res.status(400);
+            res.send('wrong credentials');
+        }
+    });
 }

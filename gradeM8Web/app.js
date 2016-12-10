@@ -99,6 +99,7 @@ app.put('/participation/:idParticipation', participationService.updateParticipat
 app.delete('/participation/:idParticipation', participationService.deleteParticipation);
 app.get('/participation/byPupilAndTeaches/:idPupil/:idTeaches', participationService.getParticipationByPupilAndTeaches);
 app.get('/participation/byEvent/:idEvent', participationService.getParticipationByEvent);
+app.get('/participation/pupil/byEvent/:idEvent', participationService.getPupilByParticipationEvent);
 
 
 app.get('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.getNotesByTeachesAndPupil);
