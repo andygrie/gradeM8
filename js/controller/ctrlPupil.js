@@ -50,7 +50,7 @@ angular.module("modulePupil", [])
         });
         var pupil;
         sData_allData.data.pupils.forEach(function(entry){
-            if(entry.idPupil == $routeParams.idPupil){
+            if(entry.fkUser == $routeParams.idPupil){
                 pupil = entry.forename + " " + entry.surname;
             }
         });
