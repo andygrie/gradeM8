@@ -51,12 +51,12 @@ angular.module("modulePupil", [])
         var pupil;
         sData_allData.data.pupils.forEach(function(entry){
             if(entry.idPupil == $routeParams.idPupil){
-                pupil = entry.name;
+                pupil = entry.firstname;
             }
         });
 
 
-        return "Group-"+group+"-Pupil-"+pupil;
+        return group+" - "+pupil;
     };
 
     $scope.breadcrumb = generateBreadcrumb();
