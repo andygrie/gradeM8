@@ -35,7 +35,7 @@ angular.module("moduleEvent", ['ngMaterial'])
 
             $scope.loadParticipationsByEvent = function(paramEventId) {
                 console.log("loadParticipationsByEvent");
-                sData_participationsByEvent.fillData({idEvent: paramEventId}).then(function(response){
+                sData_participationsByEvent.fillData({idGradeEvent: paramEventId}).then(function(response){
                     console.log(response);
                     $scope.grade.colParticipations = sData_participationsByEvent.data.map(function(item){
                         item.isUpdating = false;
