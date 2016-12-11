@@ -227,16 +227,14 @@
                     <thead>
                     <tr>
                         <th class="md-table-header">Latest Note</th>
-                        <th class="md-table-header">Update Note</th>
                         <th class="md-table-header">test</th>
                         <th class="md-table-header">History</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr class="md-table-content-row"  ng-repeat="recNote in data.colNotes">
-                        <td class="md-table-content">{{recNote.note}}</td>
                         <td class="md-table-content">
-                            <button ng-click="updateNote(recNote)">Update</button>
+                            <input  value="whatsoever" ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
                         <td class="md-table-content">
                         <td class="md-table-td-more">
                             <span class="glyphicon glyphicon-zoom-in" ng-click="displayNoteHistory(recNote.idNote)">History</span>

@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Student.html" afterPath="$PROJECT_DIR$/templates/styled_Student.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -54,12 +53,11 @@
       <file leaf-file-name="styled_Information.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Information.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="196" selection-end-column="18" />
+            <state relative-caret-position="99">
+              <caret line="125" column="27" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#main#0;n#!!top" expanded="false" />
                 <element signature="n#h2#0;n#div#0;n#main#0;n#!!top" expanded="false" />
                 <element signature="n#select#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
                 <element signature="n#select#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
@@ -93,13 +91,12 @@
       <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="186" column="88" selection-start-line="186" selection-start-column="88" selection-end-line="186" selection-end-column="88" />
+            <state relative-caret-position="297">
+              <caret line="237" column="51" selection-start-line="237" selection-start-column="51" selection-end-line="237" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#main#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#3;n#main#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -460,12 +457,12 @@
       <workItem from="1481398642117" duration="2147000" />
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
-      <workItem from="1481459651038" duration="6687000" />
+      <workItem from="1481459651038" duration="7190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125004000" />
+    <option name="totallyTimeSpent" value="125507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -771,14 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pupil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -789,12 +778,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Information.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="196" selection-end-column="18" />
+        <state relative-caret-position="99">
+          <caret line="125" column="27" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#main#0;n#!!top" expanded="false" />
             <element signature="n#h2#0;n#div#0;n#main#0;n#!!top" expanded="false" />
             <element signature="n#select#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
             <element signature="n#select#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
@@ -804,15 +792,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="186" column="88" selection-start-line="186" selection-start-column="88" selection-end-line="186" selection-end-column="88" />
+        <state relative-caret-position="297">
+          <caret line="237" column="51" selection-start-line="237" selection-start-column="51" selection-end-line="237" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#main#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#3;n#main#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
