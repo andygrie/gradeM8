@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlPupil.js" afterPath="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Student.html" afterPath="$PROJECT_DIR$/templates/styled_Student.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -88,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="299">
+              <caret line="237" column="45" selection-start-line="237" selection-start-column="45" selection-end-line="237" selection-end-column="45" />
               <folding>
                 <element signature="n#div#0;n#main#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#main#0;n#div#1;n#!!top" expanded="false" />
@@ -106,20 +107,18 @@
                 <element signature="n#div#5;n#main#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#5;n#main#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#6;n#main#0;n#div#1;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-                <marker date="1481471307291" expanded="false" signature="8435:9856" ph="..." />
-                <marker date="1481471307291" expanded="false" signature="11017:11312" ph="..." />
+                <marker date="1481471591196" expanded="false" signature="8435:9856" ph="..." />
+                <marker date="1481471591196" expanded="false" signature="10997:11292" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlPupil.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlPupil.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="150" column="6" selection-start-line="150" selection-start-column="6" selection-end-line="150" selection-end-column="6" />
+            <state relative-caret-position="289">
+              <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -217,8 +216,8 @@
         <option value="$PROJECT_DIR$/css/app.css" />
         <option value="$PROJECT_DIR$/templates/styled_Information.html" />
         <option value="$PROJECT_DIR$/templates/pupil.html" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
         <option value="$PROJECT_DIR$/templates/styled_Student.html" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
       </list>
     </option>
   </component>
@@ -469,12 +468,12 @@
       <workItem from="1481398642117" duration="2147000" />
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
-      <workItem from="1481459651038" duration="9382000" />
+      <workItem from="1481459651038" duration="9706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127699000" />
+    <option name="totallyTimeSpent" value="128023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -780,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="150" column="6" selection-start-line="150" selection-start-column="6" selection-end-line="150" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Information.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -814,8 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="299">
+          <caret line="237" column="45" selection-start-line="237" selection-start-column="45" selection-end-line="237" selection-end-column="45" />
           <folding>
             <element signature="n#div#0;n#main#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#1;n#main#0;n#div#1;n#!!top" expanded="false" />
@@ -829,11 +820,17 @@
             <element signature="n#div#5;n#main#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#5;n#main#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#6;n#main#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
-            <marker date="1481471307291" expanded="false" signature="8435:9856" ph="..." />
-            <marker date="1481471307291" expanded="false" signature="11017:11312" ph="..." />
+            <marker date="1481471591196" expanded="false" signature="8435:9856" ph="..." />
+            <marker date="1481471591196" expanded="false" signature="10997:11292" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

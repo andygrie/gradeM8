@@ -119,7 +119,7 @@ $scope.breadcrumb = generateBreadcrumb();
     $scope.submitUpdateNote = function(note){
         sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function(response){
             console.log("success updating note");
-            $scope.switchModalUpdateNote();
+           // $scope.switchModalUpdateNote();
         }, function(response){
             console.log("error updating note");
         });
@@ -127,7 +127,8 @@ $scope.breadcrumb = generateBreadcrumb();
 
     $scope.updateNote = function(note) {
         $scope.updatedNote = note;
-        $scope.switchModalUpdateNote();
+        $scope.submitUpdateNote(note);
+       // $scope.switchModalUpdateNote();
     }
 
     var dataInit = {idPupil: $scope.data.idPupil, 
