@@ -47,7 +47,7 @@
                         <td class="md-table-content">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label style="color: white">Grade</label>
-                                <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white">
+                                <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white; border-color:white">
                                     <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
                                         {{gradeOption.description}}
                                     </md-option>
