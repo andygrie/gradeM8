@@ -31,7 +31,7 @@ exports.getParticipation = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p where p.participation = 0", function (err) {
+        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p where p.successor = 0", function (err) {
             if (err) {
                 console.log(err);
             }
