@@ -472,4 +472,5 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
 
         return retVal;
     }
-}]);
+    
+};}
