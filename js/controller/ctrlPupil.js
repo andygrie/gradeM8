@@ -47,6 +47,27 @@ angular.module("modulePupil", [])
         {grade: 4, description: "4"},
         {grade: 5, description: "5"}
     ];
+    $scope.grade.parseGrade = function(grade)
+    {
+        var found = false;
+        var retVal = grade;
+
+        for(var i = 0; i < $scope.grade.gradeOptions.length && found == false; i++)
+        {
+            if($scope.grade.gradeOptions[i].grade == grade)
+            {
+                found = true;
+                retVal = $scope.grade.gradeOptions[i].description;
+            }
+        }
+
+        return retVal;
+    }
+
+    $scope.parseDate = function(date)
+    {
+        return moment(date, "YYYY-MM-DD HH:mm:ss");
+    }
 
     function generateBreadcrumb(){ 
         var group;
@@ -96,7 +117,7 @@ angular.module("modulePupil", [])
     }
 
     $scope.submitUpdateNote = function(note){
-        sData_CUDHandler.putNote({idNote: note.idNote}).then(function(response){
+        sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function(response){
             console.log("success updating note");
             $scope.switchModalUpdateNote();
         }, function(response){
@@ -105,7 +126,8 @@ angular.module("modulePupil", [])
     }
 
     $scope.updateNote = function(note) {
-        $scope.updateNote = note;
+        console.log(note);
+        $scope.updatedNote = note;
         $scope.switchModalUpdateNote();
     }
 
@@ -132,6 +154,7 @@ angular.module("modulePupil", [])
 
     sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log("successfully loaded notes");
+        console.log(sData_notesByPupil.data);
         $scope.data.colNotes = sData_notesByPupil.data;
     }, function(response){
         console.log("error loading notes: " + response);
@@ -150,6 +173,7 @@ angular.module("modulePupil", [])
     }
 
     $scope.loadNoteHistory = function(paramIdNote){
+        $scope.noteHistory.colNotes = [];
         sData_noteHistory.fillData({idNote: paramIdNote}).then(function(response){
             console.log(response);
             $scope.noteHistory.colNotes = sData_noteHistory.data;
@@ -159,6 +183,7 @@ angular.module("modulePupil", [])
     }
 
     $scope.loadParticipationHistory = function(paramIdParticipation){
+        $scope.partHistory.colParticipation = [];
         sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function(response){
             console.log(response);
             $scope.partHistory.colParticipation = sData_participationHistory.data;
@@ -178,7 +203,7 @@ angular.module("modulePupil", [])
     }
 
     $scope.switchModalUpdateNote = function(){
-        $scope.data.displayModalUpdateNote = !$scope.displayModalUpdateNote;
+        $scope.data.displayModalUpdateNote = !$scope.data.displayModalUpdateNote;
     }
     
     $scope.switchModalSettings = function(){

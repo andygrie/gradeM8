@@ -116,20 +116,20 @@
                 <h2>Grade History</h2>
             </div>
             <form>
-                <div class="modal-body">
-                    <table>
+                <div class="modal-body" style="color: grey">
+                    <table style="color: grey">
                         <tr>
                             <th>Grade</th>
                             <th>Updated On</th>
                         </tr>
                         <tr ng-repeat="item in partHistory.colParticipation">
-                            <td>{{item.grade}}</td>
-                            <td>{{item.gradedOn}}</td>
+                            <td>{{grade.parseGrade(item.grade)}}</td>
+                            <td>{{parseDate(item.gradedOn)}}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button ng-click="switchModalGrade()" class="btnCancel">Ok</button>
+                    <button ng-click="switchModalParticipationHistory()" class="btnCancel">Ok</button>
                 </div>
             </form>
         </div>
@@ -142,19 +142,19 @@
             </div>
             <form>
                 <div class="modal-body">
-                    <table>
+                    <table style="color: grey">
                         <tr>
                             <th>Note</th>
                             <th>Updated On</th>
                         </tr>
                         <tr ng-repeat="item in noteHistory.colNotes">
                             <td>{{item.note}}</td>
-                            <td>{{item.documentedOn}}</td>
+                            <td>{{parseDate(item.documentedOn)}}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button ng-click="switchModalGrade()" class="btnCancel">Ok</button>
+                    <button ng-click="switchModalNoteHistory()" class="btnCancel">Ok</button>
                 </div>
             </form>
         </div>
@@ -206,7 +206,6 @@
             <tr>
                 <th>Latest Note</th>
                 <th>Update Note</th>
-                <th>test</th>
                 <th>History</th>
             </tr>
             <tr ng-repeat="recNote in data.colNotes">

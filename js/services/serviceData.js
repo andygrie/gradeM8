@@ -111,6 +111,8 @@ angular.module('moduleData', [])
   //data = {idNote, note}
   function putNote(data){
       return $q(function(resolve, reject) {
+          console.log("data:");
+          console.log(data);
           sWeb_putNote(function(response){
               resolve("success");
           }, function(response){
