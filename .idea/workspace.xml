@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlGroup.js" afterPath="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" afterPath="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlEventGrading.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlEventGrading.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            <state relative-caret-position="51">
+              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -105,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,8 +119,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="51">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -187,9 +188,9 @@
         <option value="$PROJECT_DIR$/templates/styled_Information.html" />
         <option value="$PROJECT_DIR$/templates/styled_Group.html" />
         <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
       </list>
     </option>
   </component>
@@ -440,12 +441,12 @@
       <workItem from="1481398642117" duration="2147000" />
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
-      <workItem from="1481459651038" duration="14972000" />
+      <workItem from="1481459651038" duration="15094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133289000" />
+    <option name="totallyTimeSpent" value="133411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -808,14 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -827,18 +820,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
+    <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="51">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
