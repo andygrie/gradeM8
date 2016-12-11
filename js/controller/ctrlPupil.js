@@ -107,7 +107,7 @@ $scope.breadcrumb = generateBreadcrumb();
     $scope.updateNote = function(note) {
         $scope.updateNote = note;
         //$scope.switchModalUpdateNote();
-        submitUpdateNote();
+        $sope.submitUpdateNote(note);
     }
 
     var dataInit = {idPupil: $scope.data.idPupil, 
