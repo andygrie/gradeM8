@@ -18,7 +18,7 @@ angular.module("moduleEvent", ['ngMaterial'])
                 {grade: 5, description: "5"}
             ];
 
-          //  $scope.grade.colParticipations = [];
+            $scope.grade.colParticipations = [];
 
             $scope.grade.updateGrade = function(item){
                 item.isUpdating = true;
@@ -45,22 +45,13 @@ angular.module("moduleEvent", ['ngMaterial'])
                     console.log(response);
                 });
             }
-            $scope.$on('$ionicView.enter', function(){
-                $scope.loadParticipationsByEvent($scope.idEvent);
-                alert("This function just ran away");
-            });
 
             $scope.back = function () {
                 $location.path("/group/" +$scope.idGradeGroup);
             }
             $scope.$on('$viewContentLoaded', function() {
                 $scope.loadParticipationsByEvent($scope.idEvent);
-            });
-            $scope.$on('$stateChangeSuccess', function () {
                 alert("This function just ran away");
             });
-
-
-
 
     }]);
