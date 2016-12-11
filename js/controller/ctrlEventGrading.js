@@ -49,6 +49,9 @@ angular.module("moduleEvent", ['ngMaterial'])
                 $scope.loadParticipationsByEvent($scope.idEvent);
                 alert("This function just ran away");
             });
+            $scope.init = function(){
+                alert("This function just ran away");
+            }
             $scope.back = function () {
                 $location.path("/group/" +$scope.idGradeGroup);
             }
