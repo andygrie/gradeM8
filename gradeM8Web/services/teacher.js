@@ -299,7 +299,7 @@ function getPupilsByUsernameFromAD(pupils, teacher, res) {
                             email: item.mail
                         });
                     });
-                    getTeacherFromAD(users, teacher, res);
+                    getTeacherFromAD(finalPupils, teacher, res);
                 }
             });
         }
