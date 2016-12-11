@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
-              <caret line="236" column="67" selection-start-line="236" selection-start-column="67" selection-end-line="236" selection-end-column="67" />
+              <caret line="236" column="113" selection-start-line="236" selection-start-column="113" selection-end-line="236" selection-end-column="113" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#main#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#3;n#main#0;n#div#1;n#!!top" expanded="true" />
@@ -103,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlPupil.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrlPupil.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+            <state relative-caret-position="170">
+              <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -457,12 +457,12 @@
       <workItem from="1481398642117" duration="2147000" />
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
-      <workItem from="1481459651038" duration="7880000" />
+      <workItem from="1481459651038" duration="8140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126197000" />
+    <option name="totallyTimeSpent" value="126457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -768,6 +768,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Information.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -795,21 +803,13 @@
     <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
-          <caret line="236" column="67" selection-start-line="236" selection-start-column="67" selection-end-line="236" selection-end-column="67" />
+          <caret line="236" column="113" selection-start-line="236" selection-start-column="113" selection-end-line="236" selection-end-column="113" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#2;n#main#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#3;n#main#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#7;n#main#0;n#div#1;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
