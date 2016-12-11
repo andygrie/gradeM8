@@ -599,7 +599,7 @@ i {
 .md-table-content {
     white-space: nowrap;
     font-size: 0.8em;
-    /* padding: 16px; */
+    padding: 1em;
     /* height: 72px; */
 
 }
