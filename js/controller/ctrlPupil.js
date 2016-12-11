@@ -291,11 +291,12 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
         });
     }
 
-    $scope.toggleView = function(){
+    $scope.toggleView = function() {
         $scope.data.showOverview = !$scope.data.showOverview;
-        if($scope.data.showOverview)
+        if ($scope.data.showOverview)
+            $scope.breadcrumb = $scope.generatedBreadcrumb + " Overview";
+        else
             $scope.breadcrumb = $scope.generatedBreadcrumb + " Information";
-        else{
     }
 
     $scope.getEventOfParticipation = function(id){
@@ -472,5 +473,5 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
 
         return retVal;
     }
-    
-};}
+
+}]);
