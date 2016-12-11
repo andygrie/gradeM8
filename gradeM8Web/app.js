@@ -99,6 +99,7 @@ app.put('/participation/:idParticipation', participationService.updateParticipat
 app.delete('/participation/:idParticipation', participationService.deleteParticipation);
 app.get('/participation/byPupilAndTeaches/:idPupil/:idTeaches', participationService.getParticipationByPupilAndTeaches);
 app.get('/participation/byEvent/:idEvent', participationService.getParticipationByEvent);
+app.get('/participation/pupil/byEvent/:idEvent', participationService.getPupilByParticipationEvent);
 
 
 app.get('/note/byTeachesAndPupil/:fkTeaches/:fkPupil', noteService.getNotesByTeachesAndPupil);
@@ -108,6 +109,10 @@ app.delete('/note/:idNote', noteService.deleteNote);
 
 app.post('/login', loginService.login);
 app.get('/test', pupilService.getAllPupils);
+
+
+app.get('/note/history/:idNote', noteService.getVersionHistory);
+app.get('/participation/history/:idParticipation', participationService.getVersionHistory)
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

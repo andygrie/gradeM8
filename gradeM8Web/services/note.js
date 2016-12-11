@@ -16,7 +16,7 @@ exports.getNotesByTeachesAndPupil = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select n.idNote, n.fkTeaches, n.fkPupil, n.note from note n where n.fkTeaches = @fkt and n.fkPupil = @fkp", function (err) {
+        request = new Request("select n.idNote, n.fkTeaches, n.fkPupil, n.note from note n where n.fkTeaches = @fkt and n.fkPupil = @fkp and n.successor = 0", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -113,4 +113,55 @@ exports.deleteNote = function (req, res) {
         request.addParameter('id', TYPES.Int, req.params.idNote);
         connection.execSql(request);
     }
+}
+
+
+exports.getVersionHistory = function (req, res) {
+    var connection = new Connection(config);
+    var results = [];
+    var reqString = ";WITH    q AS " +
+        "( " +
+        "SELECT * " +
+        "FROM    note " +
+        "WHERE   idNote = @id " +
+        "UNION ALL " +
+        "SELECT  n.* " +
+        "FROM    note n " +
+        "JOIN    q " +
+        "ON      n.successor = q.idnote " +
+        ") " +
+        "SELECT * " +
+        "FROM    q; ";
+        connection.on('connect', executeStatement);
+    console.log(reqString);
+
+    function executeStatement() {
+        request = new Request(reqString, function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+        connection.on('debug', function (err) { console.log('debug:', err); });
+        request.on('doneProc', function (rowCount, more) {
+            res.send(results);
+        });
+        request.addParameter('id', TYPES.Int, req.params.idNote);
+        connection.execSql(request);
+
+        request.on('row', function (columns) {
+            var result = {};
+            columns.forEach(function (column) {
+                if (column.value === null) {
+                    console.log('NULL');
+                } else {
+                    result[column.metadata.colName] = column.value;
+                }
+            });
+            results.push(result);
+            result = {};
+        });
+
+    }
+
+
 }
