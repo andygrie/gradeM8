@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/app.css" afterPath="$PROJECT_DIR$/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/styled_EventGrading.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Group.html" afterPath="$PROJECT_DIR$/templates/styled_Group.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +71,8 @@
       <file leaf-file-name="styled_Student.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="67">
+              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
               <folding>
                 <element signature="n#div#0;n#main#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#main#0;n#div#1;n#!!top" expanded="false" />
@@ -88,6 +88,22 @@
                 <element signature="n#div#6;n#main#0;n#div#1;n#!!top" expanded="false" />
                 <marker date="1481471591196" expanded="false" signature="8435:9856" ph="..." />
                 <marker date="1481471591196" expanded="false" signature="10997:11292" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styled_EventGrading.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+              <folding>
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#col#0;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#col#1;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-select#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,16 +139,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Group.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styled_Group.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="68">
               <caret line="188" column="6" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#nav#0;n#!!top" expanded="false" />
-                <element signature="n#main#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="601" column="24" selection-start-line="601" selection-start-column="24" selection-end-line="601" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,7 +207,6 @@
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/templates/table.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlLogin.js" />
-        <option value="$PROJECT_DIR$/css/app.css" />
         <option value="$PROJECT_DIR$/templates/pupil.html" />
         <option value="$PROJECT_DIR$/templates/styled_Student.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
@@ -190,8 +215,9 @@
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
-        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
         <option value="$PROJECT_DIR$/templates/styled_Group.html" />
+        <option value="$PROJECT_DIR$/css/app.css" />
+        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
       </list>
     </option>
   </component>
@@ -442,12 +468,12 @@
       <workItem from="1481398642117" duration="2147000" />
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
-      <workItem from="1481459651038" duration="19014000" />
+      <workItem from="1481459651038" duration="19553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137331000" />
+    <option name="totallyTimeSpent" value="137870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -729,14 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="665" column="44" selection-start-line="665" selection-start-column="44" selection-end-line="665" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -802,14 +820,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
+    <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="188" column="6" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
           <folding>
-            <element signature="n#main#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#col#0;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#col#1;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,10 +840,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="601" column="24" selection-start-line="601" selection-start-column="24" selection-end-line="601" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="67">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
           <folding>
             <element signature="n#div#0;n#main#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#1;n#main#0;n#div#1;n#!!top" expanded="false" />
@@ -845,14 +871,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
+    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="188" column="6" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
+        <state relative-caret-position="257">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#main#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#col#0;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#col#1;n#colgroup#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
