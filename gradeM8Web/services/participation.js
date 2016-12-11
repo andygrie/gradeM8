@@ -31,7 +31,7 @@ exports.getParticipation = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p", function (err) {
+        request = new Request("select p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn from participation p where p.participation = 0", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -157,7 +157,7 @@ exports.getParticipationByPupilAndTeaches = function (req, res) {
     connection.on('connect', executeStatement);
     function executeStatement() {
         request = new Request("SELECT p.idParticipation, p.fkGradeEvent, p.fkPupil, p.grade, p.gradedOn, e.fkTeaches FROM participation p inner join gradeevent e on" +
-            " e.idGradeEvent = p.fkGradeEvent WHERE p.fkPupil = @fkp AND e.fkTeaches = @fkt", function (err) {
+            " e.idGradeEvent = p.fkGradeEvent WHERE p.fkPupil = @fkp AND e.fkTeaches = @fkt AND p.successor = 0", function (err) {
                 if (err) {
                     console.log(err);
                 }
