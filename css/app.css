@@ -5,6 +5,7 @@
     font-family: 'Roboto';
     color: white;
     overflow: auto;
+    height: 100%;
 }
 
 .logotype img {
