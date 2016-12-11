@@ -85,10 +85,10 @@ angular.module("modulePupil", [])
         });
 
 
-        return group+" - "+pupil;
-    };
+                    return group+" - "+pupil;
+                };
 
-    $scope.breadcrumb = generateBreadcrumb();
+$scope.breadcrumb = generateBreadcrumb();
 
     $scope.status = '  ';
 
@@ -126,7 +126,6 @@ angular.module("modulePupil", [])
     }
 
     $scope.updateNote = function(note) {
-        console.log(note);
         $scope.updatedNote = note;
         $scope.switchModalUpdateNote();
     }
