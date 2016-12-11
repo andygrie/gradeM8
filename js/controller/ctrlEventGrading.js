@@ -1,5 +1,5 @@
 angular.module("moduleEvent", ['ngMaterial'])
-    .controller("ctrlGroup", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups",
+    .controller("ctrlEventGrading", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups",
         "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent","$mdDialog",
         function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups,
                   sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent,$mdDialog) {
