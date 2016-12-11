@@ -45,7 +45,10 @@ angular.module("moduleEvent", ['ngMaterial'])
                     console.log(response);
                 });
             }
-
+            $scope.$on('$ionicView.enter', function(){
+                $scope.loadParticipationsByEvent($scope.idEvent);
+                alert("This function just ran away");
+            });
             $scope.back = function () {
                 $location.path("/group/" +$scope.idGradeGroup);
             }
