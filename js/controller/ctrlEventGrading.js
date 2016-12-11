@@ -49,14 +49,12 @@ angular.module("moduleEvent", ['ngMaterial'])
                 $scope.loadParticipationsByEvent($scope.idEvent);
                 alert("This function just ran away");
             });
-            $scope.init = function(){
-                alert("This function just ran away");
-            }
+
             $scope.back = function () {
                 $location.path("/group/" +$scope.idGradeGroup);
             }
             $scope.$on('$viewContentLoaded', function() {
-                alert("This function just ran away");
+                $scope.loadParticipationsByEvent($scope.idEvent);
             });
             $scope.$on('$stateChangeSuccess', function () {
                 alert("This function just ran away");
