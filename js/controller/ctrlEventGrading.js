@@ -47,7 +47,7 @@ angular.module("moduleEvent", ['ngMaterial'])
             }
 
             $scope.back = function () {
-                $location.path("/group/" +idGradeGroup);
+                $location.path("/group/" +$scope.idGradeGroup);
             }
 
 
