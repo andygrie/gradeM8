@@ -18,7 +18,7 @@ angular.module("moduleEvent", ['ngMaterial'])
                 {grade: 5, description: "5"}
             ];
 
-            $scope.grade.colParticipations = [];
+          //  $scope.grade.colParticipations = [];
 
             $scope.grade.updateGrade = function(item){
                 item.isUpdating = true;
