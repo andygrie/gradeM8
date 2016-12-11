@@ -34,6 +34,7 @@ angular.module("moduleEvent", ['ngMaterial'])
             }
 
             $scope.loadParticipationsByEvent = function(paramEventId) {
+                console.log("loadParticipationsByEvent");
                 sData_participationsByEvent.fillData({idEvent: paramEventId}).then(function(response){
                     console.log(response);
                     $scope.grade.colParticipations = sData_participationsByEvent.data.map(function(item){
@@ -51,7 +52,7 @@ angular.module("moduleEvent", ['ngMaterial'])
             }
             $scope.$on('$viewContentLoaded', function() {
                 $scope.loadParticipationsByEvent($scope.idEvent);
-                alert("This function just ran away");
+                console.log("This function just ran away");
             });
 
     }]);
