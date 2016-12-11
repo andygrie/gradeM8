@@ -55,6 +55,12 @@ angular.module("moduleEvent", ['ngMaterial'])
             $scope.back = function () {
                 $location.path("/group/" +$scope.idGradeGroup);
             }
+            $scope.$on('$viewContentLoaded', function() {
+                alert("This function just ran away");
+            });
+            $scope.$on('$stateChangeSuccess', function () {
+                alert("This function just ran away");
+            });
 
 
 
