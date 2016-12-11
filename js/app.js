@@ -5,7 +5,8 @@ var app = angular.module("gradeM8", ["ngRoute",
                                      "moduleGroup",
                                      "moduleData",
                                      "moduleWeb",
-                                     "moduleLogin"
+                                     "moduleLogin",
+                                    "moduleEvent"
                                     ]);
 app.constant('constants', {
     apiUrl: "http://gradem8.azurewebsites.net",
