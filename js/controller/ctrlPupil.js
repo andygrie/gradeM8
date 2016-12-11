@@ -1,8 +1,8 @@
 angular.module("modulePupil", [])
 .controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData", 
-                            "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups",
+                            "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups","$mdDialog",
                 function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
-                            sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups) {
+                            sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups,$mdDialog) {
                     $scope.show = true;
     $scope.data = {};
     $scope.formData = {};
@@ -58,17 +58,42 @@ angular.module("modulePupil", [])
         });
         var pupil;
         sData_allData.data.pupils.forEach(function(entry){
-            if(entry.idPupil == $routeParams.idPupil){
-                pupil = entry.name;
+            if(entry.fkUser == $routeParams.idPupil){
+                pupil = entry.forename + " " + entry.surname;
             }
         });
 
 
-        return "Group-"+group+"-Pupil-"+pupil;
+        return group+" - "+pupil;
     };
 
     $scope.breadcrumb = generateBreadcrumb();
 
+    $scope.status = '  ';
+
+    $scope.showTabDialog = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '../../templates/settings_Modal.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        });
+    };
+
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
 
     $scope.submitUpdateNote = function(note){
         sData_CUDHandler.putNote({idNote: note.idNote}).then(function(response){

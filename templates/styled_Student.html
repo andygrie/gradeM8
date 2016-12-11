@@ -13,7 +13,7 @@
                 </h2>
             </div>
             <div class="settings-btn">
-                <img src="resources/settings.png" width="2em" ng-click="switchModalSettings()">
+                <img src="resources/settings.png" width="2em"  ng-click="showTabDialog($event)">
             </div>
         </div>
     </header>
@@ -29,86 +29,6 @@
 
 <div class="all">
 <main class="main">
-
-    <div ng-hide="!data.displayModalSettings"  id="myModal3" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Settings</h2>
-            </div>
-            <form>
-                <div class="modal-body">
-                    <div class=imput>
-
-                        <div>
-                            <label>Uhrzeit:</label>
-                        </div>
-
-                        <div>
-                            <input type="time">
-                        </div>
-                        <div>
-                            <ul class="nav nav-tabs">
-                                <li ng-click="setSettingTabToPeriod()">Periode</li>
-                                <li ng-click="setSettingTabToWeekdays()">Weekdays</li>
-                            </ul>
-                            <div ng-hide="data.currentSettingstab != 'Weekdays'">
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Monday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Tuesday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Wednesday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Thursday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Friday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Saturday</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Sunday</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group" ng-hide="data.currentSettingstab != 'Period'">
-                                <label class="control-label" for="sel1">Send me an e-mail every </label>
-                                <div >
-                                    <select class="form-control"  id="sel1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                    </select>
-                                </div>
-                                <label> days </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <input ng-disabled="" type="submit" ng-click=""
-                           value="Submit" class="btnOK"/>
-                    <button ng-click="switchModalSettings()" class="btnCancel">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
     <div ng-hide="!data.displayModalEvent" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">

@@ -1,8 +1,8 @@
 angular.module("moduleGroup", ['ngMaterial'])
 .controller("ctrlGroup", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups", 
-                            "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent",
+                            "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent","$mdDialog",
                 function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups, 
-                            sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent) {
+                            sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent,$mdDialog) {
 
     $scope.idGradeGroup = $routeParams.idGradeGroup;
 
@@ -56,6 +56,7 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.data.displayModalSettings = false;
     $scope.show = true;
     $scope.data.currentSettingstab = "Period";
+
     var groupname = function(){ var group;
         sData_allData.data.groups.forEach(function(entry){
         if(entry.idGradeGroup == $routeParams.idGradeGroup){
@@ -64,8 +65,34 @@ angular.module("moduleGroup", ['ngMaterial'])
         }
     });
     return group;};
-    $scope.breadcrumb = "Group - " + groupname();
+    $scope.breadcrumb = groupname();
 
+
+                    $scope.status = '  ';
+
+                    $scope.showTabDialog = function(ev) {
+                        $mdDialog.show({
+                            controller: DialogController,
+                            templateUrl: '../../templates/settings_Modal.html',
+                            parent: angular.element(document.body),
+                            targetEvent: ev,
+                            clickOutsideToClose:true
+                        });
+                    };
+
+                    function DialogController($scope, $mdDialog) {
+                        $scope.hide = function() {
+                            $mdDialog.hide();
+                        };
+
+                        $scope.cancel = function() {
+                            $mdDialog.cancel();
+                        };
+
+                        $scope.answer = function(answer) {
+                            $mdDialog.hide(answer);
+                        };
+                    }
 
 // Autocomplete
     $scope.auto = {};

@@ -14,6 +14,7 @@ angular.module("moduleLogin", [])
     $scope.breadcrumb = "login";
 
 
+
     /*
     $scope.colTeachers = [
         {idUser: 1, forename: "Richard", surname: "Ludy"},
