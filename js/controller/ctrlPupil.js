@@ -12,6 +12,12 @@ angular.module("modulePupil", [])
     $scope.data.displayModalEvent = false;
     $scope.data.displayModalNote = false;
     $scope.data.displayModalGrade = false;
+    $scope.data.displayModalNoteHistory = false;
+    $scope.data.displayModalParticipationHistory = false;
+    $scope.data.displayModalUpdateNote = false;
+
+    $scope.state = {};
+    $scope.state.awaitingParticipationData = true;
 
     $scope.partHistory = {};
     $scope.noteHistory = {};
@@ -21,13 +27,15 @@ angular.module("modulePupil", [])
     $scope.data.currentSettingstab = "Period";
     $scope.data.displayModalSettings = false;
 
+    $scope.updateNote = {};
+
     $scope.data.colNoteHistory = [];
     $scope.data.colParticipationHistroy = [];
     $scope.data.ungradedEvents = [];
     $scope.data.gradedEvents = [];
     $scope.data.ungradedParticipations = [];
     $scope.data.gradedParticipations = [];
-    $scope.data.colEvents = findEvents();
+    $scope.data.colEvents = [];
 
     $scope.grade = {};
     $scope.grade.gradeOptions = [
@@ -61,43 +69,66 @@ angular.module("modulePupil", [])
 
     $scope.breadcrumb = generateBreadcrumb();
 
+    $scope.status = '  ';
 
-                    $scope.status = '  ';
+    $scope.showTabDialog = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '../../templates/settings_Modal.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        });
+    };
 
-                    $scope.showTabDialog = function(ev) {
-                        $mdDialog.show({
-                            controller: DialogController,
-                            templateUrl: '../../templates/settings_Modal.html',
-                            parent: angular.element(document.body),
-                            targetEvent: ev,
-                            clickOutsideToClose:true
-                        });
-                    };
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
 
-                    function DialogController($scope, $mdDialog) {
-                        $scope.hide = function() {
-                            $mdDialog.hide();
-                        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 
-                        $scope.cancel = function() {
-                            $mdDialog.cancel();
-                        };
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
 
-                        $scope.answer = function(answer) {
-                            $mdDialog.hide(answer);
-                        };
-                    }
+    $scope.submitUpdateNote = function(note){
+        sData_CUDHandler.putNote({idNote: note.idNote}).then(function(response){
+            console.log("success updating note");
+            $scope.switchModalUpdateNote();
+        }, function(response){
+            console.log("error updating note");
+        });
+    }
 
+    $scope.updateNote = function(note) {
+        $scope.updateNote = note;
+        $scope.switchModalUpdateNote();
+    }
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
-    sData_participationsByPupil.fillData(dataInit).then(function(response){
-        console.log("successfuly loaded participations");
-        $scope.data.colParticipations = sData_participationsByPupil.data;
-        setGradedAndUngraded();
+    sData_eventsByGroups.fillData({idGradeGroup: $scope.data.idGradeGroup}).then(function(outerResponse){
+        console.log("success fetching events");
+        $scope.data.colEvents = sData_eventsByGroups.data;
+        
+        sData_participationsByPupil.fillData(dataInit).then(function(response){
+            console.log("successfuly loaded participations");
+            $scope.data.colParticipations = sData_participationsByPupil.data;
+            setGradedAndUngraded();
+            $scope.state.awaitingParticipationData = false;
+        }, function(response){
+            console.log("error loading participations");
+            $scope.state.awaitingParticipationData = false;
+        });
     }, function(response){
-        console.log("error loading participations");
-    });
+        console.log("error fetching events");
+        $scope.state.awaitingParticipationData = false;
+    })
+    
 
     sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log("successfully loaded notes");
@@ -109,17 +140,17 @@ angular.module("modulePupil", [])
     
     $scope.displayNoteHistory = function(paramIdNote) {
         $scope.switchModalNoteHistory();
-        $scope.loadNoteHistory();
+        $scope.loadNoteHistory(paramIdNote);
     }
 
     $scope.displayParticipationHistory = function(paramIdParticipation)
     {
         $scope.switchModalParticipationHistory();
-        $scope.loadParticipationHistory();
+        $scope.loadParticipationHistory(paramIdParticipation);
     }
 
     $scope.loadNoteHistory = function(paramIdNote){
-        sData_noteHistory.fillData(paramIdNote).then(function(response){
+        sData_noteHistory.fillData({idNote: paramIdNote}).then(function(response){
             console.log(response);
             $scope.noteHistory.colNotes = sData_noteHistory.data;
         }, function(response){
@@ -128,7 +159,7 @@ angular.module("modulePupil", [])
     }
 
     $scope.loadParticipationHistory = function(paramIdParticipation){
-        sData_participationHistory.fillData(paramIdParticipation).then(function(response){
+        sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function(response){
             console.log(response);
             $scope.partHistory.colParticipation = sData_participationHistory.data;
         }, function(response){
@@ -144,6 +175,10 @@ angular.module("modulePupil", [])
     }
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
+    }
+
+    $scope.switchModalUpdateNote = function(){
+        $scope.data.displayModalUpdateNote = !$scope.displayModalUpdateNote;
     }
     
     $scope.switchModalSettings = function(){
@@ -161,10 +196,10 @@ angular.module("modulePupil", [])
     }
 
     $scope.switchModalNoteHistory = function() {
-
+        $scope.data.displayModalNoteHistory = !$scope.data.displayModalNoteHistory;
     }
     $scope.switchModalParticipationHistory = function() {
-        
+        $scope.data.displayModalParticipationHistory = !$scope.data.displayModalParticipationHistory;
     }
 
     $scope.getTotalGrade = function(){
@@ -240,9 +275,6 @@ angular.module("modulePupil", [])
         {
             if($scope.data.gradedEvents[i].idGradeEvent == id)
             {
-                console.log("found");
-                console.log(i);
-                console.log($scope.data.gradedEvents[i]);
                 retVal = $scope.data.gradedEvents[i];
                 found = true;
             }
@@ -365,7 +397,6 @@ angular.module("modulePupil", [])
         $scope.data.ungradedEvents = [];
         $scope.data.gradedEvents = [];
         var found = 0;
-
         for(var i = 0; i < $scope.data.colEvents.length; i++)
         {
             found = 0;
@@ -410,21 +441,5 @@ angular.module("modulePupil", [])
         }
 
         return retVal;
-    }
-
-    function findEvents(){
-        /*var retVal = [];
-
-        var colEvents = sData_allData.data.events;
-        for(var i = 0; i < colEvents.length; i++)
-        {
-            if(colEvents[i].idGradeGroup = $scope.data.idGradeGroup)
-                retVal.push(colEvents[i]);
-        }
-
-        return retVal;
-        */
-
-        return sData_eventsByGroups.data[$scope.idGradeGroup];
     }
 }]);

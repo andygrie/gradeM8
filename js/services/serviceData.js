@@ -2,10 +2,10 @@ angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil",
                                 "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
-                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned",
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,
                                 sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
-                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned) {
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote) {
   var retVal;
 
   retVal = {
@@ -15,7 +15,8 @@ angular.module('moduleData', [])
       registerPupils: registerPupils,
       insertNote: insertNote,
       putParticipation: putParticipation,
-      insertParticipation: insertParticipation
+      insertParticipation: insertParticipation,
+      putNote: putNote
   }
 
   return retVal;
@@ -103,6 +104,17 @@ angular.module('moduleData', [])
               resolve("success");
           }, function(response){
               reject(response);
+          }, data);
+      });
+  }
+
+  //data = {idNote, note}
+  function putNote(data){
+      return $q(function(resolve, reject) {
+          sWeb_putNote(function(response){
+              resolve("success");
+          }, function(response){
+              reject("error");
           }, data);
       });
   }
@@ -485,7 +497,7 @@ angular.module('moduleData', [])
   //data = {idParticipation}
   function fillData(data){
     return $q(function(resolve, reject) {
-        sWeb_getNoteHistory(function(responseData){
+        sWeb_getParticipationHistory(function(responseData){
 
             participations = responseData;
             retVal.data = participations;
