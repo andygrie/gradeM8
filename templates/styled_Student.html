@@ -146,13 +146,33 @@
         </div>
     </div>
 
+    <div ng-hide="!data.displayModalUpdateNote" class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h2>Update Note</h2>
+            </div>
+            <form name="updateNoteForm">
+                <div class="modal-body" style="color: grey">
+                    <md-input-container>
+                        <label>Note</label>
+                        <input ng-model="updatedNote.note" required/>
+                    </md-input-container>
+                </div>
+                <div class="modal-footer">
+                    <input class="btnOK" type="submit" ng-click="submitUpdateNote(updatedNote)" ng-disabled="!updateNoteForm.$valid" value="Submit"/>
+                    <button ng-click="switchModalUpdateNote()" class="btnCancel" >Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div ng-hide="!data.displayModalGrade" id="participation_Modal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Grade</h2>
             </div>
             <form>
-                <div class="modal-body">
+                <div class="modal-body" style="color: grey">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Grade</label>
                         <md-select ng-model="formData.grade">
@@ -221,6 +241,9 @@
     </div>
 
     <div ng-hide="data.showOverview">
+        </br>
+        <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingParticipationData"></md-progress-linear>
+
         <div class="section-container">
             <div class="tile-container">
                 <h1>Ungraded Events</h1>
@@ -262,10 +285,13 @@
         <table>
             <tr>
                 <th>Latest Note</th>
+                <th>Update Note</th>
+                <th>test</th>
                 <th>History</th>
             </tr>
             <tr ng-repeat="recNote in data.colNotes">
                 <td>{{recNote.note}}</td>
+                <td><button ng-click="updateNote(recNote)">Update</button><td>
                 <td><button ng-click="displayNoteHistory(recNote.idNote)">History</button></td>
             </tr>
         </table>

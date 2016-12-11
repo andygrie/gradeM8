@@ -402,3 +402,20 @@ angular.module('moduleWeb', [])
       });
   }
 }])
+
+.factory('sWeb_putNote', ["$q", '$http', 'constants', 
+                    function($q, $http, constants) {
+  return function(resolve, reject, data){
+      $http({
+          method: "PUT",
+          url: constants.apiUrl + "/note/" + data.idNote,
+          data: {
+              "note": data.note
+          }
+      }).then(function(response){
+          resolve(response.data);
+        }, function(response){
+          reject(response);
+      });
+  }
+}])
