@@ -88,7 +88,9 @@ angular.module("modulePupil", [])
                     return group+" - "+pupil;
                 };
 
-$scope.breadcrumb = generateBreadcrumb();
+$scope.generatedBreadcrumb = generateBreadcrumb();
+
+                    $scope.breadcrumb = $scope.generatedBreadcrumb + " Overview";
 
     $scope.status = '  ';
 
@@ -291,6 +293,9 @@ $scope.breadcrumb = generateBreadcrumb();
 
     $scope.toggleView = function(){
         $scope.data.showOverview = !$scope.data.showOverview;
+        if($scope.data.showOverview)
+            $scope.breadcrumb = $scope.generatedBreadcrumb + " Information";
+        else{
     }
 
     $scope.getEventOfParticipation = function(id){
