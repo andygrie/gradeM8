@@ -230,7 +230,7 @@ function sendTodaysGrades(req, res, requestString) {
         });
 
         request.on('doneProc', function (rowCount, more) {
-            getGrades(result, res, req.body.lowerDate, req.body.upperDate);
+            getGrades(result, res, req.body.lowerDate, req.body.upperDate, requestString);
         });
         request.addParameter('id', TYPES.Int, req.body.idTeacher);
         connection.execSql(request);
