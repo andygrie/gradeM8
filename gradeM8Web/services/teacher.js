@@ -217,11 +217,11 @@ function getGrades(teacher, res, lowerDate, upperDate) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor from gradeUser u" +
-            "INNER JOIN pupil pu ON pu.fkUser = u.idUser" +
-            "INNER JOIN participation p ON p.fkPupil = pu.fkUser" +
-            "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent" +
-            "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 ORDER BY gradedOn";
+        var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor from gradeUser u " +
+            "INNER JOIN pupil pu ON pu.fkUser = u.idUser " +
+            "INNER JOIN participation p ON p.fkPupil = pu.fkUser " +
+            "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent " +
+            "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 ORDER BY gradedOn ";
         request = new Request(requestString,
             function (err) {
                 if (err) {
