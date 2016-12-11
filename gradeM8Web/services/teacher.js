@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
         from: 'm8grade@gmail.com', 
         to: '', 
         subject: 'Grades',
-        html: '<p>Hello, you added following grades today:</p><table><tr><th>Forename</th><th>Surname</th><th>Description</th><th>Grade</th></tr>'
+        html: '<p>Hello, you added following grades today:</p><table><tr><th>Surname</th><th>Forename</th><th>Subject</th><th>Description</th><th>Grade</th></tr>'
     };
 
     var atob = require('atob');
@@ -217,11 +217,14 @@ function getGrades(teacher, res, lowerDate, upperDate) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor from gradeUser u " +
+        var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor, s.name from gradeUser u " +
             "INNER JOIN pupil pu ON pu.fkUser = u.idUser " +
             "INNER JOIN participation p ON p.fkPupil = pu.fkUser " +
             "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent " +
-            "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 ORDER BY gradedOn ";
+            "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches " +
+            "INNER JOIN gradeSubject s ON t.fkGradeSubject = s.idGradeSubject " +
+            "WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 " +
+            "ORDER BY e.eventDescription, u.username";
         request = new Request(requestString,
             function (err) {
                 if (err) {
@@ -273,7 +276,8 @@ function getPupilsByUsernameFromAD(pupils, teacher, res) {
                     eventDescription: item.eventDescription,
                     grade: item.grade,
                     eventDate: item.eventDate,
-                    gradedOn: item.gradedOn
+                    gradedOn: item.gradedOn,
+                    subject: item.name
                 };
             });
             query = query + ')';
@@ -293,6 +297,7 @@ function getPupilsByUsernameFromAD(pupils, teacher, res) {
                             grade: pupilsHelp[item.cn].grade,
                             eventDate: pupilsHelp[item.cn].eventDate,
                             gradedOn: pupilsHelp[item.cn].gradedOn,
+                            subject: pupilsHelp[item.cn].subject,
                             username: item.cn,
                             forename: item.givenName,
                             surname: item.sn,
@@ -346,7 +351,11 @@ function sendMail(results, teacher, res) {
     mailOptions.to = teacher.email;
     var emptyResults = true;
     results.forEach(function (result) {
-        mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.eventDescription + "</td><td>" + result.grade + "</td></tr>";
+        mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.subject + "</td><td>" + result.eventDescription + "</td>";
+        if (result.grade != 0)
+            mailOptions.html += "<td>" + result.grade + "</td></tr>";
+        else
+            mailOptions.html += "<td>abscent</td></tr>";
         emptyResults = false;
     });
     mailOptions.html += "</table>";
