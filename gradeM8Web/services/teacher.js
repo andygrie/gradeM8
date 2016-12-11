@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
         from: 'm8grade@gmail.com', 
         to: '', 
         subject: 'Grades',
-        html: '<p>Hello, you added following grades today:</p><table><tr><th>Surname</th><th>Forename</th><th>Subject</th><th>Description</th><th>Grade</th></tr>'
+        html: '<p>Hello, you added following grades today:</p><table><tr><th>Surname</th><th>Forename</th><th>Subject</th><th>Description</th><th>Event Date</th><th>Grade On</th><th>Grade</th></tr>'
     };
 
     var atob = require('atob');
@@ -350,8 +350,23 @@ function getTeacherFromAD(results, teacher, res) {
 function sendMail(results, teacher, res) {
     mailOptions.to = teacher.email;
     var emptyResults = true;
+
+    results.sort(function (a, b) {
+        var result = 0;
+        (a.subject > b.subject) ? result = 1 : ((b.subject > a.subject) ? result = -1 : result = 0);
+        if (result == 0) {
+            (a.eventDescription > b.eventDescription) ? result = 1 : ((b.eventDescription > a.eventDescription) ? result = -1 : result = 0);
+            if (result == 0) {
+                (a.surname > b.surname) ? result = 1 : ((b.surname > a.surname) ? result = -1 : result = 0);
+                if (result == 0)
+                    (a.forename > b.forename) ? result = 1 : ((b.forename > a.forename) ? result = -1 : result = 0);
+            }
+        }
+        return result;
+    }); 
+
     results.forEach(function (result) {
-        mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.subject + "</td><td>" + result.eventDescription + "</td>";
+        mailOptions.html += "<tr><td>" + result.surname + "</td><td>" + result.forename + "</td><td>" + result.subject + "</td><td>" + result.eventDescription + "</td><td>" + result.eventDate + "</td><td>" + result.gradedOn + "</td>";
         if (result.grade != 0)
             mailOptions.html += "<td>" + result.grade + "</td></tr>";
         else
