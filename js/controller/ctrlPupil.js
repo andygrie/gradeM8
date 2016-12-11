@@ -3,7 +3,8 @@ angular.module("modulePupil", [])
                             "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups","$mdDialog",
                 function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
                             sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups,$mdDialog) {
-                    $scope.show = true;
+
+    $scope.show = true;
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -83,14 +84,11 @@ angular.module("modulePupil", [])
                 pupil = entry.forename + " " + entry.surname;
             }
         });
+        return group+" - "+pupil;
+    };
 
-
-                    return group+" - "+pupil;
-                };
-
-$scope.generatedBreadcrumb = generateBreadcrumb();
-
-                    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
+    $scope.generatedBreadcrumb = generateBreadcrumb();
+    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
 
     $scope.status = '  ';
 
@@ -135,6 +133,7 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
+
     sData_eventsByGroups.fillData({idGradeGroup: $scope.data.idGradeGroup}).then(function(outerResponse){
         console.log("success fetching events");
         $scope.data.colEvents = sData_eventsByGroups.data;
@@ -152,7 +151,6 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
         console.log("error fetching events");
         $scope.state.awaitingParticipationData = false;
     })
-    
 
     sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log("successfully loaded notes");
@@ -168,8 +166,7 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
         $scope.loadNoteHistory(paramIdNote);
     }
 
-    $scope.displayParticipationHistory = function(paramIdParticipation)
-    {
+    $scope.displayParticipationHistory = function(paramIdParticipation) {
         $scope.switchModalParticipationHistory();
         $scope.loadParticipationHistory(paramIdParticipation);
     }
@@ -197,9 +194,11 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
     $scope.switchModalEvent = function(){
         $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
     }
+
     $scope.switchModalNote = function(){
         $scope.data.displayModalNote = !$scope.data.displayModalNote;
     }
+
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
     }
@@ -225,6 +224,7 @@ $scope.generatedBreadcrumb = generateBreadcrumb();
     $scope.switchModalNoteHistory = function() {
         $scope.data.displayModalNoteHistory = !$scope.data.displayModalNoteHistory;
     }
+
     $scope.switchModalParticipationHistory = function() {
         $scope.data.displayModalParticipationHistory = !$scope.data.displayModalParticipationHistory;
     }

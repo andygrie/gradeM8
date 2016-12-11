@@ -43,14 +43,14 @@ angular.module("moduleGroup", ['ngMaterial'])
         });
     }
 
-    $scope.classesSelected = false;
-    $scope.colPupils = [];
-    $scope.colClasses = [];
-    $scope.colAdPupils = []; //Maybe [] because push() is called
-    $scope.colSelectedClasses = [];
-    $scope.colSelectedPupils = [];
-    $scope.colParticipations = [];
-    $scope.colEvents = [];
+                    $scope.classesSelected = false;
+                    $scope.colPupils = [];
+                    $scope.colClasses = [];
+                    $scope.colAdPupils = []; //Maybe [] because push() is called
+                    $scope.colSelectedClasses = [];
+                    $scope.colSelectedPupils = [];
+                    $scope.colParticipations = [];
+                    $scope.colEvents = [];
 
 //Breadcrumbs
     $scope.data.displayModalSettings = false;
@@ -199,8 +199,9 @@ angular.module("moduleGroup", ['ngMaterial'])
     })
 
     $scope.displayParticipationsOfEvent = function(paramEventId){
-        $scope.switchModalEventDetail();
+       // $scope.switchModalEventDetail();
         $scope.loadParticipationsByEvent(paramEventId);
+        $location.path("/group/" +idGradeGroup + "/" + paramEventId);
     }
 
     $scope.loadParticipationsByEvent = function(paramEventId) {
