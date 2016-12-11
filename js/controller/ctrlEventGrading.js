@@ -4,6 +4,17 @@ angular.module("moduleEvent", ['ngMaterial'])
         function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups,
                   sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent,$mdDialog) {
 
+            var groupname = function(){ var group;
+                sData_allData.data.groups.forEach(function(entry){
+                    if(entry.idGradeGroup == $routeParams.idGradeGroup){
+
+                        group = entry.name;
+                    }
+                });
+                return group;};
+
+            $scope.breadcrumb = groupname() + " - Event-Grading";
+
             $scope.idEvent = $routeParams.idEvent;
             $scope.grade = {};
             $scope.idGradeGroup = $routeParams.idGradeGroup;
@@ -35,6 +46,7 @@ angular.module("moduleEvent", ['ngMaterial'])
 
             $scope.loadParticipationsByEvent = function(paramEventId) {
                 console.log("loadParticipationsByEvent");
+                console.log(paramEventId);
                 sData_participationsByEvent.fillData({idGradeEvent: paramEventId}).then(function(response){
                     console.log(response);
                     $scope.grade.colParticipations = sData_participationsByEvent.data.map(function(item){
