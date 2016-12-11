@@ -264,9 +264,7 @@ function getPupilsByUsernameFromAD(pupils, teacher, res) {
         if (auth) {
             ad.opts.bindDN = username;
             ad.opts.bindCredentials = password;
-
-            p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor
-
+           
             var query = '(|';
             pupils.forEach(function (item) {
                 query = query + '(cn=' + item.username + ')';
