@@ -183,7 +183,31 @@ function deleteUser(idUser) {
         connection.execSql(request);
     }
 }
-exports.sendTodaysGrades = function (req, res) {
+
+exports.sendGradesByEventDate = function (req, res) {
+    var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor, s.name from gradeUser u " +
+        "INNER JOIN pupil pu ON pu.fkUser = u.idUser " +
+        "INNER JOIN participation p ON p.fkPupil = pu.fkUser " +
+        "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent " +
+        "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches " +
+        "INNER JOIN gradeSubject s ON t.fkGradeSubject = s.idGradeSubject " +
+        "WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 " +
+        "ORDER BY e.eventDescription, u.username";
+    sendTodaysGrades(req, res, requestString);
+}
+exports.sendGradesByGradedDate = function (req, res) {
+    var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor, s.name from gradeUser u " +
+        "INNER JOIN pupil pu ON pu.fkUser = u.idUser " +
+        "INNER JOIN participation p ON p.fkPupil = pu.fkUser " +
+        "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent " +
+        "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches " +
+        "INNER JOIN gradeSubject s ON t.fkGradeSubject = s.idGradeSubject " +
+        "WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, p.gradedOn, @lower) <= 0 AND datediff(day, p.gradedOn, @upper) >= 0 " +
+        "ORDER BY e.eventDescription, u.username";
+    sendTodaysGrades(req, res, requestString);
+}
+
+function sendTodaysGrades(req, res, requestString) {
     var connection = new Connection(config);
     var result = {};
     connection.on('connect', executeStatement);
@@ -212,19 +236,11 @@ exports.sendTodaysGrades = function (req, res) {
         connection.execSql(request);
     }
 }
-function getGrades(teacher, res, lowerDate, upperDate) {
+function getGrades(teacher, res, lowerDate, upperDate, requestString) {
     var connection = new Connection(config);
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        var requestString = "select u.username, e.eventDescription, p.grade, t.fkTeacher, e.eventDate, p.gradedOn, p.successor, s.name from gradeUser u " +
-            "INNER JOIN pupil pu ON pu.fkUser = u.idUser " +
-            "INNER JOIN participation p ON p.fkPupil = pu.fkUser " +
-            "INNER JOIN gradeEvent e ON e.idGradeEvent = p.fkGradeEvent " +
-            "INNER JOIN teaches t ON t.idTeaches = e.fkTeaches " +
-            "INNER JOIN gradeSubject s ON t.fkGradeSubject = s.idGradeSubject " +
-            "WHERE p.successor = 0 AND t.fkTeacher = @id AND p.grade != -1 AND datediff(day, e.eventDate, @lower) <= 0 AND datediff(day, e.eventDate, @upper) >= 0 " +
-            "ORDER BY e.eventDescription, u.username";
         request = new Request(requestString,
             function (err) {
                 if (err) {
