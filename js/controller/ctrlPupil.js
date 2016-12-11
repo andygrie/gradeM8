@@ -105,7 +105,7 @@ $scope.breadcrumb = generateBreadcrumb();
     }
 
     $scope.updateNote = function(note) {
-        $scope.updateNote = note;
+        //$scope.updateNote = note;
         //$scope.switchModalUpdateNote();
         $scope.submitUpdateNote(note);
     }
