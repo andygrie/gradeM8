@@ -44,6 +44,7 @@ angular.module('moduleWeb', [])
 }])
     .factory('sWeb_setEMailDates', ["$q", '$http', 'constants',
         function($q, $http, constants) {
+            console.log("in service Web");
             return function(resolve, reject, data) {
                 $http({
                     method: "POST",

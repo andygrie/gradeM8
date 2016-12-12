@@ -23,6 +23,7 @@ angular.module('moduleData', [])
   return retVal;
 
                             function insertEMailDates(data){
+                                console.log("in insertEMail");
                                 return $q(function(resolve, reject){
                                     sWeb_setEMailDates(function(responseData){
 
