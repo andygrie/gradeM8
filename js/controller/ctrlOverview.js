@@ -33,10 +33,10 @@ angular.module("moduleOverview", [])
                        var mydateFunction =  function(){
                             console.log("ready");
                             var date_input=$('#date');
-                           console.log(date_input);
+                           console.log($('#sandbox-container input'));
                            $('#sandbox-container input').datepicker({
                            });
-                            console.log("ready");
+                            console.log($('#sandbox-container input'));
                        }
 
     function DialogController($scope, $mdDialog) {
