@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="131">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
@@ -68,8 +68,8 @@
       <file leaf-file-name="serviceData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/serviceData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="312" column="14" selection-start-line="312" selection-start-column="14" selection-end-line="312" selection-end-column="14" />
+            <state relative-caret-position="91">
+              <caret line="308" column="31" selection-start-line="308" selection-start-column="31" selection-end-line="308" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -105,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            <state relative-caret-position="169">
+              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -413,12 +413,12 @@
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
       <workItem from="1481459651038" duration="22995000" />
-      <workItem from="1481553258874" duration="26449000" />
+      <workItem from="1481553258874" duration="26775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167761000" />
+    <option name="totallyTimeSpent" value="168087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -744,26 +744,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/group.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/serviceWeb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -776,26 +760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/serviceData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="312" column="14" selection-start-line="312" selection-start-column="14" selection-end-line="312" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="131">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
@@ -804,6 +772,38 @@
             <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/serviceWeb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/serviceData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="308" column="31" selection-start-line="308" selection-start-column="31" selection-end-line="308" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
