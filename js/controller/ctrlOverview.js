@@ -32,12 +32,9 @@ angular.module("moduleOverview", [])
     };
                        var mydateFunction =  function(){
                             console.log("ready");
-                            var date_input=$('input[name="date"]'); //our date input has the name "date"
+                            var date_input=$('#date');
                            console.log(date_input);
                             date_input.datepicker({
-                                format: 'mm/dd/yyyy',
-                                todayHighlight: true,
-                                autoclose: true,
                             });
                             console.log("ready");
                        }
