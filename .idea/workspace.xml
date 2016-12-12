@@ -31,8 +31,8 @@
       <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="110">
+              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
@@ -365,12 +365,12 @@
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
       <workItem from="1481459651038" duration="22995000" />
-      <workItem from="1481553258874" duration="6901000" />
+      <workItem from="1481553258874" duration="7160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148213000" />
+    <option name="totallyTimeSpent" value="148472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -751,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="110">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
