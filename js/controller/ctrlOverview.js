@@ -11,36 +11,38 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
-                        $scope.data.displayModalSettings = false;
-                        $scope.show = true;
-                        $scope.data.currentSettingstab = "Period";
+
+    
+    $scope.data.displayModalSettings = false;
+    $scope.show = true;
+    $scope.data.currentSettingstab = "Period";
 
 
-                        $scope.status = '  ';
+    $scope.status = '  ';
 
-                        $scope.showTabDialog = function(ev) {
-                            $mdDialog.show({
-                                controller: DialogController,
-                                templateUrl: '../../templates/settings_Modal.html',
-                                parent: angular.element(document.body),
-                                targetEvent: ev,
-                                clickOutsideToClose:true
-                            });
-                        };
+    $scope.showTabDialog = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '../../templates/settings_Modal.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        });
+    };
 
-                        function DialogController($scope, $mdDialog) {
-                            $scope.hide = function() {
-                                $mdDialog.hide();
-                            };
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
 
-                            $scope.cancel = function() {
-                                $mdDialog.cancel();
-                            };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 
-                            $scope.answer = function(answer) {
-                                $mdDialog.hide(answer);
-                            };
-                        }
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
 
 
     sData_groupsBySubjects.fillData().then(function(response){
@@ -53,33 +55,6 @@ angular.module("moduleOverview", [])
         console.log("error loading groups by subjects: " + response);
         $scope.state.awaitingData = false;
     })
-    
-    /*
-    $scope.colGroupsBySubjects = {
-        "Mathe": [
-            {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
-            {idGradeGroup: 2, idGradeSubject: 1, name: "4BHIFS"},
-            {idGradeGroup: 3, idGradeSubject: 1, name: "5AHIFS"},
-        ],
-        "English": [
-            {idGradeGroup: 4, idGradeSubject: 2, name: "5BHIFS"},
-            {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"},
-        ]
-    }
-    $scope.colSubjects = [
-        {idGradeSubject: 1, name: "Mathe"},
-        {idGradeSubject: 2, name: "English"},
-    ];
-    $scope.colGroups = [
-        {idGradeGroup: 1, idGradeSubject: 1, name: "4AHIFS"},
-        {idGradeGroup: 2, idGradeSubject: 1, name: "4BHIFS"},
-        {idGradeGroup: 3, idGradeSubject: 1, name: "5AHIFS"},
-        {idGradeGroup: 4, idGradeSubject: 2, name: "5BHIFS"},
-        {idGradeGroup: 5, idGradeSubject: 2, name: "1AHIT/1"}
-    ]
-    */
-
-
 
     $scope.sendEmail = function(){
         sData_email.send().then(function(response){
@@ -101,19 +76,22 @@ angular.module("moduleOverview", [])
     $scope.switchModalGroup = function()
     {
         $scope.data.displayModalGroup = !$scope.data.displayModalGroup;
-    }/*
-                        $scope.switchModalSettings = function(){
-                            $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
-                        }
+    }
+    /*
+    $scope.switchModalSettings = function(){
+        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+    }
 
-                        $scope.setSettingTabToPeriod = function () {
-                            $scope.data.currentSettingstab = "Period";
-                        }
+    $scope.setSettingTabToPeriod = function () {
+        $scope.data.currentSettingstab = "Period";
+    }
 
-                        $scope.setSettingTabToWeekdays = function () {
-                            $scope.data.currentSettingstab = "Weekdays";
-                        }
-*/
+    $scope.setSettingTabToWeekdays = function () {
+        $scope.data.currentSettingstab = "Weekdays";
+    }
+    */
+
+    
     $scope.addNewSubject = function(){
         //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
         var data = {

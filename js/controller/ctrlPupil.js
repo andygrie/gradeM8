@@ -88,7 +88,7 @@ angular.module("modulePupil", [])
                     return group+" - "+pupil;
                 };
 
-$scope.breadcrumb = generateBreadcrumb();
+    $scope.breadcrumb = generateBreadcrumb();
 
     $scope.status = '  ';
 

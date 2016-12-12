@@ -46,7 +46,7 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.classesSelected = false;
     $scope.colPupils = [];
     $scope.colClasses = [];
-    $scope.colAdPupils = []; //Maybe [] because push() is called
+    $scope.colAdPupils = [];
     $scope.colSelectedClasses = [];
     $scope.colSelectedPupils = [];
     $scope.colParticipations = [];
@@ -185,11 +185,15 @@ angular.module("moduleGroup", ['ngMaterial'])
         $scope.state.awaitingPupilData = false;
         console.log("error loading pupils by groups: " + response);
     })
+
+    console.log("test teaches");
     sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function(response){
+        console.log(response);
         $scope.teaches = findTeaches();
     }, function(response){
         console.log("error loading teaches: " + response);
     })
+
     sData_eventsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function(response){
         $scope.state.awaitingEventData = false;
         $scope.colEvents = sData_eventsByGroups.data;
@@ -282,17 +286,17 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.switchModalPupil = function(){
         $scope.data.displayModalPupil = !$scope.data.displayModalPupil;
     }
-                    $scope.switchModalSettings = function(){
-                        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
-                    }
+    $scope.switchModalSettings = function(){
+        $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
+    }
 
-                    $scope.setSettingTabToPeriod = function () {
-                        $scope.data.currentSettingstab = "Period";
-                    }
+    $scope.setSettingTabToPeriod = function () {
+        $scope.data.currentSettingstab = "Period";
+    }
 
-                    $scope.setSettingTabToWeekdays = function () {
-                        $scope.data.currentSettingstab = "Weekdays";
-                    }
+    $scope.setSettingTabToWeekdays = function () {
+        $scope.data.currentSettingstab = "Weekdays";
+    }
 
     $scope.switchModalEventDetail = function(){
         $scope.data.displayModalEventDetail = !$scope.data.displayModalEventDetail;
@@ -312,6 +316,9 @@ angular.module("moduleGroup", ['ngMaterial'])
             eventDate: $scope.newEvent.eventDate, 
             eventDescription: $scope.newEvent.eventDescription
         };
+
+        console.log("insert event data: ");
+        console.log(data);
         sData_CUDHandler.insertEvent(data).then(function(response){
             console.log("successfuly inserted event: " + response);
 
@@ -341,12 +348,18 @@ angular.module("moduleGroup", ['ngMaterial'])
     function findTeaches(){
         var retVal = null;
         var colTeaches = sData_allData.data.teaches;
+        console.log("teaches: ");
+        console.log(colTeaches);
         for(var i = 0; i < colTeaches.length && retVal == null; i++)
         {
-            if(colTeaches[i].fkGradeGroup = $scope.idGradeGroup)
+            if(colTeaches[i].fkGradeGroup == $scope.idGradeGroup)
+            {
                 retVal = colTeaches[i];
+            }
         }
 
+        console.log("retValTeaches: ");
+        console.log(retVal);
         return retVal;
     }
 }]);
