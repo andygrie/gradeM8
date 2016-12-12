@@ -304,7 +304,10 @@ function getPupilsByUsernameFromAD(pupils, teacher, res) {
                     return;
                 }
 
-                if ((!users) || (users.length == 0)) console.log('No users found.');
+                if ((!users) || (users.length == 0)) {
+                    console.log('No users found.');
+                    getTeacherFromAD(finalPupils, teacher, res);
+                }
                 else {
                     users.forEach(function (item) {
                         finalPupils.push({
