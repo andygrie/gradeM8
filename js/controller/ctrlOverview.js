@@ -32,7 +32,6 @@ angular.module("moduleOverview", [])
     };
                        var mydateFunction =  function(){
                             console.log("ready");
-                            var date_input=$('#date');
                            console.log($('#sandbox-container input'));
                            $('#sandbox-container input').datepicker({
                            });
