@@ -29,14 +29,10 @@ angular.module('moduleData', [])
 
                                         console.log("in f2");
                                         sData_setEMailDates.data=[];
-                                        console.log(sData_setEMailDates.data);
                                         sData_setEMailDates.data[responseData.name] = [];
-                                        console.log(sData_setEMailDates.data[responseData.name]);
                                         sData_setEMailDates.data.push(responseData);
 
-                                        console.log("in after push");
                                         resolve(responseData);
-                                        console.log("in after resolve data");
                                         resolve("successfuly added Dates");
                                     }, function(response){
                                         reject(response);

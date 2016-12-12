@@ -42,12 +42,12 @@ angular.module("moduleOverview", [])
                  von: $scope.eMailDates.von,
                  bis:$scope.eMailDates.bis
                 };
-                console.log(data);
                 sData_CUDHandler.insertEMailDates(data).then(function(response){
                 console.log("successfuly inserted new Mail Dates: " + response);
                 }, function(response){
                 console.log("error inserting subj: " + response);
          });
+            $mdDialog.hide();
         };
 
 
