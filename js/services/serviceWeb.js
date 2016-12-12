@@ -48,11 +48,11 @@ angular.module('moduleWeb', [])
                 $http({
                     method: "POST",
                     url: constants.apiUrl + "/teacher/sendGrades/byGradedOnDate",
-                data: {
-                    "idTeacher": data.idTeacher,
-                    "lowerDate": data.von,
-                    "upperDate": data.bis
-                }
+                    data: {
+                        "idTeacher": data.idTeacher,
+                        "lowerDate": data.von,
+                        "upperDate": data.bis
+                    }
                 }).then(function(response){
                     resolve(response.data);
                 }, function(response){

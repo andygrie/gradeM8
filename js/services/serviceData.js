@@ -385,7 +385,7 @@ angular.module('moduleData', [])
 
             return retVal;
 
-            function send(){
+            function send(data){
                 return $q(function(resolve, reject) {
                     sWeb_setEMailDates(function(responseData){
                         email = responseData;
@@ -393,7 +393,7 @@ angular.module('moduleData', [])
                         resolve("Successfuly sent emails: " + responseData.status);
                     }, function(response){
                         reject(response);
-                    });
+                    },data);
                 })
             }
         }])
