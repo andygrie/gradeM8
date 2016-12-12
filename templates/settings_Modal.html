@@ -13,9 +13,11 @@
         <md-dialog-content >
             <div class="imput">
 
-                <div>
-                    <label>Von</label>
-                    <md-datepicker ng-model="" md-placeholder="Enter date"></md-datepicker>
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
                 </div>
                 <div>
                     <label>Bis</label>
