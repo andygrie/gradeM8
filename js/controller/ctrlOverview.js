@@ -39,7 +39,7 @@ angular.module("moduleOverview", [])
         $scope.setEmails = function () {
             console.log(sData_allData.data.user);
             var data = {
-                idTeacher: sData_allData.data.user,
+                idTeacher: sData_allData.data.user.idUser,
                  von: $scope.eMailDates.von,
                 bis:$scope.eMailDates.bis
                 };
