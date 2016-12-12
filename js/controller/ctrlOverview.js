@@ -25,7 +25,7 @@ angular.module("moduleOverview", [])
                                 format: 'mm/dd/yyyy',
                                 container: container,
                                 todayHighlight: true,
-                                autoclose: true,
+                                autoclose: true
                             });
                             console.log("ready");
                         });
