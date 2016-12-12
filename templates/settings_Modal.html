@@ -14,7 +14,7 @@
         </md-toolbar>
 
         <md-dialog-content >
-            <div class="imput" style="height: 5em">
+            <div class="imput" style="height: 7em">
                 <div class="form-group ">
                     <label class="control-label " for="date">
                         Date
@@ -28,7 +28,7 @@
                 </div>
                 <script>
                     $(document).ready(function(){
-                        console.log("in ready");
+                        alert('Hallo Welt');
                         var date_input=$('input[name="date"]'); //our date input has the name "date"
                         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
                         date_input.datepicker({
