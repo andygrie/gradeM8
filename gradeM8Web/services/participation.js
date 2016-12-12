@@ -365,6 +365,7 @@ function getPupilsByUsernameFromAD(pupils, res) {
                             }
                         });
                     });
+                    finalPupils.sort(function (a, b) { return (a.surname > b.surname) ? 1 : ((b.surname > a.surname) ? -1 : 0); });
                     res.send(finalPupils);
                 }
             });
