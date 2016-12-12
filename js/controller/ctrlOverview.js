@@ -34,8 +34,8 @@ angular.module("moduleOverview", [])
                             console.log("ready");
                             var date_input=$('#date');
                            console.log(date_input);
-                            console.log(date_input.datepicker({
-                            }));
+                           $('#sandbox-container input').datepicker({
+                           });
                             console.log("ready");
                        }
 
