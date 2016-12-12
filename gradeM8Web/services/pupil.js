@@ -274,7 +274,10 @@ exports.getPupilsByGroup = function (req, res) {
             });
 
             request.on('doneProc', function (rowCount, more) {
-                getPupilsByUsernameFromAD(results, res);
+                if (results.length == 0)
+                    res.send([]);
+                else
+                    getPupilsByUsernameFromAD(results, res);
             });
             request.addParameter('id', TYPES.Int, req.params.idGradeGroup);
             connection.execSql(request);
