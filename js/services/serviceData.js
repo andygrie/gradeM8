@@ -1,11 +1,11 @@
 angular.module('moduleData', [])
 
-.factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil",
+.factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil","sData_setEMailDates",
                                 "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
-                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote",
-                        function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates",
+                        function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,sData_setEMailDates,
                                 sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
-                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote) {
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates) {
   var retVal;
 
   retVal = {
@@ -16,10 +16,24 @@ angular.module('moduleData', [])
       insertNote: insertNote,
       putParticipation: putParticipation,
       insertParticipation: insertParticipation,
-      putNote: putNote
+      putNote: putNote,
+      insertEMailDates: insertEMailDates
   }
 
   return retVal;
+
+                            function insertEMailDates(data){
+                                return $q(function(resolve, reject){
+                                    sWeb_setEMailDates(function(responseData){
+
+                                        sData_setEMailDates.data.push(responseData);
+
+                                        resolve(responseData);
+                                    }, function(response){
+                                        reject(response);
+                                    }, data);
+                                });
+                            }
 
   //data = {name, idGradeSubject}
   function insertGroup (data){
@@ -357,6 +371,32 @@ angular.module('moduleData', [])
   }
 }])
 
+    .factory('sData_emailNew', ["$q", "sWeb_sendEmailNew",
+        function($q, sWeb_sendEmailNew) {
+            var email = {};
+            var retVal;
+
+            retVal = {
+                data: email,
+                send : send
+            }
+
+            return retVal;
+
+            function send(){
+                return $q(function(resolve, reject) {
+                    sWeb_sendEmailNew(function(responseData){
+                        email = responseData;
+                        retVal.data = email;
+                        resolve("Successfuly sent emails: " + responseData.status);
+                    }, function(response){
+                        reject(response);
+                    });
+                })
+            }
+        }])
+
+
 .factory('sData_pupilsByClass', ["$q", "sWeb_getPupilByClass", 
                 function($q, sWeb_getPupilByClass) {
   var pupils = {};
@@ -514,6 +554,7 @@ angular.module('moduleData', [])
     })
   }
 }])
+
 
 .factory('sData_participationsByEvent', ["$q", "sWeb_getParticipationByEvent", 
                 function($q, sWeb_getParticipationByEvent) {

@@ -42,6 +42,24 @@ angular.module('moduleWeb', [])
       });
   }
 }])
+    .factory('sWeb_setEMailDates', ["$q", '$http', 'constants',
+        function($q, $http, constants) {
+            return function(resolve, reject, data) {
+                $http({
+                    method: "POST",
+                    url: constants.apiUrl + "/teacher/sendGrades/byGradedOnDate",
+                data: {
+                    "idTeacher": data.idTeacher,
+                    "lowerDate": data.von,
+                    "upperDate": data.bis
+                }
+                }).then(function(response){
+                    resolve(response.data);
+                }, function(response){
+                    reject(response);
+                });
+            }
+        }])
 /*
 .factory('sWeb_getTeaches', ["$q", '$http', 'constants', 
                     function($q, $http, constants) {

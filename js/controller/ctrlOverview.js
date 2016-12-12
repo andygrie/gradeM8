@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","$mdDialog",
-                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,$mdDialog) {
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","sData_setEMailDates","$mdDialog",
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,sData_setEMailDates,$mdDialog) {
                         
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.state = {};
@@ -30,9 +30,29 @@ angular.module("moduleOverview", [])
         });
     };
 
-
+    $scope.submitEMailDates = function (von, bis) {
+        var data = {
+            idTeacher: sData_allData.data.user.idUser,
+            von: von,
+            bis:bis
+        };
+        console.log(data);
+        sData_CUDHandler.insertEMailDates(data).then(function(response){
+            console.log("successfuly inserted new Mail Dates: " + response);
+            $mdDialog.hide();
+        }, function(response){
+            console.log("error inserting subj: " + response);
+        });
+    };
 
     function DialogController($scope, $mdDialog) {
+        $scope.eMailDates.von = "";
+        $scope.eMailDates.bis =  "";
+
+        $scope.setEmails = function () {
+            submitEMailDates($scope.eMailDates.von,
+            $scope.eMailDates.bis);
+        };
         $scope.hide = function() {
             $mdDialog.hide();
         };
