@@ -37,16 +37,14 @@ angular.module("moduleOverview", [])
        // $scope.eMailDates.bis =  "";
 
         $scope.setEmails = function () {
-            console.log(sData_allData.data.user);
             var data = {
                 idTeacher: sData_allData.data.user.idUser,
                  von: $scope.eMailDates.von,
-                bis:$scope.eMailDates.bis
+                 bis:$scope.eMailDates.bis
                 };
                 console.log(data);
                 sData_CUDHandler.insertEMailDates(data).then(function(response){
                 console.log("successfuly inserted new Mail Dates: " + response);
-                    $mdDialog.hide();
                 }, function(response){
                 console.log("error inserting subj: " + response);
          });
