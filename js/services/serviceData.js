@@ -26,9 +26,11 @@ angular.module('moduleData', [])
                                 return $q(function(resolve, reject){
                                     sWeb_setEMailDates(function(responseData){
 
+
                                         sData_setEMailDates.data.push(responseData);
 
                                         resolve(responseData);
+                                        resolve("successfuly added Dates");
                                     }, function(response){
                                         reject(response);
                                     }, data);
@@ -346,7 +348,7 @@ angular.module('moduleData', [])
   }
 }])
 
-.factory('sData_email', ["$q", "sWeb_sendEmail", 
+.factory('sData_email', ["$q", "sWeb_setEMailDates",
                 function($q, sWeb_sendEmail) {
   var email = {};
   var retVal;
@@ -371,7 +373,7 @@ angular.module('moduleData', [])
   }
 }])
 
-    .factory('sData_emailNew', ["$q", "sWeb_sendEmailNew",
+    .factory('sData_setEMailDates', ["$q", "sWeb_sendEmailNew",
         function($q, sWeb_sendEmailNew) {
             var email = {};
             var retVal;
@@ -395,7 +397,6 @@ angular.module('moduleData', [])
                 })
             }
         }])
-
 
 .factory('sData_pupilsByClass', ["$q", "sWeb_getPupilByClass", 
                 function($q, sWeb_getPupilByClass) {
