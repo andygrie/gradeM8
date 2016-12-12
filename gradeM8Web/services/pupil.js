@@ -307,7 +307,8 @@ function getPupilsByUsernameFromAD(pupils, res) {
                     return;
                 }
 
-                if ((!users) || (users.length == 0)) console.log('No users found.');
+                if ((!users) || (users.length == 0))
+                    res.send(finalPupils);
                 else {
                     users.forEach(function (item) {
                         finalPupils.push({
