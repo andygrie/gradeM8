@@ -39,8 +39,8 @@ angular.module("moduleOverview", [])
         $scope.setEmails = function () {
             var data = {
                 idTeacher: sData_allData.data.user.idUser,
-                 von: von,
-                bis:bis
+                 von: $scope.eMailDates.von,
+                bis:$scope.eMailDates.bis
                 };
                 console.log(data);
                 sData_CUDHandler.insertEMailDates(data).then(function(response){
