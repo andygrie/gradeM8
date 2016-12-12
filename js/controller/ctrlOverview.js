@@ -33,6 +33,9 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
+        $scope.$on('$viewContentLoaded', function ($evt, data) {
+            mydateFunction();
+        });
 
         var mydateFunction =  function(){
             console.log("ready");
