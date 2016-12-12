@@ -17,18 +17,6 @@ angular.module("moduleOverview", [])
     $scope.show = true;
     $scope.data.currentSettingstab = "Period";
 
-                        $(document).ready(function(){
-                            console.log("ready");
-                            var date_input=$('input[name="date"]'); //our date input has the name "date"
-                            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-                            date_input.datepicker({
-                                format: 'mm/dd/yyyy',
-                                container: container,
-                                todayHighlight: true,
-                                autoclose: true
-                            });
-                            console.log("ready");
-                        });
 
     $scope.status = '  ';
 
@@ -40,7 +28,20 @@ angular.module("moduleOverview", [])
             targetEvent: ev,
             clickOutsideToClose:true
         });
+        mydateFunction();
     };
+                       var mydateFunction =  function(){
+                            console.log("ready");
+                            var date_input=$('input[name="date"]'); //our date input has the name "date"
+                            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                            date_input.datepicker({
+                                format: 'mm/dd/yyyy',
+                                container: container,
+                                todayHighlight: true,
+                                autoclose: true
+                            });
+                            console.log("ready");
+                       }
 
     function DialogController($scope, $mdDialog) {
         $scope.hide = function() {
