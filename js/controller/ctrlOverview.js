@@ -37,8 +37,6 @@ angular.module("moduleOverview", [])
        // $scope.eMailDates.bis =  "";
 
         $scope.setEmails = function () {
-            submitEMailDates($scope.eMailDates.von,
-            $scope.eMailDates.bis);
             var data = {
                 idTeacher: sData_allData.data.user.idUser,
                  von: von,
