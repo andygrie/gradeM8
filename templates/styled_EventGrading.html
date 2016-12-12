@@ -1,5 +1,6 @@
-<div >
-    <header  ng-show="show" id="site-header">
+
+<div>
+    <header id="site-header">
         <div class="site-header-toprow">
             <div class="circle">
                 <a class="site-logo" href="#!/overview#overview">
@@ -23,61 +24,37 @@
     <div class="site-nav-wrapper">
     </div>
 </nav>
-
+<div class = "all">
 <main class="main">
     <div class="section-container">
         <input class="btnBack" value="Back" content="Back" type="submit" ng-click="back()"/>
         <div class="information-container">
             <div>
-                <table>
+                <table class="md-table">
                     <colgroup>
-                        <col style="width:10%">
                         <col style="width:60%">
-                        <col style="width:30%">
+                        <col style="width:40%">
                     </colgroup>
                     <thead>
                     <tr class="table-head">
-                        <th>Number</th>
-                        <th>Studentname</th>
-                        <th>Grade</th>
+                        <th class="md-table-header">Studentname</th>
+                        <th class="md-table-header">Grade</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="table-body-1">
-                        <td>1</td>
-                        <td>Dude</td>
-                        <td><select class="form-control" ng-model="Grade+id/name?" ng-change="changedValue(Grade+id/name?)">
-                            <option value="0">Absent</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select></td>
-                    </tr>
-                    <tr class="table-body-2">
-                        <td>2</td>
-                        <td>Dude</td>
-                        <td><select class="form-control"  ng-model="Grade+id/name?" ng-change="changedValue(Grade+id/name?)">
-                            <option value="0">Absent</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select></td>
-                    </tr>
-                    <tr class="table-body-1">
-                        <td>3</td>
-                        <td>Dude</td>
-                        <td><select class="form-control"  ng-model="Grade+id/name?" ng-change="changedValue(Grade+id/name?)">
-                            <option value="0">Absent</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select></td>
+                    <tbody class="md-table-content-row">
+                    <tr class="md-table-content-row" ng-repeat="item in grade.colParticipations">
+                        <td class="md-table-content">{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
+                        <td class="md-table-content">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label style="color: white">Grade</label>
+                                <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white; border-bottom-color:white">
+                                    <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
+                                        {{gradeOption.description}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-progress-circular md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-circular>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -85,6 +62,5 @@
         </div>
         <input class="btnBack" value="Back" content="Back" type="submit" ng-click="back()"/>
     </div>
-    </div>
 </main>
-
+</div>

@@ -29,6 +29,7 @@
 
 <div class="all">
     <main class="main">
+
         <div ng-hide="!data.displayModalEvent" id="myModal" class="modal">
             <div class="modal-wrapper">
                 <div class="modal-header">
@@ -50,6 +51,7 @@
                 </form>
             </div>
         </div>
+
         <div ng-hide="!data.displayModalNote" id="myModal2" class="modal">
             <div class="modal-wrapper">
                 <div class="modal-header">
@@ -114,7 +116,7 @@
             </div>
         </div>
 
-    <div ng-hide="!data.displayModalParticipationHistory" class="modal">
+        <div ng-hide="!data.displayModalParticipationHistory" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Grade History</h2>
@@ -137,8 +139,9 @@
                 </div>
             </form>
         </div>
+    </div>
 
-    <div ng-hide="!data.displayModalNoteHistory" class="modal">
+        <div ng-hide="!data.displayModalNoteHistory" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
                 <h2>Grade History</h2>
@@ -161,6 +164,7 @@
                 </div>
             </form>
         </div>
+    </div>
 
         <div ng-hide="data.showOverview">
             </br>
@@ -187,36 +191,6 @@
                 </div>
             </div>
         </div>
-
-    <div ng-hide="!data.showOverview">
-        <h1>Prüfungen</h1>
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Grade</th>
-                <th>History</th>
-            </tr>
-            <tr ng-repeat="recParticipation in data.gradedParticipations">
-                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDescription}}</td>
-                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate | date : "dd-MM-yyyy" : timezone}}</td>
-                <td>{{recParticipation.grade}}</td>
-                <td><button ng-click="displayParticipationHistory(recParticipation.idParticipation)">History</button></td>
-            </tr>
-        </table>
-        <h1>Notes</h1>
-        <table>
-            <tr>
-                <th>Latest Note</th>
-                <th>Update Note</th>
-                <th>History</th>
-            </tr>
-            <tr ng-repeat="recNote in data.colNotes">
-                <td>{{recNote.note}}</td>
-                <td><button ng-click="updateNote(recNote)">Update</button><td>
-                <td><button ng-click="displayNoteHistory(recNote.idNote)">History</button></td>
-            </tr>
-        </table>
 
         <div ng-hide="!data.showOverview">
 
@@ -261,7 +235,7 @@
                     <tbody>
                     <tr class="md-table-content-row"  ng-repeat="recNote in data.colNotes">
                         <td class="md-table-content">
-                            <input  value="whatsoever" ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
+                            <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
                         <td class="md-table-content">
                         <td class="md-table-td-more">
                             <span class="glyphicon glyphicon-zoom-in" ng-click="displayNoteHistory(recNote.idNote)">History</span>
@@ -282,6 +256,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 </div>
 </html>

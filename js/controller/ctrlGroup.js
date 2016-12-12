@@ -203,8 +203,9 @@ angular.module("moduleGroup", ['ngMaterial'])
     })
 
     $scope.displayParticipationsOfEvent = function(paramEventId){
-        $scope.switchModalEventDetail();
+       // $scope.switchModalEventDetail();
         $scope.loadParticipationsByEvent(paramEventId);
+        $location.path("/group/" +$scope.idGradeGroup + "/" + paramEventId);
     }
 
     $scope.loadParticipationsByEvent = function(paramEventId) {

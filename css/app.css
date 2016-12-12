@@ -5,6 +5,7 @@
     font-family: 'Roboto';
     color: white;
     overflow: auto;
+    height: 100%;
 }
 
 .logotype img {
@@ -599,21 +600,14 @@ i {
 .md-table-content {
     white-space: nowrap;
     font-size: 0.8em;
-    padding: 1rem;
-    height: 72px;
+    padding: 1em;
+    /* height: 72px; */
 
 }
 
 .md-table-td-more {
     max-width: 72px;
-    width: 72px;
-    padding: 1rem;
-}
-
-.md-table-thumbs {
-    max-width: 104px;
-    width: 104px;
-    padding: 1rem;
+    padding: 1em;
 }
 
 .md-table-thumbs div {

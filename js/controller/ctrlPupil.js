@@ -3,7 +3,8 @@ angular.module("modulePupil", [])
                             "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups","$mdDialog",
                 function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData, 
                             sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups,$mdDialog) {
-                    $scope.show = true;
+
+    $scope.show = true;
     $scope.data = {};
     $scope.formData = {};
     $scope.data.idPupil = $routeParams.idPupil;
@@ -83,13 +84,11 @@ angular.module("modulePupil", [])
                 pupil = entry.forename + " " + entry.surname;
             }
         });
-
-
-                    return group+" - "+pupil;
-                };
-
-    $scope.breadcrumb = generateBreadcrumb();
-
+        return group+" - "+pupil;
+    };
+    
+    $scope.generatedBreadcrumb = generateBreadcrumb();
+    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
     $scope.status = '  ';
 
     $scope.showTabDialog = function(ev) {
@@ -119,7 +118,7 @@ angular.module("modulePupil", [])
     $scope.submitUpdateNote = function(note){
         sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function(response){
             console.log("success updating note");
-            $scope.switchModalUpdateNote();
+           // $scope.switchModalUpdateNote();
         }, function(response){
             console.log("error updating note");
         });
@@ -127,11 +126,13 @@ angular.module("modulePupil", [])
 
     $scope.updateNote = function(note) {
         $scope.updatedNote = note;
-        $scope.switchModalUpdateNote();
+        $scope.submitUpdateNote(note);
+       // $scope.switchModalUpdateNote();
     }
 
     var dataInit = {idPupil: $scope.data.idPupil, 
                 idTeaches: $scope.data.teaches.idTeaches};
+
     sData_eventsByGroups.fillData({idGradeGroup: $scope.data.idGradeGroup}).then(function(outerResponse){
         console.log("success fetching events");
         $scope.data.colEvents = sData_eventsByGroups.data;
@@ -149,7 +150,6 @@ angular.module("modulePupil", [])
         console.log("error fetching events");
         $scope.state.awaitingParticipationData = false;
     })
-    
 
     sData_notesByPupil.fillData(dataInit).then(function(response){
         console.log("successfully loaded notes");
@@ -165,8 +165,7 @@ angular.module("modulePupil", [])
         $scope.loadNoteHistory(paramIdNote);
     }
 
-    $scope.displayParticipationHistory = function(paramIdParticipation)
-    {
+    $scope.displayParticipationHistory = function(paramIdParticipation) {
         $scope.switchModalParticipationHistory();
         $scope.loadParticipationHistory(paramIdParticipation);
     }
@@ -194,9 +193,11 @@ angular.module("modulePupil", [])
     $scope.switchModalEvent = function(){
         $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
     }
+
     $scope.switchModalNote = function(){
         $scope.data.displayModalNote = !$scope.data.displayModalNote;
     }
+
     $scope.switchModalGrade = function(){
         $scope.data.displayModalGrade = !$scope.data.displayModalGrade;
     }
@@ -222,6 +223,7 @@ angular.module("modulePupil", [])
     $scope.switchModalNoteHistory = function() {
         $scope.data.displayModalNoteHistory = !$scope.data.displayModalNoteHistory;
     }
+
     $scope.switchModalParticipationHistory = function() {
         $scope.data.displayModalParticipationHistory = !$scope.data.displayModalParticipationHistory;
     }
@@ -288,8 +290,12 @@ angular.module("modulePupil", [])
         });
     }
 
-    $scope.toggleView = function(){
+    $scope.toggleView = function() {
         $scope.data.showOverview = !$scope.data.showOverview;
+        if (!$scope.data.showOverview)
+            $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
+        else
+            $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
     }
 
     $scope.getEventOfParticipation = function(id){
@@ -466,4 +472,5 @@ angular.module("modulePupil", [])
 
         return retVal;
     }
+
 }]);
