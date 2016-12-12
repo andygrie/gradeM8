@@ -37,6 +37,7 @@ angular.module("moduleOverview", [])
         $scope.myFunction = function(){
             $('#sandbox-container input').datepicker({
             });
+            console.log($('#sandbox-container input'));
         }
 
         $scope.hide = function() {

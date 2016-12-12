@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/settings_Modal.html" afterPath="$PROJECT_DIR$/templates/settings_Modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlOverview.js" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +75,8 @@
       <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+            <state relative-caret-position="222">
+              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -187,8 +187,8 @@
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
         <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
       </list>
     </option>
   </component>
@@ -429,12 +429,12 @@
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
       <workItem from="1481459651038" duration="22995000" />
-      <workItem from="1481553258874" duration="19595000" />
+      <workItem from="1481553258874" duration="19737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160907000" />
+    <option name="totallyTimeSpent" value="161049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        <state relative-caret-position="222">
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
           <folding />
         </state>
       </provider>
