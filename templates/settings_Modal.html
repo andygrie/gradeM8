@@ -22,8 +22,9 @@
                     </div>
                 </div>
                     <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
+                        $('.datepicker').datepicker({
+                            format: 'mm/dd/yyyy',
+                            startDate: '-3d'
                         });
                     </script>
             </div>
