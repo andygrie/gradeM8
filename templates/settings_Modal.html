@@ -14,14 +14,21 @@
 
         <md-dialog-content >
             <div class="imput" style="height: 7em">
-                <div class="form-group ">
+                <div class="form-group"style="margin-top: 1em">
                     <label class="control-label">
-                        Date
+                        Von:
                     </label>
                     <div class="input-group" >
-                        <input type="date" id="eventDateInput" name="inputEventDate" ng-model="newEvent.eventDate" placeholder="eventDate" min="2016-01-01" required="" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
-                        </div>
-                    <div class="span5 col-md-5" id="sandbox-container"><input type="text"></div>
+                        <input type="date" id="s" name="inputEventDate" ng-model="newEvent.eventDate" placeholder="eventDate" min="2016-01-01" required="" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 1em">
+                    <label class="control-label">
+                        Bis:
+                    </label>
+                    <div class="input-group" >
+                        <input type="date" id="f" name="inputEventDate" ng-model="newEvent.eventDate" placeholder="eventDate" min="2016-01-01" required="" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
+                    </div>
                 </div>
             </div>
 
