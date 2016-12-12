@@ -45,8 +45,8 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="265" column="231" selection-start-line="265" selection-start-column="226" selection-end-line="265" selection-end-column="231" />
+            <state relative-caret-position="163">
+              <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/css/bootstrap.css.map">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
-              <caret line="74" column="4271" selection-start-line="74" selection-start-column="4271" selection-end-line="74" selection-end-column="4271" />
+              <caret line="74" column="4265" selection-start-line="74" selection-start-column="4265" selection-end-line="74" selection-end-column="4265" />
               <folding />
             </state>
           </provider>
@@ -396,12 +396,12 @@
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
       <workItem from="1481459651038" duration="22995000" />
-      <workItem from="1481553258874" duration="11097000" />
+      <workItem from="1481553258874" duration="11120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152409000" />
+    <option name="totallyTimeSpent" value="152432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -776,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="265" column="231" selection-start-line="265" selection-start-column="226" selection-end-line="265" selection-end-column="231" />
+        <state relative-caret-position="163">
+          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -785,7 +785,7 @@
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css.map">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
-          <caret line="74" column="4271" selection-start-line="74" selection-start-column="4271" selection-end-line="74" selection-end-column="4271" />
+          <caret line="74" column="4265" selection-start-line="74" selection-start-column="4265" selection-end-line="74" selection-end-column="4265" />
           <folding />
         </state>
       </provider>
