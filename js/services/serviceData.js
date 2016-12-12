@@ -386,6 +386,7 @@ angular.module('moduleData', [])
             return retVal;
 
             function send(data){
+                console.log("in send");
                 return $q(function(resolve, reject) {
                     sWeb_setEMailDates(function(responseData){
                         email = responseData;
