@@ -28,17 +28,23 @@ angular.module("moduleOverview", [])
             targetEvent: ev,
             clickOutsideToClose:true
         });
-        mydateFunction();
     };
-                       var mydateFunction =  function(){
-                            console.log("ready");
-                           console.log($('#sandbox-container input'));
-                           $('#sandbox-container input').datepicker({
-                           });
-                            console.log($('#sandbox-container input'));
-                       }
+
+
 
     function DialogController($scope, $mdDialog) {
+        $(document).ready(function(){
+            mydateFunction();
+        });
+
+        var mydateFunction =  function(){
+            console.log("ready");
+            console.log($('#sandbox-container input'));
+            $('#sandbox-container input').datepicker({
+            });
+            console.log($('#sandbox-container input'));
+        }
+
         $scope.hide = function() {
             $mdDialog.hide();
         };
