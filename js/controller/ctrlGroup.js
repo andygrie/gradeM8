@@ -52,7 +52,7 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.colParticipations = [];
     $scope.colEvents = [];
 
-//Breadcrumbs
+// Breadcrumbs
     $scope.data.displayModalSettings = false;
     $scope.show = true;
     $scope.data.currentSettingstab = "Period";
@@ -130,7 +130,7 @@ angular.module("moduleGroup", ['ngMaterial'])
       };
 
     }
-//Check
+// Check
     $scope.check = {};
 
     $scope.check.toggle = function (item, list) {
@@ -365,4 +365,5 @@ angular.module("moduleGroup", ['ngMaterial'])
         console.log(retVal);
         return retVal;
     }
+//
 }]);
