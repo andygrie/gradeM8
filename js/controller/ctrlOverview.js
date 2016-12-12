@@ -30,28 +30,27 @@ angular.module("moduleOverview", [])
         });
     };
 
-    $scope.submitEMailDates = function (von, bis) {
-        var data = {
-            idTeacher: sData_allData.data.user.idUser,
-            von: von,
-            bis:bis
-        };
-        console.log(data);
-        sData_CUDHandler.insertEMailDates(data).then(function(response){
-            console.log("successfuly inserted new Mail Dates: " + response);
-            $mdDialog.hide();
-        }, function(response){
-            console.log("error inserting subj: " + response);
-        });
-    };
 
     function DialogController($scope, $mdDialog) {
+
         $scope.eMailDates.von = "";
         $scope.eMailDates.bis =  "";
 
         $scope.setEmails = function () {
             submitEMailDates($scope.eMailDates.von,
             $scope.eMailDates.bis);
+         var data = {
+         idTeacher: sData_allData.data.user.idUser,
+         von: von,
+         bis:bis
+         };
+         console.log(data);
+         sData_CUDHandler.insertEMailDates(data).then(function(response){
+         console.log("successfuly inserted new Mail Dates: " + response);
+         $mdDialog.hide();
+         }, function(response){
+         console.log("error inserting subj: " + response);
+         });
         };
         $scope.hide = function() {
             $mdDialog.hide();
