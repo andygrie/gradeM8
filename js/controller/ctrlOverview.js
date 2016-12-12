@@ -2,6 +2,8 @@ angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","$mdDialog",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,$mdDialog) {
 
+
+                        $('.datepicker').datepicker()
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.state = {};
     $scope.state.awaitingData = true;
