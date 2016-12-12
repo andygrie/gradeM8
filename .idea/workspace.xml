@@ -5,175 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap-datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap-datepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.az.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.bg.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.bs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ca.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.cs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.cy.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.da.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.de.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.el.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.en-AU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.en-GB.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.eo.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.es.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.et.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.eu.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fa.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fi.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fo.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fr-CH.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.gl.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.he.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hu.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hy.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.id.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.is.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.it-CH.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.it.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ja.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ka.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kh.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kk.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ko.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.lt.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.lv.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.me.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.mk.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.mn.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ms.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nb.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nl-BE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nl.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.no.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pl.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pt-BR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pt.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ro.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.rs-latin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.rs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ru.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sk.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sl.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sq.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sr-latin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sv.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sw.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.th.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.tr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.uk.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.vi.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.zh-CN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.zh-TW.min.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.min.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.min.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.min.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker.standalone.min.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.min.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.min.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.min.css" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap-datepicker3.standalone.min.css.map" afterPath="$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/js/bootstrap-datepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-datepicker.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/js/bootstrap-datepicker.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ar.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ar.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.az.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.az.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.bg.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.bg.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.bs.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.bs.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ca.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ca.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.cs.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.cs.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.cy.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.cy.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.da.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.da.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.de.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.de.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.el.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.el.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.en-AU.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.en-AU.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.en-GB.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.eo.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.eo.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.es.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.et.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.et.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.eu.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.eu.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fa.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.fa.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fi.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.fi.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fo.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.fo.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fr-CH.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.fr-CH.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.fr.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.gl.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.gl.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.he.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.he.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hr.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.hr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hu.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.hu.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.hy.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.hy.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.id.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.is.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.is.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.it-CH.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.it-CH.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.it.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ja.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ka.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ka.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kh.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.kh.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kk.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.kk.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ko.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.kr.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.kr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.lt.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.lt.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.lv.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.lv.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.me.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.me.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.mk.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.mk.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.mn.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.mn.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ms.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ms.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nb.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.nb.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nl-BE.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.nl-BE.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.nl.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.nl.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.no.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.no.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pl.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.pl.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pt-BR.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.pt.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.pt.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ro.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ro.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.rs-latin.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.rs.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.rs.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.ru.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sk.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sk.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sl.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sl.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sq.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sq.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sr-latin.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sr-latin.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sr.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sv.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sv.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.sw.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.sw.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.th.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.th.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.tr.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.tr.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.uk.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.uk.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.vi.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.vi.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.zh-CN.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/locales/bootstrap-datepicker.zh-TW.min.js" afterPath="$PROJECT_DIR$/bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -200,13 +31,23 @@
       <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            <state relative-caret-position="265">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pupil.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pupil.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -226,16 +67,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
               <caret line="265" column="55" selection-start-line="265" selection-start-column="55" selection-end-line="265" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css.map" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css.map">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="74" column="4330" selection-start-line="74" selection-start-column="4330" selection-end-line="74" selection-end-column="4330" />
               <folding />
             </state>
           </provider>
@@ -271,31 +102,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="17">
+              <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap-datepicker.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bootstrap-datepicker.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Class.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/styled_Class.html">
+      <file leaf-file-name="group.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/group.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -594,12 +425,12 @@
       <workItem from="1481412510067" duration="6508000" />
       <workItem from="1481458255143" duration="738000" />
       <workItem from="1481459651038" duration="22995000" />
-      <workItem from="1481553258874" duration="15037000" />
+      <workItem from="1481553258874" duration="15284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156349000" />
+    <option name="totallyTimeSpent" value="156596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -664,13 +495,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlInformation.js" />
-    <entry file="file://$PROJECT_DIR$/templates/group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -800,14 +624,6 @@
             <element signature="n#nav#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pupil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,31 +773,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,18 +797,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap-datepicker/css/bootstrap-datepicker.css">
+    <entry file="file://$PROJECT_DIR$/templates/group.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pupil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
           <folding />
         </state>
       </provider>
