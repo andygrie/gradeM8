@@ -373,8 +373,8 @@ angular.module('moduleData', [])
   }
 }])
 
-    .factory('sData_setEMailDates', ["$q", "sWeb_sendEmailNew",
-        function($q, sWeb_sendEmailNew) {
+    .factory('sData_setEMailDates', ["$q", "sWeb_setEMailDates",
+        function($q, sWeb_setEMailDates) {
             var email = {};
             var retVal;
 
@@ -387,7 +387,7 @@ angular.module('moduleData', [])
 
             function send(){
                 return $q(function(resolve, reject) {
-                    sWeb_sendEmailNew(function(responseData){
+                    sWeb_setEMailDates(function(responseData){
                         email = responseData;
                         retVal.data = email;
                         resolve("Successfuly sent emails: " + responseData.status);
