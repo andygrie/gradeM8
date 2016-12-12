@@ -18,7 +18,7 @@ angular.module("moduleOverview", [])
     $scope.data.currentSettingstab = "Period";
 
                         $(document).ready(function(){
-                            window.alert("wellp");
+                            console.log("ready");
                             var date_input=$('input[name="date"]'); //our date input has the name "date"
                             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
                             date_input.datepicker({
@@ -27,6 +27,7 @@ angular.module("moduleOverview", [])
                                 todayHighlight: true,
                                 autoclose: true,
                             });
+                            console.log("ready");
                         });
 
     $scope.status = '  ';
