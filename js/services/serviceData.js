@@ -28,6 +28,7 @@ angular.module('moduleData', [])
                                     sWeb_setEMailDates(function(responseData){
 
                                         console.log("in f2");
+                                        sData_setEMailDates.data[responseData.name] = [];
                                         sData_setEMailDates.data.push(responseData);
                                         console.log("in after push");
                                         resolve(responseData);
