@@ -33,7 +33,20 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
-        var f = myFunction();
+        $scope.$on('$viewContentLoaded', function() {
+            console.log("in");
+        });
+
+        $scope.$on('$routeChangeSuccess', function () {
+            // do something
+            console.log("in2");
+        });
+
+            $scope.$on('$stateChangeSuccess', function () {
+                // do something
+                console.log("in3");
+            });
+
         myFunction = function(){
             console.log("ready");
             console.log($('#sandbox-container input'));
