@@ -33,8 +33,8 @@ angular.module("moduleOverview", [])
 
     function DialogController($scope, $mdDialog) {
 
-        $scope.eMailDates.von = "";
-        $scope.eMailDates.bis =  "";
+       // $scope.eMailDates.von = "";
+       // $scope.eMailDates.bis =  "";
 /*
         $scope.setEmails = function () {
             submitEMailDates($scope.eMailDates.von,
