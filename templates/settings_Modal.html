@@ -1,4 +1,4 @@
-<md-dialog aria-label="Settings"">
+<md-dialog aria-label="Settings">
 
     <div style="width: 50vw">
     <form>
@@ -14,15 +14,21 @@
 
         <md-dialog-content >
             <div class="imput" style="height: 7em">
-                <div class="form-group ">
+                <div class="form-group"style="margin-top: 1em">
                     <label class="control-label">
-                        Date
+                        Von:
                     </label>
-                    <div class="input-group"  ng-click="myFunction()">
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>
-                        </div>
-                    <div class="span5 col-md-5" id="sandbox-container"><input type="text"></div>
+                    <div class="input-group" >
+                        <input type="date" id="s" name="inputEventDate" ng-model="newEvent.eventDate" placeholder="eventDate" min="2016-01-01" required="" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 1em">
+                    <label class="control-label">
+                        Bis:
+                    </label>
+                    <div class="input-group" >
+                        <input type="date" id="f" name="inputEventDate" ng-model="newEvent.eventDate" placeholder="eventDate" min="2016-01-01" required="" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
+                    </div>
                 </div>
             </div>
 

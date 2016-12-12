@@ -33,13 +33,6 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
-
-        $scope.myFunction = function(){
-            $('#sandbox-container input').datepicker({
-            });
-            console.log($('#sandbox-container input'));
-        }
-
         $scope.hide = function() {
             $mdDialog.hide();
         };
