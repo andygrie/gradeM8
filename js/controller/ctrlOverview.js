@@ -33,6 +33,9 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
+        $scope.init = function () {
+            console.log("in3");
+        };
         $scope.$on('$viewContentLoaded', function() {
             console.log("in");
         });
