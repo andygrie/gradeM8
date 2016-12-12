@@ -36,7 +36,7 @@ angular.module("moduleOverview", [])
                             date_input.datepicker({
                                 format: 'mm/dd/yyyy',
                                 todayHighlight: true,
-                                autoclose: true
+                                autoclose: true,
                             });
                             console.log("ready");
                        }
