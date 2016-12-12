@@ -27,10 +27,11 @@ angular.module('moduleData', [])
                                 return $q(function(resolve, reject){
                                     sWeb_setEMailDates(function(responseData){
 
-
+                                        console.log("in f2");
                                         sData_setEMailDates.data.push(responseData);
-
+                                        console.log("in after push");
                                         resolve(responseData);
+                                        console.log("in after resolve data");
                                         resolve("successfuly added Dates");
                                     }, function(response){
                                         reject(response);
