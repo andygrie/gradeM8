@@ -35,7 +35,7 @@ angular.module("moduleOverview", [])
 
        // $scope.eMailDates.von = "";
        // $scope.eMailDates.bis =  "";
-/*
+
         $scope.setEmails = function () {
             submitEMailDates($scope.eMailDates.von,
             $scope.eMailDates.bis);
@@ -52,7 +52,7 @@ angular.module("moduleOverview", [])
                 console.log("error inserting subj: " + response);
          });
         };
-        */
+
 
         $scope.hide = function() {
             $mdDialog.hide();
