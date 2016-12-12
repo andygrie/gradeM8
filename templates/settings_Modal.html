@@ -1,6 +1,6 @@
 <md-dialog aria-label="Settings">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
     <div style="width: 50vw">
     <form>
         <md-toolbar>
@@ -22,18 +22,19 @@
                             <div class='input-group date' id='datetimepicker1'>
                                 <input type='text' class="form-control" />
                                 <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                                </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
-                        });
-                    </script>
-                </div>
-            </div>
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                            <script src="http://code.jquery.com/jquery-latest.js"></script>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker1').datetimepicker();
+                                });
+                            </script>
+                        </div>
                     </div>
                 </div>
+            </div>
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
