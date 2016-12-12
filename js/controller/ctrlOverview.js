@@ -33,7 +33,7 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
-        $scope.$on('$viewContentLoaded', function ($evt, data) {
+        $scope.$on('$stateChangeSuccess', function ($evt, data) {
             mydateFunction();
         });
 
