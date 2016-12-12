@@ -81,18 +81,37 @@ angular.module("moduleGroup", ['ngMaterial'])
     };
 
     function DialogController($scope, $mdDialog) {
-        $scope.hide = function() {
-            $mdDialog.hide();
-        };
 
-        $scope.cancel = function() {
-            $mdDialog.cancel();
-        };
+                        // $scope.eMailDates.von = "";
+                        // $scope.eMailDates.bis =  "";
 
-        $scope.answer = function(answer) {
-            $mdDialog.hide(answer);
-        };
-    }
+                        $scope.setEmails = function () {
+                            var data = {
+                                idTeacher: sData_allData.data.user.idUser,
+                                von: $scope.eMailDates.von,
+                                bis:$scope.eMailDates.bis
+                            };
+                            sData_CUDHandler.insertEMailDates(data).then(function(response){
+                                console.log("successfuly inserted new Mail Dates");
+                            }, function(response){
+                                console.log("error inserting subj: " + response);
+                            });
+                            $mdDialog.hide();
+                        };
+
+
+                        $scope.hide = function() {
+                            $mdDialog.hide();
+                        };
+
+                        $scope.cancel = function() {
+                            $mdDialog.cancel();
+                        };
+
+                        $scope.answer = function(answer) {
+                            $mdDialog.hide(answer);
+                        };
+                    }
 
 // Autocomplete
     $scope.auto = {};

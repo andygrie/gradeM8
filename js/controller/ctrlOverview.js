@@ -43,7 +43,7 @@ angular.module("moduleOverview", [])
                  bis:$scope.eMailDates.bis
                 };
                 sData_CUDHandler.insertEMailDates(data).then(function(response){
-                console.log("successfuly inserted new Mail Dates: " + response);
+                console.log("successfuly inserted new Mail Dates");
                 }, function(response){
                 console.log("error inserting subj: " + response);
          });

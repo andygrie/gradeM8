@@ -4,6 +4,50 @@ angular.module("moduleEvent", ['ngMaterial'])
         function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups,
                   sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent,$mdDialog) {
 
+
+            $scope.showTabDialog = function(ev) {
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '../../templates/settings_Modal.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose:true
+                });
+            };
+
+            function DialogController($scope, $mdDialog) {
+
+                // $scope.eMailDates.von = "";
+                // $scope.eMailDates.bis =  "";
+
+                $scope.setEmails = function () {
+                    var data = {
+                        idTeacher: sData_allData.data.user.idUser,
+                        von: $scope.eMailDates.von,
+                        bis:$scope.eMailDates.bis
+                    };
+                    sData_CUDHandler.insertEMailDates(data).then(function(response){
+                        console.log("successfuly inserted new Mail Dates");
+                    }, function(response){
+                        console.log("error inserting subj: " + response);
+                    });
+                    $mdDialog.hide();
+                };
+
+
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function(answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
+
             var groupname = function(){ var group;
                 sData_allData.data.groups.forEach(function(entry){
                     if(entry.idGradeGroup == $routeParams.idGradeGroup){
