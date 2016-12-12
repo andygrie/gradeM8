@@ -10,15 +10,20 @@
                 </md-button>
             </div>
         </md-toolbar>
+
         <md-dialog-content >
             <div class="imput">
 
-                <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control">
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
+                <div class="form-group" style="margin-top: 1em">
+                    <label class="col-xs-3 control-label">Date</label>
+                    <div class="col-xs-5 date">
+                        <div class="input-group input-append date" id="datePicker">
+                            <input type="text" class="form-control" name="date" />
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </md-dialog-content>
 
