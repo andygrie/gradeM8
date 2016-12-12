@@ -86,10 +86,9 @@ angular.module("modulePupil", [])
         });
         return group+" - "+pupil;
     };
-
+    
     $scope.generatedBreadcrumb = generateBreadcrumb();
     $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
-
     $scope.status = '  ';
 
     $scope.showTabDialog = function(ev) {
