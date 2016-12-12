@@ -68,31 +68,31 @@ angular.module("moduleGroup", ['ngMaterial'])
     $scope.breadcrumb = groupname();
 
 
-                    $scope.status = '  ';
+    $scope.status = '  ';
 
-                    $scope.showTabDialog = function(ev) {
-                        $mdDialog.show({
-                            controller: DialogController,
-                            templateUrl: '../../templates/settings_Modal.html',
-                            parent: angular.element(document.body),
-                            targetEvent: ev,
-                            clickOutsideToClose:true
-                        });
-                    };
+    $scope.showTabDialog = function(ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: '../../templates/settings_Modal.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true
+        });
+    };
 
-                    function DialogController($scope, $mdDialog) {
-                        $scope.hide = function() {
-                            $mdDialog.hide();
-                        };
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
 
-                        $scope.cancel = function() {
-                            $mdDialog.cancel();
-                        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
 
-                        $scope.answer = function(answer) {
-                            $mdDialog.hide(answer);
-                        };
-                    }
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+        };
+    }
 
 // Autocomplete
     $scope.auto = {};
@@ -170,7 +170,7 @@ angular.module("moduleGroup", ['ngMaterial'])
         var colGroups = sData_allData.data.groups;
         for(var i = 0; i < colGroups.length && retVal == null; i++)
         {
-            if(colGroups[i].idGradeGroup = $scope.idGradeGroup)
+            if(colGroups[i].idGradeGroup == $scope.idGradeGroup)
                 retVal = colGroups[i].idGradeSubject;
         }
 
@@ -179,6 +179,7 @@ angular.module("moduleGroup", ['ngMaterial'])
 
     $scope.idGradeSubject = $scope.getSubjectOfGroup();
     sData_pupilsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function(response){
+        console.log("success loading pupils");
         $scope.state.awaitingPupilData = false;
         $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
     }, function(response){
@@ -186,7 +187,6 @@ angular.module("moduleGroup", ['ngMaterial'])
         console.log("error loading pupils by groups: " + response);
     })
 
-    console.log("test teaches");
     sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function(response){
         console.log(response);
         $scope.teaches = findTeaches();
@@ -359,6 +359,8 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
         }
 
+        if(retVal == null)
+            console.log("no teaches found");
         console.log("retValTeaches: ");
         console.log(retVal);
         return retVal;

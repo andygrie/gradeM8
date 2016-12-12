@@ -110,11 +110,12 @@ angular.module("moduleOverview", [])
         /*$scope.colGroups.push({idGradeGroup: 1, 
                             idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
                             name: $scope.newGroup.name});*/
-        
+
         var data = {
-            idGradeSubject: $scope.newGroup.subject.idGradeSubject, 
+            idGradeSubject: $scope.newGroup.subject,//$scope.newGroup.subject.idGradeSubject, 
             name: $scope.newGroup.name
         };
+
         console.log(data);
         sData_CUDHandler.insertGroup(data).then(function(response){
             console.log("successfuly inserted group: " + response);
