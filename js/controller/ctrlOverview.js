@@ -33,9 +33,9 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
-        $scope.$on('$stateChangeSuccess', function ($evt, data) {
+        $scope.init = function(){
             mydateFunction();
-        });
+        }
 
         var mydateFunction =  function(){
             console.log("ready");
