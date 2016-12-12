@@ -60,7 +60,7 @@
             </div>
             <form name="formGroup">
 
-                <div class="modal-body">
+                <div class="modal-body" style="color: grey">
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Group name</label>
@@ -70,10 +70,10 @@
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Subject</label>
-                            <md-select ng-model="user.state" required>
-                            <md-option ng-repeat="recSubject in colSubjects" value="{{recSubject}}">
-                                {{recSubject.name}}
-                            </md-option>
+                            <md-select ng-model="newGroup.subject" required>
+                                <md-option ng-repeat="recSubject in colSubjects" value="{{recSubject.idGradeSubject}}">
+                                    {{recSubject.name}}
+                                </md-option>
                             </md-select>
                         </md-input-container>
                     </div>

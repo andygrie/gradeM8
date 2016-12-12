@@ -29,6 +29,8 @@ angular.module('moduleData', [])
                 idGradeGroup: responseData.idGradeGroup,
                 idGradeSubject: data.idGradeSubject
             };
+            console.log("teaches data: ");
+            console.log(teachesData);
 
             sWeb_setTeaches(function(responseDataInner){
                 var found = false;
@@ -49,6 +51,8 @@ angular.module('moduleData', [])
                 if(sData_allData.data.teaches == null)
                     sData_allData.data.teaches = [];
                 sData_allData.data.teaches.push(responseDataInner);
+                console.log("teaches retVal: ");
+                console.log(responseDataInner);
                 resolve("successfuly added group");
             }, function(response){
                 reject(response);
@@ -716,7 +720,7 @@ angular.module('moduleData', [])
         if(sData_allData.data.pupils == null)
             sData_allData.data.pupils = [];
 
-        pupilsByGroups = {};
+        pupilsByGroups = [];
         /*
         if(baseData == null)
         {
@@ -729,8 +733,6 @@ angular.module('moduleData', [])
             })
         }
         */
-
-
         sWeb_getPupilByGroup(function(responseData){
             // sets the events for each group
             pupilsByGroups[data.idGradeGroup] = responseData;
@@ -747,6 +749,9 @@ angular.module('moduleData', [])
                     resolve("Successfully loaded pupilsByGroups");
                 }
             }
+
+            if(responseData.length == 0)
+                resolve("No Data found");
         }, function(response){
             reject(response);
         }, data.idGradeGroup);
