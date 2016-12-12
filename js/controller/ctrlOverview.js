@@ -33,24 +33,8 @@ angular.module("moduleOverview", [])
 
 
     function DialogController($scope, $mdDialog) {
-        $scope.init = function () {
-            console.log("in3");
-        };
-        $scope.$on('$viewContentLoaded', function() {
-            console.log("in");
-        });
 
-        $scope.$on('$routeChangeSuccess', function () {
-            // do something
-            console.log("in2");
-        });
-
-            $scope.$on('$stateChangeSuccess', function () {
-                // do something
-                console.log("in3");
-            });
-
-        myFunction = function(){
+        $scope.myFunction = function(){
             console.log("ready");
             console.log($('#sandbox-container input'));
             $('#sandbox-container input').datepicker({
