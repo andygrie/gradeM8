@@ -141,12 +141,12 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 .md-button div img {
     height: 55px;
 }
-.top-toolbar{background-color: #7B1FA2 !important;
+.top-toolbar{background-color: #7B1FA2;
 
 }
 .bottom-toolbar{
     padding: 0 !important;
-    background-color: #8E24AA !important;
+    background-color: #8E24AA;
 }
 
 .subject-container{
@@ -157,5 +157,5 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 }
 md-card:hover{
     border-color: white;
-    background-color: purple;
+    background-color: #AB47BC;
 }
