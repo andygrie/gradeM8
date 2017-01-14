@@ -141,12 +141,12 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 .md-button div img {
     height: 55px;
 }
-.top-toolbar{background-color: #6A1B9A;
-
+.top-toolbar{
+    background-color: #6A1B9A !important;
 }
 .bottom-toolbar{
     padding: 0 !important;
-    background-color: #7B1FA2;
+    background-color: #7B1FA2 !important;
 }
 
 .group-container{

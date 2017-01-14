@@ -32,7 +32,6 @@
 </md-toolbar>
 
 <main>
-    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
     <div>
         <md-subheader class="group-container" md-scroll-shrink>
@@ -51,5 +50,6 @@
         </div>
     </div>
 </div>
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
 </main>
 
