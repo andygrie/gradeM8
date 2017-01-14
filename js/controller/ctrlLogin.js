@@ -21,7 +21,7 @@ angular.module("moduleLogin", [])
         {idUser: 2, forename: "Gerald", surname: "Kidner"}
     ];
     */
-
+    form.failuremessage= "Error authenticating";
     $scope.form.fail = false;
     $scope.logIn = function (){
         $scope.form.awaitingLoginResponse = true;
