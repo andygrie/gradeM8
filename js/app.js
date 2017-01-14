@@ -21,7 +21,7 @@ app.config(function($routeProvider, $mdDateLocaleProvider) {
   
   $routeProvider
   .when("/", {
-    templateUrl : "templates/old_styled_Login.html",
+    templateUrl : "templates/styled_Login.html",
     controller: "ctrlLogin"
   })
   .when("/overview", {
