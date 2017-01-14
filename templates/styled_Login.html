@@ -23,9 +23,9 @@
                         <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
                             <md-button type="submit" ng-click="logIn()"
                                        value="LogIn" class="md-raised md-primary">Login</md-button>
-
                         </md-input-container>
-                        <ng-message ng-show="form.fail" ng-bind="form.failuremessage"></ng-message>
+
+                        <ng-message ng-show="form.fail" ng-model="form.failuremessage"></ng-message>
                     </div>
                 </div>
             </form>
