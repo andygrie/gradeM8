@@ -485,7 +485,7 @@ tbody tr:last-child td:last-child {
     font-size: 25px;
 }
 
-.sign-in-button {
+/*.sign-in-button {
     margin-top: 1.0em;
     margin-bottom: 1em;
     width: 100%;
@@ -513,6 +513,7 @@ tbody tr:last-child td:last-child {
     position: relative;
     top: 1px;
 }
+*/
 
 .login-area form label {
     color: white;
