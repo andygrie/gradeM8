@@ -30,40 +30,6 @@
     </div>
 </md-toolbar>
 
-
-
-
-<div >
-    <header  ng-show="show" id="site-header">
-        <div class="site-header-toprow">
-            <div class="circle">
-                <a class="site-logo" href="#!/overview#overview">
-                    <h1 class="logotype">
-                        <img src="resources/logo.png" width="70">
-                    </h1>
-                </a>
-            </div>
-            <div >
-                <h2 ng-bind="breadcrumb" class="myBreadCrumb">
-                </h2>
-            </div>
-            <div class="settings-btn">
-                <img src="resources/settings.png" width="2em" ng-click="showTabDialog($event)">
-            </div>
-        </div>
-    </header>
-</div>
-
-
-<nav id="site-nav">
-    <div class="site-nav-wrapper">
-        <button class = "site-nav-button" ng-click="switchModalGroup()">add group</button>
-        <button class = "site-nav-button" ng-click="switchModalSubject()">add subj</button>
-    </div>
-</nav>
-
-<div class="all">
-
     <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
@@ -123,13 +89,6 @@
             </form>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 <main>
