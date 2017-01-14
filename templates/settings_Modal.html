@@ -1,6 +1,4 @@
 <md-dialog aria-label="Settings">
-
-    <div style="width: 50vw">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -19,6 +17,7 @@
                         Von:
                     </label>
                     <div class="input-group" >
+                        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
                         <input type="date" id="s" name="inputEventDate1" ng-model="eMailDates.von" placeholder="eventDate" min="2016-01-01" required="true" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
                     </div>
                 </div>
@@ -44,5 +43,4 @@
             </md-button>
         </md-dialog-actions>
     </form>
-    </div>
 </md-dialog>
