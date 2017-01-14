@@ -34,14 +34,14 @@
 <main>
 
 <div class="subject-container" md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
-    <md-subheader class="group-container">
-        <h1>
+    <div class="group-container">
+        <md-subheader md-scroll-shrink>
             {{key}}
-        </h1>
+        </md-subheader>
         <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
             <h3>{{recordGroup.name}}</h3>
         </div>
-    </md-subheader>
+    </div>
 </div>
 </main>
 
