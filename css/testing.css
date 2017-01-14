@@ -1,0 +1,154 @@
+body, html {
+    overflow-y: auto !important;
+    background-color: lightgray;
+    -webkit-font-smoothing: antialiased;
+}
+md-input-container.md-icon-left{
+    padding-right: 0em !important;
+    padding-left: 0em !important;
+}
+.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover {
+    background-color: #8c3ac4;
+}
+.md-button.md-default-theme.md-primary, .md-button.md-primary {
+    background-color: #8c3ac4;
+}
+.md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab {
+    color: rgba(255,255,255,0.87);
+    background-color: #7e35b1;
+}
+.md-button.md-default-theme.md-raised, .md-button.md-raised {
+    color: rgb(33,33,33);
+    background-color: rgb(250,250,250);
+}
+md-input-container:not(.md-input-has-value) input:not(:focus), md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-ampm-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-day-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-hour-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-millisecond-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-minute-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-month-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-second-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-text, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-week-field, md-input-container:not(.md-input-has-value) input:not(:focus)::-webkit-datetime-edit-year-field {
+    color:rgb(33,33,33) !important;
+}
+.login {
+    text-align: center;
+    height: 100%;
+}
+
+h1, h3 {
+    font-weight: 300;
+}
+
+
+
+footer p {
+    font-size: 13px;
+    letter-spacing: .4px;
+}
+/* Form Styles */
+form {
+    max-width: 340px;
+    padding: 2em 2em 2em 2em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+}
+
+.inputIconDemo {
+    min-height: 48px;
+}
+
+footer img {
+    width: 180px;
+    transition: all .2s ease;
+}
+
+footer img:hover {
+    opacity: .83;
+}
+
+footer img:focus,
+footer a:focus {
+    outline: none;
+}
+
+.inputdemoErrorsAdvanced {
+    /* NOTE: Check the demo's HTML to see some additional RTL support CSS */
+    /* Setup animations similar to the ng-messages */ }
+.inputdemoErrorsAdvanced .hint {
+    /* Position the hint */
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    /* Copy styles from ng-messages */
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    /* Set our own color */
+    color: grey; }
+.inputdemoErrorsAdvanced .hint.ng-hide,
+.inputdemoErrorsAdvanced .hint.ng-enter,
+.inputdemoErrorsAdvanced .hint.ng-leave.ng-leave-active {
+    bottom: 26px;
+    opacity: 0; }
+.inputdemoErrorsAdvanced .hint.ng-leave,
+.inputdemoErrorsAdvanced .hint.ng-enter.ng-enter-active {
+    bottom: 7px;
+    opacity: 1; }
+
+.md-button {
+margin: 0 !important;
+}
+
+
+
+md-input-container.md-icon-float {
+    margin-bottom: 10px;
+}
+
+
+md-input-container ng-messages,
+md-input-container [ng-messages] {
+    padding-left: 36px;
+}
+
+.md-button.md-raised:not([disabled]) {
+    width: 100%;
+    height: 48px;
+    color: white;
+}
+
+/* Footer Styles */
+
+footer a {
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color:#7B1FA2;
+    padding: 0.5em;
+}
+
+
+.md-button.md-fab {
+    background-color: white !important;
+    height: 75px !important;
+    width:75px !important;
+}
+.md-button.md-fab:hover {
+    transform: scale(1.1);
+}
+.imageholder {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+}
+.md-button div img {
+    height: 55px;
+}
+.top-toolbar{background-color: #7B1FA2 !important;
+
+}
+.bottom-toolbar{
+    padding: 0 !important;
+    background-color: #8E24AA !important;
+}
