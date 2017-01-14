@@ -23,7 +23,6 @@ angular.module("moduleLogin", [])
     */
 
     $scope.form.fail = false;
-                    $scope.form.failuremessage="";
     $scope.logIn = function (){
         $scope.form.awaitingLoginResponse = true;
         $scope.form.fail = false;
