@@ -39,13 +39,15 @@
             {{key}}
         </md-subheader>
         <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">{{recordGroup.name}}</span>
-                </md-card-title-text>
-            </md-card-title>
-        </md-card>
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{recordGroup.name}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
         </div>
 
        <!-- <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
