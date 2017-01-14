@@ -25,7 +25,7 @@
                                        value="LogIn" class="md-raised md-primary">Login</md-button>
 
                         </md-input-container>
-                        <div role="alert" ng-message="true" ng-hide="!form.fail">Error Authenticating</div>
+                        <ng-message ng-show="form.fail"> </ng-message>
                     </div>
                 </div>
             </form>
