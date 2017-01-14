@@ -1,0 +1,45 @@
+
+
+<md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
+    <div style="display: inline-flex">
+    <div>
+    <md-button aria-label="menu" class="md-fab md-primary">
+        <div class="imageholder">
+            <img src="../resources/logo.png">
+        </div>
+    </md-button>
+    </div>
+    <div class="md-toolbar-tools">My Messages</div>
+</div>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+    <md-button class="md-icon-button">
+        <md-icon ng-click="showTabDialog($event)" md-svg-src="ic_email_white_48px.svg"></md-icon>
+    </md-button>
+    </div>
+    </md-toolbar>
+
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button>
+            add Group
+        </md-button>
+        <md-button>
+            add Subject
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+<div class="section-container" ng-repeat="(key, value) in colGroupsBySubjects">
+    <div class="tile-container">
+        <h1>
+            {{key}}
+        </h1>
+        <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
+            <h3>{{recordGroup.name}}</h3>
+        </div>
+    </div>
+</div>
+

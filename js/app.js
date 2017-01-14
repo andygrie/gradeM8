@@ -25,7 +25,7 @@ app.config(function($routeProvider, $mdDateLocaleProvider) {
     controller: "ctrlLogin"
   })
   .when("/overview", {
-    templateUrl : "templates/old_styled_Overview.html",
+    templateUrl : "templates/styled_Overview.html",
     controller: "ctrlOverview"
   })
   .when("/group/:idGradeGroup", {
