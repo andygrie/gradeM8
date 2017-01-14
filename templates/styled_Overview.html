@@ -1,5 +1,4 @@
 
-
 <md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
     <div style="display: inline-flex">
     <div>
@@ -30,6 +29,108 @@
         </md-button>
     </div>
 </md-toolbar>
+
+
+
+
+<div >
+    <header  ng-show="show" id="site-header">
+        <div class="site-header-toprow">
+            <div class="circle">
+                <a class="site-logo" href="#!/overview#overview">
+                    <h1 class="logotype">
+                        <img src="resources/logo.png" width="70">
+                    </h1>
+                </a>
+            </div>
+            <div >
+                <h2 ng-bind="breadcrumb" class="myBreadCrumb">
+                </h2>
+            </div>
+            <div class="settings-btn">
+                <img src="resources/settings.png" width="2em" ng-click="showTabDialog($event)">
+            </div>
+        </div>
+    </header>
+</div>
+
+
+<nav id="site-nav">
+    <div class="site-nav-wrapper">
+        <button class = "site-nav-button" ng-click="switchModalGroup()">add group</button>
+        <button class = "site-nav-button" ng-click="switchModalSubject()">add subj</button>
+    </div>
+</nav>
+
+<div class="all">
+
+    <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h2>Add Subject</h2>
+            </div>
+            <form name="formSubject">
+
+                <div class="modal-body">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Subject Name</label>
+                        <input class="imput" type="text" ng-model="newSubject.name" name="subjectName" required/>
+                    </md-input-container>
+                </div>
+
+                <div class="modal-footer">
+                    <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
+                           value="Submit" class="btnOK"/>
+                    <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h2>Add Group</h2>
+            </div>
+            <form name="formGroup">
+
+                <div class="modal-body" style="color: grey">
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Group name</label>
+                            <input type="text" ng-model="newGroup.name" name="groupName" required/>
+                        </md-input-container>
+                    </div>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Subject</label>
+                            <md-select ng-model="newGroup.subject" required>
+                                <md-option ng-repeat="recSubject in colSubjects" value="{{recSubject.idGradeSubject}}">
+                                    {{recSubject.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()"
+                           value="Submit" class="btnOK"/>
+                    <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 
 <main>
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
