@@ -95,12 +95,9 @@ footer a:focus {
 margin: 0 !important;
 }
 
-
-
 md-input-container.md-icon-float {
     margin-bottom: 10px;
 }
-
 
 md-input-container ng-messages,
 md-input-container [ng-messages] {
@@ -127,7 +124,6 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     background-color:#7B1FA2;
     padding: 0.5em;
 }
-
 
 .md-button.md-fab {
     background-color: white !important;
