@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Login.html" afterPath="$PROJECT_DIR$/templates/styled_Login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/ic_description_black_24px.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/ic_email_white_48px.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/ic_perm_identity_black_24px.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +44,8 @@
       <file leaf-file-name="styled_Login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+            <state relative-caret-position="374">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
@@ -50,6 +53,7 @@
                 <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#md-input-container#2;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#md-input-container#2;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="false" />
@@ -416,12 +420,12 @@
       <workItem from="1482221485077" duration="2372000" />
       <workItem from="1484036379983" duration="6226000" />
       <workItem from="1484329523758" duration="5322000" />
-      <workItem from="1484402863801" duration="22211000" />
+      <workItem from="1484402863801" duration="22292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209263000" />
+    <option name="totallyTimeSpent" value="209344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -827,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        <state relative-caret-position="374">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
@@ -836,6 +840,7 @@
             <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-input-container#2;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#md-input-container#2;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="false" />
