@@ -20,10 +20,10 @@
                                 <div ng-message="required">Your password is required.</div>
                              </div>
                         </md-input-container>
-                        <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
+                        <md-input-container layout-align="center" style="width: 100%;margin-left:auto;margin-right: auto">
                             <md-button type="submit" ng-click="logIn()"
                                        value="LogIn" class="md-raised md-primary">Login</md-button>
-                            <div ng-hide="!form.fail">Error Authenticating</div>
+                            <div ng-message ng-hide="!form.fail">Error Authenticating</div>
                         </md-input-container>
                     </div>
                 </div>
