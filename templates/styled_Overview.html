@@ -38,6 +38,7 @@
         <md-subheader class="group-container" md-scroll-shrink>
             {{key}}
         </md-subheader>
+        <div>
         <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
                 <md-card flex-gt-sm-grow="10" ">
                     <md-card-title>
@@ -46,6 +47,7 @@
                         </md-card-title-text>
                     </md-card-title>
                 </md-card>
+        </div>
         </div>
 
        <!-- <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
