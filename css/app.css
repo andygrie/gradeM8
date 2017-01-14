@@ -436,7 +436,6 @@ tbody tr:last-child td:last-child {
 
 .single-Value {
     width: 100%;
-    text-align: left;
     color: white;
     border-collapse: collapse; /* IE7 and lower */
     border: none;
@@ -446,7 +445,7 @@ tbody tr:last-child td:last-child {
     border-radius: 5px 5px 5px 5px;
     margin-top: 1em;
 }
-
+/*
 .login-area {
     width: 25%;
     background-color: #636060;
@@ -471,7 +470,8 @@ tbody tr:last-child td:last-child {
     color: white;
 }
 
-.login-area form, select {
+.login-area form,
+select {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
