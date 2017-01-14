@@ -27,8 +27,7 @@
                     </div>
                 </div>
             </form>
-            <div ng-show="clientLogin.userPassword.$error||clientLogin.userName.$error">Error Authenticating</div>
+            <label ng-hide="clientLogin.userPassword.$error||clientLogin.userName.$error">Error Authenticating</label>
             <md-progress-linear md-mode="indeterminate" ng-disabled="!form.awaitingLoginResponse"></md-progress-linear>
         </md-input-container>
-        <label ng-hide="true" id="message" class="">hier könnte ihre message stehen</label>
     </div>
