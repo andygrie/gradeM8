@@ -23,7 +23,7 @@ angular.module("moduleLogin", [])
     */
 
     $scope.form.fail = false;
-
+                    $scope.form.failuremessage="";
     $scope.logIn = function (){
         $scope.form.awaitingLoginResponse = true;
         $scope.form.fail = false;
@@ -34,7 +34,8 @@ angular.module("moduleLogin", [])
         }, function(response){
             $scope.form.fail = true;
             $scope.form.awaitingLoginResponse = false;
-            alert("Error authenticating");
+            //alert("Error authenticating");
+            form.failuremessage= "Error authenticating";
             console.log(response);
         })
     }
