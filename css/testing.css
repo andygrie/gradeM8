@@ -155,3 +155,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 .group-container{
     background-color: #9C27B0;
 }
+md-card:hover{
+    border-color: white;
+    background-color: purple;
+}
