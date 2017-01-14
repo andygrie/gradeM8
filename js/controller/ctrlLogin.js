@@ -21,14 +21,18 @@ angular.module("moduleLogin", [])
         {idUser: 2, forename: "Gerald", surname: "Kidner"}
     ];
     */
-    
+
+    $scope.form.fail = false;
+
     $scope.logIn = function (){
         $scope.form.awaitingLoginResponse = true;
+        $scope.form.fail = false;
 
         sData_authenticate.authenticate($scope.form).then(function(response){
             $scope.form.awaitingLoginResponse = false;
             $location.path("/overview");
         }, function(response){
+            $scope.form.fail = true;
             $scope.form.awaitingLoginResponse = false;
             alert("Error authenticating");
             console.log(response);

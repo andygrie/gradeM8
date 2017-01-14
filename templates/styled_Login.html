@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </form>
-            <label ng-hide="clientLogin.userPassword.$error||clientLogin.userName.$error">Error Authenticating</label>
+            <label ng-hide="form.fail">Error Authenticating</label>
             <md-progress-linear md-mode="indeterminate" ng-disabled="!form.awaitingLoginResponse"></md-progress-linear>
         </md-input-container>
     </div>
