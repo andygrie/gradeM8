@@ -1,20 +1,19 @@
-
 <md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
     <div style="display: inline-flex">
-    <div>
-    <md-button aria-label="menu" class="md-fab md-primary">
-        <div class="imageholder">
-            <img src="../resources/logo.png">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary">
+            <div class="imageholder">
+                <img src="../resources/logo.png">
+            </div>
+        </md-button>
         </div>
-    </md-button>
-    </div>
     <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
 </div>
     <span flex></span>
     <div layout="row" layout-align="center center">
-    <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
-        <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
-    </md-button>
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
     </div>
 </md-toolbar>
 
@@ -29,29 +28,30 @@
         </md-button>
     </div>
 </md-toolbar>
-<md-progress-linear ng-hide=!state.awaitingData" md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
-    <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Add Subject</h2>
-            </div>
-            <form name="formSubject">
 
-                <div class="modal-body">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Subject Name</label>
-                        <input class="imput" type="text" ng-model="newSubject.name" name="subjectName" required/>
-                    </md-input-container>
-                </div>
+<md-progress-linear id="progressbar" ng-hide=!state.awaitingData" md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
 
-                <div class="modal-footer">
-                    <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
-                           value="Submit" class="btnOK"/>
-                    <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
-                </div>
-            </form>
+<div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <h2>Add Subject</h2>
         </div>
+        <form name="formSubject">
+            <div class="modal-body">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Subject Name</label>
+                    <input class="imput" type="text" ng-model="newSubject.name" name="subjectName" required/>
+                </md-input-container>
+            </div>
+
+            <div class="modal-footer">
+                <input ng-disabled="!formSubject.$valid" type="submit" ng-click="addNewSubject()"
+                       value="Submit" class="btnOK"/>
+                <button ng-click="switchModalSubject()" class="btnCancel">Cancel</button>
+            </div>
+        </form>
     </div>
+</div>
 
     <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
         <div class="modal-wrapper">
@@ -89,20 +89,19 @@
 
 
 <main class="main">
-<div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
-    <div>
-        <md-toolbar layout="row" class="group-container" md-scroll-shrink>
-           <div style="display: inline-block">{{key}}</div>
-            <span flex></span>
-            <div  layout="row" layout-align="center center">
-            <md-button ng-click="toggleRight()" class="md-icon-button">
-                <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
-            </md-button>
-            </div>
-        </md-toolbar>
-
-        <div flex>
-            <div style="float:left" ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
+    <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
+        <div>
+            <md-toolbar layout="row" class="group-container" md-scroll-shrink>
+               <div style="display: inline-block">{{key}}</div>
+                <span flex></span>
+                <div  layout="row" layout-align="center center">
+                <md-button ng-click="toggleRight()" class="md-icon-button">
+                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                </md-button>
+                </div>
+            </md-toolbar>
+            <div flex>
+                <div style="float:left" ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
                     <md-card flex-gt-sm-grow="10">
                         <md-card-title style="display:block">
                             <md-card-title-text style="word-break:break-all">
@@ -110,46 +109,10 @@
                             </md-card-title-text>
                         </md-card-title>
                     </md-card>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 
-<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-
-    <md-toolbar>
-        <h1 class="md-toolbar-tools">Settings</h1>
-    </md-toolbar>
-        <md-content layout-padding>
-            <form layout="column" layout-align="center">
-                <md-input-container flex>
-                    <md-button style="width: 100%">
-                        Delete
-                    </md-button>
-                </md-input-container>
-                <md-input-container flex>
-                    <md-button ng-click="toggleshowRename()" style="width: 100%">
-                        Rename
-                    </md-button>
-                </md-input-container>
-                <div ng-hide="!showRename.show">
-                    <md-input-container style="width: 100%">
-                        <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
-                        <input style="width: 100%" style="padding-left: 25px;" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
-                        <div>
-                            <div ng-message="required">A Subject is required</div>
-                        </div>
-                    </md-input-container>
-                    <md-button style="width: 100%">
-                        OK
-                    </md-button>
-                </div>
-            </form>
-        <md-button style="width: 100%" ng-click="close()">
-            Close Settings
-        </md-button>
-    </md-content>
-
-</md-sidenav>
 

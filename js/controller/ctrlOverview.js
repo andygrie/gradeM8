@@ -42,7 +42,6 @@ angular.module("moduleOverview", [])
                         }
 
                         $scope.close = function () {
-                            // Component lookup should always be available since we are not using `ng-if`
                             $mdSidenav('right').close()
                                 .then(function () {
                                     console.log("close RIGHT is done");
@@ -138,6 +137,7 @@ angular.module("moduleOverview", [])
         console.log("error loading groups by subjects: " + response);
         $scope.state.awaitingData = false;
     })
+
 
     $scope.sendEmail = function(){
         sData_email.send().then(function(response){
