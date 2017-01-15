@@ -387,7 +387,7 @@ article, div, aside, footer, header, main, nav, section {
     float: right;
 }
 
-table {
+.my_table {
     width: 100%;
     text-align: left;
     color: white;
