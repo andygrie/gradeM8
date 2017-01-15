@@ -16,7 +16,7 @@
         <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
     </md-button>
     </div>
-    </md-toolbar>
+</md-toolbar>
 
 
 <md-toolbar class="bottom-toolbar" layout>
@@ -91,7 +91,7 @@
 <main>
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
     <div>
-        <md-subheader layout="row" class="group-container" md-scroll-shrink>
+        <md-toolbar layout="row" class="group-container" md-scroll-shrink>
            <div style="display: inline-block">{{key}}</div>
             <span flex></span>
             <div  layout="row" layout-align="center center">
@@ -99,7 +99,7 @@
                 Toggle right
             </md-button>
             </div>
-        </md-subheader>
+        </md-toolbar>
 
         <div layout="row" flex>
             <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
