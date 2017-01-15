@@ -121,7 +121,6 @@ footer a:hover {
     text-decoration: underline;
 }
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-    background-color:#7B1FA2;
     padding: 0.5em;
 }
 
