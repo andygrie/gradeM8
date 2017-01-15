@@ -13,6 +13,11 @@
   border: 1px solid #ebebeb;
   box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px; }
 
+.main {
+  width: 70%;
+  margin-left: auto;
+  margin-top: auto; }
+
 @media (max-width: 800px) {
   .login {
     text-align: center;
@@ -23,6 +28,9 @@
     margin: 0;
     padding: 0;
     border: none;
-    box-shadow: none; } }
+    box-shadow: none; }
+
+  .main {
+    width: 100%; } }
 
 /*# sourceMappingURL=core.css.map */
