@@ -26,7 +26,8 @@ md-input-container:not(.md-input-has-value) input:not(:focus), md-input-containe
 }
 .login {
     text-align: center;
-
+    margin-left: auto;
+    margin-right: auto;
     max-width: 340px;
     padding: 2em 2em 2em 2em;
     background: #fafafa;
