@@ -11,7 +11,7 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
-                        $scope.showRename= {};
+                        $scope.showRename = {};
                         $scope.showRename.show = false;
 
  $scope.toggleshowRename = function(){
@@ -30,13 +30,13 @@ angular.module("moduleOverview", [])
                                     console.log("close RIGHT is done");
                                 });
                         };
-$scope.sidenav = {};
+                        $scope.sidenav = {};
                         $scope.sidenav.show = false;
 
 
                         function buildToggler(navID) {
-                            $scope.sidenav.show =true;
                             return function() {
+                                $scope.sidenav.show =true;
                                 $mdSidenav(navID)
                                     .toggle()
                                     .then(function () {
