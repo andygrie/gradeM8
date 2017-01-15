@@ -124,13 +124,22 @@
     </md-toolbar>
     <md-content layout-padding>
         <form>
-            <md-input-container>
-                <label for="testInput">Test input</label>
-                <input type="text" id="testInput"
-                       ng-model="data" md-autofocus>
+            <md-input-container layout="column">
+                <md-button>
+                    Delete
+                </md-button>
+                <md-button>
+                    Rename
+                </md-button>
+                <md-input-container>
+                    <md-input flex></md-input>
+                    <md-button flex>
+                        OK
+                    </md-button>
+                </md-input-container>
             </md-input-container>
         </form>
-        <md-button ng-click="close()">
+        <md-button flex ng-click="close()">
             Close Sidenav Right
         </md-button>
     </md-content>
