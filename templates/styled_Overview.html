@@ -120,27 +120,32 @@
 <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
     <md-toolbar>
-        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+        <h1 class="md-toolbar-tools">Settings</h1>
     </md-toolbar>
     <md-content layout-padding>
         <form>
-            <md-input-container layout="column">
-                <md-button>
-                    Delete
-                </md-button>
-                <md-button>
-                    Rename
-                </md-button>
-                <md-input-container>
-                    <md-input flex></md-input>
-                    <md-button flex>
-                        OK
+                <md-input-container layout="column">
+                    <md-input-container>
+                    <md-button>
+                        Delete
                     </md-button>
+                    </md-input-container>
+                        <md-input-container>
+                    <md-button>
+                        Rename
+                    </md-button>
+                        </md-input-container>
+                    <md-input-container>
+                        <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
+                        <input style="padding-left: 25px;" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
+                        <div>
+                            <div ng-message="required">A Subject is required</div>
+                        </div>
+                    </md-input-container>
                 </md-input-container>
-            </md-input-container>
         </form>
         <md-button flex ng-click="close()">
-            Close Sidenav Right
+            Close Settings
         </md-button>
     </md-content>
 
