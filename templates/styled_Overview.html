@@ -92,9 +92,8 @@
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
     <div>
         <md-subheader class="group-container" md-scroll-shrink>
-           <div>{{key}}</div>
-            <span flex />
-
+           <div style="display: inline">{{key}}</div>
+            <span flex></span>
             <md-button ng-click="toggleRight()"
                        class="md-primary">
                 Toggle right
@@ -119,7 +118,7 @@
 
 <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
-    <md-toolbar class="md-theme-light">
+    <md-toolbar>
         <h1 class="md-toolbar-tools">Sidenav Right</h1>
     </md-toolbar>
     <md-content layout-padding>
