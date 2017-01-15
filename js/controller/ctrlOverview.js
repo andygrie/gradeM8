@@ -11,6 +11,7 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
+                        $scope.showRename= {};
                         $scope.showRename.show = false;
 
  $scope.toggleshowRename = function(){
