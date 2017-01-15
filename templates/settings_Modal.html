@@ -17,7 +17,11 @@
                         Von:
                     </label>
                     <div class="input-group" >
-                        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        <div layout-gt-xs="row">
+                            <div flex-gt-xs>
+                                <h4>Standard date-picker</h4>
+                                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                            </div>
                         <input type="date" id="s" name="inputEventDate1" ng-model="eMailDates.von" placeholder="eventDate" min="2016-01-01" required="true" class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required" aria-invalid="false">
                     </div>
                 </div>

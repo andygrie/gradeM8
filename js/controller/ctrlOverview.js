@@ -35,7 +35,7 @@ angular.module("moduleOverview", [])
 
        // $scope.eMailDates.von = "";
        // $scope.eMailDates.bis =  "";
-
+        $scope.myDate = new Date();
         $scope.setEmails = function () {
             var data = {
                 idTeacher: sData_allData.data.user.idUser,
