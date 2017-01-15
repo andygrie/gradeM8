@@ -1,6 +1,6 @@
 angular.module("moduleOverview", [])
 .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","sData_setEMailDates","$mdDialog",
-                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,sData_setEMailDates,$mdDialog) {
+                    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,sData_setEMailDates,$mdDialog, $timeout, $mdSidenav) {
                         
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
     $scope.state = {};
@@ -12,8 +12,66 @@ angular.module("moduleOverview", [])
     $scope.colSubjects = {};
     $scope.colGroups = {};
 
-    
-    $scope.data.displayModalSettings = false;
+
+                        $scope.toggleRight = buildToggler('right');
+
+                        $scope.isOpenRight = function(){
+                            return $mdSidenav('right').isOpen();
+                        };
+
+                        $scope.close = function () {
+                            $mdSidenav('right').close()
+                                .then(function () {
+                                    console.log("close RIGHT is done");
+                                });
+                        };
+
+                        function buildToggler(navID) {
+                            return function() {
+                                $mdSidenav(navID)
+                                    .toggle()
+                                    .then(function () {
+                                        console.log("toggle " + navID + " is done");
+                                    });
+                            }
+                        }
+
+                        $scope.close = function () {
+                            // Component lookup should always be available since we are not using `ng-if`
+                            $mdSidenav('right').close()
+                                .then(function () {
+                                    console.log("close RIGHT is done");
+                                });
+                        };
+
+                        function debounce(func, wait, context) {
+                            var timer;
+
+                            return function debounced() {
+                                var context = $scope,
+                                    args = Array.prototype.slice.call(arguments);
+                                $timeout.cancel(timer);
+                                timer = $timeout(function() {
+                                    timer = undefined;
+                                    func.apply(context, args);
+                                }, wait || 10);
+                            };
+                        }
+                        function buildDelayedToggler(navID) {
+                            return debounce(function() {
+                                // Component lookup should always be available since we are not using `ng-if`
+                                $mdSidenav(navID)
+                                    .toggle()
+                                    .then(function () {
+                                        console.logdebug("toggle " + navID + " is done");
+                                    });
+                            }, 200);
+                        }
+
+
+
+
+                        $scope.data.displayModalSettings = false;
     $scope.show = true;
     $scope.data.currentSettingstab = "Period";
 

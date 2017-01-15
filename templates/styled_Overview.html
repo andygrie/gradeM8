@@ -92,7 +92,15 @@
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
     <div>
         <md-subheader class="group-container" md-scroll-shrink>
-            {{key}}
+           <div>{{key}}</div>
+            <span flex />
+
+            <md-button ng-click="toggleRight()"
+                       ng-hide="isOpenRight()"
+                       class="md-primary">
+                Toggle right
+            </md-button>
+
         </md-subheader>
         <div layout="row" flex>
             <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
@@ -109,4 +117,24 @@
 </div>
     <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
 </main>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+    <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label for="testInput">Test input</label>
+                <input type="text" id="testInput"
+                       ng-model="data" md-autofocus>
+            </md-input-container>
+        </form>
+        <md-button ng-click="close()" class="md-primary">
+            Close Sidenav Right
+        </md-button>
+    </md-content>
+
+</md-sidenav>
 
