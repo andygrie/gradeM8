@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Login.html" afterPath="$PROJECT_DIR$/templates/styled_Login.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -131,8 +130,8 @@
       <file leaf-file-name="testing.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="262">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -202,8 +201,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
-        <option value="$PROJECT_DIR$/css/testing.css" />
         <option value="$PROJECT_DIR$/templates/styled_Login.html" />
+        <option value="$PROJECT_DIR$/css/testing.css" />
       </list>
     </option>
   </component>
@@ -500,12 +499,12 @@
       <workItem from="1484036379983" duration="6226000" />
       <workItem from="1484329523758" duration="5322000" />
       <workItem from="1484402863801" duration="35812000" />
-      <workItem from="1484492545222" duration="7977000" />
+      <workItem from="1484492545222" duration="8020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230841000" />
+    <option name="totallyTimeSpent" value="230884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -912,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="262">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>
