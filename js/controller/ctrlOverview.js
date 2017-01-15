@@ -32,9 +32,10 @@ angular.module("moduleOverview", [])
                         };
 $scope.sidenav = {};
                         $scope.sidenav.show = false;
-                        $scope.sidenav.show =true;
-                        function buildToggler(navID) {
 
+
+                        function buildToggler(navID) {
+                            $scope.sidenav.show =true;
                             return function() {
                                 $mdSidenav(navID)
                                     .toggle()
