@@ -92,13 +92,14 @@
 <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
     <div>
         <md-subheader class="group-container" md-scroll-shrink>
-           <div style="display: inline">{{key}}</div>
+           <div style="display: inline-block">{{key}}</div>
             <span flex></span>
+            <div layout="row" layout-align="center center">
             <md-button ng-click="toggleRight()"
                        class="md-primary">
                 Toggle right
             </md-button>
-
+            </div>
         </md-subheader>
         <div layout="row" flex>
             <div ng-repeat="recordGroup in value" ng-click="navToGroup(recordGroup.idGradeGroup)">
