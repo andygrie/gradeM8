@@ -41,8 +41,8 @@
       <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+            <state relative-caret-position="331">
+              <caret line="148" column="19" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -496,12 +496,12 @@
       <workItem from="1484036379983" duration="6226000" />
       <workItem from="1484329523758" duration="5322000" />
       <workItem from="1484402863801" duration="35812000" />
-      <workItem from="1484492545222" duration="4852000" />
+      <workItem from="1484492545222" duration="4945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227716000" />
+    <option name="totallyTimeSpent" value="227809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -893,8 +893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+        <state relative-caret-position="331">
+          <caret line="148" column="19" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
             <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
