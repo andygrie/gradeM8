@@ -134,7 +134,7 @@
                         Rename
                     </md-button>
                 </md-input-container>
-                <div ng-hide="showRename.show">
+                <div ng-hide="!showRename.show">
                     <md-input-container style="width: 100%">
                         <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
                         <input style="width: 100%" style="padding-left: 25px;" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
