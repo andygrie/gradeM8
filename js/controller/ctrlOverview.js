@@ -11,9 +11,10 @@ angular.module("moduleOverview", [])
     $scope.colGroupsBySubjects = {};
     $scope.colSubjects = {};
     $scope.colGroups = {};
-                        $scope.showRename = false;
+                        $scope.showRename.show = false;
+
  $scope.toggleshowRename = function(){
-    $scope.showRename = !$scope.showRename;
+    $scope.showRename.show = !$scope.showRename.show;
  }
 
                         $scope.toggleRight = buildToggler('right');
