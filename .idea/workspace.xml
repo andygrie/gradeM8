@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/settings_Modal.html" afterPath="$PROJECT_DIR$/templates/settings_Modal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Overview.html" afterPath="$PROJECT_DIR$/templates/styled_Overview.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -32,18 +31,18 @@
       <file leaf-file-name="old_styled_Overview.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+            <state relative-caret-position="119">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-476">
-              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="51">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -180,8 +179,8 @@
         <option value="$PROJECT_DIR$/css/app.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/testing.css" />
-        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
         <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
+        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
       </list>
     </option>
   </component>
@@ -459,12 +458,12 @@
       <workItem from="1482221485077" duration="2372000" />
       <workItem from="1484036379983" duration="6226000" />
       <workItem from="1484329523758" duration="5322000" />
-      <workItem from="1484402863801" duration="33286000" />
+      <workItem from="1484402863801" duration="33429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220338000" />
+    <option name="totallyTimeSpent" value="220481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -858,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -874,10 +865,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="51">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -886,14 +893,6 @@
             <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
