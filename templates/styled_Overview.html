@@ -134,17 +134,17 @@
                         Rename
                     </md-button>
                 </md-input-container>
-                <div>
-                <md-input-container style="width: 100%"  ng-hide="true">
-                    <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
-                    <input style="width: 100%" style="padding-left: 25px;" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
-                    <div>
-                        <div ng-message="required">A Subject is required</div>
-                    </div>
-                </md-input-container>
-                <md-button style="width: 100%">
-                    OK
-                </md-button>
+                <div ng-hide="true">
+                    <md-input-container style="width: 100%">
+                        <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
+                        <input style="width: 100%" style="padding-left: 25px;" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
+                        <div>
+                            <div ng-message="required">A Subject is required</div>
+                        </div>
+                    </md-input-container>
+                    <md-button style="width: 100%">
+                        OK
+                    </md-button>
                 </div>
             </form>
         <md-button style="width: 100%" ng-click="close()">
