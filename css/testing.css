@@ -39,8 +39,8 @@ footer p {
     font-size: 13px;
     letter-spacing: .4px;
 }
-/* Form Styles */
-form {
+
+.login-area{
     max-width: 340px;
     padding: 2em 2em 2em 2em;
     background: #fafafa;
