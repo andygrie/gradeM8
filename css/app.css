@@ -115,15 +115,6 @@ article, div, aside, footer, header, main, nav, section {
     background-color: #7e37b2;
 }
 
-.main {
-    background-color: #363636;
-    position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
-    overflow-y: hidden;
-    padding-bottom: 1em;
-}
-
 .section-container {
     float: left;
     width: 100%;
