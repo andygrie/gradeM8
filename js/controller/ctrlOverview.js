@@ -1,5 +1,5 @@
 angular.module("moduleOverview", [])
-.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","sData_setEMailDates","$mdDialog",
+.controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email","sData_setEMailDates","$mdDialog", "$timeout","$mdSidenav",
                     function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email,sData_setEMailDates,$mdDialog, $timeout, $mdSidenav) {
                         
     $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
