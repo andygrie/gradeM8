@@ -30,8 +30,11 @@ angular.module("moduleOverview", [])
                                     console.log("close RIGHT is done");
                                 });
                         };
-
+$scope.sidenav = {};
+                        $scope.sidenav.show = false;
+                        $scope.sidenav.show =true;
                         function buildToggler(navID) {
+
                             return function() {
                                 $mdSidenav(navID)
                                     .toggle()
