@@ -29,7 +29,7 @@
         </md-button>
     </div>
 </md-toolbar>
-
+<md-progress-linear ng-hide=!state.awaitingData" md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
     <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-header">
@@ -115,7 +115,7 @@
     </div>
 </div>
 </main>
-<md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
+
 <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 
     <md-toolbar>
