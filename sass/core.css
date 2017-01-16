@@ -16,10 +16,10 @@
 .main {
   width: 70%;
   margin-left: auto;
-  margin-right: auto;
-  background-color: #BDBDBD;
-  height: 100%;
-  overflow-y: auto;}
+  margin-right: auto; }
+
+.group-container div div {
+  word-break: normal; }
 
 @media (max-width: 800px) {
   .login {
@@ -32,6 +32,10 @@
     padding: 0;
     border: none;
     box-shadow: none; }
+
+  .group-container div div {
+    width: 100%;
+    word-break: break-all; }
 
   .main {
     width: 100%; } }

@@ -136,7 +136,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     background-color: #7B1FA2 !important;
 }
 
-.group-container{
+.group-container-header{
     background-color: #8E24AA !important;
     color:white;
 }
