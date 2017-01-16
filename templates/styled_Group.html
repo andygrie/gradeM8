@@ -30,8 +30,6 @@
     </div>
 </md-toolbar>
 
-<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
-
 <main class="main">
 
             <md-toolbar layout="row" class="group-container" md-scroll-shrink>
@@ -49,7 +47,8 @@
                     <md-card flex-gt-sm-grow="10">
                         <md-card-title style="display:block">
                             <md-card-title-text style="word-break:break-all">
-                                <div class="md-headline">{{recPupil.surname}} {{recPupil.forename}}</div>
+                                <div class="md-headline">{{recPupil.surname}} </div>
+                                <div class="md-subhead"> {{recPupil.forename}}</div>
                             </md-card-title-text>
                         </md-card-title>
                     </md-card>
