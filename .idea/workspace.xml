@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Sidenav.html" afterPath="$PROJECT_DIR$/templates/styled_Sidenav.html" />
-    </list>
+    <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="" />
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -468,12 +466,12 @@
       <workItem from="1484329523758" duration="5322000" />
       <workItem from="1484402863801" duration="35812000" />
       <workItem from="1484492545222" duration="19358000" />
-      <workItem from="1484560292841" duration="2131000" />
+      <workItem from="1484560292841" duration="2223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244353000" />
+    <option name="totallyTimeSpent" value="244445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
