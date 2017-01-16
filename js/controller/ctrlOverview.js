@@ -21,7 +21,7 @@ angular.module("moduleOverview", [])
                         $scope.showAddGroup = {};
                         $scope.showAddGroup.show = false;
 
-                        $scope.toggleshowAddGroupe = function(){
+                        $scope.toggleshowAddGroup = function(){
                             $scope.showAddGroup.show = !$scope.showAddGroup.show;
                         }
 
