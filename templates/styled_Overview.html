@@ -30,8 +30,6 @@
     </div>
 </md-toolbar>
 
-<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
-
 <div ng-hide="!data.displayModalSubject" id="myModal" class="modal">
     <div class="modal-wrapper">
         <div class="modal-header">
@@ -54,41 +52,6 @@
     </div>
 </div>
 
-<!--
-    <div ng-hide="!data.displayModalGroup" id="myModal2" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Add Group</h2>
-            </div>
-            <form name="formGroup">
-                <div class="modal-body" style="color: grey">
-                    <div layout-gt-xs="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Group name</label>
-                            <input type="text" ng-model="newGroup.name" name="groupName" required/>
-                        </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Subject</label>
-                            <md-select ng-model="newGroup.subject" required>
-                                <md-option ng-repeat="recSubject in colSubjects" value="{{recSubject.idGradeSubject}}">
-                                    {{recSubject.name}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <input ng-disabled="!formGroup.$valid" type="submit" ng-click="addNewGroup()"
-                           value="Submit" class="btnOK"/>
-                    <button ng-click="switchModalGroup()" class="btnCancel">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
--->
 <main class="main">
     <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
         <div>
@@ -117,3 +80,4 @@
 </main>
 
 <div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
+<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
