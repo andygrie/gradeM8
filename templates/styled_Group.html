@@ -1,189 +1,87 @@
-<div >
-    <header  ng-show="show" id="site-header">
-        <div class="site-header-toprow">
-            <div class="circle">
-                <a class="site-logo" href="#!/overview#overview">
-                    <h1 class="logotype">
-                        <img src="resources/logo.png" width="70">
-                    </h1>
-                </a>
-            </div>
-            <div >
-                <h2 ng-bind="breadcrumb" class="myBreadCrumb">
-                </h2>
-            </div>
-            <div class="settings-btn">
-                <img src="resources/settings.png" width="2em"  ng-click="showTabDialog($event)">
-            </div>
+<md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
         </div>
-    </header>
-</div>
-
-<nav id="site-nav">
-    <div class="site-nav-wrapper">
-        <button class="site-nav-button" ng-click="displayAddPupil()">add pupil</button>
-        <button class="site-nav-button" ng-click="switchModalEvent()">add event</button>
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
     </div>
-</nav>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
 
-<div class = "all">
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button ng-click="switchModalGroup()">
+             add Pupil
+        </md-button>
+
+        <md-button ng-click="showAddSubjectDialog($event)">
+            add Event
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
+
 <main class="main">
-    <div ng-show="data.displayModalPupil" id="myModal" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Add Pupil</h2>
-            </div>
-            <div class="modal-body">
-                <md-content ng-show="!classesSelected">
-                    <md-chips ng-model="colSelectedClasses" md-autocomplete-snap
-                    md-transform-chip="auto.transformChip($chip)"
-                    md-require-match="true">
-                     <md-chip-template>
-                            <span>
-                            <strong>{{$chip.name}}</strong>
-                            </span>
-                        </md-chip-template>
-                        <md-autocomplete
-                            md-selected-item="auto.selectedItem"
-                            md-search-text="auto.searchText"
-                            md-items="item in auto.querySearch(auto.searchText)"
-                            md-item-text="item.name"
-                            placeholder="Search for a Class">
-                            <md-item-template><span md-highlight-text="auto.searchText">{{item.name}}</span></md-item-template>
-                        </md-autocomplete>
-                    </md-chips>
-                    <md-button class="md-raised md-primary" ng-click="loadAdPupils()">Submit Classes</md-button>
-                </md-content>
-                <md-content ng-show="classesSelected">
-                     <div layout="row" layout-wrap flex>
-                        <div flex-xs flex="50">
-                            <md-checkbox aria-label="Select All"
-                                        ng-checked="check.isChecked()"
-                                        md-indeterminate="check.isIndeterminate()"
-                                        ng-click="check.toggleAll()">
-                            <span ng-if="check.isChecked()">Un-</span>Select All
-                            </md-checkbox>
-                        </div>
-                        <div flex="50" ng-repeat="item in colAdPupils">
-                        <md-checkbox ng-checked="check.exists(item, colSelectedPupils)" ng-click="check.toggle(item, colSelectedPupils)">
-                            {{item.surname}},{{item.forename}}
-                        </md-checkbox>
-                        </div>
-                      </div>
-                      <md-button class="md-raised md-primary" ng-click="registerPupils()">Submit Pupils</md-button>
-                </md-content>
-            </div>
-            <div class="modal-footer">
-                <button ng-click="switchModalPupil()" class="btnCancel">Cancel</button>
-            </div>
-            <!--
-            <form>
-                <div class="modal-body">
-                    <div class="imput">
-                        <div>Class:</div>
-                        <input id="classList" list="Class">
-                        <datalist id="Class">
-                            <option value="1BHIFS">
-                            <option value="1AHIFS">
-                        </datalist>
-                    </div>
-                    <div class="imput" id="studentList">
-                        <div>Student:</div>
-                        <input list="Students">
-                        <datalist id="Students">
-                            <option value="Dude 01">
-                            <option value="Dude 02">
-                        </datalist>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btnOK" type="button"> OK</button>
-                    <button ng-click="switchModalPupil()" class="btnCancel">Cancel</button>
-                </div>
-            </form>
-            -->
-        </div>
-    </div>
 
-    <div ng-hide="!data.displayModalEvent" id="myModal2" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Add Event</h2>
-            </div>
-            <form name="eventForm">
-                <div class="modal-body">
-                    <md-input-container>
-                        <label>Enter date</label>
-                        <md-datepicker ng-model="newEvent.eventDate" required></md-datepicker>
-                    </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Event Description</label>
-                        <input ng-model="newEvent.eventDescription" required> 
-                    </md-input-container>
+            <md-toolbar layout="row" class="group-container" md-scroll-shrink>
+                <div style="display: inline-block">Pupils</div>
+                <span flex></span>
+                <div  layout="row" layout-align="center center">
+                    <md-button ng-click="toggleRight()" class="md-icon-button">
+                        <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                    </md-button>
                 </div>
-                <div class="modal-footer">
-                    <input class="btnOK" type="submit" ng-click="insertNewEvent()" ng-disabled="!eventForm.$valid" value="Submit"/>
-                    <button ng-click="switchModalEvent()" class="btnCancel">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
+            </md-toolbar>
 
-    <div ng-hide="!data.displayModalEventDetail" id="myModal4" class="modal">
-        <div class="modal-wrapper">
-            <div class="modal-header">
-                <h2>Grade Event</h2>
-            </div>
-            <div class="modal-body" style="color: black">
-                <div ng-repeat="item in grade.colParticipations">
-                    <label>{{item.Pupil.surname}}, {{item.Pupil.forename}}</label>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Grade</label>
-                        <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)">
-                        <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
-                            {{gradeOption.description}}
-                        </md-option>
-                        </md-select>
-                    </md-input-container>
-                    <md-progress-circular md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-circular>
+            <div flex>
+                <div style="float:left" ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.fkUser)">
+                    <md-card flex-gt-sm-grow="10">
+                        <md-card-title style="display:block">
+                            <md-card-title-text style="word-break:break-all">
+                                <div class="md-headline">{{recPupil.surname}}{{recPupil.forename}}</div>
+                            </md-card-title-text>
+                        </md-card-title>
+                    </md-card>
                 </div>
             </div>
-            <div class="modal-footer">
-                <input class="btnOK" type="submit" value="Submit"/>
-                <button ng-click="switchModalEventDetail()" class="btnCancel">Cancel</button>
-            </div>
-        </div>
-    </div>
 
-    </br>
     <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingPupilData"></md-progress-linear>
 
+    <md-toolbar layout="row" class="group-container" md-scroll-shrink>
+        <div style="display: inline-block">Events</div>
+        <span flex></span>
+        <div  layout="row" layout-align="center center">
+            <md-button ng-click="toggleRight()" class="md-icon-button">
+                <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
 
-    <div class="section-container">
-        <div class="tile-container">
-            <h1>
-                Pupils
-            </h1>
-            <div ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.fkUser)">
-                <h4>{{recPupil.surname}}</h4>
-                <h5>{{recPupil.forename}}</h5>
-            </div>
+    <div flex>
+        <div style="float:left" ng-repeat="recEvent in colEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+            <md-card flex-gt-sm-grow="10">
+                <md-card-title style="display:block">
+                    <md-card-title-text style="word-break:break-all">
+                        <div class="md-headline">{{recEvent.eventDescription}}{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
         </div>
     </div>
 
-    </br>
     <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
 
-    <div class="section-container">
-        <div class="tile-container">
-            <h1>
-                Events
-            </h1>
-            <div ng-repeat="recEvent in colEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
-                <h4>{{recEvent.eventDescription}}</h4>
-                <h5>{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</h5>
-            </div>
-        </div>
-    </div>
 </main>
-</div>
+<div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
+
