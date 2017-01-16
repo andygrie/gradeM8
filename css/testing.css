@@ -26,6 +26,7 @@ h1, h3 {
 
 html {
     overflow-y: scroll;
+    height: initial;
 }
 body{
     background-color: lightgrey;
