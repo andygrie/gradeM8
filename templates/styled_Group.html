@@ -49,7 +49,7 @@
                     <md-card flex-gt-sm-grow="10">
                         <md-card-title style="display:block">
                             <md-card-title-text style="word-break:break-all">
-                                <div class="md-headline">{{recPupil.surname}}{{recPupil.forename}}</div>
+                                <div class="md-headline">{{recPupil.surname}} {{recPupil.forename}}</div>
                             </md-card-title-text>
                         </md-card-title>
                     </md-card>
@@ -73,7 +73,8 @@
             <md-card flex-gt-sm-grow="10">
                 <md-card-title style="display:block">
                     <md-card-title-text style="word-break:break-all">
-                        <div class="md-headline">{{recEvent.eventDescription}}{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        <div class="md-headline">{{recEvent.eventDescription}} </div>
+                        <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
                     </md-card-title-text>
                 </md-card-title>
             </md-card>
