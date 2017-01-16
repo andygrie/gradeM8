@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlOverview.js" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Sidenav.html" afterPath="$PROJECT_DIR$/templates/styled_Sidenav.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -48,12 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Sidenav.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_Sidenav.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Sidenav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="102">
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#1;n#form#0;n#md-content#0;n#md-sidenav#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            <state relative-caret-position="272">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,8 +183,8 @@
         <option value="$PROJECT_DIR$/sass/core.css" />
         <option value="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
-        <option value="$PROJECT_DIR$/templates/styled_Sidenav.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
+        <option value="$PROJECT_DIR$/templates/styled_Sidenav.html" />
       </list>
     </option>
   </component>
@@ -467,12 +468,12 @@
       <workItem from="1484329523758" duration="5322000" />
       <workItem from="1484402863801" duration="35812000" />
       <workItem from="1484492545222" duration="19358000" />
-      <workItem from="1484560292841" duration="1622000" />
+      <workItem from="1484560292841" duration="2131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243844000" />
+    <option name="totallyTimeSpent" value="244353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -812,17 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -871,19 +861,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Sidenav.html">
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        <state relative-caret-position="272">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
+    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="68">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Sidenav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#1;n#form#0;n#md-content#0;n#md-sidenav#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
