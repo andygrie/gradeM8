@@ -18,6 +18,14 @@ angular.module("moduleOverview", [])
     $scope.showRename.show = !$scope.showRename.show;
  }
 
+                        $scope.showAddGroup = {};
+                        $scope.showAddGroup.show = false;
+
+                        $scope.toggleshowAddGroupe = function(){
+                            $scope.showAddGroup.show = !$scope.showAddGroup.show;
+                        }
+
+
                         $scope.toggleRight = buildToggler('right');
 
                         $scope.isOpenRight = function(){
@@ -96,6 +104,31 @@ angular.module("moduleOverview", [])
         });
     };
 
+                        $scope.showAddSubjectDialog = function(ev) {
+                            $mdDialog.show({
+                                controller: AddSubjectController,
+                                templateUrl: '../../templates/styled_modal_AddSubject.html',
+                                parent: angular.element(document.body),
+                                targetEvent: ev,
+                                clickOutsideToClose:true
+                            });
+                        };
+
+
+                        function AddSubjectController($scope, $mdDialog) {
+
+                            $scope.hide = function() {
+                                $mdDialog.hide();
+                            };
+
+                            $scope.cancel = function() {
+                                $mdDialog.cancel();
+                            };
+
+                            $scope.answer = function(answer) {
+                                $mdDialog.hide(answer);
+                            };
+                        }
 
     function DialogController($scope, $mdDialog) {
 
