@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlOverview.js" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Group.html" afterPath="$PROJECT_DIR$/templates/styled_Group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Overview.html" afterPath="$PROJECT_DIR$/templates/styled_Overview.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="83">
+              <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -133,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="257" column="41" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
+            <state relative-caret-position="113">
+              <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
               <folding>
                 <element signature="e#65#8977#0" expanded="false" />
               </folding>
@@ -209,10 +209,10 @@
         <option value="$PROJECT_DIR$/templates/styled_Sidenav.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/css/testing.css" />
-        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
         <option value="$PROJECT_DIR$/sass/core.scss" />
         <option value="$PROJECT_DIR$/templates/styled_Group.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
+        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
       </list>
     </option>
   </component>
@@ -223,9 +223,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="y" value="60" />
-    <option name="width" value="1378" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -533,18 +533,18 @@
       <workItem from="1484402863801" duration="35812000" />
       <workItem from="1484492545222" duration="19358000" />
       <workItem from="1484560292841" duration="7086000" />
-      <workItem from="1484607587950" duration="2727000" />
+      <workItem from="1484607587950" duration="3050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252035000" />
+    <option name="totallyTimeSpent" value="252358000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="60" width="1378" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2097015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20907739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22544283" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -922,21 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
-            <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -957,10 +942,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="257" column="41" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
+        <state relative-caret-position="113">
+          <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
           <folding>
             <element signature="e#65#8977#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
+            <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -245,7 +245,8 @@ angular.module("moduleOverview", [])
         });
         
     }
-}]).directive('pressableElement', function ($timeout) {
+}])
+    .directive('pressableElement', function ($timeout) {
     return {
         restrict: 'A',
         link: function ($scope, $elm, $attrs) {
