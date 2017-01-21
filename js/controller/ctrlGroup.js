@@ -223,7 +223,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                         sData_CUDHandler.registerPupils(paramData).then(function (response) {
                             console.log(response);
                             $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
-                            $scope.switchModalPupil();
+                            $scope.cancel();
                         }, function (response) {
                             console.log(response);
                         })
