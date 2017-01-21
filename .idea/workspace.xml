@@ -44,8 +44,8 @@
       <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="243" column="29" selection-start-line="243" selection-start-column="29" selection-end-line="243" selection-end-column="29" />
+            <state relative-caret-position="305">
+              <caret line="236" column="21" selection-start-line="236" selection-start-column="21" selection-end-line="236" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
@@ -472,12 +472,12 @@
       <workItem from="1484560292841" duration="7086000" />
       <workItem from="1484607587950" duration="3648000" />
       <workItem from="1484641529763" duration="708000" />
-      <workItem from="1485019935306" duration="6425000" />
+      <workItem from="1485019935306" duration="6825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260089000" />
+    <option name="totallyTimeSpent" value="260489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -904,7 +904,7 @@
     <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
@@ -915,8 +915,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="243" column="29" selection-start-line="243" selection-start-column="29" selection-end-line="243" selection-end-column="29" />
+        <state relative-caret-position="305">
+          <caret line="236" column="21" selection-start-line="236" selection-start-column="21" selection-end-line="236" selection-end-column="21" />
           <folding />
         </state>
       </provider>

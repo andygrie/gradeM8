@@ -120,9 +120,6 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                 function AddPupilController($scope, $mdDialog, sData_classes) {
 
-
-
-
                     $scope.classesSelected = false;
                     $scope.colPupils = [];
                     $scope.colClasses = [];
@@ -228,6 +225,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                     }
 
                     $scope.loadAdPupils = function () {
+                        console.log("in loadAdPupils");
                         loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
                             $scope.classesSelected = true;
                             console.log("successfully loaded Pupils of selected Classes");
@@ -235,29 +233,12 @@ angular.module("moduleGroup", ['ngMaterial'])
                         }, function (msg) {
                             console.log("error loading pupils");
                             console.log(msg);
-                        })
+                        });
                     }
-                //    var doSearch = function(){
-                //        $scope.loadClasses();
-                //    }
 
-                //    doSearch();
                     angular.element(document).ready(function () {
-
                         $scope.loadClasses();
-
                     });
-
-               //     $scope.$on('$viewContentLoaded', function() {
-               //         $scope.loadClasses();
-               //     });
-                //    $scope.$on('$routeChangeSuccess', function () {
-                //        $scope.loadClasses();
-                //    });
-
-                  //  $scope.$on('$stateChangeSuccess', function () {
-                 //       $scope.loadClasses();
-                 //   });
 
                 }
 
