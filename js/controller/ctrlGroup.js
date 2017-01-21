@@ -245,7 +245,11 @@ angular.module("moduleGroup", ['ngMaterial'])
                             console.log(msg);
                         })
                     }
-
+                    var init = function () {
+                        loadClasses();
+                    };
+// and fire it after definition
+                    init();
 
                 }
 
