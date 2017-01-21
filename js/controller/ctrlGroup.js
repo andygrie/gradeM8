@@ -118,7 +118,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                     });
                 };
 
-                function AddPupilController($scope, $mdDialog, sData_classes) {
+                function AddPupilController($scope, $mdDialog, sData_classes,  sData_CUDHandler, sData_pupilsByGroups) {
 
                     $scope.classesSelected = false;
                     $scope.colPupils = [];
@@ -213,11 +213,26 @@ angular.module("moduleGroup", ['ngMaterial'])
                         }
                     };
 
+                    $scope.registerPupils = function () {
+                        var paramData = {
+                            idGradeGroup: $scope.idGradeGroup,
+                            pupils: $scope.colSelectedPupils
+                        }
+
+                        sData_CUDHandler.registerPupils(paramData).then(function (response) {
+                            console.log(response);
+                            $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
+                            $scope.switchModalPupil();
+                        }, function (response) {
+                            console.log(response);
+                        })
+                    }
 
                     $scope.loadClasses = function () {
                         sData_classes.fillData().then(function (response) {
                             console.log(response);
                             $scope.colClasses = sData_classes.data;
+                            console.log("finished loading classes");
                         }, function (response) {
                             console.log("error filling classes: ");
                             console.log(response);
@@ -346,21 +361,6 @@ angular.module("moduleGroup", ['ngMaterial'])
             $scope.displayAddPupil = function () {
                 $scope.switchModalPupil();
                 $scope.loadClasses();
-            }
-
-            $scope.registerPupils = function () {
-                var paramData = {
-                    idGradeGroup: $scope.idGradeGroup,
-                    pupils: $scope.colSelectedPupils
-                }
-
-                sData_CUDHandler.registerPupils(paramData).then(function (response) {
-                    console.log(response);
-                    $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
-                    $scope.switchModalPupil();
-                }, function (response) {
-                    console.log(response);
-                })
             }
 
 
