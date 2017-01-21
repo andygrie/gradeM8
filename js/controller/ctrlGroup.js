@@ -120,16 +120,7 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                 function AddPupilController($scope, $mdDialog, sData_classes) {
 
-                    $scope.$on('$viewContentLoaded', function() {
-                        $scope.loadClasses();
-                    });
-                    $scope.$on('$routeChangeSuccess', function () {
-                        $scope.loadClasses();
-                    });
 
-                        $scope.$on('$stateChangeSuccess', function () {
-                            $scope.loadClasses();
-                        });
 
 
                     $scope.classesSelected = false;
@@ -247,10 +238,26 @@ angular.module("moduleGroup", ['ngMaterial'])
                         })
                     }
                     var doSearch = function(){
-                        loadClasses();
+                        $scope.loadClasses();
                     }
 
                     doSearch();
+                    angular.element(document).ready(function () {
+
+                        $scope.loadClasses();
+
+                    });
+
+                    $scope.$on('$viewContentLoaded', function() {
+                        $scope.loadClasses();
+                    });
+                    $scope.$on('$routeChangeSuccess', function () {
+                        $scope.loadClasses();
+                    });
+
+                    $scope.$on('$stateChangeSuccess', function () {
+                        $scope.loadClasses();
+                    });
 
                 }
 
