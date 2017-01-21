@@ -122,6 +122,13 @@ angular.module("moduleGroup", ['ngMaterial'])
                     $scope.$on('$viewContentLoaded', function() {
                         $scope.loadClasses();
                     });
+                    $scope.$on('$routeChangeSuccess', function () {
+                        $scope.loadClasses();
+                    });
+
+                        $scope.$on('$stateChangeSuccess', function () {
+                            $scope.loadClasses();
+                        });
 
 
                     $scope.classesSelected = false;
