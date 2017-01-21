@@ -1,0 +1,65 @@
+<md-dialog style="width: 50%" aria-label="Add Subject">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Add Pupil</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <span class="glyphicon glyphicon-remove" aria-label="Close dialog"></span>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <md-content ng-show="!classesSelected">
+                <md-chips ng-model="colSelectedClasses" md-autocomplete-snap
+                          md-transform-chip="auto.transformChip($chip)"
+                          md-require-match="true">
+                    <md-chip-template>
+                            <span>
+                            <strong>{{$chip.name}}</strong>
+                            </span>
+                    </md-chip-template>
+                    <md-autocomplete
+                            md-selected-item="auto.selectedItem"
+                            md-search-text="auto.searchText"
+                            md-items="item in auto.querySearch(auto.searchText)"
+                            md-item-text="item.name"
+                            placeholder="Search for a Class">
+                        <md-item-template><span md-highlight-text="auto.searchText">{{item.name}}</span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </md-chips>
+                <md-button class="md-raised md-primary" ng-click="loadAdPupils()">Submit Classes</md-button>
+            </md-content>
+            <md-content ng-show="classesSelected">
+                <div layout="row" layout-wrap flex>
+                    <div flex-xs flex="50">
+                        <md-checkbox aria-label="Select All"
+                                     ng-checked="check.isChecked()"
+                                     md-indeterminate="check.isIndeterminate()"
+                                     ng-click="check.toggleAll()">
+                            <span ng-if="check.isChecked()">Un-</span>Select All
+                        </md-checkbox>
+                    </div>
+                    <div flex="50" ng-repeat="item in colAdPupils">
+                        <md-checkbox ng-checked="check.exists(item, colSelectedPupils)"
+                                     ng-click="check.toggle(item, colSelectedPupils)">
+                            {{item.surname}},{{item.forename}}
+                        </md-checkbox>
+                    </div>
+                </div>
+            </md-content>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button style="margin-left:20px;" ng-click="registerPupils()">
+                OK
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()" style="margin-right:20px;">
+                CANCEL
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
