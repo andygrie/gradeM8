@@ -114,7 +114,7 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
 
                 $scope.showAddPupilDialog = function (ev) {
-
+                    $scope.loadClasses();
                     $mdDialog.show({
                         controller: AddPupilController,
                         templateUrl: '../../templates/styled_modal_AddPupil.html',
@@ -125,7 +125,9 @@ angular.module("moduleGroup", ['ngMaterial'])
                 };
 
                 function AddPupilController($scope, $mdDialog) {
-                    $scope.loadClasses();
+
+
+
                     $scope.hide = function () {
                         $mdDialog.hide();
                     };
@@ -211,44 +213,44 @@ angular.module("moduleGroup", ['ngMaterial'])
                         }
                     };
 
-                    $scope.loadClasses = function () {
-                        sData_classes.fillData().then(function (response) {
-                            console.log(response);
-                            $scope.colClasses = sData_classes.data;
-                        }, function (response) {
-                            console.log("error filling classes: ");
-                            console.log(response);
-                        });
-                    }
 
-                    $scope.loadAdPupils = function () {
-                        loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
-                            $scope.classesSelected = true;
-                            console.log("successfully loaded Pupils of selected Classes");
-                            console.log(msg);
-                        }, function (msg) {
-                            console.log("error loading pupils");
-                            console.log(msg);
-                        })
-                    }
-
-                    function loadPupilsOfClass(classnames, index, onDone, onError) {
-                        sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
-                            for (var i = 0; i < response.length; i++) {
-                                $scope.colAdPupils.push(response[i]);
-                            }
-                            index++;
-                            if (index < classnames.length) {
-                                loadPupilsOfClass(classnames, index, onDone, onError);
-                            }
-                            else {
-                                onDone($scope.colAdPupils);
-                            }
-                        }, onError)
-                    }
 
                 }
+            $scope.loadClasses = function () {
+                sData_classes.fillData().then(function (response) {
+                    console.log(response);
+                    $scope.colClasses = sData_classes.data;
+                }, function (response) {
+                    console.log("error filling classes: ");
+                    console.log(response);
+                });
+            }
 
+            $scope.loadAdPupils = function () {
+                loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
+                    $scope.classesSelected = true;
+                    console.log("successfully loaded Pupils of selected Classes");
+                    console.log(msg);
+                }, function (msg) {
+                    console.log("error loading pupils");
+                    console.log(msg);
+                })
+            }
+
+            function loadPupilsOfClass(classnames, index, onDone, onError) {
+                sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        $scope.colAdPupils.push(response[i]);
+                    }
+                    index++;
+                    if (index < classnames.length) {
+                        loadPupilsOfClass(classnames, index, onDone, onError);
+                    }
+                    else {
+                        onDone($scope.colAdPupils);
+                    }
+                }, onError)
+            }
                 $scope.showAddEventDialog = function (ev) {
                     $mdDialog.show({
                         controller: AddEventController,
