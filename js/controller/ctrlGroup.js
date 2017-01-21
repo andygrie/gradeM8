@@ -118,8 +118,9 @@ angular.module("moduleGroup", ['ngMaterial'])
                     });
                 };
 
-                function AddPupilController($scope, $mdDialog, sData_classes,  sData_CUDHandler, sData_pupilsByGroups) {
+                function AddPupilController($scope, $mdDialog,$routeParams, sData_classes,  sData_CUDHandler, sData_pupilsByGroups) {
 
+                    $scope.idGradeGroup = $routeParams.idGradeGroup;
                     $scope.classesSelected = false;
                     $scope.colPupils = [];
                     $scope.colClasses = [];
