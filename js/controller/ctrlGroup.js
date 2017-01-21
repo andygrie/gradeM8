@@ -245,11 +245,14 @@ angular.module("moduleGroup", ['ngMaterial'])
                             console.log(msg);
                         })
                     }
-                    var init = function () {
+                    $window.onload = function(e) {
                         loadClasses();
-                    };
-// and fire it after definition
-                    init();
+                    }
+                    angular.element(window.document.body).ready(function () {
+
+                        loadClasses();
+
+                    });
 
                 }
 
