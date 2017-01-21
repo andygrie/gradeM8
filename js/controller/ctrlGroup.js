@@ -76,7 +76,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                 });
             };
 
-            function DialogController($scope, $mdDialog, $sDataclass) {
+            function DialogController($scope, $mdDialog, sData_allData) {
 
                 // $scope.eMailDates.von = "";
                 // $scope.eMailDates.bis =  "";
@@ -100,10 +100,6 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                 $scope.cancel = function () {
                     $mdDialog.cancel();
-                };
-
-                $scope.answer = function (answer) {
-                    $mdDialog.hide(answer);
                 };
             }
 
@@ -135,10 +131,6 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                     $scope.cancel = function () {
                         $mdDialog.cancel();
-                    };
-
-                    $scope.answer = function (answer) {
-                        $mdDialog.hide(answer);
                     };
 
 
@@ -274,9 +266,6 @@ angular.module("moduleGroup", ['ngMaterial'])
                 }
 
 
-
-
-
                 $scope.showAddEventDialog = function (ev) {
                     $mdDialog.show({
                         controller: AddEventController,
@@ -297,12 +286,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                     $scope.cancel = function () {
                         $mdDialog.cancel();
                     };
-
-                    $scope.answer = function (answer) {
-                        $mdDialog.hide(answer);
-                    };
                 }
-
 
 
 // Other Functions
