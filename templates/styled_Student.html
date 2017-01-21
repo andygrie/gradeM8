@@ -1,0 +1,68 @@
+<md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
+        </div>
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
+    </div>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button ng-click="showAddNoteDialog($event)">
+            add Note
+        </md-button>
+        <md-button ng-click="showAddEventDialog($event)">
+            add Event
+        </md-button>
+        <md-button ng-click="">
+            toggle Information
+        </md-button>
+    </div>
+</md-toolbar>
+
+<main class="main">
+    <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
+        <div class = "group-container">
+
+            <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+                <div style="display: inline-block">{{key}}</div>
+                <span flex></span>
+                <div  layout="row" layout-align="center center">
+                    <md-button ng-click="toggleRight()" class="md-icon-button">
+                        <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <div flex>
+                <div style="float:left" ng-repeat="recordGroup in value" pressable-element
+                     on-long-press="toggleRight()"
+                     time-out="600" ng-click="navToGroup(recordGroup.idGradeGroup)">
+                    <md-card flex-gt-sm-grow="10">
+                        <md-card-title style="display:block">
+                            <md-card-title-text>
+                                <div class="md-headline">{{recordGroup.name}}</div>
+                            </md-card-title-text>
+                        </md-card-title>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
+
+<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
