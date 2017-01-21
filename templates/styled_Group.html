@@ -1,4 +1,4 @@
-<md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
+<md-toolbar class="top-toolbar" layout="row" md-scroll-shrink>
     <div style="display: inline-flex">
         <div>
             <md-button aria-label="menu" class="md-fab md-primary">
@@ -11,7 +11,7 @@
     </div>
     <span flex></span>
     <div layout="row" layout-align="center center">
-        <md-button  ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
             <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
         </md-button>
     </div>
@@ -21,7 +21,7 @@
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
         <md-button ng-click="switchModalGroup()">
-             add Pupil
+            add Pupil
         </md-button>
 
         <md-button ng-click="showAddSubjectDialog($event)">
@@ -31,55 +31,56 @@
 </md-toolbar>
 
 <main class="main">
-<div class="group-container">
-            <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
-                <div style="display: inline-block">Pupils</div>
-                <span flex></span>
-                <div  layout="row" layout-align="center center">
-                    <md-button ng-click="toggleRight()" class="md-icon-button">
-                        <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <div flex>
-                <div style="float:left" ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.fkUser)">
-                    <md-card flex-gt-sm-grow="10">
-                        <md-card-title style="display:block">
-                            <md-card-title-text>
-                                <div class="md-headline">{{recPupil.surname}} </div>
-                                <div class="md-subhead"> {{recPupil.forename}}</div>
-                            </md-card-title-text>
-                        </md-card-title>
-                    </md-card>
-                </div>
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Pupils</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+                <md-button ng-click="toggleRight()" class="md-icon-button">
+                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                </md-button>
             </div>
-</div>
-    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingPupilData"></md-progress-linear>
+        </md-toolbar>
 
-    <div  class = "group-container">
-    <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
-        <div style="display: inline-block">Events</div>
-        <span flex></span>
-        <div  layout="row" layout-align="center center">
-            <md-button ng-click="toggleRight()" class="md-icon-button">
-                <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-
-    <div flex>
-        <div style="float:left" ng-repeat="recEvent in colEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
-            <md-card flex-gt-sm-grow="10">
-                <md-card-title style="display:block">
-                    <md-card-title-text>
-                        <div class="md-headline">{{recEvent.eventDescription}} </div>
-                        <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
-                    </md-card-title-text>
-                </md-card-title>
-            </md-card>
+        <div flex>
+            <div style="float:left" ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.fkUser)">
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recPupil.surname}}</div>
+                            <div class="md-subhead"> {{recPupil.forename}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
         </div>
     </div>
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingPupilData"></md-progress-linear>
+
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Events</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+                <md-button ng-click="toggleRight()" class="md-icon-button">
+                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <div flex>
+            <div style="float:left" ng-repeat="recEvent in colEvents"
+                 ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recEvent.eventDescription}}</div>
+                            <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </div>
     </div>
 
     <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>

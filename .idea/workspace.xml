@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/styled_Student.html" afterPath="$PROJECT_DIR$/templates/old_styled_Student.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" afterPath="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlGroup.js" afterPath="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlLogin.js" afterPath="$PROJECT_DIR$/js/controller/ctrlLogin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlOverview.js" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlPupil.js" afterPath="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.css" afterPath="$PROJECT_DIR$/sass/core.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.css.map" afterPath="$PROJECT_DIR$/sass/core.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.scss" afterPath="$PROJECT_DIR$/sass/core.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/settings_Modal.html" afterPath="$PROJECT_DIR$/templates/settings_Modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Group.html" afterPath="$PROJECT_DIR$/templates/styled_Group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Login.html" afterPath="$PROJECT_DIR$/templates/styled_Login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Overview.html" afterPath="$PROJECT_DIR$/templates/styled_Overview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" afterPath="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,28 +45,21 @@
       <file leaf-file-name="styled_Group.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="153">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
+            <state relative-caret-position="272">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -66,81 +72,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/core.scss">
+      <file leaf-file-name="styled_modal_AddPupil.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/testing.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="old_styled_Group.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/old_styled_Group.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
               <folding>
-                <element signature="n#main#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_modal_AddSubject.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
+      <file leaf-file-name="styled_modal_AddEvent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddEvent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="102">
+              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-input-container#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#md-input-container#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#md-input-container#1;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#md-input-container#2;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
-              <folding>
-                <element signature="e#65#8977#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,8 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/app.css" />
-        <option value="$PROJECT_DIR$/app.css" />
         <option value="$PROJECT_DIR$/Information.html" />
         <option value="$PROJECT_DIR$/Student.js" />
         <option value="$PROJECT_DIR$/Student.html" />
@@ -182,37 +148,39 @@
         <option value="$PROJECT_DIR$/bower_components/angular-material/angular-material.js" />
         <option value="$PROJECT_DIR$/templates/table.html" />
         <option value="$PROJECT_DIR$/templates/pupil.html" />
-        <option value="$PROJECT_DIR$/templates/styled_Student.html" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css.map" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/js/services/serviceWeb.js" />
         <option value="$PROJECT_DIR$/js/services/serviceData.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
         <option value="$PROJECT_DIR$/templates/newtest.html" />
         <option value="$PROJECT_DIR$/templates/newtest.js" />
         <option value="$PROJECT_DIR$/templates/provisorialNewLoginScreen.html" />
         <option value="$PROJECT_DIR$/templates/testing.css" />
         <option value="$PROJECT_DIR$/templates/provisorialNewOverviewScreen.html" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlLogin.js" />
         <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
         <option value="$PROJECT_DIR$/templates/styled_Information.html" />
-        <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/templates/styled_Login.html" />
         <option value="$PROJECT_DIR$/css/app.css" />
         <option value="$PROJECT_DIR$/sass/core.css" />
-        <option value="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
         <option value="$PROJECT_DIR$/templates/styled_Sidenav.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/css/testing.css" />
         <option value="$PROJECT_DIR$/sass/core.scss" />
+        <option value="$PROJECT_DIR$/templates/styled_Login.html" />
+        <option value="$PROJECT_DIR$/templates/styled_Student.html" />
+        <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
+        <option value="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlLogin.js" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
+        <option value="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" />
+        <option value="$PROJECT_DIR$/templates/styled_modal_AddPupil.html" />
+        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
         <option value="$PROJECT_DIR$/templates/styled_Group.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
-        <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
       </list>
     </option>
   </component>
@@ -397,8 +365,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,12 +501,14 @@
       <workItem from="1484402863801" duration="35812000" />
       <workItem from="1484492545222" duration="19358000" />
       <workItem from="1484560292841" duration="7086000" />
-      <workItem from="1484607587950" duration="3050000" />
+      <workItem from="1484607587950" duration="3648000" />
+      <workItem from="1484641529763" duration="708000" />
+      <workItem from="1485019935306" duration="2180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252358000" />
+    <option name="totallyTimeSpent" value="255844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -546,7 +516,8 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20907739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22544283" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22544283" sideWeight="0.50595236" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20611916" sideWeight="0.4940476" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.49702382" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -558,7 +529,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20611916" sideWeight="0.49702382" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -580,34 +550,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="227" column="27" selection-start-line="227" selection-start-column="27" selection-end-line="227" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1675" column="25" selection-start-line="1675" selection-start-column="1" selection-end-line="1675" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="775" column="10" selection-start-line="775" selection-start-column="1" selection-end-line="775" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap-theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -663,20 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/angular-aria/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
@@ -695,7 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="903" column="6" selection-start-line="903" selection-start-column="0" selection-end-line="903" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,18 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/angular-material/angular-material.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36">
           <caret line="6627" column="0" selection-start-line="6627" selection-start-column="0" selection-end-line="6627" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,13 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Class.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -818,21 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -840,7 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -865,33 +753,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Group.html">
+    <entry file="file://$PROJECT_DIR$/sass/core.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="n#main#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
+    <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="294">
+          <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        <state relative-caret-position="73">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
@@ -906,54 +787,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/testing.css">
+    <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/core.scss">
+    <entry file="file://$PROJECT_DIR$/templates/old_styled_Group.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="867">
+          <caret line="90" column="43" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/old_styled_Student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="151" column="28" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Class.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#md-input-container#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-input-container#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#md-input-container#1;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Group.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="153">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
             <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
-          <folding>
-            <element signature="e#65#8977#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="71" column="84" selection-start-line="71" selection-start-column="84" selection-end-line="71" selection-end-column="84" />
+        <state relative-caret-position="272">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
             <element signature="n#md-button#0;n#div#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="false" />
@@ -962,6 +941,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-card-title#0;n#md-card#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
