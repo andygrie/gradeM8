@@ -237,27 +237,27 @@ angular.module("moduleGroup", ['ngMaterial'])
                             console.log(msg);
                         })
                     }
-                    var doSearch = function(){
-                        $scope.loadClasses();
-                    }
+                //    var doSearch = function(){
+                //        $scope.loadClasses();
+                //    }
 
-                    doSearch();
+                //    doSearch();
                     angular.element(document).ready(function () {
 
                         $scope.loadClasses();
 
                     });
 
-                    $scope.$on('$viewContentLoaded', function() {
-                        $scope.loadClasses();
-                    });
-                    $scope.$on('$routeChangeSuccess', function () {
-                        $scope.loadClasses();
-                    });
+               //     $scope.$on('$viewContentLoaded', function() {
+               //         $scope.loadClasses();
+               //     });
+                //    $scope.$on('$routeChangeSuccess', function () {
+                //        $scope.loadClasses();
+                //    });
 
-                    $scope.$on('$stateChangeSuccess', function () {
-                        $scope.loadClasses();
-                    });
+                  //  $scope.$on('$stateChangeSuccess', function () {
+                 //       $scope.loadClasses();
+                 //   });
 
                 }
 
