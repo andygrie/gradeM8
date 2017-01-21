@@ -100,6 +100,18 @@ angular.module("moduleGroup", ['ngMaterial'])
                     });
                     $mdDialog.hide();
                 };
+                $scope.hide = function () {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function (answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
 
                 $scope.showAddPupilDialog = function (ev) {
                     $mdDialog.show({
@@ -154,18 +166,8 @@ angular.module("moduleGroup", ['ngMaterial'])
                 }
 
 
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
 
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
 
-                $scope.answer = function (answer) {
-                    $mdDialog.hide(answer);
-                };
-            }
 
 // Autocomplete
             $scope.auto = {};
