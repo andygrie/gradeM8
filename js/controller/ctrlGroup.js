@@ -101,6 +101,58 @@ angular.module("moduleGroup", ['ngMaterial'])
                     $mdDialog.hide();
                 };
 
+                $scope.showAddPupilDialog = function (ev) {
+                    $mdDialog.show({
+                        controller: AddPupilController,
+                        templateUrl: '../../templates/styled_modal_AddPupil.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose: true
+                    });
+                };
+
+
+                function AddPupilController($scope, $mdDialog) {
+
+                    $scope.hide = function () {
+                        $mdDialog.hide();
+                    };
+
+                    $scope.cancel = function () {
+                        $mdDialog.cancel();
+                    };
+
+                    $scope.answer = function (answer) {
+                        $mdDialog.hide(answer);
+                    };
+                }
+
+                $scope.showAddEventDialog = function (ev) {
+                    $mdDialog.show({
+                        controller: AddSubjectController,
+                        templateUrl: '../../templates/styled_modal_AddEvent.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose: true
+                    });
+                };
+
+
+                function AddEventController($scope, $mdDialog) {
+
+                    $scope.hide = function () {
+                        $mdDialog.hide();
+                    };
+
+                    $scope.cancel = function () {
+                        $mdDialog.cancel();
+                    };
+
+                    $scope.answer = function (answer) {
+                        $mdDialog.hide(answer);
+                    };
+                }
+
 
                 $scope.hide = function () {
                     $mdDialog.hide();
