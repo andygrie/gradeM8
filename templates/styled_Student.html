@@ -17,7 +17,6 @@
     </div>
 </md-toolbar>
 
-
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
         <md-button ng-click="showAddNoteDialog($event)">
@@ -33,36 +32,58 @@
 </md-toolbar>
 
 <main class="main">
-    <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
-        <div class = "group-container">
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Ungraded Events</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+                <md-button ng-click="toggleRight()" class="md-icon-button">
+                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
 
-            <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
-                <div style="display: inline-block">{{key}}</div>
-                <span flex></span>
-                <div  layout="row" layout-align="center center">
-                    <md-button ng-click="toggleRight()" class="md-icon-button">
-                        <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <div flex>
-                <div style="float:left" ng-repeat="recordGroup in value" pressable-element
-                     on-long-press="toggleRight()"
-                     time-out="600" ng-click="navToGroup(recordGroup.idGradeGroup)">
-                    <md-card flex-gt-sm-grow="10">
-                        <md-card-title style="display:block">
-                            <md-card-title-text>
-                                <div class="md-headline">{{recordGroup.name}}</div>
-                            </md-card-title-text>
-                        </md-card-title>
-                    </md-card>
-                </div>
+        <div flex>
+            <div style="float:left" ng-repeat="recUnEvent in data.ungradedEvents" ng-click="viewGrade(recUnEvent)">
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recUnEvent.eventDescription}}</div>
+                            <div class="md-subhead">{{recUnEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
             </div>
         </div>
     </div>
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingPupilData"></md-progress-linear>
+
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Graded Events</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+                <md-button ng-click="toggleRight()" class="md-icon-button">
+                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <div flex>
+            <div style="float:left"  ng-repeat="recEvent in data.gradedEvents" ng-click="viewGrade(recEvent)">
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recEvent.eventDescription}}</div>
+                            <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </div>
+    </div>
+
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
+
 </main>
-
 <div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
-
-<md-progress-linear  md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
