@@ -239,6 +239,21 @@ angular.module("moduleGroup", ['ngMaterial'])
                         });
                     }
 
+                    function loadPupilsOfClass(classnames, index, onDone, onError) {
+                        sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
+                            for (var i = 0; i < response.length; i++) {
+                                $scope.colAdPupils.push(response[i]);
+                            }
+                            index++;
+                            if (index < classnames.length) {
+                                loadPupilsOfClass(classnames, index, onDone, onError);
+                            }
+                            else {
+                                onDone($scope.colAdPupils);
+                            }
+                        }, onError)
+                    }
+
                     $scope.loadAdPupils = function () {
                         console.log("in loadAdPupils");
                         loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
@@ -259,20 +274,8 @@ angular.module("moduleGroup", ['ngMaterial'])
 
 
 
-            function loadPupilsOfClass(classnames, index, onDone, onError) {
-                sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
-                    for (var i = 0; i < response.length; i++) {
-                        $scope.colAdPupils.push(response[i]);
-                    }
-                    index++;
-                    if (index < classnames.length) {
-                        loadPupilsOfClass(classnames, index, onDone, onError);
-                    }
-                    else {
-                        onDone($scope.colAdPupils);
-                    }
-                }, onError)
-            }
+
+
                 $scope.showAddEventDialog = function (ev) {
                     $mdDialog.show({
                         controller: AddEventController,

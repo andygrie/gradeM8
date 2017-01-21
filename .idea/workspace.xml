@@ -44,8 +44,8 @@
       <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
-              <caret line="120" column="63" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
+            <state relative-caret-position="294">
+              <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -472,12 +472,12 @@
       <workItem from="1484560292841" duration="7086000" />
       <workItem from="1484607587950" duration="3648000" />
       <workItem from="1484641529763" duration="708000" />
-      <workItem from="1485019935306" duration="7357000" />
+      <workItem from="1485019935306" duration="7587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261021000" />
+    <option name="totallyTimeSpent" value="261251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -915,8 +915,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="120" column="63" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
+        <state relative-caret-position="294">
+          <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
           <folding />
         </state>
       </provider>
