@@ -114,6 +114,7 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
 
                 $scope.showAddPupilDialog = function (ev) {
+
                     $mdDialog.show({
                         controller: AddPupilController,
                         templateUrl: '../../templates/styled_modal_AddPupil.html',
@@ -123,9 +124,8 @@ angular.module("moduleGroup", ['ngMaterial'])
                     });
                 };
 
-
                 function AddPupilController($scope, $mdDialog) {
-
+                    $scope.loadClasses();
                     $scope.hide = function () {
                         $mdDialog.hide();
                     };
