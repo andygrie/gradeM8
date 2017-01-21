@@ -119,7 +119,10 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                 function AddPupilController($scope, $mdDialog, sData_classes) {
 
-                    $scope.loadClasses();
+                    $scope.$on('$viewContentLoaded', function() {
+                        $scope.loadClasses();
+                    });
+
 
                     $scope.classesSelected = false;
                     $scope.colPupils = [];
