@@ -113,6 +113,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                         templateUrl: '../../templates/styled_modal_AddPupil.html',
                         parent: angular.element(document.body),
                         targetEvent: ev,
+                        cache:false,
                         clickOutsideToClose: true
                     });
                 };
@@ -245,14 +246,11 @@ angular.module("moduleGroup", ['ngMaterial'])
                             console.log(msg);
                         })
                     }
-                    $window.onload = function(e) {
+                    var doSearch = function(){
                         loadClasses();
                     }
-                    angular.element(window.document.body).ready(function () {
 
-                        loadClasses();
-
-                    });
+                    doSearch();
 
                 }
 
