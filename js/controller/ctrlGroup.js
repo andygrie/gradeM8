@@ -137,11 +137,121 @@ angular.module("moduleGroup", ['ngMaterial'])
                     $scope.answer = function (answer) {
                         $mdDialog.hide(answer);
                     };
+
+
+
+// Autocomplete
+                    $scope.auto = {};
+                    $scope.auto.selectedItem = null;
+                    $scope.auto.searchText = null;
+                    /**
+                     * Return the proper object when the append is called.
+                     */
+                    $scope.auto.transformChip = function transformChip(chip) {
+                        // If it is an object, it's already a known chip
+                        if (angular.isObject(chip)) {
+                            return chip;
+                        }
+
+                        // Otherwise, create a new one
+                        return {name: chip};
+                    }
+
+                    /**
+                     * Search for classes.
+                     */
+                    $scope.auto.querySearch = function querySearch(query) {
+                        var results = query ? $scope.colClasses.filter(createFilterFor(query)) : [];
+                        return results;
+                    }
+
+                    /**
+                     * Create filter function for a query string
+                     */
+                    function createFilterFor(query) {
+                        var lowercaseQuery = angular.lowercase(query);
+
+                        return function filterFn(paramClass) {
+                            return (paramClass.name.toLowerCase().indexOf(lowercaseQuery) === 0);
+                        };
+
+                    }
+
+// Check
+                    $scope.check = {};
+
+                    $scope.check.toggle = function (item, list) {
+                        var idx = list.indexOf(item);
+                        if (idx > -1) {
+                            list.splice(idx, 1);
+                        }
+                        else {
+                            list.push(item);
+                        }
+                    };
+
+                    $scope.check.exists = function (item, list) {
+                        return list.indexOf(item) > -1;
+                    };
+
+                    $scope.check.isIndeterminate = function () {
+                        return ($scope.colSelectedPupils.length !== 0 &&
+                        $scope.colSelectedPupils.length !== $scope.colAdPupils.length);
+                    };
+
+                    $scope.check.isChecked = function () {
+                        return $scope.colSelectedPupils.length === $scope.colAdPupils.length;
+                    };
+
+                    $scope.check.toggleAll = function () {
+                        if ($scope.colSelectedPupils.length === $scope.colAdPupils.length) {
+                            $scope.colSelectedPupils = [];
+                        } else if ($scope.colSelectedPupils.length === 0 || $scope.colSelectedPupils.length > 0) {
+                            $scope.colSelectedPupils = $scope.colAdPupils.slice(0);
+                        }
+                    };
+
+                    $scope.loadClasses = function () {
+                        sData_classes.fillData().then(function (response) {
+                            console.log(response);
+                            $scope.colClasses = sData_classes.data;
+                        }, function (response) {
+                            console.log("error filling classes: ");
+                            console.log(response);
+                        });
+                    }
+
+                    $scope.loadAdPupils = function () {
+                        loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
+                            $scope.classesSelected = true;
+                            console.log("successfully loaded Pupils of selected Classes");
+                            console.log(msg);
+                        }, function (msg) {
+                            console.log("error loading pupils");
+                            console.log(msg);
+                        })
+                    }
+
+                    function loadPupilsOfClass(classnames, index, onDone, onError) {
+                        sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
+                            for (var i = 0; i < response.length; i++) {
+                                $scope.colAdPupils.push(response[i]);
+                            }
+                            index++;
+                            if (index < classnames.length) {
+                                loadPupilsOfClass(classnames, index, onDone, onError);
+                            }
+                            else {
+                                onDone($scope.colAdPupils);
+                            }
+                        }, onError)
+                    }
+
                 }
 
                 $scope.showAddEventDialog = function (ev) {
                     $mdDialog.show({
-                        controller: AddSubjectController,
+                        controller: AddEventController,
                         templateUrl: '../../templates/styled_modal_AddEvent.html',
                         parent: angular.element(document.body),
                         targetEvent: ev,
@@ -166,79 +276,6 @@ angular.module("moduleGroup", ['ngMaterial'])
                 }
 
 
-
-
-
-// Autocomplete
-            $scope.auto = {};
-            $scope.auto.selectedItem = null;
-            $scope.auto.searchText = null;
-            /**
-             * Return the proper object when the append is called.
-             */
-            $scope.auto.transformChip = function transformChip(chip) {
-                // If it is an object, it's already a known chip
-                if (angular.isObject(chip)) {
-                    return chip;
-                }
-
-                // Otherwise, create a new one
-                return {name: chip};
-            }
-
-            /**
-             * Search for classes.
-             */
-            $scope.auto.querySearch = function querySearch(query) {
-                var results = query ? $scope.colClasses.filter(createFilterFor(query)) : [];
-                return results;
-            }
-
-            /**
-             * Create filter function for a query string
-             */
-            function createFilterFor(query) {
-                var lowercaseQuery = angular.lowercase(query);
-
-                return function filterFn(paramClass) {
-                    return (paramClass.name.toLowerCase().indexOf(lowercaseQuery) === 0);
-                };
-
-            }
-
-// Check
-            $scope.check = {};
-
-            $scope.check.toggle = function (item, list) {
-                var idx = list.indexOf(item);
-                if (idx > -1) {
-                    list.splice(idx, 1);
-                }
-                else {
-                    list.push(item);
-                }
-            };
-
-            $scope.check.exists = function (item, list) {
-                return list.indexOf(item) > -1;
-            };
-
-            $scope.check.isIndeterminate = function () {
-                return ($scope.colSelectedPupils.length !== 0 &&
-                $scope.colSelectedPupils.length !== $scope.colAdPupils.length);
-            };
-
-            $scope.check.isChecked = function () {
-                return $scope.colSelectedPupils.length === $scope.colAdPupils.length;
-            };
-
-            $scope.check.toggleAll = function () {
-                if ($scope.colSelectedPupils.length === $scope.colAdPupils.length) {
-                    $scope.colSelectedPupils = [];
-                } else if ($scope.colSelectedPupils.length === 0 || $scope.colSelectedPupils.length > 0) {
-                    $scope.colSelectedPupils = $scope.colAdPupils.slice(0);
-                }
-            };
 
 // Other Functions
             $scope.getSubjectOfGroup = function () {
@@ -317,41 +354,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                 })
             }
 
-            $scope.loadClasses = function () {
-                sData_classes.fillData().then(function (response) {
-                    console.log(response);
-                    $scope.colClasses = sData_classes.data;
-                }, function (response) {
-                    console.log("error filling classes: ");
-                    console.log(response);
-                });
-            }
 
-            $scope.loadAdPupils = function () {
-                loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
-                    $scope.classesSelected = true;
-                    console.log("successfully loaded Pupils of selected Classes");
-                    console.log(msg);
-                }, function (msg) {
-                    console.log("error loading pupils");
-                    console.log(msg);
-                })
-            }
-
-            function loadPupilsOfClass(classnames, index, onDone, onError) {
-                sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
-                    for (var i = 0; i < response.length; i++) {
-                        $scope.colAdPupils.push(response[i]);
-                    }
-                    index++;
-                    if (index < classnames.length) {
-                        loadPupilsOfClass(classnames, index, onDone, onError);
-                    }
-                    else {
-                        onDone($scope.colAdPupils);
-                    }
-                }, onError)
-            }
 
             $scope.switchModalEvent = function () {
                 $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
