@@ -43,12 +43,6 @@ angular.module("moduleGroup", ['ngMaterial'])
                 });
             }
 
-            $scope.classesSelected = false;
-            $scope.colPupils = [];
-            $scope.colClasses = [];
-            $scope.colAdPupils = [];
-            $scope.colSelectedClasses = [];
-            $scope.colSelectedPupils = [];
             $scope.colParticipations = [];
             $scope.colEvents = [];
 
@@ -82,7 +76,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                 });
             };
 
-            function DialogController($scope, $mdDialog) {
+            function DialogController($scope, $mdDialog, $sDataclass) {
 
                 // $scope.eMailDates.von = "";
                 // $scope.eMailDates.bis =  "";
@@ -114,7 +108,6 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
 
                 $scope.showAddPupilDialog = function (ev) {
-                    $scope.loadClasses();
                     $mdDialog.show({
                         controller: AddPupilController,
                         templateUrl: '../../templates/styled_modal_AddPupil.html',
@@ -124,8 +117,16 @@ angular.module("moduleGroup", ['ngMaterial'])
                     });
                 };
 
-                function AddPupilController($scope, $mdDialog) {
+                function AddPupilController($scope, $mdDialog, sData_classes) {
 
+                    $scope.loadClasses();
+
+                    $scope.classesSelected = false;
+                    $scope.colPupils = [];
+                    $scope.colClasses = [];
+                    $scope.colAdPupils = [];
+                    $scope.colSelectedClasses = [];
+                    $scope.colSelectedPupils = [];
 
 
                     $scope.hide = function () {
@@ -214,28 +215,31 @@ angular.module("moduleGroup", ['ngMaterial'])
                     };
 
 
+                    $scope.loadClasses = function () {
+                        sData_classes.fillData().then(function (response) {
+                            console.log(response);
+                            $scope.colClasses = sData_classes.data;
+                        }, function (response) {
+                            console.log("error filling classes: ");
+                            console.log(response);
+                        });
+                    }
+
+                    $scope.loadAdPupils = function () {
+                        loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
+                            $scope.classesSelected = true;
+                            console.log("successfully loaded Pupils of selected Classes");
+                            console.log(msg);
+                        }, function (msg) {
+                            console.log("error loading pupils");
+                            console.log(msg);
+                        })
+                    }
+
 
                 }
-            $scope.loadClasses = function () {
-                sData_classes.fillData().then(function (response) {
-                    console.log(response);
-                    $scope.colClasses = sData_classes.data;
-                }, function (response) {
-                    console.log("error filling classes: ");
-                    console.log(response);
-                });
-            }
 
-            $scope.loadAdPupils = function () {
-                loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
-                    $scope.classesSelected = true;
-                    console.log("successfully loaded Pupils of selected Classes");
-                    console.log(msg);
-                }, function (msg) {
-                    console.log("error loading pupils");
-                    console.log(msg);
-                })
-            }
+
 
             function loadPupilsOfClass(classnames, index, onDone, onError) {
                 sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
