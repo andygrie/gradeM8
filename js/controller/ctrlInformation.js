@@ -1,4 +1,4 @@
-angular.module("moduleInformation", [])
+angular.module("moduleInformation", ['ngMaterial'])
     .controller("ctrlInformation", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
         "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups", "$mdDialog",
         function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData,
