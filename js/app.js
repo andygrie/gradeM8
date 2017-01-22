@@ -6,7 +6,8 @@ var app = angular.module("gradeM8", ["ngRoute",
                                         "moduleData",
                                         "moduleWeb",
                                         "moduleLogin",
-                                        "moduleEvent"
+                                        "moduleEvent",
+                                        "moduleInformation"
                                     ]);
 app.constant('constants', {
     apiUrl: "http://gradem8.azurewebsites.net",
@@ -39,5 +40,9 @@ app.config(function($routeProvider, $mdDateLocaleProvider) {
       .when("/group/:idGradeGroup/:idEvent", {
       templateUrl : "templates/styled_EventGrading.html",
       controller: "ctrlEventGrading"
-  });
+  })
+      .when("/group/:idPupil/:idGradeGroup/Information",{
+          templateUrl : "templates/styled_Information.html",
+          controller: "ctrlInformation"
+      });
 }); 

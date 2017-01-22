@@ -33,6 +33,7 @@
 
 <main class="main">
     <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingParticipationData"></md-progress-linear>
+
     <div class="group-container">
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Ungraded Events</div>
@@ -82,8 +83,6 @@
             </div>
         </div>
     </div>
-
-    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
 
 </main>
 <div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>

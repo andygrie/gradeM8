@@ -13,25 +13,16 @@ angular.module("modulePupil", [])
             $scope.data.displayModalEvent = false;
             $scope.data.displayModalNote = false;
             $scope.data.displayModalGrade = false;
-            $scope.data.displayModalNoteHistory = false;
-            $scope.data.displayModalParticipationHistory = false;
+
             $scope.data.displayModalUpdateNote = false;
 
             $scope.state = {};
             $scope.state.awaitingParticipationData = true;
 
-            $scope.partHistory = {};
-            $scope.noteHistory = {};
-            $scope.partHistory.colParticipation = [];
-            $scope.noteHistory.colNotes = [];
-
             $scope.data.currentSettingstab = "Period";
             $scope.data.displayModalSettings = false;
 
-            $scope.updateNote = {};
 
-            $scope.data.colNoteHistory = [];
-            $scope.data.colParticipationHistroy = [];
             $scope.data.ungradedEvents = [];
             $scope.data.gradedEvents = [];
             $scope.data.ungradedParticipations = [];
@@ -130,21 +121,6 @@ angular.module("modulePupil", [])
                 };
             }
 
-            $scope.submitUpdateNote = function (note) {
-                sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function (response) {
-                    console.log("success updating note");
-                    // $scope.switchModalUpdateNote();
-                }, function (response) {
-                    console.log("error updating note");
-                });
-            }
-
-            $scope.updateNote = function (note) {
-                $scope.updatedNote = note;
-                $scope.submitUpdateNote(note);
-                // $scope.switchModalUpdateNote();
-            }
-
             var dataInit = {
                 idPupil: $scope.data.idPupil,
                 idTeaches: $scope.data.teaches.idTeaches
@@ -177,35 +153,7 @@ angular.module("modulePupil", [])
             });
 
 
-            $scope.displayNoteHistory = function (paramIdNote) {
-                $scope.switchModalNoteHistory();
-                $scope.loadNoteHistory(paramIdNote);
-            }
 
-            $scope.displayParticipationHistory = function (paramIdParticipation) {
-                $scope.switchModalParticipationHistory();
-                $scope.loadParticipationHistory(paramIdParticipation);
-            }
-
-            $scope.loadNoteHistory = function (paramIdNote) {
-                $scope.noteHistory.colNotes = [];
-                sData_noteHistory.fillData({idNote: paramIdNote}).then(function (response) {
-                    console.log(response);
-                    $scope.noteHistory.colNotes = sData_noteHistory.data;
-                }, function (response) {
-                    console.log(response);
-                });
-            }
-
-            $scope.loadParticipationHistory = function (paramIdParticipation) {
-                $scope.partHistory.colParticipation = [];
-                sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function (response) {
-                    console.log(response);
-                    $scope.partHistory.colParticipation = sData_participationHistory.data;
-                }, function (response) {
-                    console.log(response);
-                });
-            }
 
             $scope.switchModalEvent = function () {
                 $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
@@ -245,14 +193,6 @@ angular.module("modulePupil", [])
                 $scope.data.displayModalParticipationHistory = !$scope.data.displayModalParticipationHistory;
             }
 
-            $scope.getTotalGrade = function () {
-                var gradesSum = 0;
-
-                for (var i = 0; i < $scope.data.gradedParticipations.length; i++) {
-                    gradesSum += parseInt($scope.data.gradedParticipations[i].grade);
-                }
-                return gradesSum / $scope.data.gradedParticipations.length;
-            }
 
             $scope.insertNewNote = function () {
 
@@ -314,17 +254,7 @@ angular.module("modulePupil", [])
                     $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
             }
 
-            $scope.getEventOfParticipation = function (id) {
-                var retVal = {};
-                var found = false;
-                for (var i = 0; i < $scope.data.gradedEvents.length && !found; i++) {
-                    if ($scope.data.gradedEvents[i].idGradeEvent == id) {
-                        retVal = $scope.data.gradedEvents[i];
-                        found = true;
-                    }
-                }
-                return retVal;
-            }
+
 
             $scope.viewGrade = function (event) {
                 var participation = getParticipationOfEvent(event.idGradeEvent);
