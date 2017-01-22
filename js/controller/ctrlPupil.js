@@ -247,11 +247,12 @@ angular.module("modulePupil", [])
             }
 
             $scope.toggleView = function () {
-                $scope.data.showOverview = !$scope.data.showOverview;
+                /*$scope.data.showOverview = !$scope.data.showOverview;
                 if (!$scope.data.showOverview)
                     $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
                 else
-                    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
+                    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";*/
+                $location.path("/pupil/" + idPupil + "/" + $scope.idGradeGroup + "/Information");
             }
 
 
