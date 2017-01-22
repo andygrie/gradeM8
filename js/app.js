@@ -41,7 +41,7 @@ app.config(function($routeProvider, $mdDateLocaleProvider) {
       templateUrl : "templates/styled_EventGrading.html",
       controller: "ctrlEventGrading"
   })
-      .when("/group/:idPupil/:idGradeGroup/Information",{
+      .when("/pupil/:idPupil/:idGradeGroup/Information",{
           templateUrl : "templates/styled_Information.html",
           controller: "ctrlInformation"
       });

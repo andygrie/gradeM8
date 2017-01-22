@@ -434,6 +434,4 @@ angular.module("moduleGroup", ['ngMaterial'])
                 console.log(retVal);
                 return retVal;
             }
-
-//
         }]);
