@@ -4,10 +4,12 @@ angular.module("moduleInformation", ['ngMaterial'])
         function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData,
                   sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog) {
 
-            $scope.data.displayModalNoteHistory = false;
-            $scope.data.displayModalParticipationHistory = false;
+            $scope.data = {};
             $scope.partHistory = {};
             $scope.noteHistory = {};
+            $scope.updateNote = {};
+            $scope.data.displayModalNoteHistory = false;
+            $scope.data.displayModalParticipationHistory = false;
             $scope.partHistory.colParticipation = [];
             $scope.noteHistory.colNotes = [];
             $scope.data.colNoteHistory = [];
@@ -17,7 +19,7 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data.ungradedParticipations = [];
             $scope.data.gradedParticipations = [];
             $scope.data.colEvents = [];
-            $scope.updateNote = {};
+
 
             $scope.submitUpdateNote = function (note) {
                 sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function (response) {
