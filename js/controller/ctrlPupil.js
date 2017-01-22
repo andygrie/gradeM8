@@ -252,8 +252,7 @@ angular.module("modulePupil", [])
                     $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
                 else
                     $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";*/
-
-                $location.path("/pupil/" + idPupil + "/" + $scope.idGradeGroup + "/Information");
+                $location.path("/pupil/" + $scope.data.idPupil + "/" + $scope.data.idGradeGroup + "/Information");
             }
 
 

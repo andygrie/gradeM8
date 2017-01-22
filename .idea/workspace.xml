@@ -77,8 +77,8 @@
       <file leaf-file-name="ctrlPupil.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="66" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="66" />
+            <state relative-caret-position="186">
+              <caret line="253" column="88" selection-start-line="253" selection-start-column="88" selection-end-line="253" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -475,12 +475,12 @@
       <workItem from="1484607587950" duration="3648000" />
       <workItem from="1484641529763" duration="708000" />
       <workItem from="1485019935306" duration="10926000" />
-      <workItem from="1485088035687" duration="4472000" />
+      <workItem from="1485088035687" duration="4590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269062000" />
+    <option name="totallyTimeSpent" value="269180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -889,8 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlPupil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="66" />
+        <state relative-caret-position="186">
+          <caret line="253" column="88" selection-start-line="253" selection-start-column="88" selection-end-line="253" selection-end-column="88" />
           <folding />
         </state>
       </provider>
