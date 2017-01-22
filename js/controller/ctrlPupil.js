@@ -1,7 +1,7 @@
 angular.module("modulePupil", [])
-    .controller("ctrlPupil", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
+    .controller("ctrlPupil", ["$scope", "$routeParams","$location", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
         "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups", "$mdDialog",
-        function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData,
+        function ($scope, $routeParams,$location, sData_participationsByPupil, sData_CUDHandler, sData_allData,
                   sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog) {
 
             $scope.show = true;
