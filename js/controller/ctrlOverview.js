@@ -93,16 +93,6 @@ angular.module("moduleOverview", [])
 
             $scope.status = '  ';
 
-            $scope.showTabDialog = function (ev) {
-                $mdDialog.show({
-                    controller: DialogController,
-                    templateUrl: '../../templates/settings_Modal.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true
-                });
-            };
-
             $scope.showAddSubjectDialog = function (ev) {
                 $mdDialog.show({
                     controller: AddSubjectController,
@@ -129,6 +119,17 @@ angular.module("moduleOverview", [])
                 };
             }
 
+
+            $scope.showTabDialog = function (ev) {
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '../../templates/settings_Modal.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
+/*
             function DialogController($scope, $mdDialog) {
 
                 // $scope.eMailDates.von = "";
@@ -162,7 +163,7 @@ angular.module("moduleOverview", [])
                 };
             }
 
-
+*/
             sData_groupsBySubjects.fillData().then(function (response) {
                 console.log(response);
                 $scope.colGroupsBySubjects = sData_groupsBySubjects.data;
