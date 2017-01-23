@@ -59,7 +59,7 @@ angular.module("modulePupil", [])
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
-                    controller: AddEventController,
+                    controller: 'AddEventController',
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
@@ -67,39 +67,15 @@ angular.module("modulePupil", [])
                 });
             };
 
-
-            function AddEventController($scope, $mdDialog) {
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-            }
-
             $scope.showAddNoteDialog = function (ev) {
                 $mdDialog.show({
-                    controller: AddNoteController,
+                    controller: 'AddNoteController',
                     templateUrl: '../../templates/styled_modal_AddNote.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
                 });
             };
-
-
-            function AddNoteController($scope, $mdDialog) {
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-            }
 
             function generateBreadcrumb() {
                 var group;
@@ -124,46 +100,13 @@ angular.module("modulePupil", [])
 
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
-                    controller: DialogController,
+                    controller: 'DialogController',
                     templateUrl: '../../templates/settings_Modal.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
                 });
             };
-
-            function DialogController($scope, $mdDialog) {
-
-                // $scope.eMailDates.von = "";
-                // $scope.eMailDates.bis =  "";
-
-                $scope.setEmails = function () {
-                    var data = {
-                        idTeacher: sData_allData.data.user.idUser,
-                        von: $scope.eMailDates.von,
-                        bis: $scope.eMailDates.bis
-                    };
-                    sData_CUDHandler.insertEMailDates(data).then(function (response) {
-                        console.log("successfuly inserted new Mail Dates");
-                    }, function (response) {
-                        console.log("error inserting subj: " + response);
-                    });
-                    $mdDialog.hide();
-                };
-
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-
-                $scope.answer = function (answer) {
-                    $mdDialog.hide(answer);
-                };
-            }
 
             var dataInit = {
                 idPupil: $scope.data.idPupil,
@@ -237,69 +180,9 @@ angular.module("modulePupil", [])
                 $scope.data.displayModalParticipationHistory = !$scope.data.displayModalParticipationHistory;
             }
 
-
-            $scope.insertNewNote = function () {
-
-                var data = {
-                    idTeaches: $scope.data.teaches.idTeaches,
-                    idPupil: $scope.data.idPupil,
-                    note: $scope.newNote.note
-                }
-                console.log(data);
-
-                sData_CUDHandler.insertNote(data).then(function (responseData) {
-                    console.log("successfuly inserted note: " + responseData);
-                    $scope.data.colNotes.push(responseData);
-                    $scope.switchModalNote();
-                }, function (response) {
-                    console.log("error inserting note: " + response);
-                });
-            }
-
-            $scope.insertNewEvent = function () {
-                var data = {
-                    idGradeGroup: $scope.data.idGradeGroup,
-                    fkTeaches: $scope.data.teaches.idTeaches,
-                    eventDate: $scope.newEvent.eventDate,
-                    eventDescription: $scope.newEvent.eventDescription
-                };
-                sData_CUDHandler.insertEvent(data).then(function (response) {
-                    console.log("successfuly inserted event: " + response);
-
-                    var dataInner = {};
-                    dataInner.idGradeEvent = response.idGradeEvent;
-                    dataInner.colPupils = [{
-                        fkPupil: parseInt($scope.data.idPupil),
-                        grade: -1
-                    }];
-                    sData_CUDHandler.insertParticipation(dataInner).then(function (responseData) {
-                        console.log("successfully inserted participations, now should follow response data <.<");
-                        console.log(responseData);
-
-                        $scope.data.ungradedEvents.push(response);
-                        $scope.data.ungradedParticipations.push(responseData[0]);
-                        $scope.data.colParticipations.push(responseData[0]);
-
-                        $scope.switchModalEvent();
-                    }, function (response) {
-                        console.log("error inserting participations" + response);
-                    })
-
-                }, function (response) {
-                    console.log("error inserting event: " + response);
-                });
-            }
-
             $scope.toggleView = function () {
-                /*$scope.data.showOverview = !$scope.data.showOverview;
-                if (!$scope.data.showOverview)
-                    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Overview";
-                else
-                    $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";*/
                 $location.path("/pupil/" + $scope.data.idPupil + "/" + $scope.data.idGradeGroup + "/Information");
             }
-
-
 
             $scope.viewGrade = function (event) {
                 var participation = getParticipationOfEvent(event.idGradeEvent);

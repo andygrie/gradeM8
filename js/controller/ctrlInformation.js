@@ -80,7 +80,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 return retVal;
             }
 
-
             $scope.displayNoteHistory = function (paramIdNote) {
                 $scope.switchModalNoteHistory();
                 $scope.loadNoteHistory(paramIdNote);
@@ -113,7 +112,7 @@ angular.module("moduleInformation", ['ngMaterial'])
 
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
-                    controller: DialogController,
+                    controller: 'DialogController',
                     templateUrl: '../../templates/settings_Modal.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
@@ -121,25 +120,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 });
             };
 
-            function DialogController($scope, $mdDialog) {
-
-                // $scope.eMailDates.von = "";
-                // $scope.eMailDates.bis =  "";
-
-                $scope.setEmails = function () {
-                    var data = {
-                        idTeacher: sData_allData.data.user.idUser,
-                        von: $scope.eMailDates.von,
-                        bis: $scope.eMailDates.bis
-                    };
-                    sData_CUDHandler.insertEMailDates(data).then(function (response) {
-                        console.log("successfuly inserted new Mail Dates");
-                    }, function (response) {
-                        console.log("error inserting subj: " + response);
-                    });
-                    $mdDialog.hide();
-                };
-            }
 
             $scope.goToOverview = function (){
                 $location.path("/overview");
@@ -152,7 +132,7 @@ angular.module("moduleInformation", ['ngMaterial'])
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
-                    controller: AddEventController,
+                    controller: 'AddEventController',
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
@@ -160,38 +140,13 @@ angular.module("moduleInformation", ['ngMaterial'])
                 });
             };
 
-
-            function AddEventController($scope, $mdDialog) {
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-            }
-
             $scope.showAddNoteDialog = function (ev) {
                 $mdDialog.show({
-                    controller: AddNoteController,
+                    controller: 'AddNoteController',
                     templateUrl: '../../templates/styled_modal_AddNote.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
                 });
             };
-
-
-            function AddNoteController($scope, $mdDialog) {
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-            }
-
         }]);
