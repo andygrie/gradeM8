@@ -122,7 +122,7 @@ angular.module("moduleOverview", [])
 
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
-                    controller: DialogController,
+                    controller: 'DialogController',
                     templateUrl: '../../templates/settings_Modal.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
