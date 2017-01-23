@@ -57,8 +57,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 // $scope.switchModalUpdateNote();
             }
 
-
-
             $scope.getTotalGrade = function () {
                 var gradesSum = 0;
 
@@ -110,5 +108,36 @@ angular.module("moduleInformation", ['ngMaterial'])
                     console.log(response);
                 });
             }
+
+            $scope.showTabDialog = function (ev) {
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '../../templates/settings_Modal.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
+
+            function DialogController($scope, $mdDialog) {
+
+                // $scope.eMailDates.von = "";
+                // $scope.eMailDates.bis =  "";
+
+                $scope.setEmails = function () {
+                    var data = {
+                        idTeacher: sData_allData.data.user.idUser,
+                        von: $scope.eMailDates.von,
+                        bis: $scope.eMailDates.bis
+                    };
+                    sData_CUDHandler.insertEMailDates(data).then(function (response) {
+                        console.log("successfuly inserted new Mail Dates");
+                    }, function (response) {
+                        console.log("error inserting subj: " + response);
+                    });
+                    $mdDialog.hide();
+                };
+            }
+
 
         }]);
