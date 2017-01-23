@@ -5,6 +5,8 @@ angular.module("moduleInformation", ['ngMaterial'])
                   sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog) {
 
             $scope.data = {};
+            $scope.data.idPupil = $routeParams.idPupil;
+            $scope.data.idGradeGroup = $routeParams.idGradeGroup;
             $scope.partHistory = {};
             $scope.noteHistory = {};
             $scope.updateNote = {};
