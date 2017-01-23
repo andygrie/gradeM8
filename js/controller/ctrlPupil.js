@@ -445,7 +445,7 @@ angular.module("modulePupil", [])
 
                 return retVal;
             }
-            
+
             $scope.goToOverview = function (){
                 $location.path("/overview");
             }

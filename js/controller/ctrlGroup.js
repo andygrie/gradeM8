@@ -374,9 +374,6 @@ angular.module("moduleGroup", ['ngMaterial'])
             $scope.switchModalEventDetail = function () {
                 $scope.data.displayModalEventDetail = !$scope.data.displayModalEventDetail;
             }
-            $scope.navBack = function () {
-                $location.path("/overview");
-            }
 
             $scope.navToPupil = function (idPupil) {
                 $location.path("/pupil/" + idPupil + "/" + $scope.idGradeGroup);
@@ -438,4 +435,5 @@ angular.module("moduleGroup", ['ngMaterial'])
             $scope.goToOverview = function (){
                 $location.path("/overview");
             }
+
         }]);
