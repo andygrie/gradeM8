@@ -37,7 +37,36 @@ angular.module("moduleDialogs", [])
     .controller("ctrlAddNote", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email", "sData_setEMailDates", "$mdDialog", "$timeout", "$mdSidenav",
         function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email, sData_setEMailDates, $mdDialog, $timeout, $mdSidenav) {
 
-        }]);
+        }]).controller("ctrlAddSubject", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email", "sData_setEMailDates", "$mdDialog", "$timeout", "$mdSidenav",
+    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email, sData_setEMailDates, $mdDialog, $timeout, $mdSidenav) {
+
+        $scope.hide = function () {
+            $mdDialog.hide();
+        };
+
+        $scope.cancel = function () {
+            $mdDialog.cancel();
+        };
+
+        $scope.answer = function (answer) {
+            $mdDialog.hide(answer);
+        };
+
+        $scope.addNewSubject = function () {
+            //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
+            var data = {
+                name: $scope.newSubject.name
+            };
+            console.log(data);
+            sData_CUDHandler.insertSubject(data).then(function (response) {
+                console.log("successfuly inserted subj: " + response);
+                $scope.hide();
+            }, function (response) {
+                console.log("error inserting subj: " + response);
+            });
+        }
+
+    }]);
 
 
 
