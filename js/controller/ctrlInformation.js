@@ -139,5 +139,8 @@ angular.module("moduleInformation", ['ngMaterial'])
                 };
             }
 
+            $scope.goToOverview = function (){
+                $location.path("/overview");
+            }
 
         }]);

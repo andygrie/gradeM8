@@ -242,6 +242,9 @@ angular.module("moduleOverview", [])
                 });
 
             }
+            $scope.goToOverview = function (){
+                $location.path("/overview");
+            }
         }])
     .directive('pressableElement', function ($timeout) {
         return {

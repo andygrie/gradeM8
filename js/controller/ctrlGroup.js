@@ -434,4 +434,8 @@ angular.module("moduleGroup", ['ngMaterial'])
                 console.log(retVal);
                 return retVal;
             }
+
+            $scope.goToOverview = function (){
+                $location.path("/overview");
+            }
         }]);
