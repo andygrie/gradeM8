@@ -49,7 +49,7 @@ angular.module("moduleDialogs", [])
             $scope.insertNewEvent = function () {
                 var data = {
                     idGradeGroup: $scope.idGradeGroup,
-                    fkTeaches: $scope.data.teaches.idTeaches,
+                    fkTeaches: $scope.teaches.idTeaches,
                     eventDate: $scope.newEvent.eventDate,
                     eventDescription: $scope.newEvent.eventDescription
                 };
