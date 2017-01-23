@@ -6,7 +6,6 @@ angular.module("moduleGroup", ['ngMaterial'])
 
             $scope.idGradeGroup = $routeParams.idGradeGroup;
 
-
             $scope.data = {};
             $scope.data.displayModalEvent = false;
             $scope.data.displayModalPupil = false;
@@ -15,9 +14,6 @@ angular.module("moduleGroup", ['ngMaterial'])
             $scope.state = {};
             $scope.state.awaitingPupilData = true;
             $scope.state.awaitingEventData = true;
-
-            $scope.newEvent = {};
-            $scope.newEvent.eventDate = new Date();
 
             $scope.grade = {};
             $scope.grade.gradeOptions = [

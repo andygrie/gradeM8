@@ -30,8 +30,13 @@ angular.module("moduleDialogs", [])
                 $mdDialog.hide();
             };
         }])
-    .controller("AddEventController", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email", "sData_setEMailDates", "$mdDialog", "$timeout", "$mdSidenav",
-        function ($scope,  sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
+    .controller("AddEventController", ["$scope","$routeParams","sData_teaches","sData_allData","sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+        function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
+
+
+            $scope.newEvent = {};
+            $scope.newEvent.eventDate = new Date();
+            $scope.idGradeGroup = $routeParams.idGradeGroup;
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -43,7 +48,7 @@ angular.module("moduleDialogs", [])
 
             $scope.insertNewEvent = function () {
                 var data = {
-                    idGradeGroup: $scope.data.idGradeGroup,
+                    idGradeGroup: $scope.idGradeGroup,
                     fkTeaches: $scope.data.teaches.idTeaches,
                     eventDate: $scope.newEvent.eventDate,
                     eventDescription: $scope.newEvent.eventDescription
@@ -75,6 +80,30 @@ angular.module("moduleDialogs", [])
                 });
             }
 
+            function findTeaches() {
+                var retVal = null;
+                var colTeaches = sData_allData.data.teaches;
+                console.log("teaches: ");
+                console.log(colTeaches);
+                for (var i = 0; i < colTeaches.length && retVal == null; i++) {
+                    if (colTeaches[i].fkGradeGroup == $scope.idGradeGroup) {
+                        retVal = colTeaches[i];
+                    }
+                }
+
+                if (retVal == null)
+                    console.log("no teaches found");
+                console.log("retValTeaches: ");
+                console.log(retVal);
+                return retVal;
+            }
+
+            sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function (response) {
+                console.log(response);
+                $scope.teaches = findTeaches();
+            }, function (response) {
+                console.log("error loading teaches: " + response);
+            })
         }])
     .controller("AddNoteController", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
