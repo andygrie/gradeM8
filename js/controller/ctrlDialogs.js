@@ -38,8 +38,8 @@ angular.module("moduleDialogs", [])
         function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email, sData_setEMailDates, $mdDialog, $timeout, $mdSidenav) {
 
         }]).
-controller("ctrlAddSubject", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email", "sData_setEMailDates", "$mdDialog",
-    function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email, sData_setEMailDates, $mdDialog) {
+controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
+    function ($scope, sData_CUDHandler, $mdDialog) {
 
         $scope.hide = function () {
             $mdDialog.hide();
@@ -66,7 +66,6 @@ controller("ctrlAddSubject", ["$scope", "$location", "sData_allData", "sData_gro
                 console.log("error inserting subj: " + response);
             });
         }
-
     }]);
 
 
