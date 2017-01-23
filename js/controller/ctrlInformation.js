@@ -1,7 +1,7 @@
 angular.module("moduleInformation", ['ngMaterial'])
-    .controller("ctrlInformation", ["$scope", "$routeParams", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
+    .controller("ctrlInformation", ["$scope", "$routeParams","$location", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
         "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups", "$mdDialog",
-        function ($scope, $routeParams, sData_participationsByPupil, sData_CUDHandler, sData_allData,
+        function ($scope, $routeParams,$location, sData_participationsByPupil, sData_CUDHandler, sData_allData,
                   sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog) {
 
             $scope.data = {};
@@ -141,6 +141,10 @@ angular.module("moduleInformation", ['ngMaterial'])
 
             $scope.goToOverview = function (){
                 $location.path("/overview");
+            }
+
+            $scope.toggleView = function () {
+                $location.path("/pupil/" + $scope.data.idPupil + "/" + $scope.data.idGradeGroup);
             }
 
 
