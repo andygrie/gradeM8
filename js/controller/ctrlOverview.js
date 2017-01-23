@@ -93,7 +93,7 @@ angular.module("moduleOverview", [])
 
             $scope.showAddSubjectDialog = function (ev) {
                 $mdDialog.show({
-                    controller: 'AddSubjectController',
+                    controller: 'ctrlAddSubject',
                     templateUrl: '../../templates/styled_modal_AddSubject.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
