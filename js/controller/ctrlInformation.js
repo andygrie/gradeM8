@@ -143,4 +143,49 @@ angular.module("moduleInformation", ['ngMaterial'])
                 $location.path("/overview");
             }
 
+
+            $scope.showAddEventDialog = function (ev) {
+                $mdDialog.show({
+                    controller: AddEventController,
+                    templateUrl: '../../templates/styled_modal_AddEvent.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
+
+
+            function AddEventController($scope, $mdDialog) {
+
+                $scope.hide = function () {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
+            }
+
+            $scope.showAddNoteDialog = function (ev) {
+                $mdDialog.show({
+                    controller: AddNoteController,
+                    templateUrl: '../../templates/styled_modal_AddNote.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
+
+
+            function AddNoteController($scope, $mdDialog) {
+
+                $scope.hide = function () {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
+            }
+
         }]);
