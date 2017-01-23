@@ -21,6 +21,27 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data.colEvents = [];
 
 
+            function generateBreadcrumb() {
+                var group;
+                sData_allData.data.groups.forEach(function (entry) {
+                    if (entry.idGradeGroup == $routeParams.idGradeGroup) {
+
+                        group = entry.name;
+                    }
+                });
+                var pupil;
+                sData_allData.data.pupils.forEach(function (entry) {
+                    if (entry.fkUser == $routeParams.idPupil) {
+                        pupil = entry.forename + " " + entry.surname;
+                    }
+                });
+                return group + " - " + pupil;
+            };
+
+            $scope.generatedBreadcrumb = generateBreadcrumb();
+            $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
+
+
             $scope.submitUpdateNote = function (note) {
                 sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function (response) {
                     console.log("success updating note");
