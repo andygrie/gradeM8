@@ -80,7 +80,7 @@ exports.getSubjectByTeacher = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select distinct s.idGradeSubject, s.name from gradesubject s INNER JOIN Teaches t ON s.idGradeSubject = t.fkGradeSubject where t.fkTeacher = @fkt", function (err) {
+        request = new Request("select distinct s.idGradeSubject, s.name from gradesubject s INNER JOIN Teaches t ON s.idGradeSubject = t.fkGradeSubject where t.fkTeacher = @fkt ORDER BY s.name", function (err) {
             if (err) {
                 console.log(err);
             }
