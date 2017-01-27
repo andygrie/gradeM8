@@ -16,6 +16,8 @@ angular.module("moduleGroup", ['ngMaterial'])
             $scope.state.awaitingEventData = true;
 
             $scope.grade = {};
+
+            $scope.grade.colParticipations = [];
             $scope.grade.gradeOptions = [
                 {grade: -1, description: "ungraded"},
                 {grade: 0, description: "abscent"},
@@ -25,7 +27,13 @@ angular.module("moduleGroup", ['ngMaterial'])
                 {grade: 4, description: "4"},
                 {grade: 5, description: "5"}
             ];
-            $scope.grade.colParticipations = [];
+
+            $scope.colParticipations = [];
+            $scope.colEvents = [];
+            $scope.data.displayModalSettings = false;
+            $scope.show = true;
+            $scope.data.currentSettingstab = "Period";
+
             $scope.grade.updateGrade = function (item) {
                 item.isUpdating = true;
 
@@ -38,14 +46,6 @@ angular.module("moduleGroup", ['ngMaterial'])
                     console.log(response);
                 });
             }
-
-            $scope.colParticipations = [];
-            $scope.colEvents = [];
-
-// Breadcrumbs
-            $scope.data.displayModalSettings = false;
-            $scope.show = true;
-            $scope.data.currentSettingstab = "Period";
 
             var groupname = function () {
                 var group;
@@ -99,191 +99,26 @@ angular.module("moduleGroup", ['ngMaterial'])
                 };
             }
 
-                $scope.showAddPupilDialog = function (ev) {
-                    $mdDialog.show({
-                        controller: AddPupilController,
-                        templateUrl: '../../templates/styled_modal_AddPupil.html',
-                        parent: angular.element(document.body),
-                        targetEvent: ev,
-                        cache:false,
-                        clickOutsideToClose: true
-                    });
-                };
+            $scope.showAddPupilDialog = function (ev) {
+                $mdDialog.show({
+                    controller: 'AddPupilController',
+                    templateUrl: '../../templates/styled_modal_AddPupil.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    cache: false,
+                    clickOutsideToClose: true
+                });
+            };
 
-                function AddPupilController($scope, $mdDialog,$routeParams, sData_classes,  sData_CUDHandler, sData_pupilsByGroups) {
-
-                    $scope.idGradeGroup = $routeParams.idGradeGroup;
-                    $scope.classesSelected = false;
-                    $scope.colPupils = [];
-                    $scope.colClasses = [];
-                    $scope.colAdPupils = [];
-                    $scope.colSelectedClasses = [];
-                    $scope.colSelectedPupils = [];
-
-
-                    $scope.hide = function () {
-                        $mdDialog.hide();
-                    };
-
-                    $scope.cancel = function () {
-                        $mdDialog.cancel();
-                    };
-
-
-
-// Autocomplete
-                    $scope.auto = {};
-                    $scope.auto.selectedItem = null;
-                    $scope.auto.searchText = null;
-                    /**
-                     * Return the proper object when the append is called.
-                     */
-                    $scope.auto.transformChip = function transformChip(chip) {
-                        // If it is an object, it's already a known chip
-                        if (angular.isObject(chip)) {
-                            return chip;
-                        }
-
-                        // Otherwise, create a new one
-                        return {name: chip};
-                    }
-
-                    /**
-                     * Search for classes.
-                     */
-                    $scope.auto.querySearch = function querySearch(query) {
-                        var results = query ? $scope.colClasses.filter(createFilterFor(query)) : [];
-                        return results;
-                    }
-
-                    /**
-                     * Create filter function for a query string
-                     */
-                    function createFilterFor(query) {
-                        var lowercaseQuery = angular.lowercase(query);
-
-                        return function filterFn(paramClass) {
-                            return (paramClass.name.toLowerCase().indexOf(lowercaseQuery) === 0);
-                        };
-
-                    }
-
-// Check
-                    $scope.check = {};
-
-                    $scope.check.toggle = function (item, list) {
-                        var idx = list.indexOf(item);
-                        if (idx > -1) {
-                            list.splice(idx, 1);
-                        }
-                        else {
-                            list.push(item);
-                        }
-                    };
-
-                    $scope.check.exists = function (item, list) {
-                        return list.indexOf(item) > -1;
-                    };
-
-                    $scope.check.isIndeterminate = function () {
-                        return ($scope.colSelectedPupils.length !== 0 &&
-                        $scope.colSelectedPupils.length !== $scope.colAdPupils.length);
-                    };
-
-                    $scope.check.isChecked = function () {
-                        return $scope.colSelectedPupils.length === $scope.colAdPupils.length;
-                    };
-
-                    $scope.check.toggleAll = function () {
-                        if ($scope.colSelectedPupils.length === $scope.colAdPupils.length) {
-                            $scope.colSelectedPupils = [];
-                        } else if ($scope.colSelectedPupils.length === 0 || $scope.colSelectedPupils.length > 0) {
-                            $scope.colSelectedPupils = $scope.colAdPupils.slice(0);
-                        }
-                    };
-
-                    $scope.registerPupils = function () {
-                        var paramData = {
-                            idGradeGroup: $scope.idGradeGroup,
-                            pupils: $scope.colSelectedPupils
-                        }
-
-                        sData_CUDHandler.registerPupils(paramData).then(function (response) {
-                            console.log(response);
-                            $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
-                            $scope.cancel();
-                        }, function (response) {
-                            console.log(response);
-                        })
-                    }
-
-                    $scope.loadClasses = function () {
-                        sData_classes.fillData().then(function (response) {
-                            console.log(response);
-                            $scope.colClasses = sData_classes.data;
-                            console.log("finished loading classes");
-                        }, function (response) {
-                            console.log("error filling classes: ");
-                            console.log(response);
-                        });
-                    }
-
-                    function loadPupilsOfClass(classnames, index, onDone, onError) {
-                        sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
-                            for (var i = 0; i < response.length; i++) {
-                                $scope.colAdPupils.push(response[i]);
-                            }
-                            index++;
-                            if (index < classnames.length) {
-                                loadPupilsOfClass(classnames, index, onDone, onError);
-                            }
-                            else {
-                                onDone($scope.colAdPupils);
-                            }
-                        }, onError)
-                    }
-
-                    $scope.loadAdPupils = function () {
-                        console.log("in loadAdPupils");
-                        loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
-                            $scope.classesSelected = true;
-                            console.log("successfully loaded Pupils of selected Classes");
-                            console.log(msg);
-                        }, function (msg) {
-                            console.log("error loading pupils");
-                            console.log(msg);
-                        });
-                    }
-
-                    angular.element(document).ready(function () {
-                        $scope.loadClasses();
-                    });
-
-                }
-
-
-                $scope.showAddEventDialog = function (ev) {
-                    $mdDialog.show({
-                        controller: AddEventController,
-                        templateUrl: '../../templates/styled_modal_AddEvent.html',
-                        parent: angular.element(document.body),
-                        targetEvent: ev,
-                        clickOutsideToClose: true
-                    });
-                };
-
-
-                function AddEventController($scope, $mdDialog) {
-
-                    $scope.hide = function () {
-                        $mdDialog.hide();
-                    };
-
-                    $scope.cancel = function () {
-                        $mdDialog.cancel();
-                    };
-                }
-
+            $scope.showAddEventDialog = function (ev) {
+                $mdDialog.show({
+                    controller: 'AddEventController',
+                    templateUrl: '../../templates/styled_modal_AddEvent.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
 
 // Other Functions
             $scope.getSubjectOfGroup = function () {
@@ -298,6 +133,7 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
 
             $scope.idGradeSubject = $scope.getSubjectOfGroup();
+
             sData_pupilsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function (response) {
                 console.log("success loading pupils");
                 $scope.state.awaitingPupilData = false;
@@ -348,7 +184,6 @@ angular.module("moduleGroup", ['ngMaterial'])
             }
 
 
-
             $scope.switchModalEvent = function () {
                 $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
             }
@@ -385,6 +220,7 @@ angular.module("moduleGroup", ['ngMaterial'])
 
                 console.log("insert event data: ");
                 console.log(data);
+
                 sData_CUDHandler.insertEvent(data).then(function (response) {
                     console.log("successfuly inserted event: " + response);
 
@@ -428,7 +264,7 @@ angular.module("moduleGroup", ['ngMaterial'])
                 return retVal;
             }
 
-            $scope.goToOverview = function (){
+            $scope.goToOverview = function () {
                 $location.path("/overview");
             }
 

@@ -12,12 +12,12 @@
             <div ng-hide="!showAddGroup.show">
                 <md-input-container style="width: 100%">
                     <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
-                    <input style="width: 100%; padding-left: 25px;" name="group" ng-model="form.group" type="text" placeholder="Group" ng-required="true">
+                    <input style="width: 100%; padding-left: 25px;" name="group" ng-model="newGroup.name" type="text" placeholder="Group" ng-required="true">
                     <div>
                         <div ng-message="required">A Groupname is Required</div>
                     </div>
                 </md-input-container>
-                <md-button style="width: 100%">
+                <md-button style="width: 100%" ng-click="addNewGroup()">
                     OK
                 </md-button>
             </div>

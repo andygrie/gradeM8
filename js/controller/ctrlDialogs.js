@@ -1,7 +1,6 @@
 angular.module("moduleDialogs", [])
-    .controller("DialogController", ["$scope", "sData_allData",  "sData_CUDHandler", "$mdDialog",
-        function ($scope, sData_allData, sData_CUDHandler, $mdDialog)
-        {
+    .controller("DialogController", ["$scope", "sData_allData", "sData_CUDHandler", "$mdDialog",
+        function ($scope, sData_allData, sData_CUDHandler, $mdDialog) {
             $scope.myDate = new Date();
 
             $scope.hide = function () {
@@ -30,7 +29,7 @@ angular.module("moduleDialogs", [])
                 $mdDialog.hide();
             };
         }])
-    .controller("AddEventController", ["$scope","$routeParams","sData_teaches","sData_allData","sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+    .controller("AddEventController", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
         function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
 
 
@@ -105,8 +104,13 @@ angular.module("moduleDialogs", [])
                 console.log("error loading teaches: " + response);
             })
         }])
-    .controller("AddNoteController", ["$scope", "sData_CUDHandler", "$mdDialog",
-        function ($scope, sData_CUDHandler, $mdDialog) {
+    .controller("AddNoteController", ["$scope", "routeParams", "sData_CUDHandler", "$mdDialog",
+        function ($scope, $routeParams, sData_CUDHandler, $mdDialog) {
+
+            $scope.data = {};
+            $scope.data.idGradeGroup = $routeParams.idGradeGroup;
+            $scope.data.teaches = findTeaches();
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -132,36 +136,196 @@ angular.module("moduleDialogs", [])
                     console.log("error inserting note: " + response);
                 });
             }
+            function findTeaches() {
+                var retVal = null;
+
+                var colTeaches = sData_allData.data.teaches;
+                for (var i = 0; i < colTeaches.length && retVal == null; i++) {
+                    if (colTeaches[i].fkGradeGroup == $scope.data.idGradeGroup)
+                        retVal = colTeaches[i];
+                }
+
+                return retVal;
+            }
         }])
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
-    function ($scope, sData_CUDHandler, $mdDialog) {
+        function ($scope, sData_CUDHandler, $mdDialog) {
 
-        $scope.hide = function () {
-            $mdDialog.hide();
-        };
-
-        $scope.cancel = function () {
-            $mdDialog.cancel();
-        };
-
-        $scope.answer = function (answer) {
-            $mdDialog.hide(answer);
-        };
-
-        $scope.addNewSubject = function () {
-            //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
-            var data = {
-                name: $scope.newSubject.name
+            $scope.hide = function () {
+                $mdDialog.hide();
             };
-            console.log(data);
-            sData_CUDHandler.insertSubject(data).then(function (response) {
-                console.log("successfuly inserted subj: " + response);
-                $scope.hide();
-            }, function (response) {
-                console.log("error inserting subj: " + response);
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+
+            $scope.addNewSubject = function () {
+                //$scope.colSubjects.push({idGradeSubject: 1, name: $scope.newSubject.name});
+                var data = {
+                    name: $scope.newSubject.name
+                };
+                console.log(data);
+                sData_CUDHandler.insertSubject(data).then(function (response) {
+                    console.log("successfuly inserted subj: " + response);
+                    $scope.hide();
+                }, function (response) {
+                    console.log("error inserting subj: " + response);
+                });
+            }
+        }])
+    .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", "sData_pupilsByGroups",
+        function ($scope, $mdDialog, $routeParams, sData_classes, sData_CUDHandler, sData_pupilsByGroups) {
+            $scope.idGradeGroup = $routeParams.idGradeGroup;
+            $scope.classesSelected = false;
+            $scope.colPupils = [];
+            $scope.colClasses = [];
+            $scope.colAdPupils = [];
+            $scope.colSelectedClasses = [];
+            $scope.colSelectedPupils = [];
+            $scope.auto = {};
+            $scope.auto.selectedItem = null;
+            $scope.auto.searchText = null;
+
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+// Autocomplete
+
+            /**
+             * Return the proper object when the append is called.
+             */
+            $scope.auto.transformChip = function transformChip(chip) {
+                // If it is an object, it's already a known chip
+                if (angular.isObject(chip)) {
+                    return chip;
+                }
+
+                // Otherwise, create a new one
+                return {name: chip};
+            }
+
+            /**
+             * Search for classes.
+             */
+            $scope.auto.querySearch = function querySearch(query) {
+                var results = query ? $scope.colClasses.filter(createFilterFor(query)) : [];
+                return results;
+            }
+
+            /**
+             * Create filter function for a query string
+             */
+            function createFilterFor(query) {
+                var lowercaseQuery = angular.lowercase(query);
+
+                return function filterFn(paramClass) {
+                    return (paramClass.name.toLowerCase().indexOf(lowercaseQuery) === 0);
+                };
+
+            }
+
+// Check
+            $scope.check = {};
+
+            $scope.check.toggle = function (item, list) {
+                var idx = list.indexOf(item);
+                if (idx > -1) {
+                    list.splice(idx, 1);
+                }
+                else {
+                    list.push(item);
+                }
+            };
+
+            $scope.check.exists = function (item, list) {
+                return list.indexOf(item) > -1;
+            };
+
+            $scope.check.isIndeterminate = function () {
+                return ($scope.colSelectedPupils.length !== 0 &&
+                $scope.colSelectedPupils.length !== $scope.colAdPupils.length);
+            };
+
+            $scope.check.isChecked = function () {
+                return $scope.colSelectedPupils.length === $scope.colAdPupils.length;
+            };
+
+            $scope.check.toggleAll = function () {
+                if ($scope.colSelectedPupils.length === $scope.colAdPupils.length) {
+                    $scope.colSelectedPupils = [];
+                } else if ($scope.colSelectedPupils.length === 0 || $scope.colSelectedPupils.length > 0) {
+                    $scope.colSelectedPupils = $scope.colAdPupils.slice(0);
+                }
+            };
+
+            $scope.registerPupils = function () {
+                var paramData = {
+                    idGradeGroup: $scope.idGradeGroup,
+                    pupils: $scope.colSelectedPupils
+                }
+
+                sData_CUDHandler.registerPupils(paramData).then(function (response) {
+                    console.log(response);
+                    $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
+                    $scope.cancel();
+                }, function (response) {
+                    console.log(response);
+                })
+            }
+
+            $scope.loadClasses = function () {
+                sData_classes.fillData().then(function (response) {
+                    console.log(response);
+                    $scope.colClasses = sData_classes.data;
+                    console.log("finished loading classes");
+                }, function (response) {
+                    console.log("error filling classes: ");
+                    console.log(response);
+                });
+            }
+
+            function loadPupilsOfClass(classnames, index, onDone, onError) {
+                sData_pupilsByClass.fillData({classname: classnames[index].name}).then(function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        $scope.colAdPupils.push(response[i]);
+                    }
+                    index++;
+                    if (index < classnames.length) {
+                        loadPupilsOfClass(classnames, index, onDone, onError);
+                    }
+                    else {
+                        onDone($scope.colAdPupils);
+                    }
+                }, onError)
+            }
+
+            $scope.loadAdPupils = function () {
+                console.log("in loadAdPupils");
+                loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
+                    $scope.classesSelected = true;
+                    console.log("successfully loaded Pupils of selected Classes");
+                    console.log(msg);
+                }, function (msg) {
+                    console.log("error loading pupils");
+                    console.log(msg);
+                });
+            }
+
+            angular.element(document).ready(function () {
+                $scope.loadClasses();
             });
-        }
-    }]);
+
+        }]);
 
 
 

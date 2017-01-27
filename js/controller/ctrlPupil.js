@@ -39,6 +39,7 @@ angular.module("modulePupil", [])
                 {grade: 4, description: "4"},
                 {grade: 5, description: "5"}
             ];
+
             $scope.grade.parseGrade = function (grade) {
                 var found = false;
                 var retVal = grade;
@@ -139,15 +140,8 @@ angular.module("modulePupil", [])
                 console.log("error loading notes: " + response);
             });
 
-
-
-
             $scope.switchModalEvent = function () {
                 $scope.data.displayModalEvent = !$scope.data.displayModalEvent;
-            }
-
-            $scope.switchModalNote = function () {
-                $scope.data.displayModalNote = !$scope.data.displayModalNote;
             }
 
             $scope.switchModalGrade = function () {
@@ -160,16 +154,6 @@ angular.module("modulePupil", [])
 
             $scope.switchModalSettings = function () {
                 $scope.data.displayModalSettings = !$scope.data.displayModalSettings;
-            }
-
-            $scope.setSettingTabToPeriod = function () {
-                window.alert($scope.data.currentSettingstab);
-                $scope.data.currentSettingstab = "Period";
-            }
-
-            $scope.setSettingTabToWeekdays = function () {
-                window.alert($scope.data.currentSettingstab);
-                $scope.data.currentSettingstab = "Weekdays";
             }
 
             $scope.switchModalNoteHistory = function () {

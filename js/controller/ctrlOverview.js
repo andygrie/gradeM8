@@ -11,6 +11,7 @@ angular.module("moduleOverview", [])
             $scope.colSubjects = {};
             $scope.colGroups = {};
             $scope.showRename = {};
+            $scope.clickedSubject = null;
             $scope.showRename.show = false;
 
             $scope.toggleshowRename = function () {
@@ -25,23 +26,9 @@ angular.module("moduleOverview", [])
             }
 
 
-            $scope.toggleRight = buildToggler('right');
-
-            $scope.isOpenRight = function () {
-                return $mdSidenav('right').isOpen();
-            };
-
-            $scope.close = function () {
-                $mdSidenav('right').close()
-                    .then(function () {
-                        console.log("close RIGHT is done");
-                    });
-            };
-            $scope.sidenav = {};
-            $scope.sidenav.show = false;
-
-
-            function buildToggler(navID) {
+            $scope.toggleRight = function buildToggler($event) {
+                $scope.clickedSubject = $event.target.id;
+                var navId = 'right';
                 return function () {
                     $scope.sidenav.show = true;
                     $mdSidenav(navID)
@@ -51,6 +38,16 @@ angular.module("moduleOverview", [])
                         });
                 }
             }
+
+            $scope.close = function () {
+                $mdSidenav('right').close()
+                    .then(function () {
+                        console.log("close RIGHT is done");
+                    });
+            };
+
+            $scope.sidenav = {};
+            $scope.sidenav.show = false;
 
             $scope.close = function () {
                 $mdSidenav('right').close()
@@ -141,7 +138,7 @@ angular.module("moduleOverview", [])
                  name: $scope.newGroup.name});*/
 
                 var data = {
-                    idGradeSubject: $scope.newGroup.subject,//$scope.newGroup.subject.idGradeSubject,
+                    idGradeSubject: $scope.clickedSubject,//$scope.newGroup.subject.idGradeSubject,
                     name: $scope.newGroup.name
                 };
 
