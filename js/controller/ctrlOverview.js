@@ -25,6 +25,8 @@ angular.module("moduleOverview", [])
                 $scope.showRename.show = !$scope.showRename.show;
             }
 
+            $scope.toggleRight = buildToggler('right');
+
             $scope.showAddGroup = {};
             $scope.showAddGroup.show = false;
 
@@ -32,20 +34,17 @@ angular.module("moduleOverview", [])
                 $scope.showAddGroup.show = !$scope.showAddGroup.show;
             }
 
-
-            $scope.buildToggler = function(navID) {
-                //   $scope.clickedSubject = $event.target.id;
-                //  var navID = 'right';
-                return function () {
+            function buildToggler(navID) {
+                return function() {
                     $scope.sidenav.show = true;
+                    // Component lookup should always be available since we are not using `ng-if`
                     $mdSidenav(navID)
                         .toggle()
                         .then(function () {
-                            console.log("toggle " + navID + " is done");
+                            $log.debug("toggle " + navID + " is done");
                         });
                 }
             }
-            $scope.toggleRight = buildToggler('right');
 
 
 
