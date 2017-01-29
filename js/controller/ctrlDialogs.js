@@ -29,6 +29,55 @@ angular.module("moduleDialogs", [])
                 $mdDialog.hide();
             };
         }])
+
+    .controller("EditEventController", ["$scope", "$routeParams", "sData_allData", "sData_CUDHandler", "$mdDialog",
+        function ($scope, $routeParams, sData_allData, sData_CUDHandler, $mdDialog) {
+
+            $scope.event = findEventById($routeParams.idGradeEvent);
+
+            function findEventById(paramId){
+                $scope.originalEvent = null;
+                var events = sData_allData.events;
+                
+                for(var i = 0; i < events.length && $scope.originalEvent == null; i++)
+                {
+                    if(events[i].idGradeEvent == paramId)
+                    {
+                        $scope.originalEvent = events[i];
+                    }
+                }
+
+                return {
+                    idGradeEvent: $scope.originalEvent.idGradeEvent,
+                    fkTeaches: $scope.originalEvent.fkTeaches,
+                    eventDate: $scope.originalEvent.eventDate,
+                    eventDescription: $scope.originalEvent.eventDescription
+                }
+            }
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.updateEvent = function () {
+                var data = $scope.event;
+
+                sData_CUDHandler.updateEvent(data).then(function (response) {
+                    console.log("successfuly updated event: " + response);
+
+                    $scope.originalEvent.eventDate = data.eventDate;
+                    $scope.originalEvent.eventDescription = data.eventDescription;
+
+                    $scope.hide();
+                }, function (response) {
+                    console.log("error updating event: " + response);
+                });
+            }
+        }])
     .controller("AddEventController", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
         function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
 
@@ -104,7 +153,7 @@ angular.module("moduleDialogs", [])
                 console.log("error loading teaches: " + response);
             })
         }])
-    .controller("AddNoteController", ["$scope", "routeParams", "sData_CUDHandler", "$mdDialog",
+    .controller("AddNoteController", ["$scope", "$routeParams", "sData_CUDHandler", "$mdDialog",
         function ($scope, $routeParams, sData_CUDHandler, $mdDialog) {
 
             $scope.data = {};
@@ -177,7 +226,7 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", "sData_pupilsByGroups",
+    .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", "sData_pupilsByGroups",  
         function ($scope, $mdDialog, $routeParams, sData_classes, sData_CUDHandler, sData_pupilsByGroups) {
             $scope.idGradeGroup = $routeParams.idGradeGroup;
             $scope.classesSelected = false;
@@ -199,7 +248,7 @@ angular.module("moduleDialogs", [])
                 $mdDialog.cancel();
             };
 
-// Autocomplete
+        // Autocomplete
 
             /**
              * Return the proper object when the append is called.
@@ -234,7 +283,7 @@ angular.module("moduleDialogs", [])
 
             }
 
-// Check
+        // Check
             $scope.check = {};
 
             $scope.check.toggle = function (item, list) {

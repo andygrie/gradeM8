@@ -2,25 +2,48 @@ angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil","sData_setEMailDates",
                                 "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
-                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates",
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates", "sWeb_putEvent", "sWeb_deleteEvent",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,sData_setEMailDates,
                                 sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
-                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates) {
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates, sWeb_putEvent, sWeb_deleteEvent) {
   var retVal;
 
   retVal = {
       insertGroup: insertGroup,
       insertSubject: insertSubject,
       insertEvent: insertEvent,
-      registerPupils: registerPupils,
       insertNote: insertNote,
-      putParticipation: putParticipation,
       insertParticipation: insertParticipation,
+      insertEMailDates: insertEMailDates,
+
+      registerPupils: registerPupils,
+      
+      putParticipation: putParticipation,
+      putEvent: putEvent,
       putNote: putNote,
-      insertEMailDates: insertEMailDates
+
+      deleteEvent: deleteEvent
   }
 
   return retVal;
+
+  //data = {idGradeEvent}
+  function deleteEvent(data){
+      return $q(function(resolve, reject){
+          sWeb_deleteEvent(function(response){resolve(response)},
+                            function(response){reject(response)}, 
+                            data);
+      });
+  }
+
+  //data = {idGradeEvent, fkTeaches, eventDate, eventDescription}
+  function putEvent(data){
+      return $q(function(resolve, reject){
+          sWeb_putEvent(function(response){resolve(response)},
+                            function(response){reject(response)}, 
+                            data);
+      })
+  }
 
     function insertEMailDates(data){
         console.log("in insertEMail");

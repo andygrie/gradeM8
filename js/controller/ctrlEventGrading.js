@@ -53,6 +53,36 @@ angular.module("moduleEvent", ['ngMaterial'])
                 };
             }
 
+            $scope.showEditEventDialog = function (ev) {
+                $mdDialog.show({
+                    controller: 'EditEventController',
+                    templateUrl: '../../templates/styled_modal_EditEvent.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    cache: false,
+                    clickOutsideToClose: true
+                });
+            };
+
+            $scope.showDeleteEventDialog = function (ev) {
+                var confirm = $mdDialog.confirm()
+                    .title('Bestätigung')
+                    .textContent('Wollen Sie das Event wirklich löschen?')
+                    .ariaLabel('Bestätigung')
+                    .targetEvent(ev)
+                    .ok('Ja')
+                    .cancel('Nein');
+
+                $mdDialog.show(confirm).then(function() {
+                    sData_CUDHandler.deleteEvent({idGradeEvent: $scope.idEvent}).then(function(response){
+                        console.log("success deleting");
+                        $location.path("/group/" + $scope.idGradeGroup);
+                    }, function(response){
+                        console.log("error deleting");
+                    });
+                }, function() {});
+            };
+
             var groupname = function () {
                 var group;
                 sData_allData.data.groups.forEach(function (entry) {
@@ -118,4 +148,4 @@ angular.module("moduleEvent", ['ngMaterial'])
                 $scope.loadParticipationsByEvent($scope.idEvent);
                 console.log("This function just ran away");
             });
-                    }]);
+}]);
