@@ -179,7 +179,7 @@ angular.module("moduleDialogs", [])
 
                 sData_CUDHandler.insertNote(data).then(function (responseData) {
                     console.log("successfuly inserted note: " + responseData);
-                    $scope.data.colNotes.push(responseData);
+                    // $scope.data.colNotes.push(responseData);
                     $scope.hide()
                 }, function (response) {
                     console.log("error inserting note: " + response);

@@ -61,15 +61,15 @@
       <file leaf-file-name="ctrlDialogs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
+            <state relative-caret-position="137">
+              <caret line="179" column="35" selection-start-line="179" selection-start-column="35" selection-end-line="179" selection-end-column="35" />
               <folding>
                 <element signature="e#1172#2947#0" expanded="false" />
                 <element signature="e#2987#6165#0" expanded="false" />
                 <element signature="e#6557#6606#0" expanded="false" />
                 <element signature="e#6649#6700#0" expanded="false" />
-                <element signature="e#7897#8907#0" expanded="false" />
-                <element signature="e#9156#14446#0" expanded="false" />
+                <element signature="e#7900#8910#0" expanded="false" />
+                <element signature="e#9159#14449#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -443,12 +443,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="16371000" />
+      <workItem from="1485696532098" duration="16716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301372000" />
+    <option name="totallyTimeSpent" value="301717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -911,15 +911,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
+        <state relative-caret-position="137">
+          <caret line="179" column="35" selection-start-line="179" selection-start-column="35" selection-end-line="179" selection-end-column="35" />
           <folding>
             <element signature="e#1172#2947#0" expanded="false" />
             <element signature="e#2987#6165#0" expanded="false" />
             <element signature="e#6557#6606#0" expanded="false" />
             <element signature="e#6649#6700#0" expanded="false" />
-            <element signature="e#7897#8907#0" expanded="false" />
-            <element signature="e#9156#14446#0" expanded="false" />
+            <element signature="e#7900#8910#0" expanded="false" />
+            <element signature="e#9159#14449#0" expanded="false" />
           </folding>
         </state>
       </provider>
