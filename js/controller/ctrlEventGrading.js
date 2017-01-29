@@ -108,9 +108,9 @@ angular.module("moduleEvent", ['ngMaterial'])
             $scope.back = function () {
                 $location.path("/group/" + $scope.idGradeGroup);
             }
+
             $scope.$on('$viewContentLoaded', function () {
                 $scope.loadParticipationsByEvent($scope.idEvent);
                 console.log("This function just ran away");
             });
-
-        }]);
+                    }]);

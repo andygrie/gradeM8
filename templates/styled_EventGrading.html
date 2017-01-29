@@ -1,66 +1,49 @@
-
-<div>
-    <header id="site-header">
-        <div class="site-header-toprow">
-            <div class="circle">
-                <a class="site-logo" href="#!/overview#overview">
-                    <h1 class="logotype">
-                        <img src="resources/logo.png" width="70">
-                    </h1>
-                </a>
-            </div>
-            <div >
-                <h2 ng-bind="breadcrumb" class="myBreadCrumb">
-                </h2>
-            </div>
-            <div class="settings-btn">
-                <img src="resources/settings.png" width="2em" ng-click="showTabDialog($event)">
-            </div>
+<md-toolbar class="top-toolbar" layout="row" md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
         </div>
-    </header>
-</div>
-
-<nav id="site-nav">
-    <div class="site-nav-wrapper">
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
     </div>
-</nav>
-<div class = "all">
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+    </div>
+</md-toolbar>
+
 <main class="main">
-    <div class="section-container">
-        <input class="btnBack" value="Back" content="Back" type="submit" ng-click="back()"/>
-        <div class="information-container">
-            <div>
-                <table class="md-table mytable">
-                    <colgroup>
-                        <col style="width:60%">
-                        <col style="width:40%">
-                    </colgroup>
-                    <thead>
-                    <tr class="table-head">
-                        <th class="md-table-header">Studentname</th>
-                        <th class="md-table-header">Grade</th>
-                    </tr>
-                    </thead>
-                    <tbody class="md-table-content-row">
-                    <tr class="md-table-content-row" ng-repeat="item in grade.colParticipations">
-                        <td class="md-table-content">{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
-                        <td class="md-table-content">
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label style="color: white">Grade</label>
-                                <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white; border-bottom-color:white">
-                                    <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
-                                        {{gradeOption.description}}
-                                    </md-option>
-                                </md-select>
-                            </md-input-container>
-                            <md-progress-circular md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-circular>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <input class="btnBack" value="Back" content="Back" type="submit" ng-click="back()"/>
-    </div>
+    <table class="md-table mytable">
+        <colgroup>
+            <col style="width:60%">
+            <col style="width:40%">
+        </colgroup>
+        <thead>
+        <tr class="table-head">
+            <th class="md-table-header">Studentname</th>
+            <th class="md-table-header">Grade</th>
+        </tr>
+        </thead>
+        <tbody class="md-table-content-row">
+        <tr class="md-table-content-row" ng-repeat="item in grade.colParticipations">
+            <td class="md-table-content">{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
+            <td class="md-table-content">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label style="color: white">Grade</label>
+                </md-input-container>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </main>
-</div>
