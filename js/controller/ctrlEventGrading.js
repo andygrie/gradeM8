@@ -12,46 +12,13 @@ angular.module("moduleEvent", ['ngMaterial'])
 
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
-                    controller: DialogController,
+                    controller: 'DialogController',
                     templateUrl: '../../templates/settings_Modal.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
                 });
             };
-
-            function DialogController($scope, $mdDialog) {
-
-                // $scope.eMailDates.von = "";
-                // $scope.eMailDates.bis =  "";
-
-                $scope.setEmails = function () {
-                    var data = {
-                        idTeacher: sData_allData.data.user.idUser,
-                        von: $scope.eMailDates.von,
-                        bis: $scope.eMailDates.bis
-                    };
-                    sData_CUDHandler.insertEMailDates(data).then(function (response) {
-                        console.log("successfuly inserted new Mail Dates");
-                    }, function (response) {
-                        console.log("error inserting subj: " + response);
-                    });
-                    $mdDialog.hide();
-                };
-
-
-                $scope.hide = function () {
-                    $mdDialog.hide();
-                };
-
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-
-                $scope.answer = function (answer) {
-                    $mdDialog.hide(answer);
-                };
-            }
 
             $scope.showEditEventDialog = function (ev) {
                 $mdDialog.show({
