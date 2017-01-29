@@ -152,6 +152,8 @@ md-card:hover{
 .md-table thead{
     background-color:#AB47BC;
     color:rgba(255,255,255,0.87);
+}
+.md-table thead tr{
     height: 3em;
 }
 .md-table tbody{
