@@ -17,16 +17,16 @@
     </div>
 </md-toolbar>
 
-<md-toolbar class="bottom-toolbar" layout layout-align="center center">
-    <div class="md-toolbar-tools" layout="row" layout-align="start center">
+<md-toolbar style="display: block;" class="bottom-toolbar" layout layout-align="center center">
+    <div style="position: absolute" class="md-toolbar-tools" layout="row" layout-align="start center">
         <md-button ng-click="back()" aria-label="none" class="md-fab eventGrading">
             <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
         </md-button>
-        <md-button ng-click="showEditEventDialog()">Edit Event</md-button>
-        <md-button ng-click="showDeleteEventDialog()">Delete Event</md-button>
+
     </div>
     <div  class="md-toolbar-tools" layout="row" layout-align="center center">
-        something
+        <md-button ng-click="showEditEventDialog()">Edit Event</md-button>
+        <md-button ng-click="showDeleteEventDialog()">Delete Event</md-button>
     </div>
 
 </md-toolbar>
