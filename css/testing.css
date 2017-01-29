@@ -145,12 +145,12 @@ md-card:hover{
     background-color: #9C27B0;
 }
 
-#table thead{
+.md-table .thead{
     background-color:#AB47BC;
 }
-#table tbody{
+.md-table tbody{
     background-color:ghostwhite;
 }
-#table tbody tr{
+.md-table tbody tr{
     background-color:whitesmoke;
 }
