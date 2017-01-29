@@ -158,7 +158,6 @@ angular.module("moduleDialogs", [])
 
             $scope.data = {};
             $scope.data.idGradeGroup = $routeParams.idGradeGroup;
-            $scope.data.teaches = findTeaches();
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -185,6 +184,7 @@ angular.module("moduleDialogs", [])
                     console.log("error inserting note: " + response);
                 });
             }
+
             function findTeaches() {
                 var retVal = null;
 
@@ -196,6 +196,7 @@ angular.module("moduleDialogs", [])
 
                 return retVal;
             }
+            $scope.data.teaches = findTeaches();
         }])
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
