@@ -33,11 +33,10 @@ angular.module("moduleDialogs", [])
     .controller("EditEventController", ["$scope", "paramGradeEvent", "sData_allData", "sData_CUDHandler", "$mdDialog",
         function ($scope, paramGradeEvent, sData_allData, sData_CUDHandler, $mdDialog) {
             $scope.originalEvent = paramGradeEvent;
-            console.log("date: " + $scope.originalEvent.eventDate.split("T")[0]);
             $scope.event = {
                     idGradeEvent: $scope.originalEvent.idGradeEvent,
                     fkTeaches: $scope.originalEvent.fkTeaches,
-                    eventDate: new Date($scope.originalEvent.eventDate.split("T")[0]),
+                    eventDate: new Date($scope.originalEvent.eventDate),
                     eventDescription: $scope.originalEvent.eventDescription
                 };
 
