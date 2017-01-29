@@ -24,21 +24,21 @@
 </md-toolbar>
 
 <main class="main">
-    <table class="md-table mytable">
+    <table>
         <colgroup>
             <col style="width:60%">
             <col style="width:40%">
         </colgroup>
         <thead>
-        <tr class="table-head">
-            <th class="md-table-header">Studentname</th>
-            <th class="md-table-header">Grade</th>
+        <tr>
+            <th>Studentname</th>
+            <th>Grade</th>
         </tr>
         </thead>
-        <tbody class="md-table-content-row">
-        <tr class="md-table-content-row" ng-repeat="item in grade.colParticipations">
-            <td class="md-table-content">{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
-            <td class="md-table-content">
+        <tbody>
+        <tr ng-repeat="item in grade.colParticipations">
+            <td>{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
+            <td>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label style="color: white">Grade</label>
                 </md-input-container>
