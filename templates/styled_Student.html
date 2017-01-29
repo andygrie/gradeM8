@@ -47,7 +47,7 @@
 
         <div flex>
             <!--ng-click="viewGrade(recUnEvent)"-->
-            <div style="float:left" ng-repeat="recUnEvent in data.ungradedEvents"  ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)" >
+            <div style="float:left" ng-repeat="recUnEvent in data.ungradedEvents" ng-click="displayParticipationsOfEvent(recUnEvent.idGradeEvent)" >
                 <md-card flex-gt-sm-grow="10">
                     <md-card-title style="display:block">
                         <md-card-title-text>
@@ -72,7 +72,7 @@
         </md-toolbar>
 
         <div flex>
-            <div style="float:left"  ng-repeat="recEvent in data.gradedEvents" ng-click="viewGrade(recEvent)">
+            <div style="float:left"  ng-repeat="recEvent in data.gradedEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
                 <md-card flex-gt-sm-grow="10">
                     <md-card-title style="display:block">
                         <md-card-title-text>
