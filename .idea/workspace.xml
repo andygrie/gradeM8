@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Login.html" afterPath="$PROJECT_DIR$/templates/styled_Login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/styled_EventGrading.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +32,8 @@
       <file leaf-file-name="styled_EventGrading.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#col#0;n#colgroup#0;n#table#0;n#main#0;n#!!top" expanded="true" />
@@ -43,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Login.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styled_Login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+            <state relative-caret-position="238">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -78,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testing.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testing.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+            <state relative-caret-position="283">
+              <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -91,8 +92,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+            <state relative-caret-position="289">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -163,9 +164,9 @@
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/templates/old_styled_EventGrading.html" />
         <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
-        <option value="$PROJECT_DIR$/css/testing.css" />
-        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
         <option value="$PROJECT_DIR$/templates/styled_Login.html" />
+        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
+        <option value="$PROJECT_DIR$/css/testing.css" />
       </list>
     </option>
   </component>
@@ -462,12 +463,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="12401000" />
+      <workItem from="1485696532098" duration="13069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297402000" />
+    <option name="totallyTimeSpent" value="298070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -673,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddNote.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -870,33 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#md-select#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/testing.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlEventGrading.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -921,10 +888,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddPupil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-select#0;n#md-input-container#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#md-toolbar#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#col#0;n#colgroup#0;n#table#0;n#main#0;n#!!top" expanded="true" />
@@ -934,13 +938,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Login.html">
+    <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
-          <folding>
-            <element signature="n#style#0;n#md-input-container#0;n#div#0;n#div#0;n#form#0;n#md-input-container#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="283">
+          <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
