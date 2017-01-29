@@ -122,6 +122,10 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     transform: scale(1.1);
 }
 
+.md-button.md-fab.eventGrading{
+    position: absolute;
+}
+
 .md-button.md-fab.top-toolbar{
     background-color: white !important;
     height: 75px !important;
