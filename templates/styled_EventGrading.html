@@ -18,7 +18,14 @@
 </md-toolbar>
 
 <md-toolbar class="bottom-toolbar" layout>
-    <div class="md-toolbar-tools" layout="row" layout-align="start center">
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button ng-click="showEditEventDialog($event)">
+            edit Event
+        </md-button>
+
+        <md-button ng-click="showDeleteEventDialog($event)">
+            delete Event
+        </md-button>
         <md-button ng-click="back()" aria-label="none" class="md-fab">
             <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
         </md-button>
@@ -38,7 +45,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in grade.colParticipations">
+        <tr ng-repeat="item in grade.colParticipations | orderBy: 'Pupil.surname'">
             <td>{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
             <td>
                 <md-input-container class="md-block" flex-gt-sm>

@@ -43,7 +43,7 @@
         </md-toolbar>
 
         <div flex>
-            <div style="float:left" ng-repeat="recPupil in colPupils" ng-click="navToPupil(recPupil.fkUser)">
+            <div style="float:left" ng-repeat="recPupil in colPupils | orderBy: 'surname'" ng-click="navToPupil(recPupil.fkUser)">
                 <md-card flex-gt-sm-grow="10">
                     <md-card-title style="display:block">
                         <md-card-title-text>
@@ -69,7 +69,7 @@
         </md-toolbar>
 
         <div flex>
-            <div style="float:left" ng-repeat="recEvent in colEvents"
+            <div style="float:left" ng-repeat="recEvent in colEvents | orderBy: '-eventDate'"
                  ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
                 <md-card flex-gt-sm-grow="10">
                     <md-card-title style="display:block">

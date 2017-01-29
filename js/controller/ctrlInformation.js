@@ -1,8 +1,13 @@
 angular.module("moduleInformation", ['ngMaterial'])
     .controller("ctrlInformation", ["$scope", "$routeParams","$location", "sData_participationsByPupil", "sData_CUDHandler", "sData_allData",
-        "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups", "$mdDialog",
+        "sData_notesByPupil", "sData_noteHistory", "sData_participationHistory", "sData_eventsByGroups", "$mdDialog", "sData_authenticate",
         function ($scope, $routeParams,$location, sData_participationsByPupil, sData_CUDHandler, sData_allData,
-                  sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog) {
+                  sData_notesByPupil, sData_noteHistory, sData_participationHistory, sData_eventsByGroups, $mdDialog, sData_authenticate) {
+
+            if(!sData_authenticate.isAuthenticated())
+            {
+                $location.path("/");
+            }
 
             $scope.data = {};
             $scope.data.idPupil = $routeParams.idPupil;

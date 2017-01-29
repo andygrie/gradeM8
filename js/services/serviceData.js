@@ -2,43 +2,66 @@ angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil","sData_setEMailDates",
                                 "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
-                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates",
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates", "sWeb_putEvent", "sWeb_deleteEvent",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,sData_setEMailDates,
                                 sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
-                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates) {
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates, sWeb_putEvent, sWeb_deleteEvent) {
   var retVal;
 
   retVal = {
       insertGroup: insertGroup,
       insertSubject: insertSubject,
       insertEvent: insertEvent,
-      registerPupils: registerPupils,
       insertNote: insertNote,
-      putParticipation: putParticipation,
       insertParticipation: insertParticipation,
+      insertEMailDates: insertEMailDates,
+
+      registerPupils: registerPupils,
+      
+      putParticipation: putParticipation,
+      putEvent: putEvent,
       putNote: putNote,
-      insertEMailDates: insertEMailDates
+
+      deleteEvent: deleteEvent
   }
 
   return retVal;
 
-                            function insertEMailDates(data){
-                                console.log("in insertEMail");
-                                return $q(function(resolve, reject){
-                                    sWeb_setEMailDates(function(responseData){
+  //data = {idGradeEvent}
+  function deleteEvent(data){
+      return $q(function(resolve, reject){
+          sWeb_deleteEvent(function(response){resolve(response)},
+                            function(response){reject(response)}, 
+                            data);
+      });
+  }
 
-                                        console.log("in f2");
-                                        sData_setEMailDates.data=[];
-                                        sData_setEMailDates.data[responseData.name] = [];
-                                        sData_setEMailDates.data.push(responseData);
+  //data = {idGradeEvent, fkTeaches, eventDate, eventDescription}
+  function putEvent(data){
+      return $q(function(resolve, reject){
+          sWeb_putEvent(function(response){resolve(response)},
+                            function(response){reject(response)}, 
+                            data);
+      })
+  }
 
-                                        resolve(responseData);
-                                        resolve("successfuly added Dates");
-                                    }, function(response){
-                                        reject(response);
-                                    }, data);
-                                });
-                            }
+    function insertEMailDates(data){
+        console.log("in insertEMail");
+        return $q(function(resolve, reject){
+            sWeb_setEMailDates(function(responseData){
+
+                console.log("in f2");
+                sData_setEMailDates.data=[];
+                sData_setEMailDates.data[responseData.name] = [];
+                sData_setEMailDates.data.push(responseData);
+
+                resolve(responseData);
+                resolve("successfuly added Dates");
+            }, function(response){
+                reject(response);
+            }, data);
+        });
+    }
 
   //data = {name, idGradeSubject}
   function insertGroup (data){
@@ -300,10 +323,23 @@ angular.module('moduleData', [])
 
   retVal = {
       data: user,
-      authenticate : authenticate
+      authenticate : authenticate,
+      isAuthenticated: isAuthenticated
   }
 
   return retVal;
+
+  function isAuthenticated(){
+      var authenticated = false;
+
+      if(sData_allData.data.user.username != null &&
+            sData_allData.data.user.username != undefined)
+      {
+         authenticated = true;      
+      }
+
+      return authenticated;
+  }
 
   function authenticate(userData){
     return $q(function(resolve, reject) {

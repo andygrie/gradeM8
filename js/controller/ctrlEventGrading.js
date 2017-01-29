@@ -1,9 +1,14 @@
 angular.module("moduleEvent", ['ngMaterial'])
     .controller("ctrlEventGrading", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups",
-        "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent", "$mdDialog",
+        "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent", "$mdDialog", "sData_authenticate",
         function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups,
-                  sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent, $mdDialog) {
+                  sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent, $mdDialog, sData_authenticate) {
 
+
+            if(!sData_authenticate.isAuthenticated())
+            {
+                $location.path("/");
+            }
 
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
@@ -47,6 +52,36 @@ angular.module("moduleEvent", ['ngMaterial'])
                     $mdDialog.hide(answer);
                 };
             }
+
+            $scope.showEditEventDialog = function (ev) {
+                $mdDialog.show({
+                    controller: 'EditEventController',
+                    templateUrl: '../../templates/styled_modal_EditEvent.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    cache: false,
+                    clickOutsideToClose: true
+                });
+            };
+
+            $scope.showDeleteEventDialog = function (ev) {
+                var confirm = $mdDialog.confirm()
+                    .title('Bestätigung')
+                    .textContent('Wollen Sie das Event wirklich löschen?')
+                    .ariaLabel('Bestätigung')
+                    .targetEvent(ev)
+                    .ok('Ja')
+                    .cancel('Nein');
+
+                $mdDialog.show(confirm).then(function() {
+                    sData_CUDHandler.deleteEvent({idGradeEvent: $scope.idEvent}).then(function(response){
+                        console.log("success deleting");
+                        $location.path("/group/" + $scope.idGradeGroup);
+                    }, function(response){
+                        console.log("error deleting");
+                    });
+                }, function() {});
+            };
 
             var groupname = function () {
                 var group;
@@ -117,4 +152,4 @@ angular.module("moduleEvent", ['ngMaterial'])
                 $scope.loadParticipationsByEvent($scope.idEvent);
                 console.log("This function just ran away");
             });
-                    }]);
+}]);

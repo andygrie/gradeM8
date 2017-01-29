@@ -1,9 +1,14 @@
 angular.module("moduleGroup", ['ngMaterial'])
     .controller("ctrlGroup", ["$scope", "$routeParams", "$location", "sData_pupilsByGroups", "sData_eventsByGroups",
-        "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent", "$mdDialog",
+        "sData_CUDHandler", "sData_allData", "sData_teaches", "sData_classes", "sData_pupilsByClass", "sData_participationsByEvent", "$mdDialog", "sData_authenticate",
         function ($scope, $routeParams, $location, sData_pupilsByGroups, sData_eventsByGroups,
-                  sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent, $mdDialog) {
+                  sData_CUDHandler, sData_allData, sData_teaches, sData_classes, sData_pupilsByClass, sData_participationsByEvent, $mdDialog, sData_authenticate) {
 
+            if(!sData_authenticate.isAuthenticated())
+            {
+                $location.path("/");
+            }
+            
             $scope.idGradeGroup = $routeParams.idGradeGroup;
 
             $scope.data = {};
