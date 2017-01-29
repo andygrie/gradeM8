@@ -29,14 +29,17 @@ angular.module("moduleEvent", ['ngMaterial'])
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     cache: false,
-                    clickOutsideToClose: true
+                    clickOutsideToClose: true,
+                    locals: {
+                        paramGradeEvent: findEventById($scope.idEvent)
+                    }
                 });
             };
 
             $scope.showDeleteEventDialog = function (ev) {
                 var confirm = $mdDialog.confirm()
-                    .title('Bestätigung')
-                    .textContent('Wollen Sie das Event wirklich löschen?')
+                    .title('Event entfernen')
+                    .textContent('Wollen Sie das Event wirklich entfernen?')
                     .ariaLabel('Bestätigung')
                     .targetEvent(ev)
                     .ok('Ja')
@@ -51,6 +54,22 @@ angular.module("moduleEvent", ['ngMaterial'])
                     });
                 }, function() {});
             };
+
+            function findEventById(paramId){
+                console.log(sData_eventsByGroups.data);
+
+                var event = null;
+                var events = sData_eventsByGroups.data;
+
+                for(var i = 0; i < events.length && event == null; i++){
+                    if(events[i].idGradeEvent == paramId)
+                    {
+                        event = events[i];
+                    }
+                }
+
+                return event;
+            }
 
             var groupname = function () {
                 var group;

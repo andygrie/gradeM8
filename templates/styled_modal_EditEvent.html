@@ -1,4 +1,4 @@
-<md-dialog style="width: 50%" aria-label="Add Subject">
+<md-dialog style="width: 50%" aria-label="Edit Event">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -17,9 +17,6 @@
                     <input style="padding-left: 25px;" name="eventDescription" id="eventDescription"
                            ng-model="event.eventDescription" type="text" placeholder="Description"
                            ng-required="true">
-                    <!--       <div ng-messages="clientLogin.userName.$error">
-                               <div ng-message="required">Your full name is required.</div>
-                           </div>-->
                 </md-input-container>
 
                 <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
@@ -28,9 +25,6 @@
                             min="2016-01-01" ng-required="true" ng-model="event.eventDate"
                            class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required"
                            aria-invalid="false">
-                    <!--        <div ng-messages="clientLogin.userName.$error">
-                                <div ng-message="required">Your full name is required.</div>
-                            </div>-->
                 </md-input-container>
             </div>
         </md-dialog-content>

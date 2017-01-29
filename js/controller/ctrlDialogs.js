@@ -30,30 +30,16 @@ angular.module("moduleDialogs", [])
             };
         }])
 
-    .controller("EditEventController", ["$scope", "$routeParams", "sData_allData", "sData_CUDHandler", "$mdDialog",
-        function ($scope, $routeParams, sData_allData, sData_CUDHandler, $mdDialog) {
-
-            $scope.event = findEventById($routeParams.idGradeEvent);
-
-            function findEventById(paramId){
-                $scope.originalEvent = null;
-                var events = sData_allData.events;
-                
-                for(var i = 0; i < events.length && $scope.originalEvent == null; i++)
-                {
-                    if(events[i].idGradeEvent == paramId)
-                    {
-                        $scope.originalEvent = events[i];
-                    }
-                }
-
-                return {
+    .controller("EditEventController", ["$scope", "paramGradeEvent", "sData_allData", "sData_CUDHandler", "$mdDialog",
+        function ($scope, paramGradeEvent, sData_allData, sData_CUDHandler, $mdDialog) {
+            $scope.originalEvent = paramGradeEvent;
+            console.log("date: " + $scope.originalEvent.eventDate.split("T")[0]);
+            $scope.event = {
                     idGradeEvent: $scope.originalEvent.idGradeEvent,
                     fkTeaches: $scope.originalEvent.fkTeaches,
-                    eventDate: $scope.originalEvent.eventDate,
+                    eventDate: new Date($scope.originalEvent.eventDate.split("T")[0]),
                     eventDescription: $scope.originalEvent.eventDescription
-                }
-            }
+                };
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -66,7 +52,7 @@ angular.module("moduleDialogs", [])
             $scope.updateEvent = function () {
                 var data = $scope.event;
 
-                sData_CUDHandler.updateEvent(data).then(function (response) {
+                sData_CUDHandler.putEvent(data).then(function (response) {
                     console.log("successfuly updated event: " + response);
 
                     $scope.originalEvent.eventDate = data.eventDate;
