@@ -26,8 +26,8 @@
 <main class="main">
     <table class="md-table">
         <colgroup>
-            <col style="width:60%">
-            <col style="width:40%">
+            <col style="width:70%">
+            <col style="width:30%">
         </colgroup>
         <thead>
         <tr>
@@ -41,7 +41,7 @@
             <td>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Grade</label>
-                    <md-select tabindex = "item.id" id ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="border-bottom-color:white">
+                    <md-select tabindex = "item.id" ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="border-bottom-color:white">
                         <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
                             {{gradeOption.description}}
                         </md-option>

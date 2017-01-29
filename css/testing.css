@@ -152,13 +152,15 @@ md-card:hover{
 .md-table thead{
     background-color:#AB47BC;
     color:rgba(255,255,255,0.87);
+    border:none;
 }
 .md-table thead tr{
     height: 3em;
 }
 .md-table tbody{
     background-color:ghostwhite;
+    border:none;
 }
-.md-table tbody tr{
+.md-table tbody tr:hover{
     background-color:whitesmoke;
 }
