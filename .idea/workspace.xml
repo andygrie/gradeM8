@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_Overview.html" afterPath="$PROJECT_DIR$/templates/styled_Overview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlOverview.js" afterPath="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,16 +58,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlOverview.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+            <state relative-caret-position="120">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#3748#4090#0" expanded="false" />
-                <element signature="e#4142#4477#0" expanded="false" />
-                <element signature="e#6386#8076#0" expanded="false" />
-                <element signature="e#6538#7375#0" expanded="false" />
+                <element signature="e#3735#4077#0" expanded="false" />
+                <element signature="e#4129#4464#0" expanded="false" />
+                <element signature="e#6373#8063#0" expanded="false" />
+                <element signature="e#6525#7362#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styled_Overview.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+            <state relative-caret-position="94">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,8 +176,8 @@
         <option value="$PROJECT_DIR$/js/controller/ctrlInformation.js" />
         <option value="$PROJECT_DIR$/js/controller/ctrlDialogs.js" />
         <option value="$PROJECT_DIR$/js/controller/ctrlEventGrading.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
       </list>
     </option>
   </component>
@@ -478,12 +478,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="18597000" />
+      <workItem from="1485696532098" duration="18752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303598000" />
+    <option name="totallyTimeSpent" value="303753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -936,24 +936,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
+    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-          <folding>
-            <element signature="e#3748#4090#0" expanded="false" />
-            <element signature="e#4142#4477#0" expanded="false" />
-            <element signature="e#6386#8076#0" expanded="false" />
-            <element signature="e#6538#7375#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="94">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_Overview.html">
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#3735#4077#0" expanded="false" />
+            <element signature="e#4129#4464#0" expanded="false" />
+            <element signature="e#6373#8063#0" expanded="false" />
+            <element signature="e#6525#7362#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
