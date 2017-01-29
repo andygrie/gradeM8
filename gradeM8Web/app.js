@@ -48,7 +48,8 @@ app.get('/teacher', teacherService.getTeachers);
 app.post('/teacher', teacherService.insertUser);
 app.put('/teacher/:idUser', teacherService.updateUser);
 app.delete('/teacher/:idUser', teacherService.deleteTeacher);
-app.post('/teacher/sendGrades/:idTeacher', teacherService.sendTodaysGrades);
+app.post('/teacher/sendGrades/byEventDate', teacherService.sendGradesByEventDate);
+app.post('/teacher/sendGrades/byGradedOnDate', teacherService.sendGradesByGradedDate);
 
 app.get('/class', classService.getClasses);
 app.post('/class', classService.insertClass);

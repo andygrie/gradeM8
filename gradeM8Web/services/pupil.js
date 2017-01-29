@@ -274,7 +274,10 @@ exports.getPupilsByGroup = function (req, res) {
             });
 
             request.on('doneProc', function (rowCount, more) {
-                getPupilsByUsernameFromAD(results, res);
+                if (results.length == 0)
+                    res.send([]);
+                else
+                    getPupilsByUsernameFromAD(results, res);
             });
             request.addParameter('id', TYPES.Int, req.params.idGradeGroup);
             connection.execSql(request);
@@ -307,7 +310,8 @@ function getPupilsByUsernameFromAD(pupils, res) {
                     return;
                 }
 
-                if ((!users) || (users.length == 0)) console.log('No users found.');
+                if ((!users) || (users.length == 0))
+                    res.send(finalPupils);
                 else {
                     users.forEach(function (item) {
                         finalPupils.push({
@@ -318,6 +322,8 @@ function getPupilsByUsernameFromAD(pupils, res) {
                             email: item.mail
                         });
                     });
+
+                    finalPupils.sort(function (a, b) { return (a.surname > b.surname) ? 1 : ((b.surname > a.surname) ? -1 : 0); }); 
                     res.send(finalPupils);
                 }
             });

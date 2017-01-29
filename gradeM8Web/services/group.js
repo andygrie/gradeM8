@@ -47,7 +47,7 @@ exports.getGroupsByTeacherAndSubject = function (req, res) {
     var results = [];
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("select g.idGradeGroup, g.name from gradegroup g INNER JOIN teaches t ON g.idGradeGroup = t.fkGradeGroup WHERE t.fkTeacher = @fkt AND t.fkGradeSubject = @fks", function (err) {
+        request = new Request("select g.idGradeGroup, g.name from gradegroup g INNER JOIN teaches t ON g.idGradeGroup = t.fkGradeGroup WHERE t.fkTeacher = @fkt AND t.fkGradeSubject = @fks ORDER BY g.name", function (err) {
             if (err) {
                 console.log(err);
             }
