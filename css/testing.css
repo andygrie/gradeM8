@@ -148,6 +148,7 @@ md-card:hover{
 .md-table{
     width: 100%;
     border:none;
+    border-spacing: 0;
 }
 .md-table thead{
     background-color:#AB47BC;
@@ -157,10 +158,20 @@ md-card:hover{
 .md-table thead tr{
     height: 3em;
 }
+
+.md-table thead th{
+    padding-left: 2em;
+}
+
 .md-table tbody{
-    background-color:ghostwhite;
+    background-color:white;
     border:none;
 }
 .md-table tbody tr:hover{
-    background-color:whitesmoke;
+    background-color:#EEEEEE;
 }
+.md-table tbody tr td{
+    padding-left: 2em;
+}
+
+

@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Group.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Group.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Login.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Overview.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Overview.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Student.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Student.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" afterPath="$PROJECT_DIR$/templates/modals/styled_modal_AddEvent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/styled_EventGrading.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +60,7 @@
         </entry>
       </file>
       <file leaf-file-name="old_styled_EventGrading.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/old_styled_EventGrading.html">
+        <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
               <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
@@ -70,8 +75,8 @@
       <file leaf-file-name="testing.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
+            <state relative-caret-position="105">
+              <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -250,6 +255,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gradeM8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gradeM8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -303,13 +326,6 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\resources" />
-      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\css" />
-      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\bootstrap-datepicker\js" />
-      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8" />
-      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\resources" />
       <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\templates" />
@@ -317,9 +333,16 @@
       <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8" />
       <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\fonts" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\templates\modals" />
+      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\templates\oldFiles" />
+      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\resources" />
+      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\css" />
+      <recent name="C:\Users\laubi\Documents\School\gradeM8\gradeM8\bootstrap-datepicker\js" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.old_styled_Overview.html">
-    <configuration default="false" name="old_styled_Overview.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/gradeM8/templates/old_styled_Overview.html">
+    <configuration default="false" name="old_styled_Overview.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/gradeM8/templates/oldFiles/old_styled_Overview.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -431,12 +454,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="8216000" />
+      <workItem from="1485696532098" duration="9231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293217000" />
+    <option name="totallyTimeSpent" value="294232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -561,7 +584,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Login.html">
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_Login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
@@ -614,7 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Group.html">
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_Group.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="90" column="43" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
@@ -734,7 +757,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddEvent.html">
+    <entry file="file://$PROJECT_DIR$/templates/modals/styled_modal_AddEvent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
@@ -774,7 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Student.html">
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_Student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="128" column="39" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
@@ -788,7 +811,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_Overview.html">
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_Overview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
@@ -869,7 +892,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/old_styled_EventGrading.html">
+    <entry file="file://$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
@@ -895,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="161" column="16" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
+        <state relative-caret-position="105">
+          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
           <folding />
         </state>
       </provider>
