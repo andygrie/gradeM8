@@ -184,7 +184,7 @@ angular.module("moduleDialogs", [])
                     console.log("error inserting note: " + response);
                 });
             }
-
+/*
             function findTeaches() {
                 var retVal = null;
 
@@ -197,6 +197,7 @@ angular.module("moduleDialogs", [])
                 return retVal;
             }
             $scope.data.teaches = findTeaches();
+            */
         }])
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
