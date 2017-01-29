@@ -117,6 +117,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     background-color: white !important;
     height: 36px !important;
     width:36px !important;
+    position: absolute;
 }
 .md-button.md-fab:hover {
     transform: scale(1.1);
