@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/styled_EventGrading.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testing.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testing.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="124" column="24" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+            <state relative-caret-position="162">
+              <caret line="119" column="1" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_EventGrading.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_EventGrading.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="278">
-              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -127,8 +127,8 @@
         <option value="$PROJECT_DIR$/js/controller/ctrlOverview.js" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
         <option value="$PROJECT_DIR$/templates/styled_Group.html" />
-        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
         <option value="$PROJECT_DIR$/css/testing.css" />
+        <option value="$PROJECT_DIR$/templates/styled_EventGrading.html" />
       </list>
     </option>
   </component>
@@ -429,12 +429,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="23119000" />
+      <workItem from="1485696532098" duration="23844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308120000" />
+    <option name="totallyTimeSpent" value="308845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -891,18 +891,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
+    <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="162">
+          <caret line="119" column="1" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/testing.css">
+    <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="124" column="24" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+        <state relative-caret-position="278">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding />
         </state>
       </provider>
