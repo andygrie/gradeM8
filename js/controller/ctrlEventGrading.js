@@ -9,7 +9,9 @@ angular.module("moduleEvent", ['ngMaterial'])
             {
                 $location.path("/");
             }
-
+            $scope.goToOverview = function (){
+                $location.path("/overview");
+            }
             $scope.showTabDialog = function (ev) {
                 $mdDialog.show({
                     controller: 'DialogController',
