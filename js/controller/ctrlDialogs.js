@@ -153,11 +153,12 @@ angular.module("moduleDialogs", [])
                 console.log("error loading teaches: " + response);
             })
         }])
-    .controller("AddNoteController", ["$scope", "$routeParams", "sData_CUDHandler", "$mdDialog",
-        function ($scope, $routeParams, sData_CUDHandler, $mdDialog) {
+    .controller("AddNoteController", ["$scope", "$routeParams", "sData_CUDHandler","sData_allData", "$mdDialog",
+        function ($scope, $routeParams, sData_CUDHandler,sData_allData, $mdDialog) {
 
             $scope.data = {};
             $scope.data.idGradeGroup = $routeParams.idGradeGroup;
+            $scope.data.idPupil = $routeParams.idPupil;
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -184,7 +185,7 @@ angular.module("moduleDialogs", [])
                     console.log("error inserting note: " + response);
                 });
             }
-/*
+
             function findTeaches() {
                 var retVal = null;
 
@@ -197,7 +198,7 @@ angular.module("moduleDialogs", [])
                 return retVal;
             }
             $scope.data.teaches = findTeaches();
-            */
+
         }])
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
