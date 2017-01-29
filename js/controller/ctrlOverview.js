@@ -32,10 +32,11 @@ angular.module("moduleOverview", [])
                 $scope.showAddGroup.show = !$scope.showAddGroup.show;
             }
 
+            $scope.toggleRight = buildToggler('right');
 
-            $scope.toggleRight = function buildToggler($event) {
-                $scope.clickedSubject = $event.target.id;
-                var navID = 'right';
+            $scope.buildToggler = function buildToggler(navid) {
+             //   $scope.clickedSubject = $event.target.id;
+              //  var navID = 'right';
                 return function () {
                     $scope.sidenav.show = true;
                     $mdSidenav(navID)
