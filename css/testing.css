@@ -112,15 +112,6 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     padding: 0.5em;
 }
 
-.md-button.md-fab{
-    background-color: white !important;
-    height: 75px !important;
-    width:75px !important;
-}
-.md-button.md-fab:hover {
-    transform: scale(1.1);
-}
-
 .md-button.md-fab.top-toolbar{
     background-color: white !important;
     height: 75px !important;
