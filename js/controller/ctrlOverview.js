@@ -35,7 +35,7 @@ angular.module("moduleOverview", [])
 
             $scope.toggleRight = function buildToggler($event) {
                 $scope.clickedSubject = $event.target.id;
-                var navId = 'right';
+                var navID = 'right';
                 return function () {
                     $scope.sidenav.show = true;
                     $mdSidenav(navID)
