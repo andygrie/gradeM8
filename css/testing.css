@@ -124,6 +124,8 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 
 .md-button.md-fab.eventGrading{
     position: absolute;
+    margin-top: 1em !important;
+    margin-left: 1em !important;
 }
 
 .md-button.md-fab.top-toolbar{
