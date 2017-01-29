@@ -33,7 +33,7 @@ angular.module("moduleOverview", [])
             }
 
 
-            $scope.buildToggler = function(navid) {
+            $scope.buildToggler = function(navID) {
                 //   $scope.clickedSubject = $event.target.id;
                 //  var navID = 'right';
                 return function () {
