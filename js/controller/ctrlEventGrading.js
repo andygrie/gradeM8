@@ -130,10 +130,14 @@ angular.module("moduleEvent", ['ngMaterial'])
                 console.log(paramEventId);
                 sData_participationsByEvent.fillData({idGradeEvent: paramEventId}).then(function (response) {
                     console.log(response);
+                    var curID=1;
                     $scope.grade.colParticipations = sData_participationsByEvent.data.map(function (item) {
                         item.isUpdating = false;
+                        item.id = curID;
+                        curID++;
                         return item;
                     });
+
                     console.log($scope.grade.colParticipations);
                 }, function (response) {
                     console.log(response);

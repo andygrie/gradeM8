@@ -17,7 +17,6 @@
     </div>
 </md-toolbar>
 
-
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
         <md-button ng-click="showEditEventDialog($event)">
@@ -27,14 +26,17 @@
         <md-button ng-click="showDeleteEventDialog($event)">
             delete Event
         </md-button>
+        <md-button ng-click="back()" aria-label="none" class="md-fab">
+            <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
+        </md-button>
     </div>
 </md-toolbar>
 
 <main class="main">
     <table class="md-table">
         <colgroup>
-            <col style="width:60%">
-            <col style="width:40%">
+            <col style="width:70%">
+            <col style="width:30%">
         </colgroup>
         <thead>
         <tr>
@@ -47,13 +49,15 @@
             <td>{{item.Pupil.surname}}, {{item.Pupil.forename}}</td>
             <td>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label style="color: white">Grade</label>
-                    <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white; border-bottom-color:white">
+                    <label>Grade</label>
+                    <md-select tabindex="item.id" ng-model="item.grade" md-on-close="grade.updateGrade(item)"
+                               style="border-bottom-color:white">
                         <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
                             {{gradeOption.description}}
                         </md-option>
                     </md-select>
                 </md-input-container>
+                <md-progress-linear md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-linear>
             </td>
         </tr>
         </tbody>
