@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_EventGrading.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Group.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Group.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Login.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Overview.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Overview.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/old_styled_Student.html" afterPath="$PROJECT_DIR$/templates/oldFiles/old_styled_Student.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" afterPath="$PROJECT_DIR$/templates/modals/styled_modal_AddEvent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -75,8 +69,8 @@
       <file leaf-file-name="testing.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+            <state relative-caret-position="224">
+              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -454,12 +448,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="9231000" />
+      <workItem from="1485696532098" duration="9857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294232000" />
+    <option name="totallyTimeSpent" value="294858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -918,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+        <state relative-caret-position="224">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
           <folding />
         </state>
       </provider>

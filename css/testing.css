@@ -161,6 +161,7 @@ md-card:hover{
 
 .md-table thead th{
     padding-left: 2em;
+    text-align: left;
 }
 
 .md-table tbody{
@@ -172,6 +173,7 @@ md-card:hover{
 }
 .md-table tbody tr td{
     padding-left: 2em;
+    padding-right:2em;
 }
 
 
