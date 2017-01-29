@@ -16,7 +16,9 @@
 .main {
   width: 70%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  background-color: silver;
+  overflow-y: hidden; }
 
 .group-container div div {
   word-break: normal; }
