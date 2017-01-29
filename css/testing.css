@@ -145,6 +145,10 @@ md-card:hover{
     background-color: #9C27B0;
 }
 
+.md-table{
+    width: 100%;
+    border:none;
+}
 .md-table thead{
     background-color:#AB47BC;
 }

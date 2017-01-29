@@ -47,6 +47,11 @@
                         <td class="md-table-content">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label style="color: white">Grade</label>
+                                <md-select ng-model="item.grade" md-on-close="grade.updateGrade(item)" style="color: white; border-bottom-color:white">
+                                    <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
+                                        {{gradeOption.description}}
+                                    </md-option>
+                                </md-select>
                             </md-input-container>
                             <md-progress-circular md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-circular>
                         </td>
