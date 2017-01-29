@@ -62,12 +62,12 @@
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding>
-                <element signature="e#3741#4083#0" expanded="false" />
-                <element signature="e#4135#4470#0" expanded="false" />
-                <element signature="e#6379#8069#0" expanded="false" />
-                <element signature="e#6531#7368#0" expanded="false" />
+                <element signature="e#3748#4090#0" expanded="false" />
+                <element signature="e#4142#4477#0" expanded="false" />
+                <element signature="e#6386#8076#0" expanded="false" />
+                <element signature="e#6538#7375#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -478,12 +478,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="18523000" />
+      <workItem from="1485696532098" duration="18577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303524000" />
+    <option name="totallyTimeSpent" value="303578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -947,12 +947,12 @@
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlOverview.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding>
-            <element signature="e#3741#4083#0" expanded="false" />
-            <element signature="e#4135#4470#0" expanded="false" />
-            <element signature="e#6379#8069#0" expanded="false" />
-            <element signature="e#6531#7368#0" expanded="false" />
+            <element signature="e#3748#4090#0" expanded="false" />
+            <element signature="e#4142#4477#0" expanded="false" />
+            <element signature="e#6386#8076#0" expanded="false" />
+            <element signature="e#6538#7375#0" expanded="false" />
           </folding>
         </state>
       </provider>

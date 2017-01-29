@@ -32,11 +32,10 @@ angular.module("moduleOverview", [])
                 $scope.showAddGroup.show = !$scope.showAddGroup.show;
             }
 
-            $scope.toggleRight = buildToggler('right');
 
             $scope.buildToggler = function buildToggler(navid) {
-             //   $scope.clickedSubject = $event.target.id;
-              //  var navID = 'right';
+                //   $scope.clickedSubject = $event.target.id;
+                //  var navID = 'right';
                 return function () {
                     $scope.sidenav.show = true;
                     $mdSidenav(navID)
@@ -46,6 +45,9 @@ angular.module("moduleOverview", [])
                         });
                 }
             }
+            $scope.toggleRight = buildToggler('right');
+
+
 
             $scope.close = function () {
                 $mdSidenav('right').close()
