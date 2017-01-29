@@ -182,6 +182,12 @@ angular.module("modulePupil", [])
                 $scope.switchModalGrade();
                 $scope.formData.grade = participation.grade;
             }
+            $scope.displayParticipationsOfEvent = function (paramEventId) {
+                // $scope.switchModalEventDetail();
+                $scope.loadParticipationsByEvent(paramEventId);
+                $location.path("/group/" + $scope.idGradeGroup + "/" + paramEventId);
+            }
+
 
             $scope.submitGrade = function () {
                 if ($scope.formData.grade != $scope.data.participationToBeConfigured.grade) {
