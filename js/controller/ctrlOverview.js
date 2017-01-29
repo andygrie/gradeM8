@@ -1,6 +1,13 @@
 angular.module("moduleOverview", [])
-    .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "sData_email", "sData_setEMailDates", "$mdDialog", "$timeout", "$mdSidenav",
-        function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, sData_email, sData_setEMailDates, $mdDialog, $timeout, $mdSidenav) {
+    .controller("ctrlOverview", ["$scope", "$location", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", 
+                                    "sData_email", "sData_setEMailDates", "$mdDialog", "$timeout", "$mdSidenav", "sData_authenticate",
+        function ($scope, $location, sData_allData, sData_groupsBySubjects, sData_CUDHandler, 
+                                        sData_email, sData_setEMailDates, $mdDialog, $timeout, $mdSidenav, sData_authenticate) {
+
+            if(!sData_authenticate.isAuthenticated())
+            {
+                $location.path("/");
+            }
 
             $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
             $scope.state = {};

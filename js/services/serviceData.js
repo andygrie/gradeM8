@@ -22,23 +22,23 @@ angular.module('moduleData', [])
 
   return retVal;
 
-                            function insertEMailDates(data){
-                                console.log("in insertEMail");
-                                return $q(function(resolve, reject){
-                                    sWeb_setEMailDates(function(responseData){
+    function insertEMailDates(data){
+        console.log("in insertEMail");
+        return $q(function(resolve, reject){
+            sWeb_setEMailDates(function(responseData){
 
-                                        console.log("in f2");
-                                        sData_setEMailDates.data=[];
-                                        sData_setEMailDates.data[responseData.name] = [];
-                                        sData_setEMailDates.data.push(responseData);
+                console.log("in f2");
+                sData_setEMailDates.data=[];
+                sData_setEMailDates.data[responseData.name] = [];
+                sData_setEMailDates.data.push(responseData);
 
-                                        resolve(responseData);
-                                        resolve("successfuly added Dates");
-                                    }, function(response){
-                                        reject(response);
-                                    }, data);
-                                });
-                            }
+                resolve(responseData);
+                resolve("successfuly added Dates");
+            }, function(response){
+                reject(response);
+            }, data);
+        });
+    }
 
   //data = {name, idGradeSubject}
   function insertGroup (data){
@@ -300,10 +300,23 @@ angular.module('moduleData', [])
 
   retVal = {
       data: user,
-      authenticate : authenticate
+      authenticate : authenticate,
+      isAuthenticated: isAuthenticated
   }
 
   return retVal;
+
+  function isAuthenticated(){
+      var authenticated = false;
+
+      if(sData_allData.data.user.username != null &&
+            sData_allData.data.user.username != undefined)
+      {
+         authenticated = true;      
+      }
+
+      return authenticated;
+  }
 
   function authenticate(userData){
     return $q(function(resolve, reject) {
