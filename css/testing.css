@@ -111,6 +111,12 @@ footer a:hover {
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
     padding: 0.5em;
 }
+.md-button.md-fab{
+    background-color: white !important;
+    height: 50px !important;
+    width:50px !important;
+}
+
 
 .md-button.md-fab.top-toolbar{
     background-color: white !important;
