@@ -34,12 +34,12 @@
     <div class="group-container">
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Pupils</div>
-            <span flex></span>
+        <!--    <span flex></span>
             <div layout="row" layout-align="center center">
                 <md-button ng-click="toggleRight()" class="md-icon-button">
                     <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
                 </md-button>
-            </div>
+            </div>-->
         </md-toolbar>
 
         <div flex>
@@ -60,31 +60,31 @@
     <div class="group-container">
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Events</div>
-            <span flex></span>
-            <div layout="row" layout-align="center center">
-                <md-button ng-click="toggleRight()" class="md-icon-button">
-                    <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
+            <!--        <span flex></span>
+                <div layout="row" layout-align="center center">
+                    <md-button ng-click="toggleRight()" class="md-icon-button">
+                        <md-icon md-svg-src="../resources/ic_settings_white_48px.svg"></md-icon>
+                    </md-button>
+                </div>-->
+            </md-toolbar>
 
-        <div flex>
-            <div style="float:left" ng-repeat="recEvent in colEvents | orderBy: '-eventDate'"
-                 ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
-                <md-card flex-gt-sm-grow="10">
-                    <md-card-title style="display:block">
-                        <md-card-title-text>
-                            <div class="md-headline">{{recEvent.eventDescription}}</div>
-                            <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
-                        </md-card-title-text>
-                    </md-card-title>
-                </md-card>
+            <div flex>
+                <div style="float:left" ng-repeat="recEvent in colEvents | orderBy: '-eventDate'"
+                     ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+                    <md-card flex-gt-sm-grow="10">
+                        <md-card-title style="display:block">
+                            <md-card-title-text>
+                                <div class="md-headline">{{recEvent.eventDescription}}</div>
+                                <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                            </md-card-title-text>
+                        </md-card-title>
+                    </md-card>
+                </div>
             </div>
         </div>
-    </div>
 
-    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
+        <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingEventData"></md-progress-linear>
 
-</main>
-<div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
+    </main>
+    <div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
 
