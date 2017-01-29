@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_EventGrading.html" afterPath="$PROJECT_DIR$/templates/styled_EventGrading.html" />
     </list>
     <ignored path="gradeM8.iws" />
@@ -41,8 +42,8 @@
       <file leaf-file-name="styled_EventGrading.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="68">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -429,12 +430,12 @@
       <workItem from="1485195478632" duration="5268000" />
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
-      <workItem from="1485696532098" duration="24991000" />
+      <workItem from="1485696532098" duration="25151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309992000" />
+    <option name="totallyTimeSpent" value="310152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -492,12 +493,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/controller/ctrlDialogs.js</url>
-          <line>97</line>
+          <line>83</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/controller/ctrlDialogs.js</url>
-          <line>96</line>
+          <line>82</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -793,12 +794,12 @@
         <state relative-caret-position="715">
           <caret line="186" column="13" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="13" />
           <folding>
-            <element signature="e#1172#2947#0" expanded="false" />
-            <element signature="e#2987#6165#0" expanded="false" />
-            <element signature="e#6557#6606#0" expanded="false" />
-            <element signature="e#6649#6700#0" expanded="false" />
-            <element signature="e#7900#8910#0" expanded="false" />
-            <element signature="e#9159#14449#0" expanded="false" />
+            <element signature="e#1172#2586#0" expanded="false" />
+            <element signature="e#2626#5804#0" expanded="false" />
+            <element signature="e#6196#6245#0" expanded="false" />
+            <element signature="e#6288#6339#0" expanded="false" />
+            <element signature="e#7539#8549#0" expanded="false" />
+            <element signature="e#8798#14088#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_EventGrading.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="68">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
