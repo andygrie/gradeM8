@@ -85,7 +85,7 @@ angular.module('moduleData', [])
 
                     sWeb_putTeaches(function(teachesResponse){
                         //console.log("put succeeded");
-                        finalize(resolve, data, insertGroupResponse, teachesResponse);
+                        finalize(resolve, data, insertGroupResponse, teachesData);
                     }, function(response){
                         //console.log("teaches put failed...");
                         reject(fillResponse);

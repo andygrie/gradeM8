@@ -466,8 +466,8 @@ angular.module('moduleWeb', [])
             url: constants.apiUrl + "/teaches/" + data.idTeaches,
             data: {
                 fkTeacher: constants.teacherId,
-                fkGradeGroup: data.fkGradeGroup,
-                fkGradeSubject: data.fkGradeSubject
+                fkGradeGroup: data.idGradeGroup,
+                fkGradeSubject: data.idGradeSubject
             }
         }).then(function(response){
             resolve(response.data);
