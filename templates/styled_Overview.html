@@ -28,6 +28,7 @@
 </md-toolbar>
 
 <main class="main">
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
     <div md-scroll-shrink ng-repeat="(key, value) in colGroupsBySubjects">
         <div class="group-container">
 
@@ -59,6 +60,4 @@
 </main>
 
 <div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
-
-<md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingData"></md-progress-linear>
 </div>
