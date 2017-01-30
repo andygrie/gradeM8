@@ -23,7 +23,7 @@
 .group-container div div {
   word-break: normal;
   float: left;
-  min-width: 23%; }
+  min-width: 25%; }
 
 @media (max-width: 800px) {
   .login {
