@@ -99,10 +99,10 @@ angular.module("moduleDialogs", [])
                         console.log("successfully inserted participations, now should follow response data <.<");
                         console.log(responseData);
 
-                        $scope.data.ungradedEvents.push(response);
+               /*         $scope.data.ungradedEvents.push(response);
                         $scope.data.ungradedParticipations.push(responseData[0]);
                         $scope.data.colParticipations.push(responseData[0]);
-
+*/
                         $scope.hide();
                     }, function (response) {
                         console.log("error inserting participations" + response);
@@ -194,7 +194,7 @@ angular.module("moduleDialogs", [])
 
                     sData_CUDHandler.insertParticipation(dataInner).then(function (responseData) {
                         console.log("successfully inserted participations");
-                        $scope.switchModalEvent();
+                        $scope.hide();
                     }, function (response) {
                         console.log("error inserting participations" + response);
                     });
