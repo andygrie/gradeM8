@@ -35,6 +35,7 @@ angular.module("moduleGroup", ['ngMaterial'])
 
             $scope.colParticipations = [];
             $scope.colEvents = [];
+            $scope.colPupils = [];
             $scope.data.displayModalSettings = false;
             $scope.show = true;
             $scope.data.currentSettingstab = "Period";
@@ -126,6 +127,10 @@ angular.module("moduleGroup", ['ngMaterial'])
             };
 
 // Other Functions
+            $scope.groupContainsPupils = function(){
+                return $scope.colPupils != undefined && $scope.colPupils.length > 0;
+            }
+
             $scope.getSubjectOfGroup = function () {
                 var retVal = null;
                 var colGroups = sData_allData.data.groups;
@@ -142,6 +147,8 @@ angular.module("moduleGroup", ['ngMaterial'])
             sData_pupilsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function (response) {
                 console.log("success loading pupils");
                 $scope.state.awaitingPupilData = false;
+                if(sData_pupilsByGroups.data[$scope.idGradeGroup] == null)
+                    sData_pupilsByGroups.data[$scope.idGradeGroup] = [];
                 $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
             }, function (response) {
                 $scope.state.awaitingPupilData = false;

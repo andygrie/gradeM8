@@ -24,7 +24,7 @@
             add Pupil
         </md-button>
 
-        <md-button ng-click="showAddEventDialog($event)">
+        <md-button ng-click="showAddEventDialog($event)" ng-disabled="!groupContainsPupils()">
             add Event
         </md-button>
     </div>

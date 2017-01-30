@@ -267,8 +267,9 @@ angular.module('moduleData', [])
                 //register Pupils locally
                 for(var i = 0; i < responsePupils.length; i++)
                 {
-                    if(sData_pupilsByGroups.data[data.idGradeGroup] != null)
-                        sData_pupilsByGroups.data[data.idGradeGroup].push(responsePupils[i]);
+                    if(sData_pupilsByGroups.data[data.idGradeGroup] == null)
+                        sData_pupilsByGroups.data[data.idGradeGroup] = [];
+                    sData_pupilsByGroups.data[data.idGradeGroup].push(responsePupils[i]);
                     // new instance so pupilsByGroups isnt polluted
                     var tmp = {
                         fkUser: responsePupils[i].fkUser,
