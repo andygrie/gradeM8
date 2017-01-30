@@ -41,10 +41,15 @@ angular.module("moduleInformation", ['ngMaterial'])
                 idTeaches: $scope.data.teaches.idTeaches
             };
 
+            $scope.loading ={};
+            $scope.loading.isEventsLoading=false;
+            $scope.loading.isNotesLoading=false;
+
             sData_notesByPupil.fillData(dataInit).then(function (response) {
                 console.log("successfully loaded notes");
                 console.log(sData_notesByPupil.data);
                 $scope.data.colNotes = sData_notesByPupil.data;
+                $scope.loading.NotesLoading=true;
             }, function (response) {
                 console.log("error loading notes: " + response);
             });
@@ -57,6 +62,7 @@ angular.module("moduleInformation", ['ngMaterial'])
                     console.log("successfuly loaded participations");
                     $scope.data.colParticipations = sData_participationsByPupil.data;
                     setGradedAndUngraded();
+                    $scope.loading.isEventsLoading=true;
                 }, function (response) {
                     console.log("error loading participations");
                 });
