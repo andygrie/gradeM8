@@ -21,10 +21,6 @@
 
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
-        <!-- <md-button ng-click="switchModalGroup()">
-             add Group
-         </md-button>
-         -->
         <md-button ng-click="showAddSubjectDialog($event)">
             add Subject
         </md-button>
@@ -46,7 +42,7 @@
             </md-toolbar>
 
             <div flex>
-                <div style="float:left" ng-repeat="recordGroup in value" pressable-element
+                <div style="float:left;min-width: 23%;" ng-repeat="recordGroup in value" pressable-element
                      time-out="600" ng-click="navToGroup(recordGroup.idGradeGroup)">
                     <md-card flex-gt-sm-grow="10">
                         <md-card-title style="display:block">
