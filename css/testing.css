@@ -242,4 +242,9 @@ md-card:hover{
     background: transparent;
 }
 
+.md-dialog-content .md-input-container{
+    margin-top:1em;
+    margin-bottom:1em;
+}
+
 
