@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/testing.css" afterPath="$PROJECT_DIR$/css/testing.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.css" afterPath="$PROJECT_DIR$/sass/core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.css.map" afterPath="$PROJECT_DIR$/sass/core.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/core.scss" afterPath="$PROJECT_DIR$/sass/core.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/settings_Modal.html" afterPath="$PROJECT_DIR$/templates/settings_Modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" afterPath="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_AddGroup.html" afterPath="$PROJECT_DIR$/templates/styled_modal_AddGroup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_AddNote.html" afterPath="$PROJECT_DIR$/templates/styled_modal_AddNote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlDialogs.js" afterPath="$PROJECT_DIR$/js/controller/ctrlDialogs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlPupil.js" afterPath="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" afterPath="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/styled_modal_EditEvent.html" afterPath="$PROJECT_DIR$/templates/styled_modal_EditEvent.html" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings_Modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
               </folding>
@@ -116,12 +110,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styled_modal_AddSubject.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styled_modal_AddSubject.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#md-input-container#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#md-input-container#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,9 +212,9 @@
         <option value="$PROJECT_DIR$/templates/styled_modal_AddEvent.html" />
         <option value="$PROJECT_DIR$/templates/styled_modal_AddGroup.html" />
         <option value="$PROJECT_DIR$/templates/styled_modal_AddNote.html" />
-        <option value="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
         <option value="$PROJECT_DIR$/templates/styled_modal_EditEvent.html" />
         <option value="$PROJECT_DIR$/templates/settings_Modal.html" />
+        <option value="$PROJECT_DIR$/templates/styled_modal_AddSubject.html" />
       </list>
     </option>
   </component>
@@ -550,12 +548,12 @@
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
       <workItem from="1485696532098" duration="27489000" />
-      <workItem from="1485784907104" duration="20718000" />
+      <workItem from="1485784907104" duration="20817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333208000" />
+    <option name="totallyTimeSpent" value="333307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -878,13 +876,13 @@
           <caret line="440" column="25" selection-start-line="440" selection-start-column="25" selection-end-line="440" selection-end-column="25" />
           <folding>
             <element signature="e#72#1130#0" expanded="false" />
-            <element signature="e#1171#2489#0" expanded="false" />
             <element signature="e#2540#6360#0" expanded="false" />
             <element signature="e#6405#10508#0" expanded="false" />
             <element signature="e#10547#12207#0" expanded="false" />
             <element signature="e#12241#13242#0" expanded="false" />
-            <element signature="e#13278#14288#0" expanded="false" />
-            <element signature="e#18056#23619#0" expanded="false" />
+            <element signature="e#13282#14181#0" expanded="false" />
+            <element signature="e#14217#15241#0" expanded="false" />
+            <element signature="e#19009#24572#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -957,14 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/styled_modal_EditEvent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -998,9 +988,21 @@
     <entry file="file://$PROJECT_DIR$/templates/settings_Modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/styled_modal_AddSubject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#md-input-container#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#md-input-container#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#0;n#md-dialog-actions#0;n#form#0;n#md-dialog#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
