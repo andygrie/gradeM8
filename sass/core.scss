@@ -26,4 +26,26 @@
   .main{
     width: 100%;
   }
+
+  .table-events-title{
+    width:35%;
+  }
+  .table-events-date{
+    width:35%;
+  }
+  .table-events-Grade{
+    width:20%;
+  }
+  .table-events-History{
+    display: none;
+    width:0%;
+  }
+  .table-notes-latest{
+    width:100%;
+  }
+  .table-notes-history{
+    display: none;
+    width:0%;
+  }
+
 }
