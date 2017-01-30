@@ -11,6 +11,7 @@
         </md-toolbar>
 
         <md-dialog-content>
+            <md-progress-linear md-mode="indeterminate" ng-disabled="!state.loading"></md-progress-linear>
             <md-content ng-show="!classesSelected">
                 <md-chips ng-model="colSelectedClasses" md-autocomplete-snap
                           md-transform-chip="auto.transformChip($chip)"

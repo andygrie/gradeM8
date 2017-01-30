@@ -38,6 +38,8 @@ angular.module("moduleDialogs", [])
                     eventDate: new Date($scope.originalEvent.eventDate),
                     eventDescription: $scope.originalEvent.eventDescription
                 };
+            $scope.state = {};
+            $scope.state.loading = false;
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -50,14 +52,17 @@ angular.module("moduleDialogs", [])
             $scope.updateEvent = function () {
                 var data = $scope.event;
 
+                $scope.state.loading = true;
                 sData_CUDHandler.putEvent(data).then(function (response) {
                     console.log("successfuly updated event: " + response);
+                    $scope.state.loading = false;
 
                     $scope.originalEvent.eventDate = data.eventDate;
                     $scope.originalEvent.eventDescription = data.eventDescription;
 
                     $scope.hide();
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error updating event: " + response);
                 });
             }
@@ -70,6 +75,8 @@ angular.module("moduleDialogs", [])
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
             $scope.data.idPupil = $routeParams.idPupil;
+            $scope.state = {};
+            $scope.state.loading = false;
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -86,6 +93,8 @@ angular.module("moduleDialogs", [])
                     eventDate: $scope.newEvent.eventDate,
                     eventDescription: $scope.newEvent.eventDescription
                 };
+
+                $scope.state.loading = true;
                 sData_CUDHandler.insertEvent(data).then(function (response) {
                     console.log("successfuly inserted event: " + response);
 
@@ -98,16 +107,19 @@ angular.module("moduleDialogs", [])
                     sData_CUDHandler.insertParticipation(dataInner).then(function (responseData) {
                         console.log("successfully inserted participations, now should follow response data <.<");
                         console.log(responseData);
+                        $scope.state.loading = false;
 
                         ungradedEvents.push(response);
                         ungradedParticipations.push(responseData[0]);
                         colParticipations.push(responseData[0]);
                         $scope.hide();
                     }, function (response) {
+                        $scope.state.loading = false;
                         console.log("error inserting participations" + response);
                     })
 
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error inserting event: " + response);
                 });
             }
@@ -159,6 +171,9 @@ angular.module("moduleDialogs", [])
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -178,6 +193,8 @@ angular.module("moduleDialogs", [])
                 console.log("insert event data: ");
                 console.log(data);
 
+                $scope.state.loading = true;
+
                 sData_CUDHandler.insertEvent(data).then(function (response) {
                     console.log("successfuly inserted event: " + response);
 
@@ -192,13 +209,16 @@ angular.module("moduleDialogs", [])
                     }
 
                     sData_CUDHandler.insertParticipation(dataInner).then(function (responseData) {
+                        $scope.state.loading = false;
                         console.log("successfully inserted participations");
                         $scope.hide();
                     }, function (response) {
+                        $scope.state.loading = false;
                         console.log("error inserting participations" + response);
                     });
 
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error inserting event: " + response);
                 });
             }
@@ -257,6 +277,9 @@ angular.module("moduleDialogs", [])
             $scope.data.idGradeGroup = $routeParams.idGradeGroup;
             $scope.data.idPupil = $routeParams.idPupil;
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -274,11 +297,15 @@ angular.module("moduleDialogs", [])
                 }
                 console.log(data);
 
+                $scope.state.loading = true;
+
                 sData_CUDHandler.insertNote(data).then(function (responseData) {
+                    $scope.state.loading = false;
                     console.log("successfuly inserted note: " + responseData);
                     // $scope.data.colNotes.push(responseData);
                     $scope.hide()
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error inserting note: " + response);
                 });
             }
@@ -302,6 +329,9 @@ angular.module("moduleDialogs", [])
 
             $scope.group = {};
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -319,10 +349,15 @@ angular.module("moduleDialogs", [])
                     idGradeSubject: paramSubject.idGradeSubject,
                     name: $scope.group.name
                 };
+
+                $scope.state.loading = true;
+
                 sData_CUDHandler.insertGroup(data).then(function (response) {
+                    $scope.state.loading = false;
                     console.log("successfuly inserted group: " + response);
                     $scope.hide();
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error inserting group: " + response);
                 });
             }
@@ -358,6 +393,9 @@ angular.module("moduleDialogs", [])
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog", "sData_allData",
         function ($scope, sData_CUDHandler, $mdDialog, sData_allData) {
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -375,11 +413,15 @@ angular.module("moduleDialogs", [])
                 var data = {
                     name: $scope.newSubject.name
                 };
+
+                $scope.state.loading = true;
                 
                 sData_CUDHandler.insertSubject(data).then(function (response) {
+                    $scope.state.loading = false;
                     console.log("successfuly inserted subj: " + response);
                     $scope.hide();
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error inserting subj: " + response);
                 });
             }
@@ -402,6 +444,9 @@ angular.module("moduleDialogs", [])
                 {grade: 5, description: "5"}
             ];
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -416,10 +461,13 @@ angular.module("moduleDialogs", [])
 
             $scope.loadParticipationHistory = function (paramIdParticipation) {
                 $scope.partHistory.colParticipation = [];
+                $scope.state.loading = true;
                 sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                     $scope.partHistory.colParticipation = sData_participationHistory.data;
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                 });
             }
@@ -454,6 +502,9 @@ angular.module("moduleDialogs", [])
             $scope.noteHistory.colNotes = [];
             $scope.data.colNoteHistory = [];
 
+            $scope.state = {};
+            $scope.state.loading = false;
+
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -468,10 +519,14 @@ angular.module("moduleDialogs", [])
 
             $scope.loadNoteHistory = function (paramIdNote) {
                 $scope.noteHistory.colNotes = [];
+                $scope.state.loading = true;
+
                 sData_noteHistory.fillData({idNote: paramIdNote}).then(function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                     $scope.noteHistory.colNotes = sData_noteHistory.data;
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                 });
             }
@@ -498,6 +553,9 @@ angular.module("moduleDialogs", [])
             $scope.auto = {};
             $scope.auto.selectedItem = null;
             $scope.auto.searchText = null;
+
+            $scope.state = {};
+            $scope.state.loading = false;
 
 
             $scope.hide = function () {
@@ -583,21 +641,28 @@ angular.module("moduleDialogs", [])
                     pupils: $scope.colSelectedPupils
                 }
 
+                $scope.state.loading = true;
+
                 sData_CUDHandler.registerPupils(paramData).then(function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                     $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
                     $scope.cancel();
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                 })
             }
 
             $scope.loadClasses = function () {
+                $scope.state.loading = true;
                 sData_classes.fillData().then(function (response) {
+                    $scope.state.loading = false;
                     console.log(response);
                     $scope.colClasses = sData_classes.data;
                     console.log("finished loading classes");
                 }, function (response) {
+                    $scope.state.loading = false;
                     console.log("error filling classes: ");
                     console.log(response);
                 });
@@ -620,11 +685,14 @@ angular.module("moduleDialogs", [])
 
             $scope.loadAdPupils = function () {
                 console.log("in loadAdPupils");
+                $scope.state.loading = true;
                 loadPupilsOfClass($scope.colSelectedClasses, 0, function (msg) {
+                    $scope.state.loading = false;
                     $scope.classesSelected = true;
                     console.log("successfully loaded Pupils of selected Classes");
                     console.log(msg);
                 }, function (msg) {
+                    $scope.state.loading = false;
                     console.log("error loading pupils");
                     console.log(msg);
                 });
