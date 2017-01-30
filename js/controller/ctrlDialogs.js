@@ -29,7 +29,6 @@ angular.module("moduleDialogs", [])
                 $mdDialog.hide();
             };
         }])
-
     .controller("EditEventController", ["$scope", "paramGradeEvent", "sData_allData", "sData_CUDHandler", "$mdDialog",
         function ($scope, paramGradeEvent, sData_allData, sData_CUDHandler, $mdDialog) {
             $scope.originalEvent = paramGradeEvent;
@@ -298,7 +297,6 @@ angular.module("moduleDialogs", [])
             $scope.data.teaches = findTeaches();
 
         }])
-    
     .controller("ctrlAddGroup", ["$scope", "sData_CUDHandler", "$mdDialog", "paramSubject",
         function ($scope, sData_CUDHandler, $mdDialog, paramSubject) {
 
@@ -329,7 +327,6 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
 
@@ -358,6 +355,73 @@ angular.module("moduleDialogs", [])
                     console.log("error inserting subj: " + response);
                 });
             }
+        }])
+    .controller("showEventHistoryController", ["$scope","eventID", "sData_participationHistory","sData_CUDHandler", "$mdDialog",
+        function ($scope,eventID,sData_participationHistory, sData_CUDHandler, $mdDialog) {
+
+            $scope.data={};
+            $scope.partHistory = {};
+            $scope.partHistory.colParticipation = [];
+            $scope.data.colParticipationHistroy = [];
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+
+            $scope.loadParticipationHistory = function (paramIdParticipation) {
+                $scope.partHistory.colParticipation = [];
+                sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function (response) {
+                    console.log(response);
+                    $scope.partHistory.colParticipation = sData_participationHistory.data;
+                }, function (response) {
+                    console.log(response);
+                });
+            }
+            angular.element(document).ready(function () {
+                $scope.loadParticipationHistory(eventID);
+            });
+        }])
+    .controller("showNoteHistoryController", ["$scope","noteID", "sData_noteHistory","sData_CUDHandler", "$mdDialog",
+        function ($scope, noteID,sData_noteHistory, sData_CUDHandler, $mdDialog) {
+
+            $scope.data={};
+            $scope.noteHistory = {};
+            $scope.noteHistory.colNotes = [];
+            $scope.data.colNoteHistory = [];
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+
+            $scope.loadNoteHistory = function (paramIdNote) {
+                $scope.noteHistory.colNotes = [];
+                sData_noteHistory.fillData({idNote: paramIdNote}).then(function (response) {
+                    console.log(response);
+                    $scope.noteHistory.colNotes = sData_noteHistory.data;
+                }, function (response) {
+                    console.log(response);
+                });
+            }
+
+            angular.element(document).ready(function () {
+                $scope.loadNoteHistory(eventID);
+            });
         }])
     .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", 
                     "sData_pupilsByGroups", "sData_pupilsByClass",

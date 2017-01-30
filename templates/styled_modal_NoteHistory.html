@@ -1,0 +1,32 @@
+<md-dialog style="width: 50%" aria-label="Note History">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Note History</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content >
+            <table class="md-table">
+                <tr>
+                    <th>Note</th>
+                    <th>Updated On</th>
+                </tr>
+                <tr ng-repeat="item in noteHistory.colNotes">
+                    <td>{{item.note}}</td>
+                    <td>{{parseDate(item.documentedOn)}}</td>
+                </tr>
+            </table>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button style="margin-left:20px;" ng-click="hide()" >
+                OK
+            </md-button>
+            <span flex></span>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
