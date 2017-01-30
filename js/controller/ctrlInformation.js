@@ -258,7 +258,7 @@ angular.module("moduleInformation", ['ngMaterial'])
                     clickOutsideToClose: true,
                     resolve: {
                         eventID: function () {
-                            return event.id;
+                            return event.idParticipation;
                         }
                     }
                 });
@@ -273,7 +273,7 @@ angular.module("moduleInformation", ['ngMaterial'])
                     clickOutsideToClose: true,
                     resolve: {
                         noteID: function () {
-                            return note.id;
+                            return note.idNote;
                         }
                     }
                 });
