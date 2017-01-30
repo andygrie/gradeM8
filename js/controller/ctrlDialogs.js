@@ -63,14 +63,13 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("AddEventController", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+    .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
         function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
 
-
+            $scope.data.idPupil = $routeParams.idPupil;
             $scope.newEvent = {};
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
-            $scope.idGradeSubject
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -108,6 +107,96 @@ angular.module("moduleDialogs", [])
                     }, function (response) {
                         console.log("error inserting participations" + response);
                     })
+
+                }, function (response) {
+                    console.log("error inserting event: " + response);
+                });
+            }
+
+            function findTeaches() {
+                var retVal = null;
+                var colTeaches = sData_allData.data.teaches;
+                console.log($scope.idGradeGroup);
+                console.log("teaches: ");
+                console.log(colTeaches);
+                for (var i = 0; i < colTeaches.length && retVal == null; i++) {
+                    if (colTeaches[i].fkGradeGroup == $scope.idGradeGroup) {
+                        retVal = colTeaches[i];
+                    }
+                }
+
+                if (retVal == null)
+                    console.log("no teaches found");
+                console.log("retValTeaches: ");
+                console.log(retVal);
+                return retVal;
+            }
+            $scope.getSubjectOfGroup = function () {
+                var retVal = null;
+                var colGroups = sData_allData.data.groups;
+                for (var i = 0; i < colGroups.length && retVal == null; i++) {
+                    if (colGroups[i].idGradeGroup == $scope.idGradeGroup)
+                        retVal = colGroups[i].idGradeSubject;
+                }
+
+                return retVal;
+            }
+
+            $scope.idGradeSubject = $scope.getSubjectOfGroup();
+
+            sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function (response) {
+                console.log(response);
+                $scope.teaches = findTeaches();
+            }, function (response) {
+                console.log("error loading teaches: " + response);
+            })
+
+        }])
+    .controller("AddEventControllerGroup", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+        function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
+
+            $scope.newEvent = {};
+            $scope.newEvent.eventDate = new Date();
+            $scope.idGradeGroup = $routeParams.idGradeGroup;
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.insertNewEvent = function () {
+                var data = {
+                    idGradeGroup: $scope.idGradeGroup,
+                    fkTeaches: $scope.teaches.idTeaches,
+                    eventDate: $scope.newEvent.eventDate,
+                    eventDescription: $scope.newEvent.eventDescription
+                };
+
+                console.log("insert event data: ");
+                console.log(data);
+
+                sData_CUDHandler.insertEvent(data).then(function (response) {
+                    console.log("successfuly inserted event: " + response);
+
+                    var dataInner = {};
+                    dataInner.idGradeEvent = response.idGradeEvent;
+                    dataInner.colPupils = [];
+                    for (var i = 0; i < $scope.colPupils.length; i++) {
+                        dataInner.colPupils.push({
+                            fkPupil: $scope.colPupils[i].fkUser,
+                            grade: -1
+                        });
+                    }
+
+                    sData_CUDHandler.insertParticipation(dataInner).then(function (responseData) {
+                        console.log("successfully inserted participations");
+                        $scope.switchModalEvent();
+                    }, function (response) {
+                        console.log("error inserting participations" + response);
+                    });
 
                 }, function (response) {
                     console.log("error inserting event: " + response);
