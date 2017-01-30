@@ -169,12 +169,12 @@ angular.module("moduleInformation", ['ngMaterial'])
             }
 
             $scope.displayNoteHistory = function (paramIdNote) {
-                $scope.switchModalNoteHistory();
+             //   $scope.switchModalNoteHistory();
                 $scope.loadNoteHistory(paramIdNote);
             }
 
             $scope.displayParticipationHistory = function (paramIdParticipation) {
-                $scope.switchModalParticipationHistory();
+       //         $scope.switchModalParticipationHistory();
                 $scope.loadParticipationHistory(paramIdParticipation);
             }
 
