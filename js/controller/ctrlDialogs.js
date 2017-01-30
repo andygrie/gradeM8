@@ -389,8 +389,8 @@ angular.module("moduleDialogs", [])
                 $scope.loadParticipationHistory(eventID);
             });
         }])
-    .controller("showNoteHistoryController", ["$scope","noteID", "sData_participationHistory","sData_CUDHandler", "$mdDialog",
-        function ($scope, noteID,sData_participationHistory, sData_CUDHandler, $mdDialog) {
+    .controller("showNoteHistoryController", ["$scope","noteID", "sData_noteHistory","sData_CUDHandler", "$mdDialog",
+        function ($scope, noteID,sData_noteHistory, sData_CUDHandler, $mdDialog) {
 
             $scope.data={};
             $scope.noteHistory = {};

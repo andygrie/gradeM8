@@ -64,8 +64,8 @@
       <file leaf-file-name="ctrlDialogs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="397" column="30" selection-start-line="397" selection-start-column="30" selection-end-line="397" selection-end-column="30" />
+            <state relative-caret-position="188">
+              <caret line="394" column="27" selection-start-line="394" selection-start-column="27" selection-end-line="394" selection-end-column="27" />
               <folding>
                 <element signature="e#72#1130#0" expanded="false" />
                 <element signature="e#1171#2489#0" expanded="false" />
@@ -73,7 +73,7 @@
                 <element signature="e#10547#12207#0" expanded="false" />
                 <element signature="e#12241#13242#0" expanded="false" />
                 <element signature="e#13278#14288#0" expanded="false" />
-                <element signature="e#16907#22470#0" expanded="false" />
+                <element signature="e#16889#22452#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -480,12 +480,12 @@
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
       <workItem from="1485696532098" duration="27489000" />
-      <workItem from="1485784907104" duration="15522000" />
+      <workItem from="1485784907104" duration="16066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328012000" />
+    <option name="totallyTimeSpent" value="328556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -913,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="397" column="30" selection-start-line="397" selection-start-column="30" selection-end-line="397" selection-end-column="30" />
+        <state relative-caret-position="188">
+          <caret line="394" column="27" selection-start-line="394" selection-start-column="27" selection-end-line="394" selection-end-column="27" />
           <folding>
             <element signature="e#72#1130#0" expanded="false" />
             <element signature="e#1171#2489#0" expanded="false" />
@@ -922,7 +922,7 @@
             <element signature="e#10547#12207#0" expanded="false" />
             <element signature="e#12241#13242#0" expanded="false" />
             <element signature="e#13278#14288#0" expanded="false" />
-            <element signature="e#16907#22470#0" expanded="false" />
+            <element signature="e#16889#22452#0" expanded="false" />
           </folding>
         </state>
       </provider>
