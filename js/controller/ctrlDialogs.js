@@ -70,6 +70,7 @@ angular.module("moduleDialogs", [])
             $scope.newEvent = {};
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
+            $scope.idGradeSubject
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -131,6 +132,18 @@ angular.module("moduleDialogs", [])
                 console.log(retVal);
                 return retVal;
             }
+            $scope.getSubjectOfGroup = function () {
+                var retVal = null;
+                var colGroups = sData_allData.data.groups;
+                for (var i = 0; i < colGroups.length && retVal == null; i++) {
+                    if (colGroups[i].idGradeGroup == $scope.idGradeGroup)
+                        retVal = colGroups[i].idGradeSubject;
+                }
+
+                return retVal;
+            }
+
+            $scope.idGradeSubject = $scope.getSubjectOfGroup();
 
             sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function (response) {
                 console.log(response);
@@ -138,6 +151,7 @@ angular.module("moduleDialogs", [])
             }, function (response) {
                 console.log("error loading teaches: " + response);
             })
+
         }])
     .controller("AddNoteController", ["$scope", "$routeParams", "sData_CUDHandler","sData_allData", "$mdDialog",
         function ($scope, $routeParams, sData_CUDHandler,sData_allData, $mdDialog) {
