@@ -69,7 +69,12 @@ angular.module("modulePupil", [])
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
-                    clickOutsideToClose: true
+                    clickOutsideToClose: true,
+                    locals: {
+                        ungradedEvents: $scope.data.ungradedEvents,
+                        ungradedParticipations: $scope.data.ungradedParticipations,
+                        colParticipations: $scope.data.colParticipations
+                    }
                 });
             };
 

@@ -62,8 +62,9 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",    
-        function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
+    .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog", 
+                                                    "ungradedEvents", "ungradedParticipations", "colParticipations",  
+        function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog, ungradedEvents, ungradedParticipations, colParticipations) {
             $scope.data = {};
             $scope.newEvent = {};
             $scope.newEvent.eventDate = new Date();
@@ -98,10 +99,9 @@ angular.module("moduleDialogs", [])
                         console.log("successfully inserted participations, now should follow response data <.<");
                         console.log(responseData);
 
-               /*         $scope.data.ungradedEvents.push(response);
-                        $scope.data.ungradedParticipations.push(responseData[0]);
-                        $scope.data.colParticipations.push(responseData[0]);
-        */
+                        ungradedEvents.push(response);
+                        ungradedParticipations.push(responseData[0]);
+                        colParticipations.push(responseData[0]);
                         $scope.hide();
                     }, function (response) {
                         console.log("error inserting participations" + response);
