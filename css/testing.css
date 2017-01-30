@@ -156,6 +156,9 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     background-color: #8E24AA !important;
     color:white;
 }
+md-card{
+    cursor: pointer !important;
+}
 md-card:hover{
     border-color: white;
     background-color: #9C27B0;
