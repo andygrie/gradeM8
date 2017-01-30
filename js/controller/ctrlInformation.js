@@ -225,7 +225,7 @@ angular.module("moduleInformation", ['ngMaterial'])
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
-                    controller: 'AddEventController',
+                    controller: 'AddEventControllerSinglePupil',
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
