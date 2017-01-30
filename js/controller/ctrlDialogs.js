@@ -364,6 +364,15 @@ angular.module("moduleDialogs", [])
             $scope.partHistory = {};
             $scope.partHistory.colParticipation = [];
             $scope.data.colParticipationHistroy = [];
+            $scope.grade.gradeOptions = [
+                {grade: -1, description: "ungraded"},
+                {grade: 0, description: "abscent"},
+                {grade: 1, description: "1"},
+                {grade: 2, description: "2"},
+                {grade: 3, description: "3"},
+                {grade: 4, description: "4"},
+                {grade: 5, description: "5"}
+            ];
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -442,6 +451,11 @@ angular.module("moduleDialogs", [])
             angular.element(document).ready(function () {
                 $scope.loadNoteHistory(noteID);
             });
+
+            $scope.parseDate = function (date) {
+                return moment(date, "YYYY-MM-DD HH:mm:ss");
+            }
+
         }])
     .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", 
                     "sData_pupilsByGroups", "sData_pupilsByClass",
