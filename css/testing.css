@@ -240,9 +240,28 @@ md-card:hover{
     background: transparent;
 }
 
-.md-dialog-content{
+md-dialog md-dialog-content{
     padding-top: 1em !important;
     padding-bottom: 1em !important;
 }
+.table-events-title{
+    width:35%;
+}
+.table-events-date{
+    width:25%;
+}
+.table-events-Grade{
+    width:20%;
+}
+.table-events-History{
+    width:20%;
+}
+.table-notes-latest{
+    width:80%;
+}
+.table-notes-history{
+    width:20%;
+}
+
 
 
