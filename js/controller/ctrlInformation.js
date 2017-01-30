@@ -14,6 +14,7 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data.idGradeGroup = $routeParams.idGradeGroup;
             $scope.partHistory = {};
             $scope.noteHistory = {};
+            $scope.data.teaches = findTeaches();
             $scope.updateNote = {};
             $scope.data.displayModalNoteHistory = false;
             $scope.data.displayModalParticipationHistory = false;
@@ -27,6 +28,35 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data.ungradedParticipations = [];
             $scope.data.gradedParticipations = [];
             $scope.data.colEvents = [];
+
+
+            var dataInit = {
+                idPupil: $scope.data.idPupil,
+                idTeaches: $scope.data.teaches.idTeaches
+            };
+
+            sData_notesByPupil.fillData(dataInit).then(function (response) {
+                console.log("successfully loaded notes");
+                console.log(sData_notesByPupil.data);
+                $scope.data.colNotes = sData_notesByPupil.data;
+            }, function (response) {
+                console.log("error loading notes: " + response);
+            });
+
+            sData_eventsByGroups.fillData({idGradeGroup: $scope.data.idGradeGroup}).then(function (outerResponse) {
+                console.log("success fetching events");
+                $scope.data.colEvents = sData_eventsByGroups.data;
+
+                sData_participationsByPupil.fillData(dataInit).then(function (response) {
+                    console.log("successfuly loaded participations");
+                    $scope.data.colParticipations = sData_participationsByPupil.data;
+                    setGradedAndUngraded();
+                }, function (response) {
+                    console.log("error loading participations");
+                });
+            }, function (response) {
+                console.log("error fetching events");
+            })
 
 
             function generateBreadcrumb() {
@@ -46,29 +76,13 @@ angular.module("moduleInformation", ['ngMaterial'])
                 return group + " - " + pupil;
             };
 
-            $scope.generatedBreadcrumb = generateBreadcrumb();
-            $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
+            $scope.breadcrumb = generateBreadcrumb() + " - Information";
 
             $scope.updateNote = function (note) {
                 $scope.updatedNote = note;
                 $scope.submitUpdateNote(note);
                 // $scope.switchModalUpdateNote();
             }
-
-            sData_eventsByGroups.fillData({idGradeGroup: $scope.data.idGradeGroup}).then(function (outerResponse) {
-                console.log("success fetching events");
-                $scope.data.colEvents = sData_eventsByGroups.data;
-
-                sData_participationsByPupil.fillData(dataInit).then(function (response) {
-                    console.log("successfuly loaded participations");
-                    $scope.data.colParticipations = sData_participationsByPupil.data;
-                    setGradedAndUngraded();
-                }, function (response) {
-                    console.log("error loading participations");
-                });
-            }, function (response) {
-                console.log("error fetching events");
-            })
 
             function moveEventToUngraded(event, participation) {
                 var found = false;
@@ -251,4 +265,16 @@ angular.module("moduleInformation", ['ngMaterial'])
                     clickOutsideToClose: true
                 });
             };
+
+            function findTeaches() {
+                var retVal = null;
+
+                var colTeaches = sData_allData.data.teaches;
+                for (var i = 0; i < colTeaches.length && retVal == null; i++) {
+                    if (colTeaches[i].fkGradeGroup == $scope.data.idGradeGroup)
+                        retVal = colTeaches[i];
+                }
+
+                return retVal;
+            }
         }]);
