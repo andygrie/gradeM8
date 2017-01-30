@@ -327,8 +327,9 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", "sData_pupilsByGroups",  
-        function ($scope, $mdDialog, $routeParams, sData_classes, sData_CUDHandler, sData_pupilsByGroups) {
+    .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", 
+                    "sData_pupilsByGroups", "sData_pupilsByClass",
+        function ($scope, $mdDialog, $routeParams, sData_classes, sData_CUDHandler, sData_pupilsByGroups, sData_pupilsByClass) {
             $scope.idGradeGroup = $routeParams.idGradeGroup;
             $scope.classesSelected = false;
             $scope.colPupils = [];
