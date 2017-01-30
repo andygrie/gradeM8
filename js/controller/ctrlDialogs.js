@@ -359,6 +359,7 @@ angular.module("moduleDialogs", [])
     .controller("showEventHistoryController", ["$scope","eventID", "sData_participationHistory","sData_CUDHandler", "$mdDialog",
         function ($scope,eventID,sData_participationHistory, sData_CUDHandler, $mdDialog) {
 
+            $scope.data={};
             $scope.partHistory = {};
             $scope.partHistory.colParticipation = [];
             $scope.data.colParticipationHistroy = [];
@@ -391,6 +392,7 @@ angular.module("moduleDialogs", [])
     .controller("showNoteHistoryController", ["$scope","noteID", "sData_participationHistory","sData_CUDHandler", "$mdDialog",
         function ($scope, noteID,sData_participationHistory, sData_CUDHandler, $mdDialog) {
 
+            $scope.data={};
             $scope.noteHistory = {};
             $scope.noteHistory.colNotes = [];
             $scope.data.colNoteHistory = [];
