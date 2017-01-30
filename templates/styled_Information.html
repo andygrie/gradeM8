@@ -33,7 +33,6 @@
 
 <main class="main">
 
-    <div>
 
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Prüfungen</div>
@@ -63,9 +62,9 @@
                 </tr>
             </tbody>
         </table>
-    </div>
 
-    <div>
+
+
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Notes</div>
             <span flex></span>
@@ -79,32 +78,29 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="md-table-content-row" ng-repeat="recNote in data.colNotes">
-                <td class="md-table-content">
-                    <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
-                <td class="md-table-content">
-                <td class="md-table-td-more">
-                    <span class="glyphicon glyphicon-zoom-in"
-                          ng-click="displayNoteHistory(recNote.idNote)">History</span>
-                </td>
-            </tr>
+                <tr class="md-table-content-row" ng-repeat="recNote in data.colNotes">
+                    <td class="md-table-content">
+                        <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
+                    <td class="md-table-content">
+                    <td class="md-table-td-more">
+                        <span class="glyphicon glyphicon-zoom-in"
+                              ng-click="displayNoteHistory(recNote.idNote)">History</span>
+                    </td>
+                </tr>
             </tbody>
         </table>
-    </div>
 
-    <div>
+
+
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Total Grade</div>
             <span flex></span>
         </md-toolbar>
-        <div>
             <table class="md-table">
                 <tbody>
                 <tr>
-                    <td>{{getTotalGrade()}}</td>
+                    <td layout layout-align="center center">{{getTotalGrade()}}</td>
                 </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
 </main>
