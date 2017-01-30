@@ -21,7 +21,9 @@
   overflow-y: hidden; }
 
 .group-container div div {
-  word-break: normal; }
+  word-break: normal;
+  float: left;
+  min-width: 23%; }
 
 @media (max-width: 800px) {
   .login {
