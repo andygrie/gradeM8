@@ -2,10 +2,10 @@ angular.module('moduleData', [])
 
 .factory('sData_CUDHandler', ["$q", "sData_allData", "sData_groupsBySubjects", "sData_eventsByGroups", "sData_pupilsByGroups", "sData_participationsByPupil","sData_setEMailDates", "sData_teaches",
                                 "sWeb_setSubject", "sWeb_setGroup", "sWeb_setTeaches", "sWeb_putParticipation", "sWeb_setParticipation", "sWeb_setNoteByTeachesAndPupil", 
-                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates", "sWeb_putEvent", "sWeb_deleteEvent", "sWeb_putTeaches",
+                                "sWeb_setEvent", "sWeb_registerPupils", "sWeb_setAssigned", "sWeb_putNote","sWeb_setEMailDates", "sWeb_putEvent", "sWeb_deleteEvent", "sWeb_putTeaches", "sData_notesByPupil",
                         function($q, sData_allData, sData_groupsBySubjects, sData_eventsByGroups, sData_pupilsByGroups, sData_participationsByPupil,sData_setEMailDates, sData_teaches,
                                 sWeb_setSubject, sWeb_setGroup, sWeb_setTeaches, sWeb_putParticipation, sWeb_setParticipation, sWeb_setNoteByTeachesAndPupil, 
-                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates, sWeb_putEvent, sWeb_deleteEvent, sWeb_putTeaches) {
+                                sWeb_setEvent, sWeb_registerPupils, sWeb_setAssigned, sWeb_putNote, sWeb_setEMailDates, sWeb_putEvent, sWeb_deleteEvent, sWeb_putTeaches, sData_notesByPupil) {
   var retVal;
 
   retVal = {
@@ -241,6 +241,9 @@ angular.module('moduleData', [])
   function insertNote(data){
       return $q(function(resolve, reject){
           sWeb_setNoteByTeachesAndPupil(function(responseData){
+              console.log("notes: ");
+              console.log(sData_notesByPupil.data);
+              sData_notesByPupil.data.push(responseData);
               resolve(responseData);
           }, function(response){
               reject(response);
