@@ -34,35 +34,6 @@ angular.module("modulePupil", [])
             $scope.data.gradedParticipations = [];
             $scope.data.colEvents = [];
 
-            $scope.grade = {};
-            $scope.grade.gradeOptions = [
-                {grade: -1, description: "ungraded"},
-                {grade: 0, description: "abscent"},
-                {grade: 1, description: "1"},
-                {grade: 2, description: "2"},
-                {grade: 3, description: "3"},
-                {grade: 4, description: "4"},
-                {grade: 5, description: "5"}
-            ];
-
-            $scope.grade.parseGrade = function (grade) {
-                var found = false;
-                var retVal = grade;
-
-                for (var i = 0; i < $scope.grade.gradeOptions.length && found == false; i++) {
-                    if ($scope.grade.gradeOptions[i].grade == grade) {
-                        found = true;
-                        retVal = $scope.grade.gradeOptions[i].description;
-                    }
-                }
-
-                return retVal;
-            }
-
-            $scope.parseDate = function (date) {
-                return moment(date, "YYYY-MM-DD HH:mm:ss");
-            }
-
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
                     controller: 'AddEventControllerSinglePupil',

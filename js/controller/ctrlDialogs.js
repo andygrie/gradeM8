@@ -360,6 +360,7 @@ angular.module("moduleDialogs", [])
         function ($scope,eventID,sData_participationHistory, sData_CUDHandler, $mdDialog) {
 
             $scope.data={};
+            $scope.grade = {};
             $scope.partHistory = {};
             $scope.partHistory.colParticipation = [];
             $scope.data.colParticipationHistroy = [];
@@ -388,6 +389,25 @@ angular.module("moduleDialogs", [])
             angular.element(document).ready(function () {
                 $scope.loadParticipationHistory(eventID);
             });
+
+            $scope.grade.parseGrade = function (grade) {
+                var found = false;
+                var retVal = grade;
+
+                for (var i = 0; i < $scope.grade.gradeOptions.length && found == false; i++) {
+                    if ($scope.grade.gradeOptions[i].grade == grade) {
+                        found = true;
+                        retVal = $scope.grade.gradeOptions[i].description;
+                    }
+                }
+
+                return retVal;
+            }
+
+            $scope.parseDate = function (date) {
+                return moment(date, "YYYY-MM-DD HH:mm:ss");
+            }
+
         }])
     .controller("showNoteHistoryController", ["$scope","noteID", "sData_noteHistory","sData_CUDHandler", "$mdDialog",
         function ($scope, noteID,sData_noteHistory, sData_CUDHandler, $mdDialog) {

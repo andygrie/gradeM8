@@ -11,14 +11,18 @@
         </md-toolbar>
         <md-dialog-content >
             <table class="md-table">
-                <tr>
-                    <th>Note</th>
-                    <th>Updated On</th>
-                </tr>
-                <tr ng-repeat="item in noteHistory.colNotes">
-                    <td>{{item.note}}</td>
-                    <td>{{parseDate(item.documentedOn)}}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Note</th>
+                        <th>Updated On</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in noteHistory.colNotes">
+                        <td>{{item.note}}</td>
+                        <td>{{parseDate(item.documentedOn)}}</td>
+                    </tr>
+                </tbody>
             </table>
         </md-dialog-content>
 
