@@ -165,8 +165,6 @@ md-card:hover{
     background-color: #9C27B0;
 }
 
-
-
 .login {
     text-align: center;
     margin-top:auto;
@@ -242,9 +240,9 @@ md-card:hover{
     background: transparent;
 }
 
-.md-dialog-content .md-input-container{
-    margin-top:1em;
-    margin-bottom:1em;
+.md-dialog-content{
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 
