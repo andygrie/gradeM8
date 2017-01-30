@@ -458,6 +458,25 @@ angular.module('moduleWeb', [])
     }
     }])
 
+    .factory('sWeb_putTeaches', ["$q", '$http', 'constants', 
+                        function($q, $http, constants) {
+    return function(resolve, reject, data){
+        $http({
+            method: "PUT",
+            url: constants.apiUrl + "/teaches/" + data.idTeaches,
+            data: {
+                fkTeacher: constants.teacherId,
+                fkGradeGroup: data.fkGradeGroup,
+                fkGradeSubject: data.fkGradeSubject
+            }
+        }).then(function(response){
+            resolve(response.data);
+            }, function(response){
+            reject(response);
+        });
+    }
+    }])
+
 //DELETE
     .factory('sWeb_deleteEvent', ["$q", '$http', 'constants', 
                         function($q, $http, constants) {

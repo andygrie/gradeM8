@@ -116,7 +116,7 @@ angular.module("moduleOverview", [])
                 var fullSubj = {name: paramSubjName,
                                 idGradeSubject: null};
                 
-                //easy way if an Group already is registered
+                //easy way if a Group already is registered
                 if($scope.colGroupsBySubjects[paramSubjName].length > 0)
                 {
                     fullSubj.idGradeSubject = $scope.colGroupsBySubjects[paramSubjName][0].idGradeSubject;
@@ -132,7 +132,7 @@ angular.module("moduleOverview", [])
                     }
                 }
 
-                return fullSubj
+                return fullSubj;
             }
 
             $scope.showAddSubjectDialog = function (ev) {
