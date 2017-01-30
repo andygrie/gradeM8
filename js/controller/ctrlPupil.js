@@ -65,7 +65,7 @@ angular.module("modulePupil", [])
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
-                    controller: 'AddEventController',
+                    controller: 'AddEventControllerSinglePupil',
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
@@ -182,6 +182,12 @@ angular.module("modulePupil", [])
                 $scope.switchModalGrade();
                 $scope.formData.grade = participation.grade;
             }
+
+            $scope.displayParticipationsOfEvent = function (paramEventId) {
+                // $scope.switchModalEventDetail();
+                $location.path("/group/" + $scope.idGradeGroup + "/" + paramEventId);
+            }
+
 
             $scope.submitGrade = function () {
                 if ($scope.formData.grade != $scope.data.participationToBeConfigured.grade) {

@@ -7,7 +7,7 @@
                 <img src="../resources/logoLogin.png" height="100vh" style="margin-left:auto;margin-right: auto">
                     <div style="display: inline-block;text-align: left;">
                         <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
-                            <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
+                            <md-icon md-svg-src="../resources/ic_person_outline_black_48px.svg" class="name"></md-icon>
                             <input style="padding-left: 25px;"  name="username" id = "credentials" ng-model="form.username" type="text" placeholder="Name" ng-required="true">
                             <div ng-messages="clientLogin.userName.$error">
                                 <div ng-message="required">Your full name is required.</div>
@@ -15,7 +15,7 @@
                         </md-input-container>
                         <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
                     <!-- Use floating placeholder instead of label -->
-                            <md-icon md-svg-src="../resources/ic_lock_black_48px.svg" class="email"></md-icon>
+                            <md-icon md-svg-src="../resources/ic_lock_outline_black_48px.svg" class="email"></md-icon>
                             <input style="padding-left: 25px;" id = "password" ng-model="form.password" type="password" placeholder="Password" ng-required="true" name="password">
                             <div ng-messages="clientLogin.userPassword.$error">
                                 <div ng-message="required">Your password is required.</div>
