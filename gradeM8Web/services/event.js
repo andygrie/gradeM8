@@ -131,7 +131,8 @@ exports.deleteEvent = function (req, res) {
     var result = {};
     connection.on('connect', executeStatement);
     function executeStatement() {
-        request = new Request("DELETE FROM GradeEvent WHERE idGradeEvent = @id", function (err) {
+        request = new Request("DELETE FROM participation where fkgradeevent = @id;"
+            + " DELETE FROM GradeEvent WHERE idGradeEvent = @id", function (err) {
             if (err) {
                 console.log(err);
             }
