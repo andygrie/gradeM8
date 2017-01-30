@@ -49,7 +49,7 @@
             <td>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Grade</label>
-                    <md-select tabindex="1" ng-model="item.grade" md-on-close="grade.updateGrade(item)"
+                    <md-select custom-autofocus="$index == 0" tabindex="1" ng-model="item.grade" md-on-close="grade.updateGrade(item)"
                                style="border-bottom-color:white">
                         <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
                             {{gradeOption.description}}
