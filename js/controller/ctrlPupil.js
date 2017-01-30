@@ -45,6 +45,10 @@ angular.module("modulePupil", [])
                 {grade: 5, description: "5"}
             ];
 
+            $scope.back = function () {
+                $location.path("/group/" + $routeParams.idGradeGroup);
+            }
+
             $scope.grade.parseGrade = function (grade) {
                 var found = false;
                 var retVal = grade;
