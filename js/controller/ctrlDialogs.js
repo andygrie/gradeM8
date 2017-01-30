@@ -420,7 +420,7 @@ angular.module("moduleDialogs", [])
             }
 
             angular.element(document).ready(function () {
-                $scope.loadNoteHistory(eventID);
+                $scope.loadNoteHistory(noteID);
             });
         }])
     .controller("AddPupilController", ["$scope", "$mdDialog", "$routeParams", "sData_classes", "sData_CUDHandler", 
