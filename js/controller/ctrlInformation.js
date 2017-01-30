@@ -32,6 +32,10 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data.colEvents = [];
 
 
+            $scope.back = function () {
+                $location.path("/group/" + $routeParams.idGradeGroup);
+            }
+
             var dataInit = {
                 idPupil: $scope.data.idPupil,
                 idTeaches: $scope.data.teaches.idTeaches
@@ -221,11 +225,16 @@ angular.module("moduleInformation", ['ngMaterial'])
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
-                    controller: 'AddEventController',
+                    controller: 'AddEventControllerSinglePupil',
                     templateUrl: '../../templates/styled_modal_AddEvent.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
-                    clickOutsideToClose: true
+                    clickOutsideToClose: true,
+                    locals: {
+                        ungradedEvents: [],
+                        ungradedParticipations: [],
+                        colParticipations: []
+                    }
                 });
             };
 
