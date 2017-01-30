@@ -1,5 +1,5 @@
 <md-dialog style="width: 50%" aria-label="Add Subject">
-    <form>
+    <form name="formAddEvent">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>Add Event</h2>
@@ -34,7 +34,7 @@
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
-            <md-button style="margin-left:20px;" ng-click="insertNewEvent()">
+            <md-button style="margin-left:20px;" ng-click="insertNewEvent()" ng-disabled="formAddEvent.$invalid">
                 OK
             </md-button>
             <span flex></span>
