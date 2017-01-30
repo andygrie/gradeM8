@@ -49,16 +49,6 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.generatedBreadcrumb = generateBreadcrumb();
             $scope.breadcrumb = $scope.generatedBreadcrumb + " - Information";
 
-
-            $scope.submitUpdateNote = function (note) {
-                sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function (response) {
-                    console.log("success updating note");
-                    // $scope.switchModalUpdateNote();
-                }, function (response) {
-                    console.log("error updating note");
-                });
-            }
-
             $scope.updateNote = function (note) {
                 $scope.updatedNote = note;
                 $scope.submitUpdateNote(note);
@@ -164,28 +154,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 }
             }
 
-
-            $scope.getTotalGrade = function () {
-                var gradesSum = 0;
-
-                for (var i = 0; i < $scope.data.gradedParticipations.length; i++) {
-                    gradesSum += parseInt($scope.data.gradedParticipations[i].grade);
-                }
-                return gradesSum / $scope.data.gradedParticipations.length;
-            }
-
-            $scope.getEventOfParticipation = function (id) {
-                var retVal = {};
-                var found = false;
-                for (var i = 0; i < $scope.data.gradedEvents.length && !found; i++) {
-                    if ($scope.data.gradedEvents[i].idGradeEvent == id) {
-                        retVal = $scope.data.gradedEvents[i];
-                        found = true;
-                    }
-                }
-                return retVal;
-            }
-
             $scope.displayNoteHistory = function (paramIdNote) {
                 $scope.switchModalNoteHistory();
                 $scope.loadNoteHistory(paramIdNote);
@@ -216,17 +184,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 });
             }
 
-            $scope.showTabDialog = function (ev) {
-                $mdDialog.show({
-                    controller: 'DialogController',
-                    templateUrl: '../../templates/settings_Modal.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true
-                });
-            };
-
-
             $scope.goToOverview = function (){
                 $location.path("/overview");
             }
@@ -235,6 +192,35 @@ angular.module("moduleInformation", ['ngMaterial'])
                 $location.path("/pupil/" + $scope.data.idPupil + "/" + $scope.data.idGradeGroup);
             }
 
+            $scope.submitUpdateNote = function (note) {
+                sData_CUDHandler.putNote({idNote: note.idNote, note: note.note}).then(function (response) {
+                    console.log("success updating note");
+                    // $scope.switchModalUpdateNote();
+                }, function (response) {
+                    console.log("error updating note");
+                });
+            }
+
+            $scope.getEventOfParticipation = function (id) {
+                var retVal = {};
+                var found = false;
+                for (var i = 0; i < $scope.data.gradedEvents.length && !found; i++) {
+                    if ($scope.data.gradedEvents[i].idGradeEvent == id) {
+                        retVal = $scope.data.gradedEvents[i];
+                        found = true;
+                    }
+                }
+                return retVal;
+            }
+
+            $scope.getTotalGrade = function () {
+                var gradesSum = 0;
+
+                for (var i = 0; i < $scope.data.gradedParticipations.length; i++) {
+                    gradesSum += parseInt($scope.data.gradedParticipations[i].grade);
+                }
+                return gradesSum / $scope.data.gradedParticipations.length;
+            }
 
             $scope.showAddEventDialog = function (ev) {
                 $mdDialog.show({
@@ -250,6 +236,16 @@ angular.module("moduleInformation", ['ngMaterial'])
                 $mdDialog.show({
                     controller: 'AddNoteController',
                     templateUrl: '../../templates/styled_modal_AddNote.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
+
+            $scope.showTabDialog = function (ev) {
+                $mdDialog.show({
+                    controller: 'DialogController',
+                    templateUrl: '../../templates/settings_Modal.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
