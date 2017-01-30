@@ -26,12 +26,14 @@ width: 70%;
   margin-right:auto;
   background-color:silver;
   overflow-y: hidden;
-
 }
+
 .group-container{
   div{
     div{
       word-break: normal;
+      float:left;
+      min-width: 25%;
     }
   }
 }
