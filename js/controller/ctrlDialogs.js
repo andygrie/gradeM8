@@ -116,6 +116,7 @@ angular.module("moduleDialogs", [])
             function findTeaches() {
                 var retVal = null;
                 var colTeaches = sData_allData.data.teaches;
+                console.log($scope.idGradeGroup);
                 console.log("teaches: ");
                 console.log(colTeaches);
                 for (var i = 0; i < colTeaches.length && retVal == null; i++) {
