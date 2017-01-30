@@ -32,32 +32,28 @@
 </md-toolbar>
 
 <main class="main">
-
-
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Prüfungen</div>
-            <span flex></span>
         </md-toolbar>
-
         <table class="md-table">
             <thead>
                 <tr>
-                    <th class="md-table-header">Title</th>
-                    <th class="md-table-header">Date</th>
-                    <th class="md-table-header">Grade</th>
-                    <th class="md-table-header">History</th>
+                    <th width="35%">Title</th>
+                    <th width="25%">Date</th>
+                    <th width="20%">Grade</th>
+                    <th width="20%">History</th>
                 </tr>
             </thead>
             <tbody>
-            <tr class="md-table-content-row" ng-repeat="recParticipation in data.gradedParticipations">
-                <td class="md-table-content">
+            <tr ng-repeat="recParticipation in data.gradedParticipations">
+                <td>
                     {{getEventOfParticipation(recParticipation.fkGradeEvent).eventDescription}}
                 </td>
-                <td class="md-table-content">{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate
+                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate
                     | date : "dd-MM-yyyy" : timezone}}
                 </td>
-                <td class="md-table-content">{{recParticipation.grade}}</td>
-                    <td class="md-table-td-more">
+                <td>{{recParticipation.grade}}</td>
+                    <td>
                         <md-button ng-click="" aria-label="none" class="md-icon-button">
                             <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
                         </md-button>
@@ -70,13 +66,12 @@
 
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Notes</div>
-            <span flex></span>
         </md-toolbar>
         <table class="md-table">
             <thead>
             <tr>
-                <th>Latest Note</th>
-                <th>History</th>
+                <th width="80%">Latest Note</th>
+                <th width="20%">History</th>
             </tr>
             </thead>
             <tbody>
@@ -96,12 +91,11 @@
 
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Total Grade</div>
-            <span flex></span>
         </md-toolbar>
             <table class="md-table">
                 <tbody>
                 <tr>
-                    <td layout layout-align="center center">{{getTotalGrade()}}</td>
+                    <td><div layout layout-align="center center">>{{getTotalGrade()}}</div></td>
                 </tr>
                 </tbody>
             </table>
