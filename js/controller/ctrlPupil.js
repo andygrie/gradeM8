@@ -185,7 +185,7 @@ angular.module("modulePupil", [])
 
             $scope.displayParticipationsOfEvent = function (paramEventId) {
                 // $scope.switchModalEventDetail();
-                $location.path("/group/" + $scope.idGradeGroup + "/" + paramEventId);
+                $location.path("/group/" + $scope.data.idGradeGroup + "/" + paramEventId);
             }
 
 
