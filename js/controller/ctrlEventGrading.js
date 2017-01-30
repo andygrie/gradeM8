@@ -130,8 +130,12 @@ angular.module("moduleEvent", ['ngMaterial'])
                 });
             }
 
+            $scope.loading ={};
+            $scope.loading.isLoading=false;
+
             $scope.loadParticipationsByEvent = function (paramEventId) {
                 console.log("loadParticipationsByEvent");
+                $scope.loading.isLoading=true;
                 console.log(paramEventId);
                 sData_participationsByEvent.fillData({idGradeEvent: paramEventId}).then(function (response) {
                     console.log(response);
@@ -142,7 +146,7 @@ angular.module("moduleEvent", ['ngMaterial'])
                         curID++;
                         return item;
                     });
-
+                    $scope.isLoading = false;
                     console.log($scope.grade.colParticipations);
                 }, function (response) {
                     console.log(response);
