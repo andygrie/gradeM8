@@ -146,7 +146,7 @@ angular.module("moduleEvent", ['ngMaterial'])
                         curID++;
                         return item;
                     });
-                    $scope.isLoading = false;
+                    $scope.loading.isLoading = false;
                     console.log($scope.grade.colParticipations);
                 }, function (response) {
                     console.log(response);
