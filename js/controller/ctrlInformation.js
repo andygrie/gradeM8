@@ -49,7 +49,7 @@ angular.module("moduleInformation", ['ngMaterial'])
                 console.log("successfully loaded notes");
                 console.log(sData_notesByPupil.data);
                 $scope.data.colNotes = sData_notesByPupil.data;
-                $scope.loading.NotesLoading=true;
+                $scope.loading.isNotesLoading=true;
             }, function (response) {
                 console.log("error loading notes: " + response);
             });
