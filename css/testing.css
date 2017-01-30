@@ -34,6 +34,7 @@ body{
     width: 100%;
     overflow-y: auto !important;
     height: inherit !important;
+    padding-bottom: 50vh;
 }
 footer p {
     font-size: 13px;
@@ -187,7 +188,6 @@ md-card:hover{
     margin-right:auto;
     background-color:silver;
     overflow-y: hidden;
-    padding-bottom: 15em;
 }
 
 .group-container div div{
