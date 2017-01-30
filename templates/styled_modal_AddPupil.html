@@ -43,7 +43,7 @@
                             <span ng-if="check.isChecked()">Un-</span>Select All
                         </md-checkbox>
                     </div>
-                    <div flex="50" ng-repeat="item in colAdPupils">
+                    <div flex="50" ng-repeat="item in colAdPupils | orderBy: 'username'">
                         <md-checkbox ng-checked="check.exists(item, colSelectedPupils)"
                                      ng-click="check.toggle(item, colSelectedPupils)">
                             {{item.surname}},{{item.forename}}
