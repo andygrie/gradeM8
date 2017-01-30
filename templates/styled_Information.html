@@ -38,10 +38,10 @@
         <table class="md-table">
             <thead>
                 <tr>
-                    <th width="35%">Title</th>
-                    <th width="25%">Date</th>
-                    <th width="20%">Grade</th>
-                    <th width="20%">History</th>
+                    <th class="table-events-title">Title</th>
+                    <th class="table-events-date">Date</th>
+                    <th class="table-events-Grade">Grade</th>
+                    <th class="table-events-History">History</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
                     | date : "dd-MM-yyyy" : timezone}}
                 </td>
                 <td>{{recParticipation.grade}}</td>
-                    <td>
+                    <td class="table-events-History">
                         <md-button ng-click="showEventHistoryDialog($event ,recParticipation)" aria-label="none" class="md-icon-button">
                             <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
                         </md-button>
@@ -61,33 +61,29 @@
                 </tr>
             </tbody>
         </table>
-
-
-
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Notes</div>
         </md-toolbar>
         <table class="md-table">
             <thead>
             <tr>
-                <th width="80%">Latest Note</th>
-                <th width="20%">History</th>
+                <th class = "table-notes-latest">Latest Note</th>
+                <th class = "table-notes-history">History</th>
             </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="recNote in data.colNotes">
                     <td>
-                        <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
-                    <td>
-                    <md-button ng-click="showNoteHistoryDialog($event, recNote)" aria-label="none" class="md-icon-button">
-                        <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
-                    </md-button>
+                        <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note">
+                    </td>
+                    <td class="table-notes-history">
+                        <md-button ng-click="showNoteHistoryDialog($event, recNote)" aria-label="none" class="md-icon-button">
+                            <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
+                        </md-button>
                     </td>
                 </tr>
             </tbody>
         </table>
-
-
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
             <div style="display: inline-block">Total Grade</div>
         </md-toolbar>
