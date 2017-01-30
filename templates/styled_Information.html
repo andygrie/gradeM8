@@ -33,7 +33,7 @@
 
 <main class="main">
         <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
-            <div style="display: inline-block">Prüfungen</div>
+            <div style="display: inline-block">Events</div>
         </md-toolbar>
         <table class="md-table">
             <thead>
@@ -54,7 +54,7 @@
                 </td>
                 <td>{{recParticipation.grade}}</td>
                     <td>
-                        <md-button ng-click="" aria-label="none" class="md-icon-button">
+                        <md-button ng-click="showEventHistoryDialog($event ,recParticipation)" aria-label="none" class="md-icon-button">
                             <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
                         </md-button>
                     </td>
@@ -79,7 +79,7 @@
                     <td>
                         <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note"></td>
                     <td>
-                    <md-button ng-click="" aria-label="none" class="md-icon-button">
+                    <md-button ng-click="showNoteHistoryDialog($event, recNote)" aria-label="none" class="md-icon-button">
                         <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
                     </md-button>
                     </td>

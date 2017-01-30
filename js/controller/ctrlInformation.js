@@ -12,16 +12,18 @@ angular.module("moduleInformation", ['ngMaterial'])
             $scope.data = {};
             $scope.data.idPupil = $routeParams.idPupil;
             $scope.data.idGradeGroup = $routeParams.idGradeGroup;
-            $scope.partHistory = {};
-            $scope.noteHistory = {};
+
             $scope.data.teaches = findTeaches();
             $scope.updateNote = {};
-            $scope.data.displayModalNoteHistory = false;
-            $scope.data.displayModalParticipationHistory = false;
-            $scope.partHistory.colParticipation = [];
+       //     $scope.data.displayModalNoteHistory = false;
+      //      $scope.data.displayModalParticipationHistory = false;
+
             $scope.data.colParticipations
+            $scope.partHistory = {};
+            $scope.noteHistory = {};
             $scope.noteHistory.colNotes = [];
             $scope.data.colNoteHistory = [];
+            $scope.partHistory.colParticipation = [];
             $scope.data.colParticipationHistroy = [];
             $scope.data.ungradedEvents = [];
             $scope.data.gradedEvents = [];
@@ -178,25 +180,6 @@ angular.module("moduleInformation", ['ngMaterial'])
                 $scope.loadParticipationHistory(paramIdParticipation);
             }
 
-            $scope.loadNoteHistory = function (paramIdNote) {
-                $scope.noteHistory.colNotes = [];
-                sData_noteHistory.fillData({idNote: paramIdNote}).then(function (response) {
-                    console.log(response);
-                    $scope.noteHistory.colNotes = sData_noteHistory.data;
-                }, function (response) {
-                    console.log(response);
-                });
-            }
-
-            $scope.loadParticipationHistory = function (paramIdParticipation) {
-                $scope.partHistory.colParticipation = [];
-                sData_participationHistory.fillData({idParticipation: paramIdParticipation}).then(function (response) {
-                    console.log(response);
-                    $scope.partHistory.colParticipation = sData_participationHistory.data;
-                }, function (response) {
-                    console.log(response);
-                });
-            }
 
             $scope.goToOverview = function (){
                 $location.path("/overview");
@@ -265,6 +248,37 @@ angular.module("moduleInformation", ['ngMaterial'])
                     clickOutsideToClose: true
                 });
             };
+
+            $scope.showEventHistoryDialog = function (ev, event) {
+                $mdDialog.show({
+                    controller: 'showEventHistoryController',
+                    templateUrl: '../../templates/styled_modal_ParticipationHistory.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    resolve: {
+                        eventID: function () {
+                            return event.id;
+                        }
+                    }
+                });
+            };
+
+            $scope.showNoteHistoryDialog = function (ev, note) {
+                $mdDialog.show({
+                    controller: 'showNoteHistoryController',
+                    templateUrl: '../../templates/styled_modal_NoteHistory.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    resolve: {
+                        noteID: function () {
+                            return note.id;
+                        }
+                    }
+                });
+            };
+
 
             function findTeaches() {
                 var retVal = null;
