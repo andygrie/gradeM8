@@ -65,11 +65,11 @@ angular.module("moduleDialogs", [])
         }])
     .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
         function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
-
-            $scope.data.idPupil = $routeParams.idPupil;
+            $scope.data = {};
             $scope.newEvent = {};
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
+            $scope.data.idPupil = $routeParams.idPupil;
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -222,6 +222,7 @@ angular.module("moduleDialogs", [])
                 console.log(retVal);
                 return retVal;
             }
+
             $scope.getSubjectOfGroup = function () {
                 var retVal = null;
                 var colGroups = sData_allData.data.groups;
