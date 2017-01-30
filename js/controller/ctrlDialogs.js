@@ -327,8 +327,36 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
-        function ($scope, sData_CUDHandler, $mdDialog) {
+    
+    .directive('subjNameUnique', ["sData_allData", function(sData_allData) {
+        return {
+            require: 'ngModel',
+            link: function(scope, element, attr, mCtrl) {
+                function myValidation(value) {
+                    var found = false;
+
+                    for(var i = 0; i < sData_allData.data.subjects.length && found == false; i++)
+                    {
+                        if(sData_allData.data.subjects[i].name == value)
+                        {
+                            mCtrl.$setValidity('subjNameUnique', false);
+                            found = true;
+                        }
+                    }
+
+                    if(!found)
+                    {
+                        mCtrl.$setValidity('subjNameUnique', true);
+                    }
+
+                    return value;
+                }
+                mCtrl.$parsers.push(myValidation);
+            }
+        };
+    }])
+    .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog", "sData_allData",
+        function ($scope, sData_CUDHandler, $mdDialog, sData_allData) {
 
             $scope.hide = function () {
                 $mdDialog.hide();
@@ -347,7 +375,7 @@ angular.module("moduleDialogs", [])
                 var data = {
                     name: $scope.newSubject.name
                 };
-                console.log(data);
+                
                 sData_CUDHandler.insertSubject(data).then(function (response) {
                     console.log("successfuly inserted subj: " + response);
                     $scope.hide();
