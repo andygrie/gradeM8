@@ -152,10 +152,11 @@ angular.module("moduleDialogs", [])
             })
 
         }])
-    .controller("AddEventControllerGroup", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
-        function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
+    .controller("AddEventControllerGroup", ["$scope", "$routeParams","sData_pupilsByGroups", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+        function ($scope, $routeParams, sData_pupilsByGroups, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
 
             $scope.newEvent = {};
+            $scope.colPupils = {};
             $scope.newEvent.eventDate = new Date();
             $scope.idGradeGroup = $routeParams.idGradeGroup;
 
@@ -233,6 +234,13 @@ angular.module("moduleDialogs", [])
             }
 
             $scope.idGradeSubject = $scope.getSubjectOfGroup();
+
+            sData_pupilsByGroups.fillData({idGradeGroup: $scope.idGradeGroup}).then(function (response) {
+                console.log("success loading pupils");
+                $scope.colPupils = sData_pupilsByGroups.data[$scope.idGradeGroup];
+            }, function (response) {
+                console.log("error loading pupils by groups: " + response);
+            })
 
             sData_teaches.fillData({idGradeSubject: $scope.idGradeSubject}).then(function (response) {
                 console.log(response);

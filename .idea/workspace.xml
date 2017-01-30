@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9766dd27-8bb5-40af-b1d7-585f20a6dba9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlGroup.js" afterPath="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlPupil.js" afterPath="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller/ctrlDialogs.js" afterPath="$PROJECT_DIR$/js/controller/ctrlDialogs.js" />
     </list>
     <ignored path="gradeM8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ctrlGroup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="188">
+              <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
               <folding>
                 <element signature="e#9302#10208#0" expanded="false" />
               </folding>
@@ -76,23 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ctrlDialogs.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ctrlDialogs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="37">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding>
                 <element signature="e#1172#2490#0" expanded="false" />
                 <element signature="e#2541#6316#0" expanded="false" />
                 <element signature="e#2784#6315#0" expanded="false" />
                 <element signature="e#3223#4771#0" expanded="false" />
-                <element signature="e#6361#10022#0" expanded="false" />
-                <element signature="e#7443#8349#0" expanded="false" />
-                <element signature="e#10061#11721#0" expanded="false" />
-                <element signature="e#10414#10463#0" expanded="false" />
-                <element signature="e#10506#10557#0" expanded="false" />
-                <element signature="e#11757#12767#0" expanded="false" />
-                <element signature="e#12807#18307#0" expanded="false" />
+                <element signature="e#7523#8429#0" expanded="false" />
+                <element signature="e#10514#12174#0" expanded="false" />
+                <element signature="e#10867#10916#0" expanded="false" />
+                <element signature="e#10959#11010#0" expanded="false" />
+                <element signature="e#12210#13220#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -163,9 +160,9 @@
         <option value="$PROJECT_DIR$/templates/styled_Login.html" />
         <option value="$PROJECT_DIR$/templates/styled_Overview.html" />
         <option value="$PROJECT_DIR$/js/services/serviceData.js" />
-        <option value="$PROJECT_DIR$/js/controller/ctrlDialogs.js" />
         <option value="$PROJECT_DIR$/js/controller/ctrlPupil.js" />
         <option value="$PROJECT_DIR$/js/controller/ctrlGroup.js" />
+        <option value="$PROJECT_DIR$/js/controller/ctrlDialogs.js" />
       </list>
     </option>
   </component>
@@ -499,12 +496,12 @@
       <workItem from="1485246824537" duration="5549000" />
       <workItem from="1485536669861" duration="12000" />
       <workItem from="1485696532098" duration="27489000" />
-      <workItem from="1485784907104" duration="3751000" />
+      <workItem from="1485784907104" duration="4140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316241000" />
+    <option name="totallyTimeSpent" value="316630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -890,32 +887,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+          <folding>
+            <element signature="e#9302#10208#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/ctrlDialogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="37">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding>
             <element signature="e#1172#2490#0" expanded="false" />
             <element signature="e#2541#6316#0" expanded="false" />
             <element signature="e#2784#6315#0" expanded="false" />
             <element signature="e#3223#4771#0" expanded="false" />
-            <element signature="e#6361#10022#0" expanded="false" />
-            <element signature="e#7443#8349#0" expanded="false" />
-            <element signature="e#10061#11721#0" expanded="false" />
-            <element signature="e#10414#10463#0" expanded="false" />
-            <element signature="e#10506#10557#0" expanded="false" />
-            <element signature="e#11757#12767#0" expanded="false" />
-            <element signature="e#12807#18307#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/ctrlGroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="e#9302#10208#0" expanded="false" />
+            <element signature="e#7523#8429#0" expanded="false" />
+            <element signature="e#10514#12174#0" expanded="false" />
+            <element signature="e#10867#10916#0" expanded="false" />
+            <element signature="e#10959#11010#0" expanded="false" />
+            <element signature="e#12210#13220#0" expanded="false" />
           </folding>
         </state>
       </provider>
