@@ -196,5 +196,14 @@ md-card:hover{
     padding-left: 2em;
     padding-right:2em;
 }
+.md-table tbody tr td input{
+   border:none;
+    background: transparent;
+}
+.md-table tbody tr td input:focus{
+    border:none;
+    background: transparent;
+}
+
 
 
