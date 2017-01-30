@@ -33,8 +33,13 @@
 
 <main class="main">
 
-    <div class="information-container">
-        <h2>Prüfungen</h2>
+    <div>
+
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Prüfungen</div>
+            <span flex></span>
+        </md-toolbar>
+
         <table class="md-table">
             <thead>
             <tr>
@@ -62,7 +67,10 @@
     </div>
 
     <div class="information-container">
-        <h2>Notes</h2>
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Notes</div>
+            <span flex></span>
+        </md-toolbar>
         <table class="md-table">
             <thead>
             <tr>
@@ -85,12 +93,17 @@
     </div>
 
     <div class="information-container">
-        <h2>Total grade</h2>
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Total Grade</div>
+            <span flex></span>
+        </md-toolbar>
         <div>
-            <table class="single-Value">
-                <tr>
-                    <td>{{getTotalGrade()}}</td>
-                </tr>
+            <table class="md-table">
+                <tbody>
+                    <tr>
+                        <td>{{getTotalGrade()}}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
