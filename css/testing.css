@@ -157,6 +157,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     color:white;
 }
 md-card{
+    min-width: 25%;
     cursor: pointer !important;
 }
 md-card:hover{
