@@ -63,7 +63,7 @@ angular.module("moduleDialogs", [])
                 });
             }
         }])
-    .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",
+    .controller("AddEventControllerSinglePupil", ["$scope", "$routeParams", "sData_teaches", "sData_allData", "sData_groupsBySubjects", "sData_CUDHandler", "$mdDialog",    
         function ($scope, $routeParams, sData_teaches, sData_allData, sData_groupsBySubjects, sData_CUDHandler, $mdDialog) {
             $scope.data = {};
             $scope.newEvent = {};
@@ -102,7 +102,7 @@ angular.module("moduleDialogs", [])
                /*         $scope.data.ungradedEvents.push(response);
                         $scope.data.ungradedParticipations.push(responseData[0]);
                         $scope.data.colParticipations.push(responseData[0]);
-*/
+        */
                         $scope.hide();
                     }, function (response) {
                         console.log("error inserting participations" + response);
@@ -298,6 +298,38 @@ angular.module("moduleDialogs", [])
             $scope.data.teaches = findTeaches();
 
         }])
+    
+    .controller("ctrlAddGroup", ["$scope", "sData_CUDHandler", "$mdDialog", "paramSubject",
+        function ($scope, sData_CUDHandler, $mdDialog, paramSubject) {
+
+            $scope.group = {};
+
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+
+            $scope.addNewGroup = function () {
+                var data = {
+                    idGradeSubject: paramSubject.idGradeSubject,
+                    name: $scope.group.name
+                };
+                sData_CUDHandler.insertGroup(data).then(function (response) {
+                    console.log("successfuly inserted group: " + response);
+                    $scope.hide();
+                }, function (response) {
+                    console.log("error inserting group: " + response);
+                });
+            }
+        }])
+
     .controller("ctrlAddSubject", ["$scope", "sData_CUDHandler", "$mdDialog",
         function ($scope, sData_CUDHandler, $mdDialog) {
 

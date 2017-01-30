@@ -97,6 +97,44 @@ angular.module("moduleOverview", [])
 
             $scope.status = '  ';
 
+            $scope.showAddGroupDialog = function(ev, paramSubj){
+                var fullSubj = getFullSubjByName(paramSubj);
+
+                $mdDialog.show({
+                    controller: 'ctrlAddGroup',
+                    templateUrl: '../../templates/styled_modal_AddGroup.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    locals: {
+                        paramSubject: fullSubj
+                    }
+                });
+            }
+
+            function getFullSubjByName(paramSubjName){
+                var fullSubj = {name: paramSubjName,
+                                idGradeSubject: null};
+                
+                //easy way if an Group already is registered
+                if($scope.colGroupsBySubjects[paramSubjName].length > 0)
+                {
+                    fullSubj.idGradeSubject = $scope.colGroupsBySubjects[paramSubjName][0].idGradeSubject;
+                }
+                else
+                {
+                    for(var i = 0; i < $scope.colSubjects.length && fullSubj.idGradeSubject == null; i++)
+                    {
+                        if($scope.colSubjects[i].name == paramSubjName)
+                        {
+                            fullSubj.idGradeSubject = $scope.colSubjects[i].idGradeSubject;
+                        }
+                    }
+                }
+
+                return fullSubj
+            }
+
             $scope.showAddSubjectDialog = function (ev) {
                 $mdDialog.show({
                     controller: 'ctrlAddSubject',
