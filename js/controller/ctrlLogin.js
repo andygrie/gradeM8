@@ -1,7 +1,7 @@
 angular.module("moduleLogin", [])
     .controller("ctrlLogin", ["$scope", "constants", "$location", "sData_authenticate",
         function ($scope, constants, $location, sData_authenticate) {
-
+            document.getElementsByTagName("body")[0].setAttribute("style","overflow-y: hidden !important;padding-bottom: 0vh;");
             $scope.show = false;
 
             $scope.form = {
