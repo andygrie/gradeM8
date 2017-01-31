@@ -4,7 +4,7 @@
             <div class="md-toolbar-tools">
                 <h2>Add Group</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
+                <md-button aria-label="CLOSE" class="md-icon-button" ng-click="cancel()">
                     <span class="glyphicon glyphicon-remove" aria-label="Close dialog"></span>
                 </md-button>
             </div>
@@ -22,11 +22,11 @@
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
-            <md-button style="margin-left:20px;" ng-click="addNewGroup()" >
+            <md-button aria-label="OK" style="margin-left:20px;" ng-click="addNewGroup()" >
                 OK
             </md-button>
             <span flex></span>
-            <md-button ng-click="cancel()" style="margin-right:20px;" >
+            <md-button aria-label="CANCEL" ng-click="cancel()" style="margin-right:20px;" >
                 CANCEL
             </md-button>
         </md-dialog-actions>

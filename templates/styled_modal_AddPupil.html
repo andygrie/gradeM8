@@ -4,7 +4,7 @@
             <div class="md-toolbar-tools">
                 <h2>Add Pupil</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
+                <md-button aria-label="CLOSE" class="md-icon-button" ng-click="cancel()">
                     <md-icon md-svg-src="../resources/ic_cancel_white_48px.svg"></md-icon>
                 </md-button>
             </div>
@@ -31,7 +31,7 @@
                         </md-item-template>
                     </md-autocomplete>
                 </md-chips>
-                <md-button  ng-click="loadAdPupils()">Submit Classes</md-button>
+                <md-button aria-label="submitClasses"  ng-click="loadAdPupils()">Submit Classes</md-button>
             </md-content>
 
             <md-content ng-show="classesSelected">
@@ -55,11 +55,11 @@
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
-            <md-button style="margin-left:20px;" ng-click="registerPupils()" ng-disabled="!classesSelected">
+            <md-button aria-label="OK" style="margin-left:20px;" ng-click="registerPupils()" ng-disabled="!classesSelected">
                 OK
             </md-button>
             <span flex></span>
-            <md-button ng-click="cancel()" style="margin-right:20px;">
+            <md-button aria-label="CANCEL" ng-click="cancel()" style="margin-right:20px;">
                 CANCEL
             </md-button>
         </md-dialog-actions>

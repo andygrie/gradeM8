@@ -21,7 +21,7 @@
 
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
-        <md-button ng-click="showAddSubjectDialog($event)">
+        <md-button aria-label="addSubject" ng-click="showAddSubjectDialog($event)">
             add Subject
         </md-button>
     </div>
@@ -36,7 +36,7 @@
                 <div style="display: inline-block">{{key}}</div>
                 <span flex></span>
                 <div layout="row" layout-align="center center">
-                    <md-button ng-click="showAddGroupDialog($event, key)" class="md-icon-button">
+                    <md-button aria-label="showGroupDialog" ng-click="showAddGroupDialog($event, key)" class="md-icon-button">
                         <md-icon md-svg-src="../resources/ic_add_white_48px.svg"></md-icon>
                     </md-button>
                 </div>

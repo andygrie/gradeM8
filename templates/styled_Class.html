@@ -29,7 +29,7 @@
                             <md-item-template><span md-highlight-text="auto.searchText">{{item.name}}</span></md-item-template>
                         </md-autocomplete>
                     </md-chips>
-                    <md-button class="md-raised md-primary" ng-click="loadAdPupils()">Submit Classes</md-button>
+                    <md-button aria-label="submitClasses" class="md-raised md-primary" ng-click="loadAdPupils()">Submit Classes</md-button>
                 </md-content>
                 <md-content ng-show="classesSelected">
                      <div layout="row" layout-wrap flex>
@@ -47,7 +47,7 @@
                         </md-checkbox>
                         </div>
                       </div>
-                      <md-button class="md-raised md-primary" ng-click="registerPupils()">Submit Pupils</md-button>
+                      <md-button aria-label="submitPupils" class="md-raised md-primary" ng-click="registerPupils()">Submit Pupils</md-button>
                 </md-content>
             </div>
             <div class="modal-footer">

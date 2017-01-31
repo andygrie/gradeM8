@@ -5,7 +5,7 @@
     <md-content layout-padding>
         <form layout="column" layout-align="center">
             <md-input-container flex>
-                <md-button ng-click="toggleshowAddGroup()" style="width: 100%">
+                <md-button aria-label="toggleShowAddGroup" ng-click="toggleshowAddGroup()" style="width: 100%">
                     AddGroup
                 </md-button>
             </md-input-container>
@@ -17,12 +17,12 @@
                         <div ng-message="required">A Groupname is Required</div>
                     </div>
                 </md-input-container>
-                <md-button style="width: 100%" ng-click="addNewGroup()">
+                <md-button aria-label="OK" style="width: 100%" ng-click="addNewGroup()">
                     OK
                 </md-button>
             </div>
             <md-input-container flex>
-                <md-button style="width: 100%">
+                <md-button aria-label="DELETE" style="width: 100%">
                     Delete
                 </md-button>
             </md-input-container>

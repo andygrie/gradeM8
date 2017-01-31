@@ -20,11 +20,11 @@
 
 <md-toolbar class="bottom-toolbar" layout>
     <div class="md-toolbar-tools" layout="row" layout-align="center center">
-        <md-button ng-click="showAddPupilDialog($event)">
+        <md-button aria-label="addPupil" ng-click="showAddPupilDialog($event)">
             add Pupil
         </md-button>
 
-        <md-button ng-click="showAddEventDialog($event)" ng-disabled="!groupContainsPupils()">
+        <md-button aria-label="addEvent" ng-click="showAddEventDialog($event)" ng-disabled="!groupContainsPupils()">
             add Event
         </md-button>
     </div>
