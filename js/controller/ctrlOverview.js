@@ -9,6 +9,8 @@ angular.module("moduleOverview", [])
                 $location.path("/");
             }
             document.getElementsByTagName("body")[0].setAttribute("style","overflow-y: auto !important;")
+            document.getElementsByTagName("body")[0].setAttribute("style","padding-bottom: 50vh;");
+
             $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
             $scope.state = {};
             $scope.state.awaitingData = true;

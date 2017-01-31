@@ -32,9 +32,8 @@ body{
     background-color: lightgrey;
     position: absolute !important;
     width: 100%;
-    overflow-y: auto !important;
+    overflow-y: hidden !important;
     height: inherit !important;
-    padding-bottom: 50vh;
 }
 footer p {
     font-size: 13px;
