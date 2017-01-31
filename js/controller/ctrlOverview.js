@@ -8,8 +8,7 @@ angular.module("moduleOverview", [])
             {
                 $location.path("/");
             }
-            document.getElementsByTagName("body")[0].setAttribute("style","overflow-y: scroll !important;")
-            document.getElementsByTagName("body")[0].setAttribute("style","padding-bottom: 50vh;");
+            document.getElementsByTagName("body")[0].setAttribute("style","overflow-y: scroll !important;padding-bottom: 50vh;");
 
             $scope.breadcrumb = "Overview-" + sData_allData.data.user.username;
             $scope.state = {};
