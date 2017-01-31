@@ -1,0 +1,41 @@
+<md-dialog style="width: 50%" aria-label="Edit Event">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Edit Event</h2>
+                <span flex></span>
+                <md-button aria-label="CLOSE" class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="../resources/ic_cancel_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <md-progress-linear md-mode="indeterminate" ng-disabled="!state.loading"></md-progress-linear>
+                <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
+                    <md-icon md-svg-src="../resources/ic_description_black_24px.svg" class="name"></md-icon>
+                    <input style="padding-left: 25px;" name="eventDescription" id="eventDescription"
+                           ng-model="event.eventDescription" type="text" placeholder="Description"
+                           ng-required="true">
+                </md-input-container>
+
+                <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
+                    <md-icon md-svg-src="../resources/ic_date_range_black_24px.svg" class="name"></md-icon>
+                    <input style="padding-left: 25px;" id="inputEventDate" type="date" name="inputEventDate"
+                            min="2016-01-01" ng-required="true" ng-model="event.eventDate"
+                           class="ng-valid-min ng-touched ng-not-empty ng-dirty ng-valid-date ng-valid ng-valid-required"
+                           aria-invalid="false">
+                </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button aria-label="OK" style="margin-left:20px;" ng-click="updateEvent()">
+                OK
+            </md-button>
+            <span flex></span>
+            <md-button aria-label="CANCEL" ng-click="cancel()" style="margin-right:20px;">
+                CANCEL
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

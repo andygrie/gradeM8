@@ -1,0 +1,53 @@
+@mixin mobile{
+  @media(max-width: 800px){
+    @content;
+  }
+}
+
+@include mobile{
+  .login{
+    text-align: center;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding:0;
+    border: none;
+    box-shadow: none;
+  }
+  .group-container{
+    div{
+      div{
+        width: 100%;
+        word-break: break-all;
+      }
+    }
+  }
+  .main{
+    width: 100%;
+  }
+
+  .table-events-title{
+    width:35%;
+  }
+  .table-events-date{
+    width:35%;
+  }
+  .table-events-Grade{
+    width:20%;
+  }
+  .table-events-History{
+    display: none;
+    width:0%;
+  }
+  .table-notes-latest{
+    width:100%;
+  }
+  .table-notes-history{
+    display: none;
+    width:0%;
+  }
+  .back-button-container{
+    display: none;
+  }
+}

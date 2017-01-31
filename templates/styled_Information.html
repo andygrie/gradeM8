@@ -1,0 +1,109 @@
+<md-toolbar class="top-toolbar" layout="row" md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary top-toolbar" ng-click="goToOverview()">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
+        </div>
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
+    </div>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools back-button-container" layout="row" layout-align="start center">
+        <md-button ng-click="back()" aria-label="none" class="md-fab eventGrading">
+            <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
+        </md-button>
+    </div>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button ng-click="showAddNoteDialog($event)">
+            add Note
+        </md-button>
+        <md-button ng-click="showAddEventDialog($event)">
+            add Event
+        </md-button>
+        <md-button ng-click="toggleView()">
+            toggle Information
+        </md-button>
+    </div>
+</md-toolbar>
+
+<main class="main">
+
+    <md-progress-linear md-mode="indeterminate" ng-hide="loading.isEventsLoading"></md-progress-linear>
+
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Events</div>
+        </md-toolbar>
+        <table class="md-table">
+            <thead>
+                <tr>
+                    <th class="table-events-title">Title</th>
+                    <th class="table-events-date">Date</th>
+                    <th class="table-events-Grade">Grade</th>
+                    <th class="table-events-History">History</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="recParticipation in data.gradedParticipations">
+                <td>
+                    {{getEventOfParticipation(recParticipation.fkGradeEvent).eventDescription}}
+                </td>
+                <td>{{getEventOfParticipation(recParticipation.fkGradeEvent).eventDate
+                    | date : "dd-MM-yyyy" : timezone}}
+                </td>
+                <td>{{recParticipation.grade}}</td>
+                    <td class="table-events-History">
+                        <md-button ng-click="showEventHistoryDialog($event ,recParticipation)" aria-label="none" class="md-icon-button">
+                            <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    <md-progress-linear md-mode="indeterminate" ng-hide="loading.isNotesLoading"></md-progress-linear>
+
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Notes</div>
+        </md-toolbar>
+        <table class="md-table">
+            <thead>
+            <tr>
+                <th class = "table-notes-latest">Latest Note</th>
+                <th class = "table-notes-history">History</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="recNote in data.colNotes">
+                    <td>
+                        <input ng-blur="updateNote(recNote)" class="md-table-form-control" ng-model="recNote.note">
+                    </td>
+                    <td class="table-notes-history">
+                        <md-button ng-click="showNoteHistoryDialog($event, recNote)" aria-label="none" class="md-icon-button">
+                            <md-icon md-svg-src="../resources/ic_history_black_48px.svg"></md-icon>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Total Grade</div>
+        </md-toolbar>
+            <table class="md-table">
+                <tbody>
+                <tr>
+                    <td><div layout layout-align="center center">{{getTotalGrade()}}</div></td>
+                </tr>
+                </tbody>
+            </table>
+</main>

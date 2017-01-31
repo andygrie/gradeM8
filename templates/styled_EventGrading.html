@@ -1,0 +1,65 @@
+<md-toolbar class="top-toolbar" layout="row" md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button ng-click="goToOverview()" aria-label="menu" class="md-fab md-primary top-toolbar">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
+        </div>
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
+    </div>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-toolbar style="display: block;" class="bottom-toolbar" layout layout-align="center center">
+    <div class="md-toolbar-tools back-button-container" layout="row" layout-align="start center">
+        <md-button ng-click="back()" aria-label="none" class="md-fab eventGrading">
+            <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
+        </md-button>
+
+    </div>
+    <div  class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button aria-label="editEvent" ng-click="showEditEventDialog()">Edit Event</md-button>
+        <md-button aria-label="deleteEvent" ng-click="showDeleteEventDialog()">Delete Event</md-button>
+    </div>
+
+</md-toolbar>
+
+<main class="main">
+    <table class="md-table">
+        <colgroup>
+            <col style="width:70%">
+            <col style="width:30%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Studentname</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in grade.colParticipations | orderBy: 'Pupil.surname'">
+            <td>{{item.Pupil.surname}}  {{item.Pupil.forename}}</td>
+            <td>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Grade</label>
+                    <md-select custom-autofocus="$index == 0" tabindex="1" ng-model="item.grade" md-on-close="grade.updateGrade(item)"
+                               style="border-bottom-color:white">
+                        <md-option ng-repeat="gradeOption in grade.gradeOptions" value="{{gradeOption.grade}}">
+                            {{gradeOption.description}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-progress-linear md-mode="indeterminate" ng-hide="!item.isUpdating"></md-progress-linear>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <md-progress-linear md-mode="indeterminate" ng-hide="!loading.isLoading"></md-progress-linear>
+</main>

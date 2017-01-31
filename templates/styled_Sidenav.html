@@ -1,0 +1,51 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+    <md-toolbar>
+        <h1 class="md-toolbar-tools">Settings</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+        <form layout="column" layout-align="center">
+            <md-input-container flex>
+                <md-button aria-label="toggleShowAddGroup" ng-click="toggleshowAddGroup()" style="width: 100%">
+                    AddGroup
+                </md-button>
+            </md-input-container>
+            <div ng-hide="!showAddGroup.show">
+                <md-input-container style="width: 100%">
+                    <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
+                    <input style="width: 100%; padding-left: 25px;" name="group" ng-model="newGroup.name" type="text" placeholder="Group" ng-required="true">
+                    <div>
+                        <div ng-message="required">A Groupname is Required</div>
+                    </div>
+                </md-input-container>
+                <md-button aria-label="OK" style="width: 100%" ng-click="addNewGroup()">
+                    OK
+                </md-button>
+            </div>
+            <md-input-container flex>
+                <md-button aria-label="DELETE" style="width: 100%">
+                    Delete
+                </md-button>
+            </md-input-container>
+            <md-input-container flex>
+                <md-button ng-click="toggleshowRename()" style="width: 100%">
+                    Rename
+                </md-button>
+            </md-input-container>
+            <div ng-hide="!showRename.show">
+                <md-input-container style="width: 100%">
+                    <md-icon md-svg-src="../resources/ic_perm_identity_black_24px.svg" class="name"></md-icon>
+                    <input style="width: 100%; padding-left: 25px" name="subject" ng-model="form.subject" type="text" placeholder="Subject" ng-required="true">
+                    <div>
+                        <div ng-message="required">A Subjectname is required</div>
+                    </div>
+                </md-input-container>
+                <md-button style="width: 100%">
+                    OK
+                </md-button>
+            </div>
+        </form>
+        <md-button style="width: 100%" ng-click="close()">
+            Close Settings
+        </md-button>
+    </md-content>
+</md-sidenav>

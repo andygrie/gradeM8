@@ -1,0 +1,64 @@
+<form name="eventForm">
+    <input type="date" id="eventDateInput" name="inputEventDate" ng-model="newEvent.eventDate"
+       placeholder="eventDate" min="2016-01-01" required />
+    <input type="text" id="eventDescriptionInput" name="inputEventDescription" ng-model="newEvent.eventDescription"
+        placeholder="eventDescription" required/>
+    <input type="submit" ng-click="insertNewEvent()" ng-disabled="!eventForm.$valid" value="Submit"/>
+</form>
+
+<form name="noteForm">
+    <input type="text" id="noteTextInput" name="inputNoteText" ng-model="newNote.note"
+        placeholder="new note" required/>
+    <input type="submit" ng-click="insertNewNote()" ng-disabled="!noteForm.$valid" value="Submit"/>
+</form>
+
+<button ng-click="toggleView()">toggleView</button>
+
+<div ng-hide="data.showOverview">
+    <h1>Ungraded Events</h1>
+    <div ng-repeat="recUnEvent in data.ungradedEvents" ng-click="viewGrade(recUnEvent)">
+        <h4>{{recUnEvent.eventDescription}}</h4>
+        <h5>{{recUnEvent.eventDate}}</h5>
+    </div>
+
+    <h1>Graded Events</h1>
+    <div ng-repeat="recEvent in data.gradedEvents" ng-click="viewGrade(recEvent)">
+        <h4>{{recEvent.eventDescription}}</h4>
+        <h5>{{recEvent.eventDate}}</h5>
+    </div>
+
+    <form name="formGrade">
+        <div class="form-group">
+            <input type="radio" name="grade" value="1" ng-model="formData.grade">1
+            <input type="radio" name="grade" value="2" ng-model="formData.grade">2
+            <input type="radio" name="grade" value="3" ng-model="formData.grade">3
+            <input type="radio" name="grade" value="4" ng-model="formData.grade">4
+            <input type="radio" name="grade" value="5" ng-model="formData.grade">5
+            <input type="radio" name="grade" value="1" ng-model="formData.abscence">abscent
+        </div>
+        <input type="submit" ng-click="submitGrade()" value="submit"/>
+    </form>
+</div>
+
+<div ng-hide="!data.showOverview">
+    <h1>Prüfungen</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Grade</th>
+        </tr>
+        <tr ng-repeat="recParticipation in data.gradedParticipations">
+            <td>{{getEventOfParticipation(recParticipation.idParticipation).eventDescription}}</td>
+            <td>{{getEventOfParticipation(recParticipation.idParticipation).eventDate}}</td>
+            <td>{{recParticipation.grade}}</td>
+        </tr>
+    </table>
+    <h1>Notes</h1>
+    <div ng-repeat="recNote in data.colNotes">
+        <label >{{recNote.note}}</label>
+    </div>
+
+    <h1>Total grade</h1>
+    <label>{{getTotalGrade()}}</label>
+</div>

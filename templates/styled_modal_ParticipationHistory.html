@@ -1,0 +1,38 @@
+<md-dialog style="width: 50%" aria-label="Participation History">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Participation History</h2>
+                <span flex></span>
+                <md-button aria-label="CLOSE" class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="../resources/ic_cancel_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <md-progress-linear md-mode="indeterminate" ng-disabled="!state.loading"></md-progress-linear>
+            <table class="md-table">
+                <thead>
+                <tr>
+                    <th>Grade</th>
+                    <th>Updated On</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in partHistory.colParticipation">
+                    <td>{{grade.parseGrade(item.grade)}}</td>
+                    <td>{{parseDate(item.gradedOn)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button aria-label="OK" style="margin-left:20px;" ng-click="hide()" >
+                OK
+            </md-button>
+            <span flex></span>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

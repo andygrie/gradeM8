@@ -1,0 +1,36 @@
+<md-dialog style="width: 50%" aria-label="Add Note">
+    <form name="formAddNote">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Add Note</h2>
+                <span flex></span>
+                <md-button aria-label="CLOSE" class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="../resources/ic_cancel_white_48px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <md-progress-linear md-mode="indeterminate" ng-disabled="!state.loading"></md-progress-linear>
+                <md-input-container style="width: 100%;margin-left:auto;margin-right: auto">
+                    <md-icon md-svg-src="../resources/ic_description_black_24px.svg" class="name"></md-icon>
+                    <input style="padding-left: 25px;" name="inputNoteText" id="inputNoteText"
+                           ng-model="newNote.note" type="text" placeholder="Description"
+                           ng-required="true">
+                    <!--       <div ng-messages="clientLogin.userName.$error">
+                               <div ng-message="required">Your full name is required.</div>
+                           </div>-->
+                </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button aria-label="OK" style="margin-left:20px;" ng-click="insertNewNote()" ng-disabled="formAddNote.$invalid">
+                OK
+            </md-button>
+            <span flex></span>
+            <md-button aria-label="CANCEL" ng-click="cancel()" style="margin-right:20px;">
+                CANCEL
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

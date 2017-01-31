@@ -1,0 +1,89 @@
+<md-toolbar class="top-toolbar" layout="row"  md-scroll-shrink>
+    <div style="display: inline-flex">
+        <div>
+            <md-button aria-label="menu" class="md-fab md-primary top-toolbar" ng-click="goToOverview()">
+                <div class="imageholder">
+                    <img src="../resources/logo.png">
+                </div>
+            </md-button>
+        </div>
+        <div ng-bind="breadcrumb" class="md-toolbar-tools"></div>
+    </div>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="showTabDialog($event)" aria-label="none" class="md-icon-button">
+            <md-icon md-svg-src="../resources/ic_email_white_48px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-toolbar class="bottom-toolbar" layout>
+    <div class="md-toolbar-tools back-button-container" layout="row" layout-align="start center">
+        <md-button ng-click="back()" aria-label="none" class="md-fab eventGrading">
+            <md-icon md-svg-src="../resources/ic_arrow_back_black_48px.svg"></md-icon>
+        </md-button>
+    </div>
+    <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-button aria-label="addNote" ng-click="showAddNoteDialog($event)">
+            add Note
+        </md-button>
+        <md-button aria-label="addEvent" ng-click="showAddEventDialog($event)">
+            add Event
+        </md-button>
+        <md-button class="toggleInformation" aria-label="toggleInformation" ng-click="toggleView()">
+            toggle Information
+        </md-button>
+    </div>
+</md-toolbar>
+
+<main class="main">
+    <md-progress-linear md-mode="indeterminate" ng-disabled="!state.awaitingParticipationData"></md-progress-linear>
+
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Ungraded Events</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+            </div>
+        </md-toolbar>
+
+        <div flex>
+            <!--ng-click="viewGrade(recUnEvent)"-->
+            <div style="float:left" ng-repeat="recUnEvent in data.ungradedEvents" ng-click="displayParticipationsOfEvent(recUnEvent.idGradeEvent)" >
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recUnEvent.eventDescription}}</div>
+                            <div class="md-subhead">{{recUnEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="group-container">
+        <md-toolbar layout="row" class="group-container-header" md-scroll-shrink>
+            <div style="display: inline-block">Graded Events</div>
+            <span flex></span>
+            <div layout="row" layout-align="center center">
+            </div>
+        </md-toolbar>
+
+        <div flex>
+            <div style="float:left"  ng-repeat="recEvent in data.gradedEvents" ng-click="displayParticipationsOfEvent(recEvent.idGradeEvent)">
+                <md-card flex-gt-sm-grow="10">
+                    <md-card-title style="display:block">
+                        <md-card-title-text>
+                            <div class="md-headline">{{recEvent.eventDescription}}</div>
+                            <div class="md-subhead">{{recEvent.eventDate | date : "dd-MM-yyyy" : timezone}}</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<div ng-include="'templates/styled_Sidenav.html'" onload="sidenav.show"></div>
