@@ -13,7 +13,7 @@ angular.module("moduleLogin", [])
 
             $scope.breadcrumb = "login";
 
-            document.getElementsByTagName("body")[0].style.overflowY="hidden !important";
+            document.getElementsByTagName("body")[0].setAttribute("style", "OverflowY: hidden !important")
             /*
              $scope.colTeachers = [
              {idUser: 1, forename: "Richard", surname: "Ludy"},
